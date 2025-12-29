@@ -18,16 +18,11 @@ Package for production, run final checks, and make sure nothing embarrassing hap
 
 ---
 
-## Where We Are in the Week
+## Course Progress
 
-```
-Monday:      [DONE] Spec + Plan
-Tuesday:     [DONE] Payment built
-Wednesday:   [DONE] Order spec
-Thursday:    [DONE] Integration complete
-Friday AM:   [HERE] Final polish
-Friday PM:   Demo day
-```
+![Lab 1.6 Progress](../assets/images/lab-1.6-progress.svg)
+
+**Friday morning goal**: Production container, security check, demo rehearsal.
 
 **Friday morning goal**: Production container, security check, demo rehearsal.
 
@@ -330,7 +325,7 @@ Your lab is complete when:
 ### Validate Your Work
 
 ```bash
-python validate_lab.py --lab 1.6 --repo . --security-scan
+/speckit.checklist --security
 ```
 
 ---

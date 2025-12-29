@@ -18,15 +18,11 @@ Build the order service, wire it to payments, and prove the full checkout flow w
 
 ---
 
-## Where We Are in the Week
+## Course Progress
 
-```
-Monday:      [DONE] Payment spec + plan
-Tuesday:     [DONE] Payment implementation
-Wednesday:   [DONE] Order spec (Lab 1.4)
-Thursday:    [HERE] Build + Integrate
-Friday:      Demo day
-```
+![Lab 1.5 Progress](../assets/images/lab-1.5-progress.svg)
+
+**Thursday goal**: Full checkout flow working, tests passing, demo-ready.
 
 **Thursday goal**: Full checkout flow working, tests passing, demo-ready.
 
@@ -781,7 +777,7 @@ Your lab is complete when:
 ### Validate Your Work
 
 ```bash
-python validate_lab.py --lab 1.5 --repo . --coverage-check
+/speckit.checklist
 ```
 
 ---
