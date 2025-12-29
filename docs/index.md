@@ -24,7 +24,7 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 Most AI coding fails because we skip the thinking. SDD makes the thinking explicit.
 
-`mermaid
+\\\mermaid
 flowchart LR
     subgraph C["CONSTITUTION"]
         C1["Immutable Rules"]
@@ -51,7 +51,7 @@ flowchart LR
     end
     
     C --> S --> P --> I
-`
+\\\
 
 **Each phase has validation.** You don't move forward until the spec is clear.
 
@@ -86,10 +86,8 @@ The AI didn't guess these requirements. **You defined them through structured qu
 
 By Friday, you'll have a working checkout system and a repeatable process.
 
-[Start the Labs](labs/){: .btn .btn-outline .fs-5 }
-
----
-
 {: .important }
 > **Complete [Pre-Course Setup](setup) before Day 1.** You'll need your environment ready.
+
+[Start the Labs](labs/){: .btn .btn-outline .fs-5 }
 
