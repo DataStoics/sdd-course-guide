@@ -322,13 +322,15 @@ Open `spec.md` and you'll see the AI generated these scenarios **in proper Given
 
 ## Step 6: Generate Quality Checklist with /speckit.checklist (5 min)
 
-Instead of a manual checklist, let spec-kit generate one tailored to your spec:
+**Why checklists?** Your spec captures requirements, but checklists catch *gaps* - the things you forgot to specify that will bite you Thursday night.
+
+Run:
 
 ```
 /speckit.checklist demo-readiness
 ```
 
-The AI analyzes YOUR spec and generates context-aware validation:
+The AI reads YOUR spec and generates questions specific to your feature:
 
 ```markdown
 # Demo Readiness Checklist: Payment Checkout
@@ -349,22 +351,27 @@ The AI analyzes YOUR spec and generates context-aware validation:
 - [ ] "How do you handle failures?" - error recovery defined?
 ```
 
-**Review each item.** Unchecked items are Thursday night rework waiting to happen.
+**How to use it**: Review each item. If you can't check it off, go back to your spec and add the missing detail. Unchecked items = Thursday night rework.
 
-**Pro tip**: Run `/speckit.checklist security` or `/speckit.checklist ux` for different focus areas.
+**Different focus areas**:
+- `/speckit.checklist security` - authentication, authorization, data protection
+- `/speckit.checklist ux` - user flows, error messages, edge cases
+- `/speckit.checklist testing` - testability, acceptance criteria coverage
 
 ---
 
 ## Step 7: Commit Your Work (5 min)
 
-Your first commit should follow conventional commit format:
+**Where does this commit go?** When you created a Codespace from the template, GitHub made YOUR OWN COPY of the repository under your account. Your commits go to YOUR repo, not the original template.
+
+Commit using conventional format:
 
 ```bash
 git add .
 git commit -m "feat: payment checkout specification for investor demo"
 ```
 
-Note: This commit includes:
+This commit includes:
 - AI assistant configuration (`.github/prompts/` or equivalent)
 - Project constitution (`.specify/memory/constitution.md`)
 - Feature specification (`specs/001-payment-checkout/spec.md`)
@@ -385,16 +392,6 @@ Your lab is complete when:
 - [ ] Quality checklist generated via `/speckit.checklist`
 - [ ] Commit message follows convention: `feat: payment specification`
 
-### Validate Your Work
-
-Run the validation script:
-
-```bash
-python validate_lab.py --lab 1.1 --repo .
-```
-
-All checks should pass.
-
 ---
 
 ## AI Without Specs vs. AI With Specs
@@ -412,38 +409,22 @@ All checks should pass.
 
 ---
 
-## Reflection Questions
+## Key Takeaways
 
-Before moving to Lab 1.2, consider:
+1. **Specs are conversations, not documents** - You described what you needed naturally; the AI structured it.
 
-1. **Time math**: You spent ~30 min on spec. In Lab 0 (AI without specs), how much time would you have spent Thursday night fixing edge cases? Was the spec investment worth it?
+2. **`[NEEDS CLARIFICATION]` is a feature** - The AI asking instead of guessing prevents Thursday rewrites.
 
-2. **AI behavior**: With the spec, your AI will generate idempotency handling automatically. Without it, the AI "didn't know" you needed it. What changed?
+3. **Checklists catch what specs miss** - Requirements say what to build; checklists ask "did you forget anything?"
 
-3. **Uncertainty surfacing**: The AI marked `[NEEDS CLARIFICATION]` instead of guessing. How does this change your trust in AI-generated code?
-
-4. **Confidence**: Rate your demo confidence now vs. Lab 0. What made the difference?
-
----
-
-## Common Mistakes
-
-| Mistake | What Happens Thursday Night |
-|---------|----------------------------|
-| Skipping `specify init .` | AI doesn't follow your patterns |
-| Skipping `/speckit.constitution` | No governance, inconsistent decisions |
-| Over-structuring prompts | Wasted time - just describe naturally |
-| **Ignoring `[NEEDS CLARIFICATION]` markers** | AI guessed wrong, you're rewriting code |
-| **Not running `/speckit.clarify`** | Ambiguities become Thursday bugs |
-| Skipping `/speckit.checklist` | Missed edge cases surface in demo |
-| Skipping spec entirely | You're back to Lab 0 chaos |
+4. **30 minutes now saves hours later** - Every ambiguity resolved in spec is a bug that won't appear Thursday night.
 
 ---
 
 ## What's Next?
 
-In **Lab 1.2**, you'll use `/speckit.research` to make technology decisions (FastAPI vs Flask? Redis vs in-memory?) with documented trade-offs.
+In **Lab 1.2**, you'll use `/speckit.plan` to make technology decisions (FastAPI vs Flask? Redis vs in-memory?) with documented trade-offs.
 
-**The spec says WHAT. Research says HOW. Plan commits to WHICH.**
+**The spec says WHAT. The plan says HOW.**
 
 **Remember**: You're building toward Thursday. Every decision documented now is rework prevented later.
