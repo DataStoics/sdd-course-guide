@@ -57,22 +57,27 @@ Choose ONE option:
 Cloud-based VS Code that runs in your browser. No local installation required.
 
 **Requirements:**
-- GitHub account with Codespaces enabled (free tier: 60 hours/month)
+- GitHub account with Codespaces enabled (free tier: 120 core-hours/month)
 - Modern browser (Chrome, Firefox, Edge)
 - Stable internet connection
 
-**Setup:**
-1. Fork the course template repository (instructor provides URL)
-2. Click **Code** > **Codespaces** > **Create codespace on main**
-3. Wait 2-3 minutes for the container to build
+**One-Click Setup:**
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DataStoics/sdd-greenfield-starter?quickstart=1)
+
+Click the badge above, or go to [github.com/DataStoics/sdd-greenfield-starter](https://github.com/DataStoics/sdd-greenfield-starter) and click **Code** > **Codespaces** > **Create codespace on main**.
+
+Wait 2-3 minutes for the container to build. Gemini CLI is pre-installed.
 
 <!-- SCREENSHOT: Show the "Create codespace" dropdown menu -->
 
 **Verify it works:**
 ```bash
-python --version    # Should show 3.11+
-docker --version    # Should show 24.x+
+python --version    # Should show 3.12+
+gemini --version    # Should show installed version
 ```
+
+**Save your work later:** When you commit, VS Code will prompt "Publish to GitHub" -- this creates your own copy.
 
 **Official docs:** [GitHub Codespaces Quickstart](https://docs.github.com/en/codespaces/getting-started/quickstart)
 
@@ -107,15 +112,36 @@ For offline work or faster performance.
 
 Choose ONE. All three support the SDD workflow we teach.
 
+### Gemini CLI (Recommended - Free)
+
+Best choice for this course. Free tier with generous limits.
+
+| Tier | Cost | Notes |
+|:-----|:-----|:------|
+| Free | $0 | 1,000 requests/day, 60/minute |
+| Pro/Ultra | $20+/month | Higher limits |
+
+**If using Codespaces:** Already installed! Just run `gemini` and sign in with your Google account.
+
+**If using local setup:**
+```bash
+npm install -g @google/gemini-cli
+gemini
+```
+
+**Official docs:** [Gemini CLI on GitHub](https://github.com/google-gemini/gemini-cli)
+
+---
+
 ### GitHub Copilot
 
 Best if you already use GitHub or want the tightest VS Code integration.
 
 | Tier | Cost | Notes |
 |:-----|:-----|:------|
-| Free trial | 30 days | Requires payment method |
-| Individual | $10/month | |
-| Student/Educator | Free | Via GitHub Education |
+| Free | $0 | 50 agent requests/month -- may be limiting |
+| Pro | $10/month | 300 agent requests/month |
+| Student/Educator | Free (Pro) | Via GitHub Education |
 
 **Setup:** Install "GitHub Copilot" and "GitHub Copilot Chat" extensions in VS Code, then sign in.
 
@@ -127,31 +153,16 @@ Best if you already use GitHub or want the tightest VS Code integration.
 
 ### Claude Code
 
-Best for complex reasoning and long context windows.
+Best for complex reasoning and long context windows. Requires paid subscription.
 
 | Tier | Cost | Notes |
 |:-----|:-----|:------|
-| Free | Limited usage | Good for trying it out |
-| Pro | $20/month | Higher rate limits |
+| Pro | $20/month | Required for Claude Code CLI |
+| Max | $100+/month | Higher usage limits |
 
 **Setup:** Follow the official installation guide -- Claude Code runs as a CLI tool.
 
 **Official docs:** [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
-
----
-
-### Gemini CLI
-
-Best for command-line workflows and Google Cloud integration.
-
-| Tier | Cost | Notes |
-|:-----|:-----|:------|
-| Free | Generous limits | Requires Google account |
-| Pay-as-you-go | Usage-based | For heavy use |
-
-**Setup:** Get an API key from Google AI Studio, then install the CLI.
-
-**Official docs:** [Gemini CLI on GitHub](https://github.com/google-gemini/gemini-cli)
 
 ---
 

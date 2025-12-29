@@ -110,6 +110,6 @@ The best way to solidify these skills:
 ## Stay Connected
 
 - [Course Discussion Forum](https://github.com/DataStoics/sdd-course-guide/discussions)
-- [Spec Template](https://github.com/DataStoics/sdd-greenfield-template/blob/main/.specify/templates/spec-template.md)
+- [Starter Template](https://github.com/DataStoics/sdd-greenfield-starter)
 - [Checkpoint Repositories](https://github.com/DataStoics?q=lab-checkpoint)
 
