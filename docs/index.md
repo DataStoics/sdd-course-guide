@@ -22,54 +22,61 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 ## The SDD Workflow
 
-Most AI coding fails because we skip the thinking. SDD makes the thinking explicit.
+Most AI coding fails because we skip the thinking. SDD makes the thinking explicit through **human validation at every phase**.
 
 ```mermaid
-flowchart LR
-    subgraph C["CONSTITUTION"]
-        C1["Immutable Rules"]
-        C2["Security Standards"]
-        C3["Compliance Reqs"]
+flowchart TB
+    subgraph GOVERN["ðŸ›ï¸ GOVERN"]
+        G1["Constitution"]
+        G2["Security & Compliance Rules"]
+        G3["Immutable Constraints"]
     end
     
-    subgraph S["SPECIFY"]
-        S1["Interview & Clarify"]
-        S2["What does 'fast' mean?"]
-        S3["Edge cases?"]
+    subgraph SPECIFY["ðŸ“‹ SPECIFY"]
+        S1["Vague Idea"]
+        S2["Clarifying Questions"]
+        S3["Robust Specification"]
+        S1 --> S2 --> S3
     end
     
-    subgraph P["PLAN"]
-        P1["Technical Decisions"]
-        P2["Which DB? What libs?"]
-        P3["API design?"]
+    subgraph PLAN["ðŸ”¬ PLAN"]
+        P1["Research Options"]
+        P2["Technical Decisions"]
+        P3["Implementation Blueprint"]
+        P1 --> P2 --> P3
     end
     
-    subgraph I["IMPLEMENT"]
+    subgraph IMPLEMENT["ðŸ› ï¸ IMPLEMENT"]
         I1["AI Generates Code"]
-        I2["Tests pass"]
-        I3["Scan clean. Ship it."]
+        I2["Tests & Security Scan"]
+        I3["Production Ready"]
+        I1 --> I2 --> I3
     end
     
-    C --> S --> P --> I
+    GOVERN -.->|"Constraints feed every phase"| SPECIFY
+    GOVERN -.-> PLAN
+    GOVERN -.-> IMPLEMENT
+    
+    SPECIFY -->|"Human validates spec"| PLAN
+    PLAN -->|"Human approves design"| IMPLEMENT
 ```
 
-**Each phase has validation.** You don't move forward until the spec is clear.
+**What makes this different:** The spec isn't just a documentâ€”it's a **conversation** that surfaces hidden assumptions before they become bugs.
 
 ---
 
-## How Specs Get Better
+## From Vague to Validated
 
-The magic isn't in "adding lines to a spec." It's in the clarification process.
+The magic of SDD is the **clarification process**. AI doesn't guessâ€”you decide.
 
-| What You Start With | What SDD Produces |
-|:--------------------|:------------------|
-| "Build a payment system" | **Functional**: Process payments via Stripe tokenization |
-| | **Constraints**: Never store raw card numbers (PCI DSS) |
-| | **Error Handling**: Timeout after 30s, retry 3x, then fail gracefully |
-| | **Acceptance**: Given valid card, when charged, then return transaction ID |
-| | **Out of Scope**: Refunds, subscriptions, multi-currency |
+| You Say | AI Asks | You Clarify | Spec Captures |
+|:--------|:--------|:------------|:--------------|
+| "Build a payment system" | "What payment methods?" | "Credit cards via Stripe" | Stripe tokenization, no raw PAN storage |
+| | "What happens on timeout?" | "Retry 3x, then fail gracefully" | 30s timeout, exponential backoff, user notification |
+| | "What's out of scope?" | "No refunds yet" | Explicit boundary prevents scope creep |
+| | "How do we know it works?" | "Charge goes through, get transaction ID" | Testable acceptance criteria |
 
-The AI didn't guess these requirements. **You defined them through structured questions.**
+**Result:** A spec that any AI assistant can implement consistently.
 
 ---
 
