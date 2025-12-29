@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.1: Init and Spec"
 layout: default
 parent: Labs
@@ -31,6 +31,20 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 - Thursday night energy spent on rework, not polish
 
 **This lab shows you what happens when you spec first.**
+
+---
+
+## The SDD Workflow
+
+```mermaid
+flowchart TB
+    A["🔵 Lab 1.1: Specify<br/>WHAT to build"] --> B["⚪ Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
+    
+    style A fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style B fill:#f3f4f6,stroke:#d1d5db,color:#374151
+    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
+```
 
 ---
 

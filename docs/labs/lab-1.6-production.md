@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.6: Production"
 layout: default
 parent: Labs

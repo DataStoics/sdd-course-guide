@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.4: Order Spec"
 layout: default
 parent: Labs

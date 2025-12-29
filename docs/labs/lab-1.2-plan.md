@@ -22,10 +22,14 @@ By the end of this lab, you'll understand: **A plan is a commitment. Research do
 
 ## The SDD Workflow
 
-```
-[DONE] Lab 1.1: /speckit.specify → spec.md (WHAT to build)
-[HERE] Lab 1.2: /speckit.plan → plan.md + research.md + data-model.md (HOW to build)
-       Lab 1.3: /speckit.tasks → tasks.md → implementation
+```mermaid
+flowchart TB
+    A["✅ Lab 1.1: Specify<br/>WHAT to build"] --> B["🔵 Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
+    
+    style A fill:#22c55e,stroke:#16a34a,color:#fff
+    style B fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
 ```
 
 ---
@@ -255,6 +259,29 @@ Your lab is complete when:
 3. **Traceability matters** — Every technology choice should trace to a spec requirement. If it doesn't, question whether you need it.
 
 4. **Plans are commitments** — Once you commit to a plan, changes should go through the spec → plan → implementation cycle.
+
+---
+
+## Preview: External Research Tools (Course 2)
+
+In greenfield projects, your AI assistant's training data is usually sufficient for planning. But in **brownfield enterprise work** (Course 2), you'll need live, authoritative sources:
+
+| Tool | Use During Planning | Example |
+|------|---------------------|---------|
+| **Context7** | Library documentation | "What's the current FastAPI best practice for dependency injection?" |
+| **Perplexity** | Security advisories, version compatibility | "Any critical CVEs for Redis 7.x in the last 6 months?" |
+| **Confluence/SharePoint** | Company-approved tech lists | "Which caching solutions are on our approved vendor list?" |
+
+### Why This Matters in Brownfield
+
+When you're integrating with **existing systems** (Course 2), you can't rely on general knowledge:
+- Legacy systems have specific version constraints
+- Company policies restrict technology choices
+- Security teams require CVE verification
+
+**For now**: Your AI assistant handles research automatically via `/speckit.plan`.
+
+**In Course 2**: You'll learn to integrate MCP tools (Context7, Perplexity) for verified, up-to-date research — especially critical when working with legacy codebases.
 
 ---
 

@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 0: AI Without Specs"
 layout: default
 parent: Labs
@@ -27,6 +27,17 @@ You've got **4 days** to ship something demoable.
 For this exercise, you have **30 minutes** instead of 4 days. Same pressure, compressed timeline.
 
 Your challenge: Build a checkout feature that you'd be confident demoing to investors.
+
+---
+
+## Starting Point
+
+- Empty project or minimal template
+- Your AI assistant (GitHub Copilot, Claude Code, or Gemini CLI)
+- No spec, no structure, no constraints
+- Just you and a deadline
+
+---
 
 ### Your Prompt
 
@@ -145,9 +156,17 @@ Your instructor will lead a discussion using these questions:
 
 ---
 
-## Key Insights
+## Key Takeaways
 
-### The Speed Trap
+1. **Speed is an illusion** — Code appears fast, but debug time adds up. Research shows developers estimate 20% speedup with AI but measure 19% *slower* due to rework. (METR 2025 Study)
+
+2. **Consistency beats velocity** — You got 3 different patterns when you needed one consistent approach. Happy path only when you needed error handling.
+
+3. **Thursday reveals the truth** — The code that ships Friday isn't the code you started Monday. Without a spec, you built three apps and spent Thursday merging them.
+
+4. **"Works" ≠ "Demoable"** — "Works on my machine" isn't "works on demo day." Code you can't explain isn't code you can defend.
+
+### The Speed Trap (Visual)
 
 | Feels Fast | Actually Slow |
 |------------|---------------|
@@ -155,23 +174,6 @@ Your instructor will lead a discussion using these questions:
 | Features pile up quickly | Integration breaks things |
 | "Almost done" by Wednesday | Thursday night rewrites |
 | Demo works (barely) | Production requires rebuild |
-
-**Research shows**: Developers estimate 20% speedup with AI, but measure 19% **slower** due to rework and debugging. (METR 2025 Study)
-
-### The Real Problem
-
-| What You Got | What You Needed |
-|--------------|-----------------|
-| 3 different auth patterns | One consistent approach |
-| Happy path only | Error handling for demo |
-| "Works on my machine" | Works on demo day |
-| Code you can't explain | Code you can defend |
-
-### The Friday Insight
-
-> **The code that ships Friday isn't the code you started Monday.**
->
-> Without a spec, you built three applications: what you thought PM wanted, what AI interpreted, and what you actually needed. Then you spent Thursday night merging them.
 
 ---
 

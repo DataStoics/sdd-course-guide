@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.5: Integration"
 layout: default
 parent: Labs
