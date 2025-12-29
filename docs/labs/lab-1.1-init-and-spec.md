@@ -65,136 +65,192 @@ specify init .
 
 ### Select Your AI Assistant
 
-The init wizard will display a menu. Use arrow keys to select your AI assistant:
+You'll be prompted to choose your AI assistant:
 
 ```
-â•­â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Choose your AI assistant: â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•®
-â”‚                                                                                                         â”‚
-â”‚         copilot (GitHub Copilot)                                                                        â”‚
-â”‚         claude (Claude Code)                                                                            â”‚
-â”‚  â–¶      gemini (Gemini CLI)                                                                             â”‚
-â”‚         cursor-agent (Cursor)                                                                           â”‚
-â”‚         ...                                                                                             â”‚
+? Select your AI assistant:
+  copilot
+  claude
+  gemini
+  cursor-agent
 ```
 
-**Select the one you're using** (Gemini CLI is recommended for this course).
+**Select the one you're using** (the one you used in the contrast exercise).
 
 ### What Just Happened?
 
-The init command created a `.specify/` directory with configuration for your selected assistant:
+The init command created the spec-kit structure and slash commands for your selected assistant:
 
-| Assistant | Config Folder Created |
-|-----------|----------------------|
-| GitHub Copilot | `.github/` with `copilot-instructions.md` |
-| Claude Code | `.claude/` with `settings.json` |
-| Gemini CLI | `.gemini/` with `settings.json` |
+| Assistant | Commands Directory | Format |
+|-----------|-------------------|--------|
+| GitHub Copilot | `.github/prompts/` | Markdown |
+| Claude Code | `.claude/commands/` | Markdown |
+| Gemini CLI | `.gemini/commands/` | TOML |
+| Cursor | `.cursor/commands/` | Markdown |
 
-It also created:
-- `.specify/` - Contains templates, scripts, and governance rules
-- `.specify/templates/` - Spec templates for consistent documentation
-- `.specify/scripts/` - Helper scripts for the SDD workflow
+The init also created:
+- `.specify/` - Core spec-kit directory with scripts, templates, and memory
+- `.specify/memory/constitution.md` - Project principles (we'll define these next)
+- `.specify/templates/` - Templates for specs, plans, and checklists
 
-**Open the generated instructions file** and review it. This file tells your AI assistant:
-- How to work with specifications
-- Where to find governance constraints
-- How to structure generated code
-- What patterns to follow
+**Open your agent's commands directory** and review it. These slash commands enable the spec-driven workflow:
+- `/speckit.specify` - Transform ideas into structured specifications
+- `/speckit.clarify` - Ask questions to refine ambiguous requirements
+- `/speckit.plan` - Generate implementation plans
+- `/speckit.implement` - Execute implementation with traceability
 
 ### Verify Setup
 
-Your AI assistant should now understand SDD. Test it by asking:
+Your AI assistant should now understand SDD. Test it:
 
 ```
 What is spec-driven development and how should I create specs in this project?
 ```
 
-If your AI responds with information about specifications and the `/speckit.specify` command, you're ready to proceed.
+If your AI responds with information about specifications and governance, you're ready to proceed.
 
 ---
 
 ## Step 2: Establish Project Principles with /speckit.constitution (5 min)
 
-Before writing specs, establish the foundational principles that will guide all development. This is your project's "constitution" - the non-negotiable rules.
+Before diving into features, establish the foundational principles that will guide all technical decisions.
 
-Run the constitution command with your demo context:
+### Run the Constitution Command
+
+Simply describe what matters for your project:
 
 ```
-/speckit.constitution "E-commerce checkout demo for Friday investor pitch. Must look professional, handle edge cases gracefully, and be production-path code (not throwaway)."
+/speckit.constitution This is an investor demo for a payment checkout system. 
+Prioritize professional appearance, graceful error handling, and demo-ability. 
+Code should be clean enough to show investors but pragmatic for the timeline.
 ```
 
-### What the Constitution Defines
+**The beauty of spec-kit**: You don't need to structure your thoughts perfectly. Just describe what matters and the AI will help organize it into a proper constitution.
 
-The generated constitution (`.specify/memory/constitution.md`) establishes:
+### What Gets Created?
 
-| Principle | Example for Demo |
-|-----------|------------------|
-| **Business Context** | Investor demo, must impress |
-| **Quality Bar** | Production-path, not prototype |
-| **User Focus** | Professional UX, clear errors |
-| **Technical Standards** | Idempotency, audit trails |
+The command updates `.specify/memory/constitution.md` with principles like:
+- Code quality standards appropriate for your context
+- Error handling philosophy
+- Testing requirements
+- Security considerations
 
-### Why This Matters
-
-Every spec you write will inherit these principles. When your AI generates code later, it knows:
-- This isn't a hackathon throwaway
-- Error handling matters (investors are watching)
-- Security questions will be asked
-
-**Review the generated constitution** before proceeding. This is the foundation everything else builds on.
+**Review the generated constitution** and adjust if needed. This becomes the governance layer that guides all future AI-generated code.
 
 ---
 
-## Step 3: Create Your First Spec with /speckit.specify (15 min)
+## Step 3: Generate Initial Spec with /speckit.specify (10 min)
 
-Now use the AI-assisted specification command. This single command handles everything:
+Now use the conversational specification command. **You don't need to structure your thoughts** - just describe what you're building:
 
 ```
-/speckit.specify "payment checkout for investor demo - must handle edge cases gracefully, look professional, and be demoable by Friday"
+/speckit.specify Payment checkout for our investor demo on Friday. 
+Needs to handle credit card payments, show order history, and look professional. 
+Should handle edge cases like double-clicks and invalid cards gracefully.
 ```
 
-### What Happens Automatically
+### What Just Happened?
 
-When you run `/speckit.specify`, the spec-kit workflow:
+The `/speckit.specify` command automatically:
 
-1. **Analyzes** your description to generate a unique branch name (e.g., `001-payment-checkout`)
-2. **Creates a new git branch** for this feature
-3. **Creates the spec directory** (e.g., `specs/001-payment-checkout/`)
-4. **Drafts the spec.md** with User Scenarios, Functional Requirements, and Success Criteria
-5. **Runs a quality checklist** to validate the spec is ready for planning
+1. **Created a feature branch**: `001-payment-checkout` (semantic naming from your description)
+2. **Created the spec directory**: `specs/001-payment-checkout/`
+3. **Generated `spec.md`**: Structured specification from your natural language input
+4. **Ran quality validation**: Checked for completeness and clarity
 
-The spec inherits principles from your constitution automatically.
+### The Key Insight: AI Marks What It Doesn't Know
 
-### Review the Generated Spec
+Open the generated `spec.md`. You'll see something powerful - the AI **explicitly marked its uncertainty** instead of guessing:
 
-After the command completes, you'll have:
-- A new feature branch (you're automatically switched to it)
-- `specs/001-payment-checkout/spec.md` with initial content
-- A quality checklist validating the spec
+```markdown
+## User Scenarios
 
-Notice how different this is from the contrast exercise prompt. You told the AI:
-- **What** you're building (payment checkout)
-- **What context** matters (investor demo)
-- **What "done" means** (demoable, handles edge cases)
+### Scenario 1: Successful Payment (Priority: P1)
+**Given** a customer with a valid payment token,
+**When** they submit a payment for $50.00,
+**Then** payment succeeds and confirmation displays.
 
-The generated spec should include sections for:
-- Summary
-- User Scenarios (Given/When/Then)
-- Functional Requirements
-- Success Criteria
+## Functional Requirements
+
+- **FR-001**: System MUST accept payment tokens [NEEDS CLARIFICATION: which payment gateway?]
+- **FR-002**: System MUST handle duplicate submissions [NEEDS CLARIFICATION: return same response or error?]
+- **FR-003**: System MUST validate payment amounts [NEEDS CLARIFICATION: min/max limits?]
+- **FR-004**: System MUST display order history [NEEDS CLARIFICATION: how many past orders?]
+```
+
+**This is spec-kit's superpower**: Instead of the AI making plausible-but-wrong assumptions, it tells you exactly what's ambiguous. Those `[NEEDS CLARIFICATION]` markers are your Thursday night rework, surfaced on Monday morning.
+
+### Review the Generated Structure
+
+Your spec should have:
+- Summary (what we're building)
+- User Scenarios (Given/When/Then format)
+- Functional Requirements (FR-001, FR-002... with uncertainty markers)
+- Success Criteria (measurable outcomes)
+- Key Entities (data structures involved)
 
 ---
 
-## Step 4: Refine What "Demoable" Actually Means (20 min)
+## Step 4: Resolve Ambiguities with /speckit.clarify (15 min)
 
-**This is where Thursday night rework gets prevented.** What would embarrass you in front of investors?
+**This is where Thursday night rework gets prevented.** Those `[NEEDS CLARIFICATION]` markers? Let's resolve them now, not at 11pm Thursday.
+
+### Run the Clarify Command
+
+```
+/speckit.clarify
+```
+
+The AI analyzes your spec and presents **ONE question at a time** with a recommended answer:
+
+```
+## Question 1: Payment Gateway Integration
+
+**Context**: FR-001 specifies accepting payment tokens but doesn't specify the gateway.
+
+**What we need to know**: Which payment gateway should we integrate with?
+
+| Option | Answer | Implications |
+|--------|--------|--------------|
+| A (Recommended) | Mock Payment Gateway | Fast to implement, perfect for demo, easy to swap later |
+| B | Stripe Test Mode | Real integration, but adds complexity and API keys |
+| C | Direct card input | Security risk, NOT recommended for any demo |
+
+**Your choice**: _[Type A, B, C, or provide custom answer]_
+```
+
+### Answer Each Question
+
+Respond with your choice. The AI updates the spec and asks the next question:
+
+- **Q1: Payment Gateway** → A (Mock gateway for demo)
+- **Q2: Duplicate handling** → Return original response (idempotent)
+- **Q3: Amount limits** → $0.01 - $10,000 USD
+- **Q4: Order history depth** → Last 10 orders
+
+After ~4-5 questions, your spec transforms from ambiguous to precise.
+
+### Before vs. After Clarification
+
+| Before | After |
+|--------|-------|
+| `[NEEDS CLARIFICATION: which payment gateway?]` | Mock Payment Gateway with Stripe-compatible tokens |
+| `[NEEDS CLARIFICATION: return same response or error?]` | Return original confirmation (idempotent) |
+| `[NEEDS CLARIFICATION: min/max limits?]` | $0.01 - $10,000 USD |
+
+**This is the conversation that prevents Thursday rework.**
+
+---
+
+## Step 5: Define What "Demoable" Actually Means (10 min)
+
+Now think about demo day. What could still embarrass you?
 
 ### The "Don't Embarrass Me" Test
 
-Think about demo day. What could go wrong?
-
 | Demo Disaster | Prevention (goes in spec) |
 |---------------|---------------------------|
-| User clicks Pay twice - double charge | Idempotency handling |
+| User clicks Pay twice - double charge | Idempotency handling ✓ (resolved in clarify) |
 | Payment fails - ugly error | Graceful error responses |
 | "Is this secure?" question | Tokenization, no raw cards |
 | Demo with test data - crashes | Validation for all inputs |
@@ -236,7 +292,7 @@ Investors spot fake demos. Logging proves the system actually works:
 
 ---
 
-## Step 5: Write Demo Scenarios (15 min)
+## Step 5: Write Demo Scenarios (20 min)
 
 These are the moments you'll show investors. Each scenario becomes a test AND a demo script.
 
@@ -287,9 +343,9 @@ These are the moments you'll show investors. Each scenario becomes a test AND a 
 
 ---
 
-## Step 6: Define Requirements (5 min)
+## Step 7: Verify Your Requirements (5 min)
 
-Turn scenarios into numbered requirements (your AI will reference these):
+After clarification, your requirements should be precise and testable:
 
 ```markdown
 ## Requirements
@@ -297,38 +353,65 @@ Turn scenarios into numbered requirements (your AI will reference these):
 ### Functional Requirements
 
 - **FR-001**: Accept payment tokens from Mock Payment Gateway (no raw card data)
-- **FR-002**: Validate idempotency keys, return original response for duplicates
+- **FR-002**: Validate idempotency keys, return original response for duplicates  
 - **FR-003**: Log all payment attempts with timestamp, outcome, trace ID
 - **FR-004**: Return helpful errors for invalid tokens, missing data
-- **FR-005**: Show transaction in order history after successful payment
+- **FR-005**: Show last 10 transactions in order history after successful payment
+- **FR-006**: Validate payment amounts between $0.01 and $10,000 USD
 ```
 
----
-
-## Step 7: The "Ship Thursday" Checklist (5 min)
-
-Verify your spec prevents Thursday night rework:
-
-- [ ] **Double-click safe?** Idempotency handling specified
-- [ ] **Error states?** Graceful failures, not crashes
-- [ ] **Audit-ready?** Logging requirements defined
-- [ ] **Demoable?** Happy path clearly specified
-- [ ] **Defensible?** Can answer "is this secure?"
-
-**If any item is unchecked, that's your Thursday night rework waiting to happen.**
+Notice: **No `[NEEDS CLARIFICATION]` markers remain.** Every requirement is specific enough to implement and test.
 
 ---
 
-## Step 8: Commit Your Work (2 min)
+## Step 8: Generate Quality Checklist with /speckit.checklist (5 min)
 
-Your work is already on a feature branch. Commit your refined spec:
+Instead of a manual checklist, let spec-kit generate one tailored to your spec:
+
+```
+/speckit.checklist demo-readiness
+```
+
+The AI analyzes YOUR spec and generates context-aware validation:
+
+```markdown
+# Demo Readiness Checklist: Payment Checkout
+
+## Functional Completeness
+- [ ] FR-001: Payment token acceptance - is gateway integration specified?
+- [ ] FR-002: Idempotency - is duplicate detection mechanism defined?
+- [ ] FR-005: Order history - is pagination/limit specified?
+
+## Demo Safety
+- [ ] Happy path scenario covers the main demo flow?
+- [ ] Error scenarios won't crash or show ugly stack traces?
+- [ ] Double-click protection explicitly required?
+
+## Investor Questions
+- [ ] "Is this secure?" - tokenization requirement documented?
+- [ ] "Can you trace transactions?" - audit logging specified?
+- [ ] "How do you handle failures?" - error recovery defined?
+```
+
+**Review each item.** Unchecked items are Thursday night rework waiting to happen.
+
+**Pro tip**: Run `/speckit.checklist security` or `/speckit.checklist ux` for different focus areas.
+
+---
+
+## Step 9: Commit Your Work (5 min)
+
+Your first commit should follow conventional commit format:
 
 ```bash
 git add .
-git commit -m "feat: payment specification for investor demo"
+git commit -m "feat: payment checkout specification for investor demo"
 ```
 
-Note: We're adding all files (including the AI config from `specify init .`).
+Note: This commit includes:
+- AI assistant configuration (`.github/prompts/` or equivalent)
+- Project constitution (`.specify/memory/constitution.md`)
+- Feature specification (`specs/001-payment-checkout/spec.md`)
 
 ---
 
@@ -336,26 +419,25 @@ Note: We're adding all files (including the AI config from `specify init .`).
 
 Your lab is complete when:
 
-- [ ] AI assistant configured (`.specify/` directory and agent config folder exist)
-- [ ] Constitution created (`.specify/memory/constitution.md` exists)
-- [ ] You're on a feature branch (created by `/speckit.specify`)
-- [ ] `specs/NNN-payment-checkout/spec.md` exists (NNN is the feature number)
-- [ ] Spec contains constraints section (idempotency, data handling, audit)
+- [ ] AI assistant configured (`.github/prompts/`, `.claude/commands/`, `.gemini/commands/`, or `.cursor/commands/` exists)
+- [ ] Constitution defined (`.specify/memory/constitution.md` has your project principles)
+- [ ] Feature branch created by `/speckit.specify` (e.g., `001-payment-checkout`)
+- [ ] `specs/001-payment-checkout/spec.md` exists with structured content
+- [ ] **No `[NEEDS CLARIFICATION]` markers remain** (all resolved via `/speckit.clarify`)
 - [ ] Spec has at least 4 user scenarios (Given/When/Then)
-- [ ] Spec has numbered requirements (FR-001, FR-002, etc.)
-- [ ] Changes committed with message following convention: `feat: payment specification`
+- [ ] Spec has numbered requirements (FR-001, FR-002, etc.) - all specific and testable
+- [ ] Quality checklist generated via `/speckit.checklist`
+- [ ] Commit message follows convention: `feat: payment specification`
 
 ### Validate Your Work
 
-Check your setup and spec structure:
+Run the validation script:
 
 ```bash
-cat .specify/memory/constitution.md
-git branch --show-current
-ls specs/
+python validate_lab.py --lab 1.1 --repo .
 ```
 
-You should see your constitution, feature branch name, and spec directory.
+All checks should pass.
 
 ---
 
@@ -382,7 +464,9 @@ Before moving to Lab 1.2, consider:
 
 2. **AI behavior**: With the spec, your AI will generate idempotency handling automatically. Without it, the AI "didn't know" you needed it. What changed?
 
-3. **Confidence**: Rate your demo confidence now vs. contrast exercise. What made the difference?
+3. **Uncertainty surfacing**: The AI marked `[NEEDS CLARIFICATION]` instead of guessing. How does this change your trust in AI-generated code?
+
+4. **Confidence**: Rate your demo confidence now vs. contrast exercise. What made the difference?
 
 ---
 
@@ -391,9 +475,11 @@ Before moving to Lab 1.2, consider:
 | Mistake | What Happens Thursday Night |
 |---------|----------------------------|
 | Skipping `specify init .` | AI doesn't follow your patterns |
-| Vague constraints ("handle errors") | AI picks random error patterns |
-| No idempotency handling | Demo crashes on double-click |
-| Untestable scenarios | Can't prove it works |
+| Skipping `/speckit.constitution` | No governance, inconsistent decisions |
+| Over-structuring prompts | Wasted time - just describe naturally |
+| **Ignoring `[NEEDS CLARIFICATION]` markers** | AI guessed wrong, you're rewriting code |
+| **Not running `/speckit.clarify`** | Ambiguities become Thursday bugs |
+| Skipping `/speckit.checklist` | Missed edge cases surface in demo |
 | Skipping spec entirely | You ARE the contrast exercise |
 
 ---

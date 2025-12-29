@@ -42,30 +42,33 @@ That's all the guidance you get. No spec. No constraints. Just you, your AI assi
 
 Depending on which tool you're using:
 
-<details open markdown="block">
-<summary><strong>Gemini CLI</strong> (Recommended)</summary>
-
-1. Open terminal in VS Code: `Ctrl+` ` (backtick)
-2. Run: `gemini`
-3. Sign in with your Google account if prompted
-
-</details>
-
 <details markdown="block">
 <summary><strong>GitHub Copilot</strong></summary>
 
-1. Open Copilot Chat: `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Alt+I` (Mac)
-2. Select **Agent** mode at the top of the chat panel
-3. Ensure you're signed in to GitHub
+1. Open Copilot Chat: `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Shift+I` (Mac)
+2. Ensure you're signed in to GitHub
 
 </details>
 
 <details markdown="block">
 <summary><strong>Claude Code</strong></summary>
 
-1. Open terminal in VS Code: `Ctrl+` ` (backtick)
-2. Run: `claude`
-3. Sign in with your Anthropic account if prompted
+In your terminal, run:
+```bash
+claude
+```
+Sign in with your Anthropic account when prompted.
+
+</details>
+
+<details markdown="block">
+<summary><strong>Gemini CLI</strong></summary>
+
+In your terminal, run:
+```bash
+gemini
+```
+Sign in with your Google account when prompted.
 
 </details>
 
