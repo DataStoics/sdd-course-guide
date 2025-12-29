@@ -72,9 +72,11 @@ Wait 2-3 minutes for the container to build. Gemini CLI is pre-installed.
 
 **Verify it works:**
 ```bash
-python --version    # Should show 3.12.x
-gemini --version    # Should show installed version
+python --version
+gemini --version
 ```
+
+Expected output: Python 3.12.x and Gemini CLI version number.
 
 **Save your work later:** When you commit, VS Code will prompt "Publish to GitHub" -- this creates your own copy.
 
@@ -102,9 +104,11 @@ For offline work or faster performance.
 
 **Verify it works:**
 ```bash
-python --version    # Should show 3.12.x
-gemini --version    # Should show installed version
+python --version
+gemini --version
 ```
+
+Expected output: Python 3.12.x and Gemini CLI version number.
 
 **Official docs:**
 - [Docker Desktop Installation](https://docs.docker.com/desktop/)
