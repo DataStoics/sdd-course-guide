@@ -320,62 +320,7 @@ Open `spec.md` and you'll see the AI generated these scenarios **in proper Given
 
 ---
 
-## Step 6: Verify No Ambiguity Remains with /speckit.clarify (5 min)
-
-Before proceeding to implementation, run `/speckit.clarify` one final time to ensure all ambiguity is resolved:
-
-```
-/speckit.clarify
-```
-
-If your spec is complete, you'll see:
-
-```
-✅ No critical ambiguities detected worth formal clarification.
-
-Coverage Summary:
-| Category                    | Status   |
-|-----------------------------|----------|
-| Functional Scope            | Clear    |
-| Data Model                  | Clear    |
-| Edge Cases                  | Clear    |
-| Non-Functional Requirements | Clear    |
-| Integration Points          | Clear    |
-
-Suggested next command: /speckit.plan
-```
-
-**If questions remain**, the AI will ask them one at a time (as you did in Step 4). Answer them until you reach "No critical ambiguities."
-
-### Verification Checklist
-
-After clarification, your requirements should pass these tests:
-
-- [ ] **No `[NEEDS CLARIFICATION]` markers** remain in spec.md
-- [ ] **Every requirement is testable** - you could write a test for it
-- [ ] **No vague adjectives** like "fast", "secure", "robust" without metrics
-- [ ] **Edge cases documented** - what happens when things go wrong?
-
-Example of complete requirements:
-
-```markdown
-## Requirements
-
-### Functional Requirements
-
-- **FR-001**: Accept payment tokens from Mock Payment Gateway (no raw card data)
-- **FR-002**: Validate idempotency keys, return original response for duplicates  
-- **FR-003**: Log all payment attempts with timestamp, outcome, trace ID
-- **FR-004**: Return helpful errors for invalid tokens, missing data
-- **FR-005**: Show last 10 transactions in order history after successful payment
-- **FR-006**: Validate payment amounts between $0.01 and $10,000 USD
-```
-
-Notice: **Every requirement is specific enough to implement and test.** No guessing required.
-
----
-
-## Step 7: Generate Quality Checklist with /speckit.checklist (5 min)
+## Step 6: Generate Quality Checklist with /speckit.checklist (5 min)
 
 Instead of a manual checklist, let spec-kit generate one tailored to your spec:
 
@@ -410,7 +355,7 @@ The AI analyzes YOUR spec and generates context-aware validation:
 
 ---
 
-## Step 8: Commit Your Work (5 min)
+## Step 7: Commit Your Work (5 min)
 
 Your first commit should follow conventional commit format:
 
