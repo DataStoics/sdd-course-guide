@@ -320,9 +320,43 @@ Open `spec.md` and you'll see the AI generated these scenarios **in proper Given
 
 ---
 
-## Step 6: Verify Your Requirements (5 min)
+## Step 6: Verify No Ambiguity Remains with /speckit.clarify (5 min)
 
-After clarification, your requirements should be precise and testable:
+Before proceeding to implementation, run `/speckit.clarify` one final time to ensure all ambiguity is resolved:
+
+```
+/speckit.clarify
+```
+
+If your spec is complete, you'll see:
+
+```
+✅ No critical ambiguities detected worth formal clarification.
+
+Coverage Summary:
+| Category                    | Status   |
+|-----------------------------|----------|
+| Functional Scope            | Clear    |
+| Data Model                  | Clear    |
+| Edge Cases                  | Clear    |
+| Non-Functional Requirements | Clear    |
+| Integration Points          | Clear    |
+
+Suggested next command: /speckit.plan
+```
+
+**If questions remain**, the AI will ask them one at a time (as you did in Step 4). Answer them until you reach "No critical ambiguities."
+
+### Verification Checklist
+
+After clarification, your requirements should pass these tests:
+
+- [ ] **No `[NEEDS CLARIFICATION]` markers** remain in spec.md
+- [ ] **Every requirement is testable** - you could write a test for it
+- [ ] **No vague adjectives** like "fast", "secure", "robust" without metrics
+- [ ] **Edge cases documented** - what happens when things go wrong?
+
+Example of complete requirements:
 
 ```markdown
 ## Requirements
@@ -337,7 +371,7 @@ After clarification, your requirements should be precise and testable:
 - **FR-006**: Validate payment amounts between $0.01 and $10,000 USD
 ```
 
-Notice: **No `[NEEDS CLARIFICATION]` markers remain.** Every requirement is specific enough to implement and test.
+Notice: **Every requirement is specific enough to implement and test.** No guessing required.
 
 ---
 
