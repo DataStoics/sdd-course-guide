@@ -13,46 +13,19 @@ You can now build compliant software from scratch using the spec-first methodolo
 
 ---
 
-## Your Completion Certificate
-
-{: .important }
-> **Claim Your Certificate**: After completing all labs, email [training@datastoics.io](mailto:training@datastoics.io) with:
-> - Your name (as you'd like it on the certificate)
-> - Link to your completed GitHub repository
-> - Screenshot of your final demo running
->
-> You'll receive a digital certificate within 5 business days.
-
-### What You've Earned
-
-Your certificate validates:
-- **Spec-Driven Development methodology** using spec-kit
-- **AI-assisted coding best practices** from industry leaders
-- **Production-ready delivery** from specification to deployment
-- **Governance integration** for compliance-aware development
-
-**Share on LinkedIn**: Add "Spec-Driven Development Foundations" to your certifications.
-
----
-
 ## Join the Community
-
-### Alumni Network
 
 Connect with other Spec-Driven Development practitioners:
 
 | Resource | Purpose |
 |----------|---------|
 | [GitHub Discussions](https://github.com/DataStoics/sdd-course-guide/discussions) | Ask questions, share wins, troubleshoot issues |
-| [Monthly Office Hours](#) | Live Q&A with instructors (first Thursday, 12pm EST) |
-| [Alumni Slack](#) | Real-time chat with fellow practitioners |
 
 ### Share Your Experience
 
 We'd love to hear how you're applying Spec-Driven Development:
 - **Case studies**: Did spec-first save your Thursday night? Tell us!
 - **Blog posts**: Write about your experience (we'll promote it)
-- **Testimonials**: Help future students understand the value
 
 Email your story to [stories@datastoics.io](mailto:stories@datastoics.io).
 
@@ -92,12 +65,6 @@ Most real-world work isn't greenfield. You inherit legacy systems with implicit 
 | **Confluence** | Query company architecture decision records |
 | **Jira** | Pull requirements from existing tickets |
 
-### Course 2 Timeline
-
-- **Expected availability**: Q2 2025
-- **Format**: Same 2-day intensive, different challenges
-- **Prerequisite**: Course 1 completion
-
 **Express interest**: [training@datastoics.io](mailto:training@datastoics.io) with subject "Course 2 Interest"
 
 ---
@@ -120,15 +87,6 @@ We can adapt the course for your:
 - **Tech stack**: Python, Java, TypeScript, Go
 - **Compliance requirements**: PCI DSS, HIPAA, SOC 2, GDPR
 - **Tools**: Your existing CI/CD, code review, project management
-
-### Consulting Services
-
-| Service | Description |
-|---------|-------------|
-| **Specification Audit** | Review your existing specs for completeness and clarity |
-| **Pilot Program Design** | Structure a spec-first pilot for your team |
-| **Governance Framework** | Build compliance templates for your organization |
-| **Tool Integration** | Connect spec-kit to your enterprise systems |
 
 **Contact**: [enterprise@datastoics.io](mailto:enterprise@datastoics.io)
 
@@ -178,7 +136,7 @@ The best way to solidify these skills:
 
 ## Quick Reference Card
 
-Keep this handy as you apply spec-driven development:
+Keep this handy as you apply Spec-Driven Development:
 
 ### spec-kit Commands
 
@@ -218,5 +176,4 @@ Now go build something greatspec-first.
 - [Course Guide](https://datastoics.github.io/sdd-course-guide)
 - [GitHub Discussions](https://github.com/DataStoics/sdd-course-guide/discussions)
 - [Starter Template](https://github.com/DataStoics/sdd-greenfield-starter)
-- [Checkpoint Repositories](https://github.com/DataStoics?q=lab-checkpoint)
 - [Email Training Team](mailto:training@datastoics.io)
