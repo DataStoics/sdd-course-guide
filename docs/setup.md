@@ -188,16 +188,80 @@ Best for complex reasoning and long context windows. Requires paid subscription.
 
 ## Step 4: Verify Everything Works
 
-Run this quick test with your AI assistant:
+Test your AI assistant by asking it to create a simple file. Click your assistant below for specific instructions:
 
-> "Create a file called hello.py with a function that prints 'Hello SDD'"
+<details markdown="block">
+<summary><strong>Gemini CLI</strong> (click to expand)</summary>
+
+**In your Codespace terminal, run:**
+```bash
+gemini
+```
+
+**Sign in when prompted**, then type this prompt:
+```
+Create a file called hello.py with a function that prints 'Hello SDD'
+```
 
 **Success looks like:**
-- The AI creates the file (not just shows you code to copy)
-- The file appears in your file explorer
-- You did not have to copy-paste anything
+```
+âœ“ Created hello.py
+```
 
-<!-- SCREENSHOT: Show the file explorer with hello.py created, and the AI chat showing the successful command -->
+The file appears in your file explorer. Type `/quit` to exit Gemini CLI.
+
+</details>
+
+<details markdown="block">
+<summary><strong>GitHub Copilot</strong> (click to expand)</summary>
+
+**Open Copilot Chat** (click the Copilot icon in the sidebar or press `Ctrl+Alt+I`).
+
+**Select "Agent" mode** at the top of the chat panel, then type:
+```
+Create a file called hello.py with a function that prints 'Hello SDD'
+```
+
+**Success looks like:**
+- Copilot shows "Created hello.py" or similar
+- The file appears in your file explorer
+- You did NOT have to copy-paste code
+
+If Copilot only shows code without creating the file, you may be in "Chat" mode instead of "Agent" mode.
+
+</details>
+
+<details markdown="block">
+<summary><strong>Claude Code</strong> (click to expand)</summary>
+
+**In your Codespace terminal, run:**
+```bash
+claude
+```
+
+**Sign in when prompted**, then type this prompt:
+```
+Create a file called hello.py with a function that prints 'Hello SDD'
+```
+
+**Success looks like:**
+```
+I'll create that file for you.
+
+hello.py
+â”œâ”€â”€ Created
+```
+
+The file appears in your file explorer. Type `/exit` to exit Claude Code.
+
+</details>
+
+---
+
+**After verification:** Delete the test file to start fresh:
+```bash
+rm hello.py
+```
 
 If this works, you are ready for Day 1.
 
