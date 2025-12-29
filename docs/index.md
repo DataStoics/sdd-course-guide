@@ -9,10 +9,10 @@ permalink: /
 # SDD Foundations Course 1
 {: .fs-9 }
 
-Same AI. Better specs. Production-ready code.
+From vague idea to production code in a structured workflow.
 {: .fs-6 .fw-300 }
 
-A 2-day hands-on course where you'll build a checkout system that's ready to ship - not ready to rewrite.
+Stop hoping AI understands you. Start giving it what it needs to succeed.
 {: .fs-5 .fw-300 }
 
 [Get Started](setup){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
@@ -20,68 +20,70 @@ A 2-day hands-on course where you'll build a checkout system that's ready to shi
 
 ---
 
-## The Spec Makes the Difference
+## The SDD Workflow
 
-The same AI produces wildly different results depending on what you give it.
+Most AI coding fails because we skip the thinking. SDD makes the thinking explicit.
 
-### Without a Spec (Vague Prompt)
+`
+CONSTITUTION          SPECIFY              PLAN                 IMPLEMENT
+     |                    |                   |                      |
+     v                    v                   v                      v
++-----------+      +------------+      +------------+      +--------------+
+| Immutable |  ->  | Interview  |  ->  | Technical  |  ->  | AI Generates |
+| Rules     |      | & Clarify  |      | Decisions  |      | Code         |
++-----------+      +------------+      +------------+      +--------------+
+     |                    |                   |                      |
+  Security            What does            Which DB?            Tests pass.
+  Standards           "fast" mean?         What libs?           Scan clean.
+  Compliance          Edge cases?          API design?          Ship it.
+`
 
-> "Build me a payment endpoint"
-
-You get:
-- Missing error handling
-- No input validation
-- Hardcoded values everywhere
-- Security vulnerabilities
-- Works on demo, fails in production
-
-### With a Robust Spec
-
-> "Process payments per spec: validate amount > 0, use gateway tokenization, return standardized errors, log without PAN, handle timeout with retry"
-
-You get:
-- Complete error scenarios covered
-- Input validation built-in
-- Configurable and testable
-- Security by design
-- Production-ready from the start
-
-**The AI didn't get smarter. The spec got better.**
+**Each phase has validation.** You don't move forward until the spec is clear.
 
 ---
 
-## What You'll Experience
+## How Specs Get Better
 
-| Day | The Shift |
-|:----|:----------|
-| **Day 1 AM** | Frustration: AI produces inconsistent code |
-| **Day 1 PM** | Clarity: Your first real spec changes everything |
-| **Day 2 AM** | Confidence: Adding features without breaking things |
-| **Day 2 PM** | Pride: Code you'd actually ship |
+The magic isn't in "adding lines to a spec." It's in the clarification process.
 
-By Friday, you'll demo a working checkout system to stakeholders.
+| What You Start With | What SDD Produces |
+|:--------------------|:------------------|
+| "Build a payment system" | **Functional**: Process payments via Stripe tokenization |
+| | **Constraints**: Never store raw card numbers (PCI DSS) |
+| | **Error Handling**: Timeout after 30s, retry 3x, then fail gracefully |
+| | **Acceptance**: Given valid card, when charged, then return transaction ID |
+| | **Out of Scope**: Refunds, subscriptions, multi-currency |
+
+The AI didn't guess these requirements. **You defined them through structured questions.**
+
+---
+
+## Your Journey This Week
+
+| Phase | What Happens | The Shift |
+|:------|:-------------|:----------|
+| **Contrast** | Try AI coding without specs | Feel the frustration of inconsistent output |
+| **Specify** | Write your first real spec | Experience how questions clarify intent |
+| **Plan** | Make technical decisions explicit | See how constraints guide AI choices |
+| **Implement** | AI generates compliant code | Watch the spec translate to working software |
+| **Integrate** | Add a second feature | Prove the approach scales |
+| **Ship** | Production-ready artifact | Demo something you'd actually deploy |
+
+By Friday, you'll have a working checkout system and a repeatable process.
 
 [Start the Labs](labs/){: .btn .btn-outline .fs-5 }
 
 ---
 
-## Quick Links
+## Quick Navigation
 
-| Before Course | During Course |
-|:--------------|:--------------|
-| [Pre-Course Setup](setup) | [Labs](labs/) |
-| [SDD Methodology](methodology) | [AI Assistant Guides](ai-assistants/) |
-| [Choose Your AI Tool](ai-assistants/) | [Checkpoint Repos](https://github.com/DataStoics?q=lab-checkpoint) |
-
-### After the Course
-
-- [What's Next](whats-next) - Apply SDD at work, Course 2 preview
-- [Speckit](https://github.com/Speckit/speckit) - Open-source spec tooling
-- [Anthropic: Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices) - Why structure beats prompting
-- [GitHub: AI-Native Development](https://github.blog/ai-and-ml/) - Industry trends
+| Getting Ready | Hands-On | Go Deeper |
+|:--------------|:---------|:----------|
+| [Pre-Course Setup](setup) | [Labs](labs/) | [SDD Methodology](methodology) |
+| [AI Assistant Guides](ai-assistants/) | [Checkpoint Repos](https://github.com/DataStoics?q=lab-checkpoint) | [What's Next](whats-next) |
 
 ---
 
 {: .important }
-> **Complete [Pre-Course Setup](setup) before Day 1.** You'll need your development environment ready.
+> **Complete [Pre-Course Setup](setup) before Day 1.** You'll need your environment ready.
 
