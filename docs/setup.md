@@ -138,7 +138,7 @@ You'll have **two browser tabs** open:
 
 Choose ONE. All three support the SDD workflow we teach. Click to expand setup instructions:
 
-<details markdown="block">
+<details open markdown="block">
 <summary><strong>Gemini CLI</strong> (Recommended - Free)</summary>
 
 Best choice for this course. Free tier with generous limits.
@@ -209,7 +209,7 @@ Sign in with your Anthropic account when prompted.
 
 Test your AI assistant by asking it to create a simple file. Click your assistant below for specific instructions:
 
-<details markdown="block">
+<details open markdown="block">
 <summary><strong>Gemini CLI</strong> (click to expand)</summary>
 
 **In your Codespace terminal, run:**
