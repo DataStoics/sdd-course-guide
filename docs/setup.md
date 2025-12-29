@@ -1,3 +1,9 @@
+﻿---
+title: Pre-Course Setup
+layout: default
+nav_order: 2
+description: "Complete these setup steps before Day 1"
+---
 # Pre-Course Setup Guide
 
 **Course**: SDD Foundations Course 1 (Greenfield Repo Flow)  
@@ -50,9 +56,9 @@ Before the course begins, you must have a working development environment with A
 - [ ] Git installed: https://git-scm.com/downloads
 - [ ] At least 8GB RAM, 10GB free disk space
 
-### 3. AI Assistant — Bring Your Own (REQUIRED)
+### 3. AI Assistant â€” Bring Your Own (REQUIRED)
 
-**⚠️ CRITICAL**: This course requires an AI coding assistant. You'll bring your own — choose ONE from the supported options below.
+**âš ï¸ CRITICAL**: This course requires an AI coding assistant. You'll bring your own â€” choose ONE from the supported options below.
 
 #### Supported Options (Choose One):
 
@@ -68,17 +74,17 @@ Before the course begins, you must have a working development environment with A
 
 | Tool | Why Not |
 |------|---------|
-| ❌ Basic Copilot autocomplete | Only suggests code in current file |
-| ❌ ChatGPT web interface | Cannot access your codebase |
-| ❌ Claude.ai web interface | Cannot execute file operations |
-| ❌ Chat-only AI assistants | Cannot perform multi-file autonomous tasks |
+| âŒ Basic Copilot autocomplete | Only suggests code in current file |
+| âŒ ChatGPT web interface | Cannot access your codebase |
+| âŒ Claude.ai web interface | Cannot execute file operations |
+| âŒ Chat-only AI assistants | Cannot perform multi-file autonomous tasks |
 
 **How to tell if your AI is agentic**:
 - Can it create new files without you copying/pasting?
 - Can it run terminal commands?
 - Can it make changes across multiple files in one task?
 
-If yes to all → You have agentic mode ✅
+If yes to all â†’ You have agentic mode âœ…
 
 ---
 
@@ -112,7 +118,7 @@ If yes to all → You have agentic mode ✅
 
 #### Step 3: Verify Environment
 
-Open the integrated terminal (View → Terminal or Ctrl+`) and run:
+Open the integrated terminal (View â†’ Terminal or Ctrl+`) and run:
 
 ```bash
 # Check Python version (should be 3.11+)
@@ -185,7 +191,7 @@ pytest --version
 
 3. **Verify**:
    - Open any `.py` file
-   - Start typing a function — Copilot should suggest completions
+   - Start typing a function â€” Copilot should suggest completions
    - Open Copilot Chat (Ctrl+Shift+I) and ask it to create a file
 
 #### Claude Code Setup
@@ -326,11 +332,11 @@ Same verification steps as Codespaces (Step 4 above).
 
 | Problem | Solution |
 |---------|----------|
-| **Codespace won't start** | Check quota at github.com/settings/billing → Codespaces |
+| **Codespace won't start** | Check quota at github.com/settings/billing â†’ Codespaces |
 | **Container build fails** | Delete codespace, create new one |
 | **"Out of storage" error** | Delete unused codespaces, or upgrade plan |
 | **Slow performance** | Try different browser, or use local Docker |
-| **Can't access terminal** | View → Terminal, or press Ctrl+` |
+| **Can't access terminal** | View â†’ Terminal, or press Ctrl+` |
 
 ### Docker Issues
 
@@ -338,7 +344,7 @@ Same verification steps as Codespaces (Step 4 above).
 |---------|----------|
 | **"Docker daemon not running"** | Start Docker Desktop application |
 | **WSL error (Windows)** | Run `wsl --update` in PowerShell as admin |
-| **"Cannot connect" on Mac** | Increase memory: Docker Desktop → Settings → Resources → 4GB+ |
+| **"Cannot connect" on Mac** | Increase memory: Docker Desktop â†’ Settings â†’ Resources â†’ 4GB+ |
 | **Container build fails** | Run `docker system prune -a` to clear cache, retry |
 | **Port already in use** | Stop conflicting service: `docker ps` then `docker stop <id>` |
 
@@ -352,7 +358,7 @@ Same verification steps as Codespaces (Step 4 above).
 | **Gemini CLI "API key not found"** | Run `export GEMINI_API_KEY="your-key"` in current terminal |
 | **Gemini CLI "npm not found"** | Install Node.js from https://nodejs.org |
 | **"Rate limit exceeded"** | Wait a few minutes, or upgrade to paid tier |
-| **AI only suggests code, won't create files** | Some modes require you to "Apply" — check tool docs |
+| **AI only suggests code, won't create files** | Some modes require you to "Apply" â€” check tool docs |
 
 ### Git/GitHub Issues
 
@@ -360,7 +366,7 @@ Same verification steps as Codespaces (Step 4 above).
 |---------|----------|
 | **"Cannot fork" error** | Ensure you're signed into GitHub |
 | **Fork already exists** | Use existing fork, or delete and re-fork |
-| **Can't push to fork** | Codespaces handles this automatically — just commit |
+| **Can't push to fork** | Codespaces handles this automatically â€” just commit |
 
 ### General Issues
 
@@ -368,7 +374,7 @@ Same verification steps as Codespaces (Step 4 above).
 |---------|----------|
 | **Nothing works** | Contact instructor before course starts |
 | **Works but slow** | Close other applications, check internet speed |
-| **Different Python version** | Use the dev container—it has correct version |
+| **Different Python version** | Use the dev containerâ€”it has correct version |
 
 ---
 
@@ -381,23 +387,23 @@ Run this script to verify everything is working:
 echo "=== SDD Course Environment Check ==="
 
 echo -n "Python 3.11+: "
-python --version 2>&1 | grep -q "3.11" && echo "✅" || echo "❌"
+python --version 2>&1 | grep -q "3.11" && echo "âœ…" || echo "âŒ"
 
 echo -n "Docker: "
-docker --version >/dev/null 2>&1 && echo "✅" || echo "❌"
+docker --version >/dev/null 2>&1 && echo "âœ…" || echo "âŒ"
 
 echo -n "Docker Compose: "
-docker-compose --version >/dev/null 2>&1 && echo "✅" || echo "❌"
+docker-compose --version >/dev/null 2>&1 && echo "âœ…" || echo "âŒ"
 
 echo -n "Git: "
-git --version >/dev/null 2>&1 && echo "✅" || echo "❌"
+git --version >/dev/null 2>&1 && echo "âœ…" || echo "âŒ"
 
 echo -n "pytest: "
-pytest --version >/dev/null 2>&1 && echo "✅" || echo "❌"
+pytest --version >/dev/null 2>&1 && echo "âœ…" || echo "âŒ"
 
 echo ""
-echo "If all checks show ✅, you're ready!"
-echo "If any show ❌, see troubleshooting guide."
+echo "If all checks show âœ…, you're ready!"
+echo "If any show âŒ, see troubleshooting guide."
 ```
 
 Save as `check-env.sh`, run with `bash check-env.sh`.
@@ -438,4 +444,4 @@ This helps instructors tailor the course to participant needs.
 
 With your environment forked and AI assistant ready, you're prepared to experience specification-driven development firsthand. 
 
-**First activity**: A 45-minute "contrast exercise" where you'll build something with your AI assistant — then discover why specs matter!
+**First activity**: A 45-minute "contrast exercise" where you'll build something with your AI assistant â€” then discover why specs matter!

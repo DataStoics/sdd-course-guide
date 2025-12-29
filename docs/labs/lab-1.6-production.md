@@ -1,4 +1,10 @@
-# Lab 1.6: Production Readiness — Friday Morning Polish
+﻿---
+title: "Lab 1.6: Production"
+layout: default
+parent: Labs
+nav_order: 7
+---
+# Lab 1.6: Production Readiness â€” Friday Morning Polish
 
 **Duration**: 90 minutes  
 **Day**: 2 (Final Lab)  
@@ -15,12 +21,12 @@ Package for production, run final checks, and make sure nothing embarrassing hap
 ## Where We Are in the Week
 
 ```
-Monday:      ✅ Spec + Plan
-Tuesday:     ✅ Payment built
-Wednesday:   ✅ Order spec
-Thursday:    ✅ Integration complete
-Friday AM:   👉 YOU ARE HERE — Final polish
-Friday PM:   Demo day 🎯
+Monday:      âœ… Spec + Plan
+Tuesday:     âœ… Payment built
+Wednesday:   âœ… Order spec
+Thursday:    âœ… Integration complete
+Friday AM:   ðŸ‘‰ YOU ARE HERE â€” Final polish
+Friday PM:   Demo day ðŸŽ¯
 ```
 
 **Friday morning goal**: Production container, security check, demo rehearsal.
@@ -306,7 +312,7 @@ git add .
 git commit -m "feat: production-ready for demo day"
 ```
 
-**🎯 You're ready for the Friday demo.**
+**ðŸŽ¯ You're ready for the Friday demo.**
 
 ---
 
@@ -351,13 +357,13 @@ In Course 2, you'll face the real world:
 
 ```
             Course 1                    Course 2
-       ┌─────────────────┐        ┌─────────────────┐
-       │  Greenfield     │        │  Brownfield     │
-       │  Empty repo     │        │  5000+ lines    │
-       │  You write spec │        │  Spec is hidden │
-       │  Full control   │        │  Tech debt      │
-       └─────────────────┘        └─────────────────┘
-              ↓                          ↓
+       â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”        â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+       â”‚  Greenfield     â”‚        â”‚  Brownfield     â”‚
+       â”‚  Empty repo     â”‚        â”‚  5000+ lines    â”‚
+       â”‚  You write spec â”‚        â”‚  Spec is hidden â”‚
+       â”‚  Full control   â”‚        â”‚  Tech debt      â”‚
+       â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜        â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+              â†“                          â†“
        Monday spec,         vs    Extract spec FROM
        Friday ship                 existing code
 ```
@@ -381,7 +387,7 @@ Remember Monday morning? The contrast exercise?
 |------|-----|
 | 30 min of coding, wouldn't demo it | 2 days, confident demo |
 | No idempotency | Double-click safe |
-| "Is this secure?" — "Uh..." | "Yes, here's the spec" |
+| "Is this secure?" â€” "Uh..." | "Yes, here's the spec" |
 | Thursday night panic | Thursday night beer |
 
 **The difference wasn't skill. It was approach.**
@@ -392,15 +398,15 @@ Remember Monday morning? The contrast exercise?
 
 In two days, you transformed a vague PM request into:
 
-✅ Authoritative specifications with governance constraints  
-✅ Researched technology decisions with documented trade-offs  
-✅ Working payment endpoint with idempotency  
-✅ Order service with state machine  
-✅ Integrated checkout flow  
-✅ 80%+ test coverage  
-✅ Security scan passing  
-✅ Production-ready container  
-✅ **A demo you're confident giving**
+âœ… Authoritative specifications with governance constraints  
+âœ… Researched technology decisions with documented trade-offs  
+âœ… Working payment endpoint with idempotency  
+âœ… Order service with state machine  
+âœ… Integrated checkout flow  
+âœ… 80%+ test coverage  
+âœ… Security scan passing  
+âœ… Production-ready container  
+âœ… **A demo you're confident giving**
 
 **Same effort as the contrast exercise approach. Different outcome.**
 
@@ -415,4 +421,4 @@ In two days, you transformed a vague PM request into:
 
 **Thank you for participating in SDD Foundations Course 1!**
 
-🎉 **Now go demo that checkout flow.**
+ðŸŽ‰ **Now go demo that checkout flow.**

@@ -1,3 +1,9 @@
+﻿---
+title: Contrast Exercise
+layout: default
+parent: Labs
+nav_order: 1
+---
 # Contrast Exercise: "Friday Demo"
 
 **Duration**: 45 minutes (30 min build + 15 min debrief)  
@@ -6,11 +12,11 @@
 
 ---
 
-## 🎯 The Scenario
+## ðŸŽ¯ The Scenario
 
 It's **Monday morning**. Your PM sends this message:
 
-> "Hey! We're pitching to investors on Friday. Need a working checkout demo — payments, order history, the works. Something that looks real. Can you have it ready by end of day Thursday?"
+> "Hey! We're pitching to investors on Friday. Need a working checkout demo â€” payments, order history, the works. Something that looks real. Can you have it ready by end of day Thursday?"
 
 You've got **4 days** to ship something demoable.
 
@@ -76,18 +82,18 @@ Work naturally. Iterate with your AI. Add features. Fix bugs. Do whatever you'd 
 With 3 minutes left, ask yourself:
 - **Would I demo this?** Would you stand in front of investors with this code?
 - **What's missing?** What would break during a live demo?
-- **What would you rewrite?** If PM says "great, now make it production-ready" — how much stays?
+- **What would you rewrite?** If PM says "great, now make it production-ready" â€” how much stays?
 
 ---
 
-## ⏱️ Time Check
+## â±ï¸ Time Check
 
 | Time | Scenario |
 |------|----------|
-| 0:00 | Monday AM — you start coding |
-| 0:15 | Wednesday — halfway to demo |
-| 0:25 | Thursday night — final push |
-| 0:30 | **FRIDAY MORNING** — Demo time |
+| 0:00 | Monday AM â€” you start coding |
+| 0:15 | Wednesday â€” halfway to demo |
+| 0:25 | Thursday night â€” final push |
+| 0:30 | **FRIDAY MORNING** â€” Demo time |
 
 ---
 
@@ -101,7 +107,7 @@ Before the timer ends, make sure you have:
 
 ---
 
-## 🛑 When the Timer Ends
+## ðŸ›‘ When the Timer Ends
 
 **It's Friday. Demo time.**
 
@@ -124,7 +130,7 @@ Your instructor will lead a discussion using these questions:
 
 ### The Rework Question
 - **PM follow-up**: PM says "Great demo! Now make it production-ready." How much do you keep?
-- **Estimate**: How many hours to go from demo code → production code?
+- **Estimate**: How many hours to go from demo code â†’ production code?
 - **The trap**: Did building fast actually save time, or create rework?
 
 ### The Pattern
@@ -182,9 +188,9 @@ You'll see how:
 
 ## Notes for Participants
 
-- **This is normal** — everyone struggles with this exercise
-- **The mess is the point** — it reveals a universal problem
-- **Your experience matters** — share honestly in the debrief
-- **Keep your code** — you'll compare it to Lab 1.3 output later
+- **This is normal** â€” everyone struggles with this exercise
+- **The mess is the point** â€” it reveals a universal problem
+- **Your experience matters** â€” share honestly in the debrief
+- **Keep your code** â€” you'll compare it to Lab 1.3 output later
 
-> 💡 **Pro tip**: Save your chat history. We'll analyze what prompts worked and which created rework.
+> ðŸ’¡ **Pro tip**: Save your chat history. We'll analyze what prompts worked and which created rework.

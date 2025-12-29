@@ -1,4 +1,10 @@
-# Lab 1.5: Integrate Payment + Order — Thursday Build Day
+﻿---
+title: "Lab 1.5: Integration"
+layout: default
+parent: Labs
+nav_order: 6
+---
+# Lab 1.5: Integrate Payment + Order â€” Thursday Build Day
 
 **Duration**: 150 minutes  
 **Day**: 2 (Afternoon)  
@@ -8,17 +14,17 @@
 
 ## Learning Objective
 
-Build the order service, wire it to payments, and prove the full checkout flow works. By end of day Thursday, you'll have a complete demo: create order → pay → see order history.
+Build the order service, wire it to payments, and prove the full checkout flow works. By end of day Thursday, you'll have a complete demo: create order â†’ pay â†’ see order history.
 
 ---
 
 ## Where We Are in the Week
 
 ```
-Monday:      ✅ Payment spec + plan
-Tuesday:     ✅ Payment implementation
-Wednesday:   ✅ Order spec (Lab 1.4)
-Thursday:    👉 YOU ARE HERE — Build + Integrate
+Monday:      âœ… Payment spec + plan
+Tuesday:     âœ… Payment implementation
+Wednesday:   âœ… Order spec (Lab 1.4)
+Thursday:    ðŸ‘‰ YOU ARE HERE â€” Build + Integrate
 Friday:      Demo day
 ```
 
@@ -262,8 +268,8 @@ async def create_order(request: CreateOrderRequest, http_request: Request):
     """
     Create a new order.
     
-    Acceptance Scenario 1: Valid items → order created with status "created".
-    Acceptance Scenario 2: Same idempotency key → original order returned.
+    Acceptance Scenario 1: Valid items â†’ order created with status "created".
+    Acceptance Scenario 2: Same idempotency key â†’ original order returned.
     """
     trace_id = http_request.headers.get("X-Trace-ID", str(uuid.uuid4()))
     actor_id = http_request.headers.get("X-User-ID", "anonymous")
@@ -328,8 +334,8 @@ async def mark_order_paid(
     """
     Mark order as paid after successful payment.
     
-    Acceptance Scenario 1: created → paid with transaction_id.
-    Acceptance Scenario 2: Already paid → error.
+    Acceptance Scenario 1: created â†’ paid with transaction_id.
+    Acceptance Scenario 2: Already paid â†’ error.
     """
     trace_id = http_request.headers.get("X-Trace-ID", str(uuid.uuid4()))
     actor_id = http_request.headers.get("X-User-ID", "system")
@@ -464,7 +470,7 @@ class TestCreateOrder:
 
     @pytest.mark.asyncio
     async def test_create_order_success(self, client: AsyncClient):
-        """Acceptance Scenario 1: Valid items → order created."""
+        """Acceptance Scenario 1: Valid items â†’ order created."""
         mock_redis = AsyncMock()
         mock_redis.get.return_value = None
         mock_redis.setex.return_value = True
@@ -505,7 +511,7 @@ class TestMarkOrderPaid:
 
     @pytest.mark.asyncio
     async def test_mark_created_order_paid(self, client: AsyncClient):
-        """Acceptance Scenario 1: created → paid."""
+        """Acceptance Scenario 1: created â†’ paid."""
         # First create an order
         mock_redis = AsyncMock()
         mock_redis.get.return_value = None
@@ -563,7 +569,7 @@ Create `tests/test_integration.py`:
 """
 End-to-End Integration Tests
 
-Tests for complete checkout flow: order → payment → order paid.
+Tests for complete checkout flow: order â†’ payment â†’ order paid.
 """
 
 import pytest
@@ -577,7 +583,7 @@ class TestCheckoutFlow:
     @pytest.mark.asyncio
     async def test_complete_checkout_flow(self, client: AsyncClient):
         """
-        E2E Test: Create order → Process payment → Order marked paid.
+        E2E Test: Create order â†’ Process payment â†’ Order marked paid.
         
         This tests the integration between order and payment services.
         """
@@ -690,7 +696,7 @@ class TestCheckoutFlow:
     @pytest.mark.asyncio
     async def test_double_payment_rejected(self, client: AsyncClient):
         """
-        Acceptance Scenario 2: Already paid → error.
+        Acceptance Scenario 2: Already paid â†’ error.
         """
         mock_redis = AsyncMock()
         mock_redis.get.return_value = None
@@ -769,8 +775,8 @@ Your lab is complete when:
 - [ ] `tests/test_order.py` exists with order unit tests
 - [ ] `tests/test_integration.py` exists with e2e checkout flow test
 - [ ] State machine enforces valid transitions only
-- [ ] `pytest --cov` shows ≥80% coverage
-- [ ] E2E test passes: order → payment → order paid
+- [ ] `pytest --cov` shows â‰¥80% coverage
+- [ ] E2E test passes: order â†’ payment â†’ order paid
 
 ### Validate Your Work
 
@@ -797,8 +803,8 @@ python validate_lab.py --lab 1.5 --repo . --coverage-check
 | Mistake | Demo Day Impact |
 |---------|-----------------|
 | No state machine validation | Invalid orders crash the demo |
-| Missing audit entries | "Can you trace this?" — "Uh..." |
-| Tests mock everything | "Run it live" — fails |
+| Missing audit entries | "Can you trace this?" â€” "Uh..." |
+| Tests mock everything | "Run it live" â€” fails |
 | Forgot to register router | 404 on demo day |
 | Coverage < 80% | Untested path crashes |
 

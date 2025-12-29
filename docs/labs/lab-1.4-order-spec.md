@@ -1,4 +1,10 @@
-# Lab 1.4: Second Feature — "Can You Also Add Order History?"
+﻿---
+title: "Lab 1.4: Order Spec"
+layout: default
+parent: Labs
+nav_order: 5
+---
+# Lab 1.4: Second Feature â€” "Can You Also Add Order History?"
 
 **Duration**: 120 minutes  
 **Day**: 2 (Morning)  
@@ -8,7 +14,7 @@
 
 ## Learning Objective
 
-Handle the inevitable scope expansion — PM wants "one more thing" before Thursday. Apply spec-first discipline to prevent the Thursday night scramble that would've killed you in the contrast exercise approach.
+Handle the inevitable scope expansion â€” PM wants "one more thing" before Thursday. Apply spec-first discipline to prevent the Thursday night scramble that would've killed you in the contrast exercise approach.
 
 ---
 
@@ -16,7 +22,7 @@ Handle the inevitable scope expansion — PM wants "one more thing" before Thurs
 
 You're feeling good. Payment endpoint works. Demo scenarios pass. Then PM appears:
 
-> "Great progress! The investors also want to see order history — create orders, view past orders, track status. Can you add that by Thursday?"
+> "Great progress! The investors also want to see order history â€” create orders, view past orders, track status. Can you add that by Thursday?"
 
 **Without spec discipline**: Panic. Start coding. Thursday night rewrite.
 
@@ -27,9 +33,9 @@ You're feeling good. Payment endpoint works. Demo scenarios pass. Then PM appear
 ## Where We Are in the Week
 
 ```
-Monday:      ✅ Spec + Plan (Labs 1.1-1.2)
-Tuesday:     ✅ Payment working (Lab 1.3)
-Wednesday:   👉 YOU ARE HERE — New feature request
+Monday:      âœ… Spec + Plan (Labs 1.1-1.2)
+Tuesday:     âœ… Payment working (Lab 1.3)
+Wednesday:   ðŸ‘‰ YOU ARE HERE â€” New feature request
 Thursday:    Build + Integrate
 Friday:      Demo day
 ```
@@ -39,7 +45,7 @@ Friday:      Demo day
 ## Starting Point
 
 - Working payment service from Lab 1.3
-- Confidence in spec → plan → tasks → implement workflow
+- Confidence in spec â†’ plan â†’ tasks â†’ implement workflow
 - PM requesting scope expansion
 
 ---
@@ -50,7 +56,7 @@ Before coding, clarify what "order history" means for the demo:
 
 | PM Said | You Ask | Demo Scope |
 |---------|---------|------------|
-| "Create orders" | Before or after payment? | Create → Pay → See result |
+| "Create orders" | Before or after payment? | Create â†’ Pay â†’ See result |
 | "View past orders" | How many? Pagination? | Show 3-5 recent orders |
 | "Track status" | Real-time updates? | Status changes on refresh |
 
@@ -88,7 +94,7 @@ What could break the order history demo?
 ### Demo-Day Requirements  
 - **Fast queries**: Order history returns in < 500ms
 - **Clear status**: Each order shows current state and timestamp
-- **Audit ready**: "Can you show me the history of this order?" — yes
+- **Audit ready**: "Can you show me the history of this order?" â€” yes
 ```
 
 ### Bonus: Production-Path Constraints
@@ -193,12 +199,12 @@ These are the flows you'll show investors on Friday.
 This is where the two features connect:
 
 ```markdown
-## Integration: Payment → Order
+## Integration: Payment â†’ Order
 
 ### Flow
-1. Customer creates order → Order in "created" state
+1. Customer creates order â†’ Order in "created" state
 2. Customer submits payment (to /pay endpoint)
-3. Payment succeeds → Order service marks order "paid"
+3. Payment succeeds â†’ Order service marks order "paid"
 
 ### API Contract
 
@@ -222,7 +228,7 @@ What could break the demo?
 ```markdown
 ### Edge Cases (Demo Disaster Prevention)
 
-- **Double payment callback**: Order already "paid" → return success, no state change
+- **Double payment callback**: Order already "paid" â†’ return success, no state change
 - **Order not found**: Return 404 with helpful error, not stack trace  
 - **Invalid state transition**: Reject with "invalid_transition", log the attempt
 - **Unauthorized access**: Return 401, don't leak order data
@@ -285,7 +291,7 @@ python validate_lab.py --lab 1.4 --repo .
 
 3. **State machine value**: Your AI will generate transition logic. What would it have generated without the state diagram?
 
-4. **Contrast callback**: In the contrast exercise, if PM had asked for "one more thing" — how would that have gone?
+4. **Contrast callback**: In the contrast exercise, if PM had asked for "one more thing" â€” how would that have gone?
 
 ---
 
@@ -303,8 +309,8 @@ python validate_lab.py --lab 1.4 --repo .
 ## What's Next?
 
 It's **Thursday morning**. You have:
-- Payment spec + implementation ✅
-- Order spec ✅
+- Payment spec + implementation âœ…
+- Order spec âœ…
 
 In **Lab 1.5**, you'll implement orders and integrate with payments. One day to build, test, and prove the full checkout flow works.
 
