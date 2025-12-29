@@ -9,95 +9,27 @@ permalink: /whats-next/
 
 Congratulations! You've completed Spec-Driven Development Foundations Course 1.
 
-You can now build compliant software from scratch using the spec-first methodology. But the learning doesn't stop here.
-
 ---
 
-## Course 2: Brownfield Legacy Flow
+## What You Accomplished
 
-Most real-world work isn't greenfield. You inherit legacy systems with implicit requirements, undocumented business logic, and technical debt.
+In two days, you transformed a vague PM request into production-ready software:
 
-### The Challenge Difference
+| Day | What You Built | The Skill |
+|-----|----------------|-----------|
+| **Day 1 Morning** | Experienced AI without specs (Lab 0) | Understood the problem |
+| **Day 1 Morning** | First governance-ready specification | Spec-first thinking |
+| **Day 1 Afternoon** | Technology decisions with trade-offs | Explicit planning |
+| **Day 1 Afternoon** | Working payment endpoint with tests | Implementation from spec |
+| **Day 2 Morning** | Order service with state machine | Second feature spec |
+| **Day 2 Afternoon** | Integrated checkout flow | Cross-feature integration |
+| **Day 2 Afternoon** | Production container, CI/CD pipeline | Ship-ready artifact |
 
-| Course 1 (Greenfield) | Course 2 (Brownfield) |
-|:----------------------|:----------------------|
-| Empty repository | 5,000+ lines of existing code |
-| You write the spec | You **extract** the spec |
-| Full control | Constraints everywhere |
-| Build compliance in | Retrofit compliance |
-| Monday spec  Friday ship | Understand first, then improve |
-
-### What You'll Learn
-
-| Module | Skill |
-|--------|-------|
-| **Reverse Specification** | Extract implicit specs from working code using AI analysis |
-| **Strangler Fig Pattern** | Incrementally replace legacy with spec-compliant code |
-| **Compliance Remediation** | Find and fix governance gaps in existing systems |
-| **Risk-Based Refactoring** | Prioritize fixes based on business impact |
-| **External System Integration** | Connect to Jira, Confluence, GitHub via MCP |
-
-### Enterprise Tools You'll Use
-
-| System | Course 2 Purpose |
-|--------|------------------|
-| **Context7** | Get current library docs for legacy dependencies |
-| **Perplexity** | Research CVEs, migration paths, compatibility issues |
-| **GitHub MCP** | Analyze existing codebase, PR history, issues |
-| **Confluence** | Query company architecture decision records |
-| **Jira** | Pull requirements from existing tickets |
-
-**Express interest**: [training@datastoics.io](mailto:training@datastoics.io) with subject "Course 2 Interest"
-
----
-
-## Enterprise Training Options
-
-### Team Workshops
-
-Bring Spec-Driven Development to your organization:
-
-| Format | Duration | Team Size | Includes |
-|--------|----------|-----------|----------|
-| **Virtual Workshop** | 2 days | 8-20 developers | Live instruction, custom scenarios |
-| **On-Site Intensive** | 3 days | 10-30 developers | Hands-on labs with your codebase |
-| **Champion Training** | 1 week | 2-4 leads | Train-the-trainer, curriculum materials |
-
-### Custom Curriculum
-
-We can adapt the course for your:
-- **Tech stack**: Python, Java, TypeScript, Go
-- **Compliance requirements**: PCI DSS, HIPAA, SOC 2, GDPR
-- **Tools**: Your existing CI/CD, code review, project management
-
-**Contact**: [enterprise@datastoics.io](mailto:enterprise@datastoics.io)
-
----
-
-## Optional Reading: Continuing Your Learning
-
-### AI Coding Best Practices
-
-| Resource | Why Read It |
-|:---------|:------------|
-| [Claude Code: Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices) | Anthropic's official guide. Covers explore-plan-code-commit workflow. |
-| [OpenAI Prompt Engineering Guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) | Foundational techniques applicable to all models. |
-| [Google Cloud: AI Coding Best Practices](https://cloud.google.com/blog/topics/developers-practitioners/five-best-practices-for-using-ai-coding-assistants) | Enterprise advice on context and planning. |
-
-### Spec-Driven Development Deep Dives
-
-| Resource | Why Read It |
-|:---------|:------------|
-| [Martin Fowler: Exploring SDD Tools](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) | ThoughtWorks analysis comparing Kiro, spec-kit, Tessl. |
-| [GitHub spec-kit Repository](https://github.com/github/spec-kit) | Official toolkit documentation. |
-| [Microsoft: Diving Into Spec-Driven Development](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) | Microsoft's introduction to spec-kit. |
-
-### The Future of AI Coding
-
-| Resource | Why Read It |
-|:---------|:------------|
-| [GitLab: Agentic AI Trends](https://about.gitlab.com/the-source/ai/emerging-agentic-ai-trends-reshaping-software-development/) | AI agents as orchestration layer. |
-| [Anthropic: Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | How to manage context effectively. |
+**You now have:**
+- A repeatable specification workflow
+- Experience with spec-kit commands
+- A working checkout system you'd confidently demo
+- The ability to apply this to any AI coding assistant
 
 ---
 
@@ -143,6 +75,48 @@ Before shipping, ask:
 
 ---
 
+## Course 2: Brownfield Legacy Flow
+
+Most real-world work isn't greenfield. You inherit legacy systems with implicit requirements, undocumented business logic, and technical debt.
+
+| Course 1 (Greenfield) | Course 2 (Brownfield) |
+|:----------------------|:----------------------|
+| Empty repository | 5,000+ lines of existing code |
+| You write the spec | You **extract** the spec |
+| Full control | Constraints everywhere |
+| Build compliance in | Retrofit compliance |
+
+### What You'll Learn
+
+- **Reverse Specification**: Extract implicit specs from working code
+- **Strangler Fig Pattern**: Incrementally replace legacy with spec-compliant code
+- **External System Integration**: Connect to Jira, Confluence, GitHub via Model Context Protocol
+
+**Express interest**: [training@datastoics.io](mailto:training@datastoics.io) with subject "Course 2 Interest"
+
+---
+
+## Continue Learning
+
+### Recommended Reading
+
+| Resource | Why Read It |
+|:---------|:------------|
+| [GitHub spec-kit Repository](https://github.com/github/spec-kit) | Official toolkitexplore advanced features |
+| [Anthropic: Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | Deep dive on managing AI context |
+| [Martin Fowler: Exploring SDD Tools](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) | Compare spec-kit, Kiro, Tessl approaches |
+| [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) | If you're using Claude for implementation |
+
+---
+
+## Team Training
+
+Want to bring Spec-Driven Development to your organization? We offer virtual workshops, on-site intensives, and train-the-trainer programs.
+
+**Contact**: [training@datastoics.io](mailto:training@datastoics.io)
+
+---
+
 ## Thank You
 
 You invested time and effort to learn a better way of building software with AI. That investment will pay dividends across your career.
@@ -150,11 +124,3 @@ You invested time and effort to learn a better way of building software with AI.
 **Remember**: The spec is the contract. AI implements it. You validate and demo.
 
 Now go build something greatspec-first.
-
----
-
-## Stay Connected
-
-- [Course Guide](https://datastoics.github.io/sdd-course-guide)
-- [Starter Template](https://github.com/DataStoics/sdd-greenfield-starter)
-- [Email Training Team](mailto:training@datastoics.io)

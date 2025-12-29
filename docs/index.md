@@ -2,11 +2,11 @@
 title: Home
 layout: home
 nav_order: 1
-description: "SDD Foundations Course 1 - Learn to build production-ready software with AI assistants"
+description: "Spec-Driven Development Foundations Course 1 - Learn to build production-ready software with AI assistants"
 permalink: /
 ---
 
-# SDD Foundations Course 1
+# Spec-Driven Development Foundations Course 1
 {: .fs-9 }
 
 From vague idea to production code in a structured workflow.
