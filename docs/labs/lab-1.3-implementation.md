@@ -14,23 +14,13 @@ nav_order: 4
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified — including the double-click that would've crashed your Lab 0 code.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified â€” including the double-click that would've crashed your Lab 0 code.
 
 ---
 
 ## The SDD Workflow
 
-```mermaid
-flowchart TB
-    A["✅ Lab 1.1: Specify<br/>WHAT to build"] --> B["✅ Lab 1.2: Plan<br/>HOW to build"]
-    B --> C["🔵 Lab 1.3: Implement<br/>BUILD it"]
-    C --> D["⚪ Lab 1.4: Scale<br/>Second feature"]
-    
-    style A fill:#22c55e,stroke:#16a34a,color:#fff
-    style B fill:#22c55e,stroke:#16a34a,color:#fff
-    style C fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style D fill:#f3f4f6,stroke:#d1d5db,color:#374151
-```
+![Lab 1.3 Progress](../assets/images/lab-1.3-progress.svg)
 
 ---
 
@@ -56,7 +46,7 @@ Break down the implementation plan into actionable tasks:
 
 The command reads your spec and plan, then generates `specs/001-payment-checkout/tasks.md` with:
 - Dependency-ordered tasks (what must come first)
-- Phase groupings (Setup → Foundational → Feature → Polish)
+- Phase groupings (Setup â†’ Foundational â†’ Feature â†’ Polish)
 - Parallel execution opportunities marked with `[P]`
 
 ### Review the Generated Tasks
@@ -106,19 +96,19 @@ This command:
 ### What Gets Created
 
 Watch as the AI creates:
-- `src/app/main.py` — FastAPI entry point
-- `src/app/models.py` — Pydantic models per data-model.md
-- `src/app/payment.py` — Payment endpoint with idempotency
-- `src/app/config.py` — Environment configuration
-- `tests/test_payment.py` — Acceptance scenario tests
-- `docker-compose.yml` — Redis + Mock Gateway services
+- `src/app/main.py` â€” FastAPI entry point
+- `src/app/models.py` â€” Pydantic models per data-model.md
+- `src/app/payment.py` â€” Payment endpoint with idempotency
+- `src/app/config.py` â€” Environment configuration
+- `tests/test_payment.py` â€” Acceptance scenario tests
+- `docker-compose.yml` â€” Redis + Mock Gateway services
 
 ### Monitor Progress
 
 The AI will show you what it's implementing. Look for:
-- **FR-xxx references** — Code linking back to spec requirements
-- **Scenario coverage** — Tests matching your Given/When/Then scenarios
-- **Error handling** — Graceful failures per your edge cases
+- **FR-xxx references** â€” Code linking back to spec requirements
+- **Scenario coverage** â€” Tests matching your Given/When/Then scenarios
+- **Error handling** â€” Graceful failures per your edge cases
 
 ---
 
@@ -165,10 +155,10 @@ Run the spec-kit validation:
 ```
 
 This checks:
-- ✓ All spec requirements have implementation
-- ✓ All acceptance scenarios have tests
-- ✓ Code coverage meets minimum threshold
-- ✓ No critical security findings
+- âœ“ All spec requirements have implementation
+- âœ“ All acceptance scenarios have tests
+- âœ“ Code coverage meets minimum threshold
+- âœ“ No critical security findings
 
 ### Address Any Gaps
 
@@ -223,13 +213,13 @@ Your lab is complete when:
 
 ## Key Takeaways
 
-1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
+1. **Spec â†’ Tasks â†’ Code** â€” `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
 
-2. **Compare to Lab 0** — Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
+2. **Compare to Lab 0** â€” Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
 
-3. **Natural language drives everything** — You described requirements; the AI structured and implemented them.
+3. **Natural language drives everything** â€” You described requirements; the AI structured and implemented them.
 
-4. **Traceability = confidence** — Every function traces to an FR-xxx requirement. That's "production-ready."
+4. **Traceability = confidence** â€” Every function traces to an FR-xxx requirement. That's "production-ready."
 
 ### Common Pitfalls
 
@@ -252,7 +242,7 @@ During implementation, you might hit API questions your AI can't answer from tra
 
 **For now**: Your AI handles most questions. The spec provides enough context.
 
-**In Course 2**: You'll integrate MCP tools for real-time documentation — essential when working with legacy APIs.
+**In Course 2**: You'll integrate MCP tools for real-time documentation â€” essential when working with legacy APIs.
 
 ---
 
@@ -262,6 +252,6 @@ It's **Wednesday morning**. PM walks over:
 
 > "Great progress! The investors also want to see order history. Can you add that by Thursday?"
 
-In **Lab 1.4**, you'll handle this scope addition — with a spec. No Thursday night panic.
+In **Lab 1.4**, you'll handle this scope addition â€” with a spec. No Thursday night panic.
 
 **Your payment feature works. Now let's see if the discipline scales.**

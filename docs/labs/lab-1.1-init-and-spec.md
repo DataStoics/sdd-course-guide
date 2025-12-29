@@ -36,15 +36,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ## The SDD Workflow
 
-```mermaid
-flowchart TB
-    A["🔵 Lab 1.1: Specify<br/>WHAT to build"] --> B["⚪ Lab 1.2: Plan<br/>HOW to build"]
-    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
-    
-    style A fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style B fill:#f3f4f6,stroke:#d1d5db,color:#374151
-    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
-```
+![Lab 1.1 Progress](../assets/images/lab-1.1-progress.svg)
 
 ---
 
@@ -236,10 +228,10 @@ The AI analyzes your spec and presents **ONE question at a time** with a recomme
 
 Respond with your choice. The AI updates the spec and asks the next question:
 
-- **Q1: Payment Gateway** → A (Mock gateway for demo)
-- **Q2: Duplicate handling** → Return original response (idempotent)
-- **Q3: Amount limits** → $0.01 - $10,000 USD
-- **Q4: Order history depth** → Last 10 orders
+- **Q1: Payment Gateway** â†’ A (Mock gateway for demo)
+- **Q2: Duplicate handling** â†’ Return original response (idempotent)
+- **Q3: Amount limits** â†’ $0.01 - $10,000 USD
+- **Q4: Order history depth** â†’ Last 10 orders
 
 After ~4-5 questions, your spec transforms from ambiguous to precise.
 
@@ -288,9 +280,9 @@ Would you like me to add a scenario where a duplicate payment attempt returns th
 
 As you answer, the AI adds scenarios to your spec:
 
-- **Q1: Double-click?** → A (Yes, add idempotency scenario)
-- **Q2: Error handling?** → A (Yes, show graceful recovery)
-- **Q3: Audit trail?** → A (Yes, prove enterprise-readiness)
+- **Q1: Double-click?** â†’ A (Yes, add idempotency scenario)
+- **Q2: Error handling?** â†’ A (Yes, show graceful recovery)
+- **Q3: Audit trail?** â†’ A (Yes, prove enterprise-readiness)
 
 ### Review Your Expanded Scenarios
 
