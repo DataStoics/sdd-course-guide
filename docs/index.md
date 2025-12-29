@@ -24,7 +24,7 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 Most AI coding fails because we skip the thinking. SDD makes the thinking explicit.
 
-\\\mermaid
+```mermaid
 flowchart LR
     subgraph C["CONSTITUTION"]
         C1["Immutable Rules"]
@@ -51,7 +51,7 @@ flowchart LR
     end
     
     C --> S --> P --> I
-\\\
+```
 
 **Each phase has validation.** You don't move forward until the spec is clear.
 
