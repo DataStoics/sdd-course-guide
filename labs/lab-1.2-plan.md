@@ -23,16 +23,14 @@ By the end of this lab, you'll understand: **A plan is a commitment. Research do
 ## The SDD Workflow
 
 ```mermaid
-flowchart LR
-    A["✅ Lab 1.1<br/>/speckit.specify<br/>spec.md"] --> B["🔵 Lab 1.2<br/>/speckit.plan<br/>plan.md"]
-    B --> C["⚪ Lab 1.3<br/>/speckit.implement<br/>code"]
+flowchart TB
+    A["✅ Lab 1.1: Specify<br/>WHAT to build"] --> B["🔵 Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
     
     style A fill:#22c55e,stroke:#16a34a,color:#fff
     style B fill:#2563eb,stroke:#1d4ed8,color:#fff
     style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
 ```
-
-**You are here**: Deciding HOW to build it
 
 ---
 

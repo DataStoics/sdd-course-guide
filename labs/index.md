@@ -24,7 +24,7 @@ This course simulates that week. By the end, you'll have production-ready code y
 |:-----|:----|:------------------|
 | Morning | [Lab 0: AI Without Specs](lab-0-ai-without-specs) | 30 min of chaos -- AI coding without guidance |
 | Morning | [Lab 1.1: Init and Spec](lab-1.1-init-and-spec) | Your first governance-ready specification |
-| Afternoon | [Lab 1.2: Research and Plan](lab-1.2-research-and-plan) | Technology decisions with trade-off docs |
+| Afternoon | [Lab 1.2: Plan](lab-1.2-plan) | Technology decisions with trade-off docs |
 | Afternoon | [Lab 1.3: Implementation](lab-1.3-implementation) | Working payment endpoint with tests |
 
 **Day 1 Outcome:** Payment service that handles idempotency and passes security scan.
@@ -45,8 +45,7 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 ---
 
-{: .important }
-> **Each lab builds on the previous one.** If you fall behind, use checkpoint repositories to catch up.
+> ⚠️ **Important**: Each lab builds on the previous one. If you fall behind, use checkpoint repositories to catch up.
 
 ---
 

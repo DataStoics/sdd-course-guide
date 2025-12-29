@@ -37,16 +37,14 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 ## The SDD Workflow
 
 ```mermaid
-flowchart LR
-    A["🔵 Lab 1.1<br/>/speckit.specify<br/>spec.md"] --> B["⚪ Lab 1.2<br/>/speckit.plan<br/>plan.md"]
-    B --> C["⚪ Lab 1.3<br/>/speckit.implement<br/>code"]
+flowchart TB
+    A["🔵 Lab 1.1: Specify<br/>WHAT to build"] --> B["⚪ Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
     
     style A fill:#2563eb,stroke:#1d4ed8,color:#fff
     style B fill:#f3f4f6,stroke:#d1d5db,color:#374151
     style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
 ```
-
-**You are here**: Defining WHAT to build
 
 ---
 

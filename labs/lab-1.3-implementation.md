@@ -4,27 +4,27 @@ layout: default
 parent: Labs
 nav_order: 4
 ---
-# Lab 1.3: First Working Implementation -- Tuesday/Wednesday Build
+# Lab 1.3: First Working Implementation
 
-**Duration**: 120 minutes  
+**Duration**: 90 minutes  
 **Day**: 1 (Afternoon)  
-**Prerequisites**: Completed Lab 1.2 with project scaffold in place
+**Prerequisites**: Completed Lab 1.2 with plan.md and research.md
 
 ---
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified -- including the double-click that would've crashed your Lab 0 code.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified — including the double-click that would've crashed your Lab 0 code.
 
 ---
 
 ## The SDD Workflow
 
 ```mermaid
-flowchart LR
-    A["✅ Lab 1.1<br/>/speckit.specify<br/>spec.md"] --> B["✅ Lab 1.2<br/>/speckit.plan<br/>plan.md"]
-    B --> C["🔵 Lab 1.3<br/>/speckit.implement<br/>code"]
-    C --> D["⚪ Lab 1.4<br/>Second feature<br/>scale it"]
+flowchart TB
+    A["✅ Lab 1.1: Specify<br/>WHAT to build"] --> B["✅ Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["🔵 Lab 1.3: Implement<br/>BUILD it"]
+    C --> D["⚪ Lab 1.4: Scale<br/>Second feature"]
     
     style A fill:#22c55e,stroke:#16a34a,color:#fff
     style B fill:#22c55e,stroke:#16a34a,color:#fff
@@ -32,406 +32,199 @@ flowchart LR
     style D fill:#f3f4f6,stroke:#d1d5db,color:#374151
 ```
 
-**You are here**: Building the code
-
 ---
 
 ## Starting Point
 
-- Scaffolded project from Lab 1.2
-- `specs/001-payment/spec.md` with demo scenarios
-- `specs/001-payment/plan.md` with technology decisions
-- `src/app/main.py` with FastAPI entry point
-- `docker-compose.yml` with Redis + Mock Payment Gateway running
+From Lab 1.2, you have:
+- `specs/001-payment-checkout/spec.md` with demo scenarios
+- `specs/001-payment-checkout/plan.md` with technology decisions
+- `specs/001-payment-checkout/research.md` with trade-off documentation
+- `specs/001-payment-checkout/data-model.md` with entity definitions
+
+**Note**: No code exists yet. This lab creates the implementation.
 
 ---
 
-## Step 1: Generate Task Breakdown (15 min)
+## Step 1: Generate Task Breakdown (10 min)
 
-Break down the spec into implementation tasks:
+Break down the implementation plan into actionable tasks:
 
-```bash
+```
 /speckit.tasks
 ```
 
-Or use your AI assistant:
+The command reads your spec and plan, then generates `specs/001-payment-checkout/tasks.md` with:
+- Dependency-ordered tasks (what must come first)
+- Phase groupings (Setup → Foundational → Feature → Polish)
+- Parallel execution opportunities marked with `[P]`
 
-> "Based on specs/001-payment/spec.md and plan.md, create a tasks.md with implementation tasks. Break down the work so I can ship incrementally."
+### Review the Generated Tasks
 
-The generated `specs/001-payment/tasks.md` should contain:
+Open `tasks.md` and verify it makes sense:
 
-1. **Models first**: Can't break anything, get types right
-2. **Config**: Environment setup
-3. **Core endpoint**: The main feature
-4. **Tests**: Prove it works before demo
-5. **Security check**: Catch issues before Thursday
+```markdown
+# Task Breakdown: Payment Checkout
+
+## Phase 1: Setup (4 tasks)
+- **T001**: Initialize FastAPI project structure
+- **T002**: Configure Redis connection
+- **T003**: Set up Mock Payment Gateway client
+- **T004**: Create environment configuration
+
+## Phase 2: Core Feature (5 tasks)
+- **T005**: Implement PaymentRequest/Response models
+- **T006**: Implement idempotency cache service
+- **T007**: Implement payment endpoint (POST /pay)
+- **T008**: Add audit logging
+- **T009**: Wire up error handling
+
+## Phase 3: Validation (3 tasks)
+- **T010**: Write acceptance tests per spec scenarios
+- **T011**: Run security scan (semgrep/bandit)
+- **T012**: Verify end-to-end flow
+```
+
+**Key insight**: The AI broke down YOUR spec into tasks. Every task traces back to a requirement.
 
 ---
 
-## Step 2: Understand Task Dependencies (10 min)
+## Step 2: Execute Implementation (45 min)
 
-Review the task breakdown and understand the order:
+Now let the AI implement the tasks:
 
 ```
-models.py (no dependencies)
-    |
-    v
-config.py (no dependencies)
-    |
-    v
-payment.py (depends on models.py, config.py)
-    |
-    v
-test_payment.py (depends on payment.py)
-    |
-    v
-security scan (depends on all code)
-```
-
-**Key Question**: Which tasks can run in parallel? Which must be sequential?
-
----
-
-## Step 3: Implement Models First (15 min)
-
-Run implementation for the models task:
-
-```bash
 /speckit.implement
 ```
 
-Or use your AI assistant:
+This command:
+1. Reads `tasks.md` for the task order
+2. Implements each task following TDD approach
+3. Validates against checklists as it progresses
+4. Creates code that traces to spec requirements
 
-> "Implement src/app/models.py based on the spec. Include PaymentRequest, PaymentResponse, and PaymentError models per the acceptance scenarios."
+### What Gets Created
 
-Your `src/app/models.py` should include:
+Watch as the AI creates:
+- `src/app/main.py` — FastAPI entry point
+- `src/app/models.py` — Pydantic models per data-model.md
+- `src/app/payment.py` — Payment endpoint with idempotency
+- `src/app/config.py` — Environment configuration
+- `tests/test_payment.py` — Acceptance scenario tests
+- `docker-compose.yml` — Redis + Mock Gateway services
 
-```python
-from pydantic import BaseModel, Field
-from typing import Optional
-from datetime import datetime
-from enum import Enum
+### Monitor Progress
 
-
-class TransactionStatus(str, Enum):
-    PENDING = "pending"
-    SUCCEEDED = "succeeded"
-    FAILED = "failed"
-
-
-class PaymentRequest(BaseModel):
-    """Payment request per FR-001, FR-002, FR-005, FR-006."""
-    
-    token: str = Field(..., description="Payment token from Mock Gateway")
-    amount: int = Field(..., gt=0, description="Amount in cents (positive)")
-    currency: str = Field(default="usd", pattern="^[a-z]{3}$")
-    idempotency_key: str = Field(..., min_length=1, max_length=255)
-
-
-class PaymentResponse(BaseModel):
-    """Payment response per acceptance scenarios."""
-    
-    transaction_id: str
-    status: TransactionStatus
-    amount: int
-    currency: str
-    duplicate: bool = False
-    created_at: datetime = Field(default_factory=datetime.utcnow)
-
-
-class PaymentError(BaseModel):
-    """Error response per edge cases."""
-    
-    error_code: str  # e.g., "invalid_token", "idempotency_key_required"
-    message: str
-    details: Optional[dict] = None
-```
+The AI will show you what it's implementing. Look for:
+- **FR-xxx references** — Code linking back to spec requirements
+- **Scenario coverage** — Tests matching your Given/When/Then scenarios
+- **Error handling** — Graceful failures per your edge cases
 
 ---
 
-## Step 4: Implement Configuration (10 min)
+## Step 3: Start Infrastructure (5 min)
 
-Create `src/app/config.py`:
-
-```python
-from pydantic_settings import BaseSettings
-
-
-class Settings(BaseSettings):
-    """Application settings from environment variables."""
-    
-    redis_url: str = "redis://localhost:6379"
-    payment_gateway_url: str = "http://localhost:8001"
-    idempotency_ttl: int = 60  # seconds
-    log_level: str = "INFO"
-    
-    class Config:
-        env_file = ".env"
-
-
-settings = Settings()
-```
-
----
-
-## Step 5: Implement Payment Endpoint (30 min)
-
-This is the core task. Run implementation:
+Start the services your code needs:
 
 ```bash
-/speckit.implement
-```
-
-> "Implement src/app/payment.py with the POST /pay endpoint. Follow the spec acceptance scenarios exactly. Use Redis for idempotency and httpx for Mock Payment Gateway calls."
-
-Your implementation should handle:
-
-1. **Idempotency check** (FR-002, FR-004)
-2. **Token validation** (FR-001)
-3. **Gateway call** (FR-001, FR-007)
-4. **Response caching** (FR-004)
-5. **Audit logging** (FR-003)
-
-**Critical Code Pattern**:
-
-```python
-@app.post("/pay")
-async def process_payment(request: PaymentRequest):
-    # 1. Check idempotency cache
-    cached = await redis_client.get(f"idempotency:{request.idempotency_key}")
-    if cached:
-        logger.info("duplicate_request", idempotency_key=request.idempotency_key)
-        response = json.loads(cached)
-        response["duplicate"] = True
-        return response
-    
-    # 2. Call Mock Payment Gateway
-    async with httpx.AsyncClient() as client:
-        gateway_response = await client.post(
-            f"{settings.payment_gateway_url}/charge",
-            json={
-                "token": request.token,
-                "amount": request.amount,
-                "currency": request.currency,
-                "idempotency_key": request.idempotency_key,
-            },
-        )
-    
-    # 3. Handle response
-    if gateway_response.status_code == 200:
-        result = gateway_response.json()
-        # 4. Cache for idempotency
-        await redis_client.setex(
-            f"idempotency:{request.idempotency_key}",
-            settings.idempotency_ttl,
-            json.dumps(result),
-        )
-        # 5. Log for audit
-        logger.info("payment_processed", **result)
-        return result
-    else:
-        # Handle gateway errors per FR-007
-        ...
-```
-
----
-
-## Step 6: First Security Scan -- Attempt 1 (10 min)
-
-Run the security scan:
-
-```bash
-# Run Semgrep
-semgrep --config p/security-audit src/
-
-# Run Bandit
-bandit -r src/
-```
-
-**Expected First Attempt Results**: You'll likely see findings related to:
-- Hardcoded URLs (INFO, not blocking)
-- Missing error handling (WARNING)
-- Logging sensitive data (ERROR - if you logged tokens!)
-
-### Address Blocking Issues
-
-If you see **ERROR** or **WARNING** findings:
-
-1. Review the finding details
-2. Update code to address the issue
-3. Re-run scan
-
-**Example Fix**: If Semgrep flags `logger.info("request", token=request.token)`:
-
-```python
-# Before (flagged)
-logger.info("request", token=request.token)
-
-# After (compliant)
-logger.info("request", token_present=bool(request.token))
-```
-
----
-
-## Step 7: Second Security Scan -- Attempt 2 (10 min)
-
-After fixing the first round:
-
-```bash
-semgrep --config p/security-audit src/
-bandit -r src/
-```
-
-**Expected Second Attempt Results**: Fewer findings, possibly some INFO-level issues remaining.
-
-**Governance Requirement**: Per security governance, you need **0 CRITICAL + 0 HIGH** findings to pass.
-
----
-
-## Step 8: Final Security Scan -- Attempt 3 (5 min)
-
-If any blocking issues remain, address them:
-
-```bash
-semgrep --config p/security-audit src/
-bandit -r src/
-```
-
-**Pass Criteria**: 
-- 0 CRITICAL findings
-- 0 HIGH findings
-- INFO/LOW findings are acceptable (documented)
-
-**If you exceed 3 attempts**: 
-1. Document the blockers
-2. Ask instructor for help
-3. Use checkpoint repository to continue
-
----
-
-## Step 9: Implement Tests (15 min)
-
-Create `tests/test_payment.py`:
-
-```python
-import pytest
-from httpx import AsyncClient
-from unittest.mock import patch, AsyncMock
-
-from src.app.main import app
-
-
-@pytest.mark.asyncio
-async def test_successful_payment():
-    """Acceptance scenario 1: Valid token - succeeded status."""
-    async with AsyncClient(app=app, base_url="http://test") as client:
-        response = await client.post(
-            "/pay",
-            json={
-                "token": "tok_valid_test",
-                "amount": 5000,
-                "currency": "usd",
-                "idempotency_key": "test-key-123",
-            },
-        )
-    
-    assert response.status_code == 200
-    data = response.json()
-    assert data["status"] == "succeeded"
-    assert data["amount"] == 5000
-
-
-@pytest.mark.asyncio
-async def test_duplicate_request():
-    """Acceptance scenario 2: Same idempotency key - original response."""
-    async with AsyncClient(app=app, base_url="http://test") as client:
-        # First request
-        response1 = await client.post(
-            "/pay",
-            json={
-                "token": "tok_valid_test",
-                "amount": 5000,
-                "currency": "usd",
-                "idempotency_key": "duplicate-key-456",
-            },
-        )
-        
-        # Duplicate request
-        response2 = await client.post(
-            "/pay",
-            json={
-                "token": "tok_another",  # Different token
-                "amount": 5000,
-                "currency": "usd",
-                "idempotency_key": "duplicate-key-456",  # Same key
-            },
-        )
-    
-    assert response2.json()["duplicate"] == True
-    assert response1.json()["transaction_id"] == response2.json()["transaction_id"]
-
-
-@pytest.mark.asyncio
-async def test_missing_idempotency_key():
-    """Acceptance scenario 4: No idempotency key - rejected."""
-    async with AsyncClient(app=app, base_url="http://test") as client:
-        response = await client.post(
-            "/pay",
-            json={
-                "token": "tok_valid",
-                "amount": 5000,
-                "currency": "usd",
-                # Missing idempotency_key
-            },
-        )
-    
-    assert response.status_code == 422  # Validation error
-```
-
----
-
-## Step 10: Run Tests with Coverage (10 min)
-
-```bash
-# Run tests with coverage
-pytest --cov=src --cov-report=term-missing
-
-# Expected output:
-# TOTAL    xxx    xxx    60%+
-```
-
-**Pass Criteria**: Minimum 60% code coverage
-
-If coverage is low:
-1. Add tests for edge cases (invalid token, zero amount)
-2. Add tests for error handling paths
-3. Re-run coverage check
-
----
-
-## Step 11: Verify End-to-End (5 min)
-
-```bash
-# Ensure services are running
 docker-compose up -d
+```
 
-# Wait for healthy status
-sleep 15
+Verify they're running:
 
-# Get a test token
-curl -X POST http://localhost:8001/tokenize \
-  -H "Content-Type: application/json" \
-  -d '{"card_number": "4242424242424242", "exp_month": 12, "exp_year": 2025, "cvc": "123"}'
+```bash
+# Check Redis
+docker-compose exec redis redis-cli ping
+# Expected: PONG
 
-# Process payment with the token
+# Check Mock Gateway
+curl http://localhost:8001/health
+# Expected: {"status":"healthy"}
+```
+
+---
+
+## Step 4: Run Tests (10 min)
+
+Verify the implementation matches your spec:
+
+```bash
+pytest tests/ -v
+```
+
+**Expected**: All acceptance scenario tests pass.
+
+If tests fail:
+1. Check which scenario failed
+2. Review the spec requirement
+3. Ask your AI to fix: "Test for Scenario 2 (double-click protection) is failing. The spec says we should return the original response. Please fix."
+
+---
+
+## Step 5: Validate with Checklist (5 min)
+
+Run the spec-kit validation:
+
+```
+/speckit.checklist
+```
+
+This checks:
+- ✓ All spec requirements have implementation
+- ✓ All acceptance scenarios have tests
+- ✓ Code coverage meets minimum threshold
+- ✓ No critical security findings
+
+### Address Any Gaps
+
+If the checklist shows incomplete items, ask your AI to address them:
+
+> "The checklist shows FR-003 (audit logging) isn't fully implemented. Please add structured logging for all payment events."
+
+---
+
+## Step 6: Verify End-to-End (10 min)
+
+Test the complete flow manually:
+
+```bash
+# Start the API server
+uvicorn src.app.main:app --reload
+
+# In another terminal, test a payment
 curl -X POST http://localhost:8000/pay \
   -H "Content-Type: application/json" \
-  -d '{"token": "tok_xxx", "amount": 5000, "currency": "usd", "idempotency_key": "manual-test-001"}'
+  -d '{
+    "token": "tok_test_valid",
+    "amount": 5000,
+    "currency": "usd",
+    "idempotency_key": "test-001"
+  }'
 ```
+
+**Expected**: Success response with transaction_id.
+
+### Test Double-Click Protection
+
+```bash
+# Same request again (same idempotency_key)
+curl -X POST http://localhost:8000/pay \
+  -H "Content-Type: application/json" \
+  -d '{
+    "token": "tok_test_valid",
+    "amount": 5000,
+    "currency": "usd",
+    "idempotency_key": "test-001"
+  }'
+```
+
+**Expected**: Same response with `"duplicate": true`.
+
+**This is the moment**: Lab 0 code would've created a duplicate charge. Your spec prevented it.
 
 ---
 
-## Step 12: Commit Your Work (2 min)
+## Step 7: Commit Your Work (5 min)
 
 ```bash
 git add .
@@ -444,41 +237,33 @@ git commit -m "feat: payment endpoint with idempotency and audit logging"
 
 Your lab is complete when:
 
-- [ ] `specs/001-payment/tasks.md` exists with task breakdown
+- [ ] `specs/001-payment-checkout/tasks.md` exists with task breakdown
 - [ ] `src/app/payment.py` exists with POST /pay endpoint
 - [ ] `src/app/models.py` has PaymentRequest, PaymentResponse, PaymentError
-- [ ] `tests/test_payment.py` exists with acceptance scenario tests
-- [ ] `semgrep` shows 0 critical + 0 high findings
-- [ ] `pytest --cov` shows 60%+ coverage
-- [ ] `curl localhost:8000/pay` returns valid response
-
-### Validate Your Work
-
-```
-/speckit.checklist
-```
-
-This validates your implementation against the spec requirements and confirms all acceptance scenarios are covered.
+- [ ] `tests/test_payment.py` has tests for all acceptance scenarios
+- [ ] `pytest tests/ -v` shows all tests passing
+- [ ] `/speckit.checklist` shows no critical gaps
+- [ ] Manual curl test shows double-click protection working
 
 ---
 
 ## Key Takeaways
 
-1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates code that traces to requirements.
+1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
 
-2. **Compare to Lab 0** — Your payment endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
+2. **Compare to Lab 0** — Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
 
-3. **Security is iterative** — Expect 2-3 scan cycles. That's normal. The spec helps you catch issues before demo day.
+3. **Natural language drives everything** — You described requirements; the AI structured and implemented them.
 
-4. **Traceability = confidence** — Every function traces to an FR-xxx requirement. That's what "production-ready" means.
+4. **Traceability = confidence** — Every function traces to an FR-xxx requirement. That's "production-ready."
 
 ### Common Pitfalls
 
 | Pitfall | Why It Matters |
 |---------|---------------|
-| Logging raw tokens | Security scan fails, demo blocked |
-| Missing idempotency cache | Double-click = duplicate charge |
-| Tests mock everything | Can't prove it actually works |
+| Skipping `/speckit.tasks` | Implementation order matters; dependencies break |
+| Not running tests | Can't prove it works |
+| Ignoring checklist gaps | Incomplete coverage = demo risk |
 
 ---
 
@@ -493,7 +278,7 @@ During implementation, you might hit API questions your AI can't answer from tra
 
 **For now**: Your AI handles most questions. The spec provides enough context.
 
-**In Course 2**: You'll integrate MCP tools for real-time documentation lookup — essential when working with unfamiliar legacy APIs.
+**In Course 2**: You'll integrate MCP tools for real-time documentation — essential when working with legacy APIs.
 
 ---
 
@@ -503,6 +288,6 @@ It's **Wednesday morning**. PM walks over:
 
 > "Great progress! The investors also want to see order history. Can you add that by Thursday?"
 
-In **Lab 1.4**, you'll handle this scope addition -- with a spec. No Thursday night panic.
+In **Lab 1.4**, you'll handle this scope addition — with a spec. No Thursday night panic.
 
 **Your payment feature works. Now let's see if the discipline scales.**
