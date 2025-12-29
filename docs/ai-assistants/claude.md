@@ -1,6 +1,7 @@
 ﻿---
 title: Claude Code
-parent: AI Assistant Tips
+layout: default
+parent: AI Assistants
 nav_order: 2
 ---
 # Claude Code Tips for SDD Labs

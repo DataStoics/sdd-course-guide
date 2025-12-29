@@ -1,6 +1,7 @@
 ﻿---
 title: GitHub Copilot
-parent: AI Assistant Tips
+layout: default
+parent: AI Assistants
 nav_order: 1
 ---
 # GitHub Copilot Tips for SDD Labs
