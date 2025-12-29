@@ -1,7 +1,7 @@
 ---
 title: The Business Case for Spec-Driven Development
 layout: default
-nav_order: 5
+nav_order: 3
 description: "ROI calculator, career impact, and enterprise value of structured AI development"
 ---
 # The Business Case for Spec-Driven Development
@@ -275,7 +275,7 @@ Suggested pilot:
 
 Ready to see Spec-Driven Development in action?
 
-[Start Lab 0: The Contrast](labs/lab-0-contrast){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Start Lab 0: AI Without Specs](labs/lab-0-ai-without-specs){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View Course Structure](labs/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---

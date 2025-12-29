@@ -1,7 +1,7 @@
 ---
 title: Spec-Driven Development Methodology
 layout: default
-nav_order: 3
+nav_order: 2
 description: "Understanding specification-first approaches to AI-assisted software development"
 ---
 # Spec-Driven Development Methodology
@@ -386,9 +386,9 @@ By Friday, you'll have:
 
 ## Ready to Begin?
 
-Complete the [Pre-Course Setup](setup) if you haven't already, then start with [Lab 0: The Contrast](labs/lab-0-contrast).
+Complete the [Pre-Course Setup](setup) if you haven't already, then start with [Lab 0: AI Without Specs](labs/lab-0-ai-without-specs).
 
-[Start Lab 0](labs/lab-0-contrast){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Start Lab 0](labs/lab-0-ai-without-specs){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 

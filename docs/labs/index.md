@@ -1,7 +1,7 @@
 ---
 title: Labs
 layout: default
-nav_order: 4
+nav_order: 5
 has_children: true
 permalink: /labs/
 ---
@@ -45,7 +45,7 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 ---
 
-> ⚠️ **Important**: Each lab builds on the previous one. If you fall behind, use checkpoint repositories to catch up.
+> âš ï¸ **Important**: Each lab builds on the previous one. If you fall behind, use checkpoint repositories to catch up.
 
 ---
 
