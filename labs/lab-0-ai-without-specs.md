@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 0: AI Without Specs"
 layout: default
 parent: Labs

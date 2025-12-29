@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.1: Init and Spec"
 layout: default
 parent: Labs
