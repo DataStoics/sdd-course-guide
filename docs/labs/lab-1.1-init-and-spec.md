@@ -65,28 +65,36 @@ specify init .
 
 ### Select Your AI Assistant
 
-You'll be prompted to choose your AI assistant:
+The init wizard will display a menu. Use arrow keys to select your AI assistant:
 
 ```
-? Select your AI assistant:
-  > GitHub Copilot
-    Claude Code
-    Gemini CLI
+â•­â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ Choose your AI assistant: â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â•®
+â”‚                                                                                                         â”‚
+â”‚         copilot (GitHub Copilot)                                                                        â”‚
+â”‚         claude (Claude Code)                                                                            â”‚
+â”‚  â–¶      gemini (Gemini CLI)                                                                             â”‚
+â”‚         cursor-agent (Cursor)                                                                           â”‚
+â”‚         ...                                                                                             â”‚
 ```
 
-**Select the one you're using** (the one you used in the contrast exercise).
+**Select the one you're using** (Gemini CLI is recommended for this course).
 
 ### What Just Happened?
 
-The init command created configuration for your selected assistant:
+The init command created a `.specify/` directory with configuration for your selected assistant:
 
-| Assistant | Config File Created |
-|-----------|---------------------|
-| GitHub Copilot | `.github/copilot-instructions.md` |
-| Claude Code | `.claude/instructions.md` |
-| Gemini CLI | `.gemini/instructions.md` |
+| Assistant | Config Folder Created |
+|-----------|----------------------|
+| GitHub Copilot | `.github/` with `copilot-instructions.md` |
+| Claude Code | `.claude/` with `settings.json` |
+| Gemini CLI | `.gemini/` with `settings.json` |
 
-**Open the generated file** and review it. This file tells your AI assistant:
+It also created:
+- `.specify/` - Contains templates, scripts, and governance rules
+- `.specify/templates/` - Spec templates for consistent documentation
+- `.specify/scripts/` - Helper scripts for the SDD workflow
+
+**Open the generated instructions file** and review it. This file tells your AI assistant:
 - How to work with specifications
 - Where to find governance constraints
 - How to structure generated code
