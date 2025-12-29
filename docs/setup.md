@@ -155,7 +155,7 @@ gemini
 </details>
 
 <details markdown="block">
-<summary><strong>GitHub Copilot</strong> ($10/month or free for students)</summary>
+<summary><strong>GitHub Copilot</strong> ($10/month)</summary>
 
 Best if you already use GitHub or want the tightest VS Code integration.
 
@@ -163,7 +163,7 @@ Best if you already use GitHub or want the tightest VS Code integration.
 |:-----|:-----|:------|
 | Free | $0 | 50 agent requests/month -- may be limiting |
 | Pro | $10/month | 300 agent requests/month |
-| Student/Educator | Free (Pro) | Via GitHub Education |
+| Business | $19/user/month | Enterprise features, admin controls |
 
 **Setup:**
 1. Install "GitHub Copilot" extension in VS Code
