@@ -7,7 +7,54 @@ permalink: /whats-next/
 
 # What's Next
 
-You've completed Course 1. You can now build compliant software from scratch using SDD.
+Congratulations! You've completed Spec-Driven Development Foundations Course 1.
+
+You can now build compliant software from scratch using the spec-first methodology. But the learning doesn't stop here.
+
+---
+
+## Your Completion Certificate
+
+{: .important }
+> **Claim Your Certificate**: After completing all labs, email [training@datastoics.io](mailto:training@datastoics.io) with:
+> - Your name (as you'd like it on the certificate)
+> - Link to your completed GitHub repository
+> - Screenshot of your final demo running
+>
+> You'll receive a digital certificate within 5 business days.
+
+### What You've Earned
+
+Your certificate validates:
+- **Spec-Driven Development methodology** using spec-kit
+- **AI-assisted coding best practices** from industry leaders
+- **Production-ready delivery** from specification to deployment
+- **Governance integration** for compliance-aware development
+
+**Share on LinkedIn**: Add "Spec-Driven Development Foundations" to your certifications.
+
+---
+
+## Join the Community
+
+### Alumni Network
+
+Connect with other Spec-Driven Development practitioners:
+
+| Resource | Purpose |
+|----------|---------|
+| [GitHub Discussions](https://github.com/DataStoics/sdd-course-guide/discussions) | Ask questions, share wins, troubleshoot issues |
+| [Monthly Office Hours](#) | Live Q&A with instructors (first Thursday, 12pm EST) |
+| [Alumni Slack](#) | Real-time chat with fellow practitioners |
+
+### Share Your Experience
+
+We'd love to hear how you're applying Spec-Driven Development:
+- **Case studies**: Did spec-first save your Thursday night? Tell us!
+- **Blog posts**: Write about your experience (we'll promote it)
+- **Testimonials**: Help future students understand the value
+
+Email your story to [stories@datastoics.io](mailto:stories@datastoics.io).
 
 ---
 
@@ -15,80 +62,102 @@ You've completed Course 1. You can now build compliant software from scratch usi
 
 Most real-world work isn't greenfield. You inherit legacy systems with implicit requirements, undocumented business logic, and technical debt.
 
+### The Challenge Difference
+
 | Course 1 (Greenfield) | Course 2 (Brownfield) |
 |:----------------------|:----------------------|
 | Empty repository | 5,000+ lines of existing code |
-| You write the spec | You extract the spec |
+| You write the spec | You **extract** the spec |
 | Full control | Constraints everywhere |
 | Build compliance in | Retrofit compliance |
+| Monday spec  Friday ship | Understand first, then improve |
 
 ### What You'll Learn
 
-1. **Reverse Specification** - Extract implicit specs from working code
-2. **Strangler Fig Pattern** - Incrementally replace legacy with SDD-compliant code
-3. **Compliance Remediation** - Find and fix governance gaps in existing systems
-4. **Risk-Based Refactoring** - Prioritize what to fix based on business impact
+| Module | Skill |
+|--------|-------|
+| **Reverse Specification** | Extract implicit specs from working code using AI analysis |
+| **Strangler Fig Pattern** | Incrementally replace legacy with spec-compliant code |
+| **Compliance Remediation** | Find and fix governance gaps in existing systems |
+| **Risk-Based Refactoring** | Prioritize fixes based on business impact |
+| **External System Integration** | Connect to Jira, Confluence, GitHub via MCP |
 
-Interested? Contact us at [training@datastoics.io](mailto:training@datastoics.io).
+### Enterprise Tools You'll Use
 
----
+| System | Course 2 Purpose |
+|--------|------------------|
+| **Context7** | Get current library docs for legacy dependencies |
+| **Perplexity** | Research CVEs, migration paths, compatibility issues |
+| **GitHub MCP** | Analyze existing codebase, PR history, issues |
+| **Confluence** | Query company architecture decision records |
+| **Jira** | Pull requirements from existing tickets |
 
-## Optional Reading: AI Coding Best Practices
+### Course 2 Timeline
 
-### From the Source
+- **Expected availability**: Q2 2025
+- **Format**: Same 2-day intensive, different challenges
+- **Prerequisite**: Course 1 completion
 
-| Resource | Why Read It |
-|:---------|:------------|
-| [Claude Code: Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices) | Anthropic's official guide to working with Claude. Covers explore-plan-code-commit workflow, CLAUDE.md files, and when to use subagents. |
-| [OpenAI Prompt Engineering Guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) | Foundational techniques: be specific, show examples, use leading words. Still relevant for all models. |
-| [Google Cloud: Five Best Practices for AI Coding Assistants](https://cloud.google.com/blog/topics/developers-practitioners/five-best-practices-for-using-ai-coding-assistants) | Train the tool, make a plan, connect context between sessions. Practical enterprise advice. |
-
-### Community Guides
-
-| Resource | Why Read It |
-|:---------|:------------|
-| [Prompt Engineering for Coding Assistants](https://stoltzstack.com/blog/prompt-engineering-coding-assistants) | Developer-focused guide covering the "follow the pattern" and "persona" techniques. Good mental models. |
-| [12 Prompt Engineering Tips for Claude](https://www.vellum.ai/blog/prompt-engineering-tips-for-claude) | Claude-specific tips: use XML tags, let Claude say "I don't know", break complex tasks into steps. |
-
----
-
-## Optional Reading: SDD Best Practices
-
-### Industry Perspectives
-
-| Resource | Why Read It |
-|:---------|:------------|
-| [Martin Fowler: Exploring SDD Tools](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) | Thoughtworks analysis comparing Kiro, Spec-kit, and Tessl. Defines spec-first vs spec-anchored vs spec-as-source. |
-| [ThoughtWorks: What Is A Spec?](https://www.thoughtworks.com/en-us/insights/blog/agile-engineering-practices/spec-driven-development-unpacking-2025-new-engineering-practices) | Defines what makes a good spec. Connects SDD to context engineering and BDD heritage. |
-| [SDD Best Practices](https://intent-driven.dev/knowledge/best-practices/) | Practical implementation guide: prioritize human reviewability, start minimal, decompose meaningfully, prevent spec drift. |
-
-### Tools and Frameworks
-
-| Resource | Why Read It |
-|:---------|:------------|
-| [GitHub Spec Kit](https://github.com/github/spec-kit) | Official GitHub toolkit for SDD. Constitution files, slash commands (/specify, /plan, /tasks), templates. |
-| [Microsoft: Diving Into Spec-Driven Development](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) | Microsoft's introduction to Spec Kit. Explains the workflow and why detailed first prompts matter. |
-| [nvisia: Building Better Software with AI-First Architecture](https://www.nvisia.com/insights/spec-driven-development-building-better-software-with-ai-first-architecture) | Enterprise perspective on SDD. Includes practical lessons from a fraud detection proof-of-concept. |
+**Express interest**: [training@datastoics.io](mailto:training@datastoics.io) with subject "Course 2 Interest"
 
 ---
 
-## Optional Reading: The Future of AI Coding
+## Enterprise Training Options
 
-### Where Things Are Heading
+### Team Workshops
+
+Bring Spec-Driven Development to your organization:
+
+| Format | Duration | Team Size | Includes |
+|--------|----------|-----------|----------|
+| **Virtual Workshop** | 2 days | 8-20 developers | Live instruction, custom scenarios |
+| **On-Site Intensive** | 3 days | 10-30 developers | Hands-on labs with your codebase |
+| **Champion Training** | 1 week | 2-4 leads | Train-the-trainer, curriculum materials |
+
+### Custom Curriculum
+
+We can adapt the course for your:
+- **Tech stack**: Python, Java, TypeScript, Go
+- **Compliance requirements**: PCI DSS, HIPAA, SOC 2, GDPR
+- **Tools**: Your existing CI/CD, code review, project management
+
+### Consulting Services
+
+| Service | Description |
+|---------|-------------|
+| **Specification Audit** | Review your existing specs for completeness and clarity |
+| **Pilot Program Design** | Structure a spec-first pilot for your team |
+| **Governance Framework** | Build compliance templates for your organization |
+| **Tool Integration** | Connect spec-kit to your enterprise systems |
+
+**Contact**: [enterprise@datastoics.io](mailto:enterprise@datastoics.io)
+
+---
+
+## Optional Reading: Continuing Your Learning
+
+### AI Coding Best Practices
 
 | Resource | Why Read It |
 |:---------|:------------|
-| [GitLab: Agentic AI Trends Reshaping Software Development](https://about.gitlab.com/the-source/ai/emerging-agentic-ai-trends-reshaping-software-development/) | AI agents as orchestration layer, enterprise guardrails, tackling technical debt at scale. |
-| [GitLab: AI Trends for 2025](https://about.gitlab.com/the-source/ai/ai-trends-for-2025-agentic-ai-self-hosted-models-and-more/) | Proactive AI collaborators, on-premises models, AI assistants becoming central hubs. |
-| [Svitla: Agentic AI Trends 2025](https://svitla.com/blog/agentic-ai-trends-2025/) | Multi-agent collaboration, tool/API integration, autonomous business workflows. Good technical depth. |
+| [Claude Code: Best Practices for Agentic Coding](https://www.anthropic.com/engineering/claude-code-best-practices) | Anthropic's official guide. Covers explore-plan-code-commit workflow. |
+| [OpenAI Prompt Engineering Guide](https://help.openai.com/en/articles/6654000-best-practices-for-prompt-engineering-with-the-openai-api) | Foundational techniques applicable to all models. |
+| [Google Cloud: AI Coding Best Practices](https://cloud.google.com/blog/topics/developers-practitioners/five-best-practices-for-using-ai-coding-assistants) | Enterprise advice on context and planning. |
 
-### The Big Picture
+### Spec-Driven Development Deep Dives
 
-The shift from **generative AI** (responds to prompts) to **agentic AI** (plans and executes autonomously) is accelerating. But autonomy without structure produces chaos.
+| Resource | Why Read It |
+|:---------|:------------|
+| [Martin Fowler: Exploring SDD Tools](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) | ThoughtWorks analysis comparing Kiro, spec-kit, Tessl. |
+| [GitHub spec-kit Repository](https://github.com/github/spec-kit) | Official toolkit documentation. |
+| [Microsoft: Diving Into Spec-Driven Development](https://developer.microsoft.com/blog/spec-driven-development-spec-kit) | Microsoft's introduction to spec-kit. |
 
-**SDD is how you stay in control.**
+### The Future of AI Coding
 
-Specs become the governance layer that constrains what agents can do. As AI gets more capable, clear specifications become more valuable - not less.
+| Resource | Why Read It |
+|:---------|:------------|
+| [GitLab: Agentic AI Trends](https://about.gitlab.com/the-source/ai/emerging-agentic-ai-trends-reshaping-software-development/) | AI agents as orchestration layer. |
+| [Anthropic: Context Engineering for AI Agents](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | How to manage context effectively. |
 
 ---
 
@@ -107,9 +176,47 @@ The best way to solidify these skills:
 
 ---
 
+## Quick Reference Card
+
+Keep this handy as you apply spec-driven development:
+
+### spec-kit Commands
+
+| Command | Purpose | When to Use |
+|---------|---------|-------------|
+| `specify init .` | Initialize project | Start of new project |
+| `/speckit.constitution` | Define project principles | Before first feature |
+| `/speckit.specify` | Generate spec from description | New feature request |
+| `/speckit.clarify` | Resolve ambiguities | After initial spec |
+| `/speckit.plan` | Create technical plan | Before implementation |
+| `/speckit.implement` | Generate code from spec | When spec is complete |
+| `/speckit.checklist` | Validate completeness | Before code review |
+
+### The "Would I Demo This?" Test
+
+Before shipping, ask:
+- [ ] Is this secure? (Can I prove it?)
+- [ ] What happens on double-click? (Idempotent?)
+- [ ] What happens on error? (Graceful?)
+- [ ] Where's the audit trail? (Traceable?)
+- [ ] Would I confidently demo this to investors?
+
+---
+
+## Thank You
+
+You invested time and effort to learn a better way of building software with AI. That investment will pay dividends across your career.
+
+**Remember**: The spec is the contract. AI implements it. You validate and demo.
+
+Now go build something greatspec-first.
+
+---
+
 ## Stay Connected
 
-- [Course Discussion Forum](https://github.com/DataStoics/sdd-course-guide/discussions)
+- [Course Guide](https://datastoics.github.io/sdd-course-guide)
+- [GitHub Discussions](https://github.com/DataStoics/sdd-course-guide/discussions)
 - [Starter Template](https://github.com/DataStoics/sdd-greenfield-starter)
 - [Checkpoint Repositories](https://github.com/DataStoics?q=lab-checkpoint)
-
+- [Email Training Team](mailto:training@datastoics.io)

@@ -228,10 +228,10 @@ The AI analyzes your spec and presents **ONE question at a time** with a recomme
 
 Respond with your choice. The AI updates the spec and asks the next question:
 
-- **Q1: Payment Gateway** â†’ A (Mock gateway for demo)
-- **Q2: Duplicate handling** â†’ Return original response (idempotent)
-- **Q3: Amount limits** â†’ $0.01 - $10,000 USD
-- **Q4: Order history depth** â†’ Last 10 orders
+- **Q1: Payment Gateway** Ã¢â€ â€™ A (Mock gateway for demo)
+- **Q2: Duplicate handling** Ã¢â€ â€™ Return original response (idempotent)
+- **Q3: Amount limits** Ã¢â€ â€™ $0.01 - $10,000 USD
+- **Q4: Order history depth** Ã¢â€ â€™ Last 10 orders
 
 After ~4-5 questions, your spec transforms from ambiguous to precise.
 
@@ -280,9 +280,9 @@ Would you like me to add a scenario where a duplicate payment attempt returns th
 
 As you answer, the AI adds scenarios to your spec:
 
-- **Q1: Double-click?** â†’ A (Yes, add idempotency scenario)
-- **Q2: Error handling?** â†’ A (Yes, show graceful recovery)
-- **Q3: Audit trail?** â†’ A (Yes, prove enterprise-readiness)
+- **Q1: Double-click?** Ã¢â€ â€™ A (Yes, add idempotency scenario)
+- **Q2: Error handling?** Ã¢â€ â€™ A (Yes, show graceful recovery)
+- **Q3: Audit trail?** Ã¢â€ â€™ A (Yes, prove enterprise-readiness)
 
 ### Review Your Expanded Scenarios
 
@@ -410,6 +410,48 @@ Your lab is complete when:
 | Friday demo | Hoping nothing breaks | Confident walkthrough |
 
 **Same effort, different outcome.**
+
+---
+
+## Troubleshooting
+
+### spec-kit Commands Not Working
+
+| Problem | Solution |
+|---------|----------|
+| `/speckit.specify` not recognized | Run `specify init .` first to create command files |
+| "No AI assistant configured" | Re-run `specify init .` and select your assistant |
+| Commands exist but AI ignores them | Make sure you're in the repo root directory |
+| Gemini shows "command not found" | Check `.gemini/commands/` directory exists |
+
+### Specification Generation Issues
+
+| Problem | Solution |
+|---------|----------|
+| Spec is too vague | Add more detail to your initial description |
+| Too many `[NEEDS CLARIFICATION]` markers | This is good! Run `/speckit.clarify` to resolve them |
+| Spec has wrong assumptions | Edit `spec.md` directly, then run `/speckit.clarify` |
+| AI generates code instead of spec | Remind AI: "Generate specification only, no code yet" |
+
+### Branch and File Issues
+
+| Problem | Solution |
+|---------|----------|
+| Feature branch not created | Check git status; manually create with `git checkout -b 001-feature-name` |
+| `specs/` directory missing | Create manually: `mkdir -p specs/001-payment-checkout` |
+| `.specify/` directory missing | Re-run `specify init .` |
+
+### Authentication Issues
+
+| Problem | Solution |
+|---------|----------|
+| Gemini "not authenticated" | Run `gemini auth login` in terminal |
+| Claude API key invalid | Check key at console.anthropic.com |
+| Copilot not responding in agent mode | Ensure you selected "Agent" not "Chat" in the dropdown |
+
+{: .tip }
+> **When in doubt**: Delete the `.specify/` directory and re-run `specify init .` to start fresh.
+
 
 ---
 
