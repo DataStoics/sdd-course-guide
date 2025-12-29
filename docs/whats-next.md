@@ -1,4 +1,4 @@
-﻿---
+---
 title: What's Next
 layout: default
 nav_order: 6

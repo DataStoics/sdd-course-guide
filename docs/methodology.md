@@ -1,4 +1,4 @@
-﻿---
+---
 title: SDD Methodology
 layout: default
 nav_order: 5

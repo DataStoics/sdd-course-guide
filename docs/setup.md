@@ -1,4 +1,4 @@
-﻿---
+---
 title: Pre-Course Setup
 layout: default
 nav_order: 2

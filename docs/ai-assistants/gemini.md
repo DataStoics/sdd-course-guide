@@ -1,4 +1,4 @@
-﻿---
+---
 title: Gemini CLI
 layout: default
 parent: AI Assistants

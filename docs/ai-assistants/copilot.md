@@ -1,4 +1,4 @@
-﻿---
+---
 title: GitHub Copilot
 layout: default
 parent: AI Assistants
