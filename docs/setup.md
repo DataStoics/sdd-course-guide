@@ -50,9 +50,10 @@ That is it for this step. No SSH keys or tokens needed -- Codespaces handles aut
 
 ## Step 2: Development Environment
 
-Choose ONE option:
+Choose ONE option. Click to expand setup instructions:
 
-### Option A: GitHub Codespaces (Recommended)
+<details open markdown="block">
+<summary><strong>GitHub Codespaces</strong> (Recommended - No Installation)</summary>
 
 Cloud-based VS Code that runs in your browser. No local installation required.
 
@@ -69,8 +70,6 @@ Click the badge above, or go to [github.com/DataStoics/sdd-greenfield-starter](h
 
 Wait 2-3 minutes for the container to build. Gemini CLI is pre-installed.
 
-<!-- SCREENSHOT: Show the "Create codespace" dropdown menu -->
-
 **Verify it works:**
 ```bash
 python --version    # Should show 3.12.x
@@ -80,6 +79,38 @@ gemini --version    # Should show installed version
 **Save your work later:** When you commit, VS Code will prompt "Publish to GitHub" -- this creates your own copy.
 
 **Official docs:** [GitHub Codespaces Quickstart](https://docs.github.com/en/codespaces/getting-started/quickstart)
+
+</details>
+
+<details markdown="block">
+<summary><strong>Local Docker + VS Code</strong> (For Offline Work)</summary>
+
+For offline work or faster performance.
+
+**Requirements:**
+- Docker Desktop ([download](https://www.docker.com/products/docker-desktop/))
+- VS Code ([download](https://code.visualstudio.com/))
+- VS Code "Dev Containers" extension
+- 8GB RAM, 10GB free disk space
+
+**Setup:**
+1. Install Docker Desktop and VS Code
+2. Install the Dev Containers extension in VS Code
+3. Clone the template: `git clone https://github.com/DataStoics/sdd-greenfield-starter`
+4. Open folder in VS Code
+5. Click "Reopen in Container" when prompted
+
+**Verify it works:**
+```bash
+python --version    # Should show 3.12.x
+gemini --version    # Should show installed version
+```
+
+**Official docs:**
+- [Docker Desktop Installation](https://docs.docker.com/desktop/)
+- [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
+
+</details>
 
 ---
 
@@ -100,31 +131,6 @@ You'll have **two browser tabs** open:
 
 {: .tip }
 > Keep both tabs visible if you have a large monitor, or use split screen.
-
----
-
-### Option B: Local Docker + VS Code
-
-For offline work or faster performance.
-
-**Requirements:**
-- Docker Desktop ([download](https://www.docker.com/products/docker-desktop/))
-- VS Code ([download](https://code.visualstudio.com/))
-- VS Code "Dev Containers" extension
-- 8GB RAM, 10GB free disk space
-
-**Setup:**
-1. Install Docker Desktop and VS Code
-2. Install the Dev Containers extension in VS Code
-3. Clone the course template repository
-4. Open folder in VS Code
-5. Click "Reopen in Container" when prompted
-
-<!-- SCREENSHOT: Show the "Reopen in Container" notification in VS Code -->
-
-**Official docs:**
-- [Docker Desktop Installation](https://docs.docker.com/desktop/)
-- [VS Code Dev Containers](https://code.visualstudio.com/docs/devcontainers/containers)
 
 ---
 
