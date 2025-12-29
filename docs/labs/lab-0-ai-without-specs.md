@@ -1,10 +1,10 @@
 ﻿---
-title: Contrast Exercise
+title: "Lab 0: AI Without Specs"
 layout: default
 parent: Labs
 nav_order: 1
 ---
-# Contrast Exercise: "Friday Demo"
+# Lab 0: AI Without Specs
 
 **Duration**: 45 minutes (30 min build + 15 min debrief)  
 **Type**: Hands-On Exploration  
@@ -12,7 +12,7 @@ nav_order: 1
 
 ---
 
-## ðŸŽ¯ The Scenario
+## The Scenario
 
 It's **Monday morning**. Your PM sends this message:
 
@@ -86,14 +86,14 @@ With 3 minutes left, ask yourself:
 
 ---
 
-## â±ï¸ Time Check
+## Time Check
 
 | Time | Scenario |
 |------|----------|
-| 0:00 | Monday AM â€” you start coding |
-| 0:15 | Wednesday â€” halfway to demo |
-| 0:25 | Thursday night â€” final push |
-| 0:30 | **FRIDAY MORNING** â€” Demo time |
+| 0:00 | Monday AM -- you start coding |
+| 0:15 | Wednesday -- halfway to demo |
+| 0:25 | Thursday night -- final push |
+| 0:30 | **FRIDAY MORNING** -- Demo time |
 
 ---
 
@@ -107,7 +107,7 @@ Before the timer ends, make sure you have:
 
 ---
 
-## ðŸ›‘ When the Timer Ends
+## When the Timer Ends
 
 **It's Friday. Demo time.**
 
@@ -182,15 +182,15 @@ You'll see how:
 - Demo day code IS production-path code
 - You ship Thursday with time to spare
 
-**The contrast between this exercise and Lab 1.3 output is why we call this "contrast-first" learning.**
+**The contrast between this lab and Lab 1.3 output is why we call this "contrast-first" learning.**
 
 ---
 
 ## Notes for Participants
 
-- **This is normal** â€” everyone struggles with this exercise
-- **The mess is the point** â€” it reveals a universal problem
-- **Your experience matters** â€” share honestly in the debrief
-- **Keep your code** â€” you'll compare it to Lab 1.3 output later
+- **This is normal** -- everyone struggles with this lab
+- **The mess is the point** -- it reveals a universal problem
+- **Your experience matters** -- share honestly in the debrief
+- **Keep your code** -- you'll compare it to Lab 1.3 output later
 
-> ðŸ’¡ **Pro tip**: Save your chat history. We'll analyze what prompts worked and which created rework.
+> **Pro tip**: Save your chat history. We'll analyze what prompts worked and which created rework.
