@@ -102,51 +102,57 @@ It also created:
 
 ### Verify Setup
 
-Your AI assistant should now understand SDD. Test it:
+Your AI assistant should now understand SDD. Test it by asking:
 
 ```
 What is spec-driven development and how should I create specs in this project?
 ```
 
-If your AI responds with information about specifications and governance, you're ready to proceed.
+If your AI responds with information about specifications and the `/speckit.specify` command, you're ready to proceed.
 
 ---
 
-## Step 2: Create the Spec Directory (5 min)
+## Step 2: Create Your First Spec with /speckit.specify (15 min)
 
-Create the specification structure:
-
-```bash
-mkdir -p specs/001-payment
-touch specs/001-payment/spec.md
-```
-
-Open `specs/001-payment/spec.md` in your editor.
-
----
-
-## Step 3: Generate Initial Spec with /speckit.specify (10 min)
-
-Now use the AI-assisted specification command:
+Now use the AI-assisted specification command. This single command handles everything:
 
 ```
 /speckit.specify "payment checkout for investor demo - must handle edge cases gracefully, look professional, and be demoable by Friday"
 ```
 
-Notice how different this is from the contrast exercise prompt. You're telling the AI:
+### What Happens Automatically
+
+When you run `/speckit.specify`, the spec-kit workflow:
+
+1. **Analyzes** your description to generate a unique branch name (e.g., `001-payment-checkout`)
+2. **Creates a new git branch** for this feature
+3. **Creates the spec directory** (e.g., `specs/001-payment-checkout/`)
+4. **Drafts the spec.md** with User Scenarios, Functional Requirements, and Success Criteria
+5. **Runs a quality checklist** to validate the spec is ready for planning
+
+You do NOT need to manually create directories or files - spec-kit handles this for you.
+
+### Review the Generated Spec
+
+After the command completes, you'll have:
+- A new feature branch (you're automatically switched to it)
+- `specs/001-payment-checkout/spec.md` with initial content
+- A quality checklist validating the spec
+
+Notice how different this is from the contrast exercise prompt. You told the AI:
 - **What** you're building (payment checkout)
 - **What context** matters (investor demo)
 - **What "done" means** (demoable, handles edge cases)
 
-Review the generated spec structure. You should have sections for:
+The generated spec should include sections for:
 - Summary
-- Demo Requirements (what investors will see)
-- Edge Cases (what could break the demo)
-- Technical Constraints
+- User Scenarios (Given/When/Then)
+- Functional Requirements
+- Success Criteria
 
 ---
 
-## Step 4: Define What "Demoable" Actually Means (25 min)
+## Step 3: Refine What "Demoable" Actually Means (25 min)
 
 **This is where Thursday night rework gets prevented.** What would embarrass you in front of investors?
 
@@ -198,7 +204,7 @@ Investors spot fake demos. Logging proves the system actually works:
 
 ---
 
-## Step 5: Write Demo Scenarios (20 min)
+## Step 4: Write Demo Scenarios (20 min)
 
 These are the moments you'll show investors. Each scenario becomes a test AND a demo script.
 
@@ -249,7 +255,7 @@ These are the moments you'll show investors. Each scenario becomes a test AND a 
 
 ---
 
-## Step 6: Define Requirements (10 min)
+## Step 5: Define Requirements (10 min)
 
 Turn scenarios into numbered requirements (your AI will reference these):
 
@@ -267,7 +273,7 @@ Turn scenarios into numbered requirements (your AI will reference these):
 
 ---
 
-## Step 7: The "Ship Thursday" Checklist (5 min)
+## Step 6: The "Ship Thursday" Checklist (5 min)
 
 Verify your spec prevents Thursday night rework:
 
@@ -281,9 +287,9 @@ Verify your spec prevents Thursday night rework:
 
 ---
 
-## Step 8: Commit Your Work (5 min)
+## Step 7: Commit Your Work (5 min)
 
-Your first commit should follow conventional commit format:
+Your work is already on a feature branch. Commit your refined spec:
 
 ```bash
 git add .
@@ -298,22 +304,24 @@ Note: We're adding all files (including the AI config from `specify init .`).
 
 Your lab is complete when:
 
-- [ ] AI assistant configured (`.github/copilot-instructions.md`, `.claude/instructions.md`, or `.gemini/instructions.md` exists)
-- [ ] `specs/001-payment/spec.md` exists
+- [ ] AI assistant configured (`.specify/` directory and agent config folder exist)
+- [ ] You're on a feature branch (created by `/speckit.specify`)
+- [ ] `specs/NNN-payment-checkout/spec.md` exists (NNN is the feature number)
 - [ ] Spec contains constraints section (idempotency, data handling, audit)
-- [ ] Spec has at least 4 demo scenarios (Given/When/Then)
+- [ ] Spec has at least 4 user scenarios (Given/When/Then)
 - [ ] Spec has numbered requirements (FR-001, FR-002, etc.)
-- [ ] Commit message follows convention: `feat: payment specification`
+- [ ] Changes committed with message following convention: `feat: payment specification`
 
 ### Validate Your Work
 
-Run the validation script:
+Check your branch and spec structure:
 
 ```bash
-python validate_lab.py --lab 1.1 --repo .
+git branch --show-current
+ls specs/
 ```
 
-All checks should pass.
+You should see your feature branch name and the spec directory created by `/speckit.specify`.
 
 ---
 
