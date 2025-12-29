@@ -2,6 +2,7 @@
 title: Home
 layout: home
 nav_order: 1
+mermaid: true
 description: "SDD Foundations Course 1 - Learn to build production-ready software with AI assistants"
 permalink: /
 ---
