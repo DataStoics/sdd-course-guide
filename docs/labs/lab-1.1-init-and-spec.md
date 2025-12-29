@@ -73,7 +73,6 @@ You'll be prompted to choose your AI assistant:
   copilot
   claude
   gemini
-  cursor-agent
 ```
 
 **Select the one you're using** (the same AI assistant you used in Lab 0).
@@ -87,7 +86,6 @@ The init command created the spec-kit structure and slash commands for your sele
 | GitHub Copilot | `.github/prompts/` | Markdown |
 | Claude Code | `.claude/commands/` | Markdown |
 | Gemini CLI | `.gemini/commands/` | TOML |
-| Cursor | `.cursor/commands/` | Markdown |
 
 The init also created:
 - `.specify/` - Core spec-kit directory with scripts, templates, and memory
@@ -382,7 +380,7 @@ This commit includes:
 
 Your lab is complete when:
 
-- [ ] AI assistant configured (`.github/prompts/`, `.claude/commands/`, `.gemini/commands/`, or `.cursor/commands/` exists)
+- [ ] AI assistant configured (`.github/prompts/`, `.claude/commands/`, or `.gemini/commands/` exists)
 - [ ] Constitution defined (`.specify/memory/constitution.md` has your project principles)
 - [ ] Feature branch created by `/speckit.specify` (e.g., `001-payment-checkout`)
 - [ ] `specs/001-payment-checkout/spec.md` exists with structured content
@@ -423,7 +421,7 @@ Your lab is complete when:
 
 ## What's Next?
 
-In **Lab 1.2**, you'll use `/speckit.plan` to make technology decisions (FastAPI vs Flask? Redis vs in-memory?) with documented trade-offs.
+In **Lab 1.2**, you'll use `/speckit.plan` to make technology decisions (FastAPI vs Flask? Redis vs in-memory?) and generate your implementation roadmap.
 
 **The spec says WHAT. The plan says HOW.**
 
