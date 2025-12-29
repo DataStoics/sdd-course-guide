@@ -21,15 +21,16 @@ By the end of this lab, you'll understand: **30 minutes of spec writing saves ho
 
 ---
 
-## Connection to Contrast Exercise
+## Why Specs Matter (What You Saw in Lab 0)
 
-Remember the Friday Demo scenario? You had 30 minutes (simulating 4 days) and ended up with:
+Remember Lab 0? You asked your AI to build a checkout feature using natural language - no specs, no structure. The result:
 
-- Code you wouldn't confidently demo
-- Features that work individually but break together  
+- Code that works in isolation but breaks when integrated
+- Missing edge cases (double-clicks, error handling)
+- No way to answer "Is this secure?" confidently
 - Thursday night energy spent on rework, not polish
 
-**This lab shows you the Monday morning that leads to a calm Thursday.**
+**This lab shows you what happens when you spec first.**
 
 ---
 
@@ -75,7 +76,7 @@ You'll be prompted to choose your AI assistant:
   cursor-agent
 ```
 
-**Select the one you're using** (the one you used in the contrast exercise).
+**Select the one you're using** (the same AI assistant you used in Lab 0).
 
 ### What Just Happened?
 
@@ -417,10 +418,10 @@ All checks should pass.
 
 ---
 
-## Contrast Exercise vs. Lab 1.1
+## AI Without Specs vs. AI With Specs
 
-| Aspect | Contrast Exercise (Monday AM) | Lab 1.1 (Monday, after spec) |
-|--------|-------------------------------|------------------------------|
+| Aspect | AI Without Specs (Lab 0) | AI With Specs (Lab 1.1) |
+|--------|--------------------------|-------------------------|
 | Time spent | 30 min coding | 30 min spec, then coding |
 | Double-click | Causes duplicate charge | Returns original response |
 | Bad input | Crash or ugly error | Helpful error message |
@@ -436,13 +437,13 @@ All checks should pass.
 
 Before moving to Lab 1.2, consider:
 
-1. **Time math**: You spent ~30 min on spec. In the contrast exercise, how much time would you have spent Thursday night fixing edge cases? Was the spec investment worth it?
+1. **Time math**: You spent ~30 min on spec. In Lab 0 (AI without specs), how much time would you have spent Thursday night fixing edge cases? Was the spec investment worth it?
 
 2. **AI behavior**: With the spec, your AI will generate idempotency handling automatically. Without it, the AI "didn't know" you needed it. What changed?
 
 3. **Uncertainty surfacing**: The AI marked `[NEEDS CLARIFICATION]` instead of guessing. How does this change your trust in AI-generated code?
 
-4. **Confidence**: Rate your demo confidence now vs. contrast exercise. What made the difference?
+4. **Confidence**: Rate your demo confidence now vs. Lab 0. What made the difference?
 
 ---
 
@@ -456,7 +457,7 @@ Before moving to Lab 1.2, consider:
 | **Ignoring `[NEEDS CLARIFICATION]` markers** | AI guessed wrong, you're rewriting code |
 | **Not running `/speckit.clarify`** | Ambiguities become Thursday bugs |
 | Skipping `/speckit.checklist` | Missed edge cases surface in demo |
-| Skipping spec entirely | You ARE the contrast exercise |
+| Skipping spec entirely | You're back to Lab 0 chaos |
 
 ---
 
