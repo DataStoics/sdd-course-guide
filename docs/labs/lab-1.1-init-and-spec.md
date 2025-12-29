@@ -4,11 +4,11 @@ layout: default
 parent: Labs
 nav_order: 2
 ---
-# Lab 1.1: Init and Spec â€” Ship Thursday, Demo Friday
+# Lab 1.1: Init and Spec -- Ship Thursday, Demo Friday
 
 **Duration**: 90 minutes  
 **Day**: 1  
-**Position**: Immediately after Contrast Exercise  
+**Position**: Immediately after Lab 0  
 **Prerequisites**: Working development environment (Codespaces or local Docker)
 
 ---
@@ -45,7 +45,7 @@ Remember the Friday Demo scenario? You had 30 minutes (simulating 4 days) and en
 
 Same PM message. Same deadline. Different approach.
 
-> "Hey! We're pitching to investors on Friday. Need a working checkout demo â€” payments, order history, the works. Something that looks real. Can you have it ready by end of day Thursday?"
+> "Hey! We're pitching to investors on Friday. Need a working checkout demo -- payments, order history, the works. Something that looks real. Can you have it ready by end of day Thursday?"
 
 **Your move**: Instead of jumping into code, you clarify what "looks real" means.
 
@@ -148,10 +148,10 @@ Think about demo day. What could go wrong?
 
 | Demo Disaster | Prevention (goes in spec) |
 |---------------|---------------------------|
-| User clicks Pay twice â†’ double charge | Idempotency handling |
-| Payment fails â†’ ugly error | Graceful error responses |
+| User clicks Pay twice - double charge | Idempotency handling |
+| Payment fails - ugly error | Graceful error responses |
 | "Is this secure?" question | Tokenization, no raw cards |
-| Demo with test data â†’ crashes | Validation for all inputs |
+| Demo with test data - crashes | Validation for all inputs |
 
 ### Translating to Constraints
 
@@ -263,11 +263,11 @@ Turn scenarios into numbered requirements (your AI will reference these):
 
 Verify your spec prevents Thursday night rework:
 
-- [ ] **Double-click safe?** Idempotency handling specified âœ“
-- [ ] **Error states?** Graceful failures, not crashes âœ“
-- [ ] **Audit-ready?** Logging requirements defined âœ“
-- [ ] **Demoable?** Happy path clearly specified âœ“
-- [ ] **Defensible?** Can answer "is this secure?" âœ“
+- [ ] **Double-click safe?** Idempotency handling specified
+- [ ] **Error states?** Graceful failures, not crashes
+- [ ] **Audit-ready?** Logging requirements defined
+- [ ] **Demoable?** Happy path clearly specified
+- [ ] **Defensible?** Can answer "is this secure?"
 
 **If any item is unchecked, that's your Thursday night rework waiting to happen.**
 

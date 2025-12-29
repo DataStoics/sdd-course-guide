@@ -4,7 +4,7 @@ layout: default
 parent: Labs
 nav_order: 4
 ---
-# Lab 1.3: First Working Implementation â€” Tuesday/Wednesday Build
+# Lab 1.3: First Working Implementation -- Tuesday/Wednesday Build
 
 **Duration**: 120 minutes  
 **Day**: 1 (Afternoon)  
@@ -14,16 +14,16 @@ nav_order: 4
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified â€” including the double-click that would've crashed your contrast exercise code.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified -- including the double-click that would've crashed your Lab 0 code.
 
 ---
 
 ## Where We Are in the Week
 
 ```
-Monday AM:   âœ… Spec written (Lab 1.1)
-Monday PM:   âœ… Tech decisions made (Lab 1.2)
-Tuesday:     ðŸ‘‰ YOU ARE HERE â€” Building
+Monday AM:   [DONE] Spec written (Lab 1.1)
+Monday PM:   [DONE] Tech decisions made (Lab 1.2)
+Tuesday:     [HERE] Building
 Wednesday:   Finishing implementation
 Thursday:    Polish and integrate
 Friday:      Demo day
@@ -69,13 +69,17 @@ Review the task breakdown and understand the order:
 
 ```
 models.py (no dependencies)
-    â†“
+    |
+    v
 config.py (no dependencies)
-    â†“
+    |
+    v
 payment.py (depends on models.py, config.py)
-    â†“
+    |
+    v
 test_payment.py (depends on payment.py)
-    â†“
+    |
+    v
 security scan (depends on all code)
 ```
 
@@ -227,7 +231,7 @@ async def process_payment(request: PaymentRequest):
 
 ---
 
-## Step 6: First Security Scan â€” Attempt 1 (10 min)
+## Step 6: First Security Scan -- Attempt 1 (10 min)
 
 Run the security scan:
 
@@ -264,7 +268,7 @@ logger.info("request", token_present=bool(request.token))
 
 ---
 
-## Step 7: Second Security Scan â€” Attempt 2 (10 min)
+## Step 7: Second Security Scan -- Attempt 2 (10 min)
 
 After fixing the first round:
 
@@ -279,7 +283,7 @@ bandit -r src/
 
 ---
 
-## Step 8: Final Security Scan â€” Attempt 3 (5 min)
+## Step 8: Final Security Scan -- Attempt 3 (5 min)
 
 If any blocking issues remain, address them:
 
@@ -314,7 +318,7 @@ from src.app.main import app
 
 @pytest.mark.asyncio
 async def test_successful_payment():
-    """Acceptance scenario 1: Valid token â†’ succeeded status."""
+    """Acceptance scenario 1: Valid token - succeeded status."""
     async with AsyncClient(app=app, base_url="http://test") as client:
         response = await client.post(
             "/pay",
@@ -334,7 +338,7 @@ async def test_successful_payment():
 
 @pytest.mark.asyncio
 async def test_duplicate_request():
-    """Acceptance scenario 2: Same idempotency key â†’ original response."""
+    """Acceptance scenario 2: Same idempotency key - original response."""
     async with AsyncClient(app=app, base_url="http://test") as client:
         # First request
         response1 = await client.post(
@@ -364,7 +368,7 @@ async def test_duplicate_request():
 
 @pytest.mark.asyncio
 async def test_missing_idempotency_key():
-    """Acceptance scenario 4: No idempotency key â†’ rejected."""
+    """Acceptance scenario 4: No idempotency key - rejected."""
     async with AsyncClient(app=app, base_url="http://test") as client:
         response = await client.post(
             "/pay",
@@ -440,7 +444,7 @@ Your lab is complete when:
 - [ ] `src/app/models.py` has PaymentRequest, PaymentResponse, PaymentError
 - [ ] `tests/test_payment.py` exists with acceptance scenario tests
 - [ ] `semgrep` shows 0 critical + 0 high findings
-- [ ] `pytest --cov` shows â‰¥60% coverage
+- [ ] `pytest --cov` shows 60%+ coverage
 - [ ] `curl localhost:8000/pay` returns valid response
 
 ### Validate Your Work
@@ -453,11 +457,11 @@ python validate_lab.py --lab 1.3 --repo . --security-scan --coverage-check
 
 ## Reflection Questions
 
-1. **Compare to contrast exercise**: Your payment endpoint handles double-clicks. Did your contrast exercise code? What made the difference?
+1. **Compare to Lab 0**: Your payment endpoint handles double-clicks. Did your Lab 0 code? What made the difference?
 
 2. **The spec-to-code path**: Can you trace every function back to a spec requirement (FR-xxx)? This is what investors mean by "production-ready."
 
-3. **AI behavior with spec**: How much did the AI get right on the first try? The spec gave it context your contrast exercise prompt didn't have.
+3. **AI behavior with spec**: How much did the AI get right on the first try? The spec gave it context your Lab 0 prompt didn't have.
 
 4. **Thursday confidence**: Could you demo this tomorrow if you had to? What would you polish?
 
@@ -470,7 +474,7 @@ python validate_lab.py --lab 1.3 --repo . --security-scan --coverage-check
 | Logging raw tokens | Security team stops the demo |
 | Missing idempotency cache | Double-click creates duplicate charge |
 | No gateway error handling | First network hiccup crashes the demo |
-| Tests mock everything | "Can you show it working?" â€” awkward silence |
+| Tests mock everything | "Can you show it working?" -- awkward silence |
 | Coverage < 60% | Can't prove untested paths work |
 
 ---
@@ -481,6 +485,6 @@ It's **Wednesday morning**. PM walks over:
 
 > "Great progress! The investors also want to see order history. Can you add that by Thursday?"
 
-In **Lab 1.4**, you'll handle this scope addition â€” with a spec. No Thursday night panic.
+In **Lab 1.4**, you'll handle this scope addition -- with a spec. No Thursday night panic.
 
 **Your payment feature works. Now let's see if the discipline scales.**

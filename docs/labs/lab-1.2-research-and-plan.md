@@ -14,16 +14,16 @@ nav_order: 3
 
 ## Learning Objective
 
-Use `/speckit.research` to document technology decisions and trade-offs **before** implementing. Understand that research creates an auditable record of **why** you chose specific technologies â€” not just what you chose.
+Use `/speckit.research` to document technology decisions and trade-offs **before** implementing. Understand that research creates an auditable record of **why** you chose specific technologies -- not just what you chose.
 
 ---
 
 ## The SDD Workflow
 
 ```
-âœ… Lab 1.1: specify init . â†’ spec.md (DONE)
-ðŸ‘‰ Lab 1.2: /speckit.research â†’ research.md â†’ plan.md (YOU ARE HERE)
-   Lab 1.3: /speckit.tasks â†’ tasks.md â†’ implementation
+[DONE] Lab 1.1: specify init . - spec.md
+[HERE] Lab 1.2: /speckit.research - research.md - plan.md
+       Lab 1.3: /speckit.tasks - tasks.md - implementation
 ```
 
 **Why research before planning?**
@@ -82,7 +82,7 @@ For each major decision, you should see alternatives considered:
 | In-memory dict | Simple, no deps | Lost on restart, not distributed |
 | Database | Persistent | Slower, overkill for 60s TTL |
 
-**Decision**: Redis â€” matches our 60-second TTL requirement, handles distributed deployments
+**Decision**: Redis -- matches our 60-second TTL requirement, handles distributed deployments
 
 ### 2b. Constraint Traceability
 
@@ -131,10 +131,10 @@ The plan should include:
 
 ## Project Structure
 src/app/
-â”œâ”€â”€ main.py          # FastAPI entry point
-â”œâ”€â”€ models.py        # Pydantic models
-â”œâ”€â”€ payment.py       # Payment service
-â””â”€â”€ config.py        # Configuration
+    main.py          # FastAPI entry point
+    models.py        # Pydantic models
+    payment.py       # Payment service
+    config.py        # Configuration
 
 ## Dependencies
 fastapi>=0.100.0
@@ -230,7 +230,7 @@ python validate_lab.py --lab 1.2 --repo .
 | WHY we considered alternatives | WHAT we're building |
 | Auditable decision record | Implementation blueprint |
 
-**Both are governance artifacts** â€” if an auditor asks "why Redis?", you point to research.md.
+**Both are governance artifacts** -- if an auditor asks "why Redis?", you point to research.md.
 
 ---
 
@@ -287,9 +287,9 @@ When using external sources, document them:
 | Perplexity search | 2025-12-29 | No critical CVEs |
 ```
 
-**This creates an auditable trail** â€” you can prove decisions were based on current, verified information.
+**This creates an auditable trail** -- you can prove decisions were based on current, verified information.
 
-> ðŸ“– **See Also**: [MCP Integration Guide](../reference/mcp-integration.md) for setup details
+> **See Also**: [MCP Integration Guide](../reference/mcp-integration.md) for setup details
 
 ---
 
@@ -297,4 +297,4 @@ When using external sources, document them:
 
 In **Lab 1.3**, you'll use `/speckit.tasks` to break down the plan into implementable tasks, then use `/speckit.implement` to generate compliant payment endpoint code.
 
-**The research and plan are your implementation contract.** Lab 1.3 implements exactly what's documented â€” no more, no less.
+**The research and plan are your implementation contract.** Lab 1.3 implements exactly what's documented -- no more, no less.

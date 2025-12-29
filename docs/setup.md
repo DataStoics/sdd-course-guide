@@ -317,4 +317,4 @@ Post in the course discussion forum or contact your instructor.
 
 ## See You on Day 1!
 
-First activity: A hands-on contrast exercise where you will build something with AI -- then discover why specs change everything.
+First activity: A hands-on contrast lab (Lab 0) where you will build something with AI -- then discover why specs change everything.

@@ -22,7 +22,7 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 | Time | Lab | What You'll Build |
 |:-----|:----|:------------------|
-| Morning | [Contrast Exercise](contrast-exercise) | 30 min of chaos -- AI coding without guidance |
+| Morning | [Lab 0: AI Without Specs](lab-0-ai-without-specs) | 30 min of chaos -- AI coding without guidance |
 | Morning | [Lab 1.1: Init and Spec](lab-1.1-init-and-spec) | Your first governance-ready specification |
 | Afternoon | [Lab 1.2: Research and Plan](lab-1.2-research-and-plan) | Technology decisions with trade-off docs |
 | Afternoon | [Lab 1.3: Implementation](lab-1.3-implementation) | Working payment endpoint with tests |
@@ -54,7 +54,7 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 | Session | Focus | Labs |
 |:--------|:------|:-----|
-| Day 1 Morning | Contrast + Specify | Contrast Exercise, Lab 1.1 |
+| Day 1 Morning | Contrast + Specify | Lab 0, Lab 1.1 |
 | Day 1 Afternoon | Research + Build | Labs 1.2, 1.3 |
 | Day 2 Morning | Second Feature | Lab 1.4 |
 | Day 2 Afternoon | Integrate + Ship | Labs 1.5, 1.6 |

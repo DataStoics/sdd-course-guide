@@ -13,7 +13,7 @@ Spec-Driven Development is a framework for getting consistent, production-ready 
 
 ## The Core Problem
 
-AI coding assistants are powerful but unpredictable. Ask three developers to prompt the same AI for a payment endpoint, and you'll get three different implementationsâ€”different error handling, different security patterns, different assumptions.
+AI coding assistants are powerful but unpredictable. Ask three developers to prompt the same AI for a payment endpoint, and you'll get three different implementations -- different error handling, different security patterns, different assumptions.
 
 **In regulated environments, this is dangerous.**
 
@@ -21,7 +21,7 @@ AI coding assistants are powerful but unpredictable. Ask three developers to pro
 
 ## The SDD Solution
 
-Write the specification first. Not documentationâ€”a machine-readable contract that:
+Write the specification first. Not documentation -- a machine-readable contract that:
 
 1. **Constrains** what the AI can produce
 2. **Specifies** exactly what success looks like
@@ -68,11 +68,11 @@ The AI implements soft delete with retention policies. Audit trail built in.
 ## The SDD Workflow
 
 \\\
-1. SPECIFY  â†’  Write governance-aware spec
-2. RESEARCH â†’  Document technology decisions
-3. PLAN     â†’  Break down into tasks
-4. IMPLEMENT â†’  AI generates compliant code
-5. VERIFY   â†’  Tests + security scan
+1. SPECIFY   -  Write governance-aware spec
+2. RESEARCH  -  Document technology decisions
+3. PLAN      -  Break down into tasks
+4. IMPLEMENT -  AI generates compliant code
+5. VERIFY    -  Tests + security scan
 \\\
 
 Each step produces an artifact. Each artifact feeds the next step.
@@ -81,10 +81,10 @@ Each step produces an artifact. Each artifact feeds the next step.
 
 ## Why This Works
 
-1. **Specs are prompts** â€” A well-structured spec is the ultimate prompt engineering
-2. **Governance is code** â€” Compliance requirements become testable assertions
-3. **AI is consistent** â€” Same spec = same output across tools and sessions
-4. **Humans stay in control** â€” You define what; AI implements how
+1. **Specs are prompts** -- A well-structured spec is the ultimate prompt engineering
+2. **Governance is code** -- Compliance requirements become testable assertions
+3. **AI is consistent** -- Same spec = same output across tools and sessions
+4. **Humans stay in control** -- You define what; AI implements how
 
 ---
 
@@ -92,17 +92,17 @@ Each step produces an artifact. Each artifact feeds the next step.
 
 ### Writing Effective Specs
 
-âœ… **Be explicit about constraints** â€” If it's not in the spec, the AI will decide  
-âœ… **Include acceptance scenarios** â€” Given/When/Then format forces clarity  
-âœ… **Specify error cases** â€” How should the system fail?  
-âœ… **Define boundaries** â€” What's explicitly out of scope?
+**Be explicit about constraints** -- If it's not in the spec, the AI will decide  
+**Include acceptance scenarios** -- Given/When/Then format forces clarity  
+**Specify error cases** -- How should the system fail?  
+**Define boundaries** -- What's explicitly out of scope?
 
 ### Common Mistakes
 
-âŒ **Vague requirements** â€” "Handle errors appropriately" means nothing  
-âŒ **Missing governance** â€” Compliance bolted on later is expensive  
-âŒ **Implementation in specs** â€” Describe what, not how  
-âŒ **No acceptance criteria** â€” If you can't test it, you can't verify it
+**Vague requirements** -- "Handle errors appropriately" means nothing  
+**Missing governance** -- Compliance bolted on later is expensive  
+**Implementation in specs** -- Describe what, not how  
+**No acceptance criteria** -- If you can't test it, you can't verify it
 
 ---
 
@@ -120,5 +120,5 @@ After implementing SDD, teams typically see:
 ---
 
 {: .note }
-> This methodology is practiced hands-on in the [Labs](labs/). You'll experience the difference between AI coding without specs (Contrast Exercise) and with specs (Labs 1.1-1.6).
+> This methodology is practiced hands-on in the [Labs](labs/). You'll experience the difference between AI coding without specs (Lab 0) and with specs (Labs 1.1-1.6).
 
