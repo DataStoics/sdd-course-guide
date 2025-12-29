@@ -26,27 +26,27 @@ Most AI coding fails because we skip the thinking. SDD makes the thinking explic
 
 ```mermaid
 flowchart TB
-    subgraph GOVERN["ðŸ›ï¸ GOVERN"]
+    subgraph GOVERN["GOVERN"]
         G1["Constitution"]
         G2["Security & Compliance Rules"]
         G3["Immutable Constraints"]
     end
     
-    subgraph SPECIFY["ðŸ“‹ SPECIFY"]
+    subgraph SPECIFY["SPECIFY"]
         S1["Vague Idea"]
         S2["Clarifying Questions"]
         S3["Robust Specification"]
         S1 --> S2 --> S3
     end
     
-    subgraph PLAN["ðŸ”¬ PLAN"]
+    subgraph PLAN["PLAN"]
         P1["Research Options"]
         P2["Technical Decisions"]
         P3["Implementation Blueprint"]
         P1 --> P2 --> P3
     end
     
-    subgraph IMPLEMENT["ðŸ› ï¸ IMPLEMENT"]
+    subgraph IMPLEMENT["IMPLEMENT"]
         I1["AI Generates Code"]
         I2["Tests & Security Scan"]
         I3["Production Ready"]
@@ -61,13 +61,13 @@ flowchart TB
     PLAN -->|"Human approves design"| IMPLEMENT
 ```
 
-**What makes this different:** The spec isn't just a documentâ€”it's a **conversation** that surfaces hidden assumptions before they become bugs.
+**What makes this different:** The spec is not just a document -- it is a **conversation** that surfaces hidden assumptions before they become bugs.
 
 ---
 
 ## From Vague to Validated
 
-The magic of SDD is the **clarification process**. AI doesn't guessâ€”you decide.
+The magic of SDD is the **clarification process**. AI does not guess -- you decide.
 
 | You Say | AI Asks | You Clarify | Spec Captures |
 |:--------|:--------|:------------|:--------------|
