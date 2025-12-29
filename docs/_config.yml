@@ -38,6 +38,10 @@ back_to_top_text: "Back to top"
 # Code copy button
 enable_copy_code_button: true
 
+# Mermaid diagrams
+mermaid:
+  version: "10.6.1"
+
 # Callouts
 callouts:
   warning:

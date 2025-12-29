@@ -24,18 +24,33 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 Most AI coding fails because we skip the thinking. SDD makes the thinking explicit.
 
-`
-CONSTITUTION          SPECIFY              PLAN                 IMPLEMENT
-     |                    |                   |                      |
-     v                    v                   v                      v
-+-----------+      +------------+      +------------+      +--------------+
-| Immutable |  ->  | Interview  |  ->  | Technical  |  ->  | AI Generates |
-| Rules     |      | & Clarify  |      | Decisions  |      | Code         |
-+-----------+      +------------+      +------------+      +--------------+
-     |                    |                   |                      |
-  Security            What does            Which DB?            Tests pass.
-  Standards           "fast" mean?         What libs?           Scan clean.
-  Compliance          Edge cases?          API design?          Ship it.
+`mermaid
+flowchart LR
+    subgraph C["CONSTITUTION"]
+        C1["Immutable Rules"]
+        C2["Security Standards"]
+        C3["Compliance Reqs"]
+    end
+    
+    subgraph S["SPECIFY"]
+        S1["Interview & Clarify"]
+        S2["What does 'fast' mean?"]
+        S3["Edge cases?"]
+    end
+    
+    subgraph P["PLAN"]
+        P1["Technical Decisions"]
+        P2["Which DB? What libs?"]
+        P3["API design?"]
+    end
+    
+    subgraph I["IMPLEMENT"]
+        I1["AI Generates Code"]
+        I2["Tests pass"]
+        I3["Scan clean. Ship it."]
+    end
+    
+    C --> S --> P --> I
 `
 
 **Each phase has validation.** You don't move forward until the spec is clear.
@@ -72,15 +87,6 @@ The AI didn't guess these requirements. **You defined them through structured qu
 By Friday, you'll have a working checkout system and a repeatable process.
 
 [Start the Labs](labs/){: .btn .btn-outline .fs-5 }
-
----
-
-## Quick Navigation
-
-| Getting Ready | Hands-On | Go Deeper |
-|:--------------|:---------|:----------|
-| [Pre-Course Setup](setup) | [Labs](labs/) | [SDD Methodology](methodology) |
-| [AI Assistant Guides](ai-assistants/) | [Checkpoint Repos](https://github.com/DataStoics?q=lab-checkpoint) | [What's Next](whats-next) |
 
 ---
 
