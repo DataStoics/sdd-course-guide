@@ -19,7 +19,7 @@ This course teaches **Spec-Driven Development** -- a methodology that works with
 
 By the end of setup, you need:
 1. A GitHub account
-2. A development environment (Codespaces or local Docker)
+2. A development environment (Codespaces recommended)
 3. An AI coding assistant in **agentic mode**
 
 ---
@@ -73,13 +73,33 @@ Wait 2-3 minutes for the container to build. Gemini CLI is pre-installed.
 
 **Verify it works:**
 ```bash
-python --version    # Should show 3.12+
+python --version    # Should show 3.12.x
 gemini --version    # Should show installed version
 ```
 
 **Save your work later:** When you commit, VS Code will prompt "Publish to GitHub" -- this creates your own copy.
 
 **Official docs:** [GitHub Codespaces Quickstart](https://docs.github.com/en/codespaces/getting-started/quickstart)
+
+---
+
+## How You'll Work During the Course
+
+You'll have **two browser tabs** open:
+
+| Tab | Purpose |
+|:----|:--------|
+| **Tab 1: Course Guide** | [datastoics.github.io/sdd-course-guide](https://datastoics.github.io/sdd-course-guide) -- read lab instructions |
+| **Tab 2: Codespace** | Your development environment -- write code with AI assistant |
+
+**Workflow:**
+1. Read the lab instructions in Tab 1
+2. Switch to Tab 2 and tell your AI assistant what to do
+3. Verify results match the lab's success criteria
+4. Move to next section
+
+{: .tip }
+> Keep both tabs visible if you have a large monitor, or use split screen.
 
 ---
 
