@@ -112,7 +112,39 @@ If your AI responds with information about specifications and the `/speckit.spec
 
 ---
 
-## Step 2: Create Your First Spec with /speckit.specify (15 min)
+## Step 2: Establish Project Principles with /speckit.constitution (5 min)
+
+Before writing specs, establish the foundational principles that will guide all development. This is your project's "constitution" - the non-negotiable rules.
+
+Run the constitution command with your demo context:
+
+```
+/speckit.constitution "E-commerce checkout demo for Friday investor pitch. Must look professional, handle edge cases gracefully, and be production-path code (not throwaway)."
+```
+
+### What the Constitution Defines
+
+The generated constitution (`.specify/memory/constitution.md`) establishes:
+
+| Principle | Example for Demo |
+|-----------|------------------|
+| **Business Context** | Investor demo, must impress |
+| **Quality Bar** | Production-path, not prototype |
+| **User Focus** | Professional UX, clear errors |
+| **Technical Standards** | Idempotency, audit trails |
+
+### Why This Matters
+
+Every spec you write will inherit these principles. When your AI generates code later, it knows:
+- This isn't a hackathon throwaway
+- Error handling matters (investors are watching)
+- Security questions will be asked
+
+**Review the generated constitution** before proceeding. This is the foundation everything else builds on.
+
+---
+
+## Step 3: Create Your First Spec with /speckit.specify (15 min)
 
 Now use the AI-assisted specification command. This single command handles everything:
 
@@ -130,7 +162,7 @@ When you run `/speckit.specify`, the spec-kit workflow:
 4. **Drafts the spec.md** with User Scenarios, Functional Requirements, and Success Criteria
 5. **Runs a quality checklist** to validate the spec is ready for planning
 
-You do NOT need to manually create directories or files - spec-kit handles this for you.
+The spec inherits principles from your constitution automatically.
 
 ### Review the Generated Spec
 
@@ -152,7 +184,7 @@ The generated spec should include sections for:
 
 ---
 
-## Step 3: Refine What "Demoable" Actually Means (25 min)
+## Step 4: Refine What "Demoable" Actually Means (20 min)
 
 **This is where Thursday night rework gets prevented.** What would embarrass you in front of investors?
 
@@ -204,7 +236,7 @@ Investors spot fake demos. Logging proves the system actually works:
 
 ---
 
-## Step 4: Write Demo Scenarios (20 min)
+## Step 5: Write Demo Scenarios (15 min)
 
 These are the moments you'll show investors. Each scenario becomes a test AND a demo script.
 
@@ -255,7 +287,7 @@ These are the moments you'll show investors. Each scenario becomes a test AND a 
 
 ---
 
-## Step 5: Define Requirements (10 min)
+## Step 6: Define Requirements (5 min)
 
 Turn scenarios into numbered requirements (your AI will reference these):
 
@@ -273,7 +305,7 @@ Turn scenarios into numbered requirements (your AI will reference these):
 
 ---
 
-## Step 6: The "Ship Thursday" Checklist (5 min)
+## Step 7: The "Ship Thursday" Checklist (5 min)
 
 Verify your spec prevents Thursday night rework:
 
@@ -287,7 +319,7 @@ Verify your spec prevents Thursday night rework:
 
 ---
 
-## Step 7: Commit Your Work (5 min)
+## Step 8: Commit Your Work (2 min)
 
 Your work is already on a feature branch. Commit your refined spec:
 
@@ -305,6 +337,7 @@ Note: We're adding all files (including the AI config from `specify init .`).
 Your lab is complete when:
 
 - [ ] AI assistant configured (`.specify/` directory and agent config folder exist)
+- [ ] Constitution created (`.specify/memory/constitution.md` exists)
 - [ ] You're on a feature branch (created by `/speckit.specify`)
 - [ ] `specs/NNN-payment-checkout/spec.md` exists (NNN is the feature number)
 - [ ] Spec contains constraints section (idempotency, data handling, audit)
@@ -314,14 +347,15 @@ Your lab is complete when:
 
 ### Validate Your Work
 
-Check your branch and spec structure:
+Check your setup and spec structure:
 
 ```bash
+cat .specify/memory/constitution.md
 git branch --show-current
 ls specs/
 ```
 
-You should see your feature branch name and the spec directory created by `/speckit.specify`.
+You should see your constitution, feature branch name, and spec directory.
 
 ---
 
