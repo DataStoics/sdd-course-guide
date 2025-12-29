@@ -50,15 +50,12 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 ---
 
-## The Week at a Glance
+## Course at a Glance
 
-| Day | Focus | Labs |
-|:----|:------|:-----|
-| Monday AM | Spec + Plan | Labs 1.1-1.2 |
-| Monday PM | Research decisions | |
-| Tuesday | Build payment | Lab 1.3 |
-| Wednesday AM | Order spec | Lab 1.4 |
-| Wednesday PM | Integration | Lab 1.5 |
-| Thursday | Production polish | Lab 1.6 |
-| Friday | Demo day! | |
+| Session | Focus | Labs |
+|:--------|:------|:-----|
+| Day 1 Morning | Contrast + Specify | Contrast Exercise, Lab 1.1 |
+| Day 1 Afternoon | Research + Build | Labs 1.2, 1.3 |
+| Day 2 Morning | Second Feature | Lab 1.4 |
+| Day 2 Afternoon | Integrate + Ship | Labs 1.5, 1.6 |
 
