@@ -130,9 +130,10 @@ For offline work or faster performance.
 
 ## Step 3: AI Coding Assistant
 
-Choose ONE. All three support the SDD workflow we teach.
+Choose ONE. All three support the SDD workflow we teach. Click to expand setup instructions:
 
-### Gemini CLI (Recommended - Free)
+<details markdown="block">
+<summary><strong>Gemini CLI</strong> (Recommended - Free)</summary>
 
 Best choice for this course. Free tier with generous limits.
 
@@ -151,9 +152,10 @@ gemini
 
 **Official docs:** [Gemini CLI on GitHub](https://github.com/google-gemini/gemini-cli)
 
----
+</details>
 
-### GitHub Copilot
+<details markdown="block">
+<summary><strong>GitHub Copilot</strong> ($10/month or free for students)</summary>
 
 Best if you already use GitHub or want the tightest VS Code integration.
 
@@ -163,15 +165,18 @@ Best if you already use GitHub or want the tightest VS Code integration.
 | Pro | $10/month | 300 agent requests/month |
 | Student/Educator | Free (Pro) | Via GitHub Education |
 
-**Setup:** Install "GitHub Copilot" and "GitHub Copilot Chat" extensions in VS Code, then sign in.
-
-<!-- SCREENSHOT: Show Copilot Chat panel open in VS Code with a sample prompt -->
+**Setup:**
+1. Install "GitHub Copilot" extension in VS Code
+2. Install "GitHub Copilot Chat" extension in VS Code
+3. Sign in with your GitHub account
+4. Select "Agent" mode in the Chat panel (not just "Chat")
 
 **Official docs:** [GitHub Copilot Quickstart](https://docs.github.com/en/copilot/quickstart)
 
----
+</details>
 
-### Claude Code
+<details markdown="block">
+<summary><strong>Claude Code</strong> ($20/month required)</summary>
 
 Best for complex reasoning and long context windows. Requires paid subscription.
 
@@ -180,9 +185,17 @@ Best for complex reasoning and long context windows. Requires paid subscription.
 | Pro | $20/month | Required for Claude Code CLI |
 | Max | $100+/month | Higher usage limits |
 
-**Setup:** Follow the official installation guide -- Claude Code runs as a CLI tool.
+**Setup:**
+```bash
+npm install -g @anthropic-ai/claude-code
+claude
+```
+
+Sign in with your Anthropic account when prompted.
 
 **Official docs:** [Claude Code Documentation](https://docs.anthropic.com/en/docs/claude-code)
+
+</details>
 
 ---
 
