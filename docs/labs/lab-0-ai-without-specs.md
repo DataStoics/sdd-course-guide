@@ -42,16 +42,16 @@ That's all the guidance you get. No spec. No constraints. Just you, your AI assi
 
 Depending on which tool you're using:
 
-<details open>
+<details open markdown="block">
 <summary><strong>Gemini CLI</strong> (Recommended)</summary>
 
-1. Open terminal in VS Code: `` Ctrl+` `` (backtick)
+1. Open terminal in VS Code: `Ctrl+` ` (backtick)
 2. Run: `gemini`
 3. Sign in with your Google account if prompted
 
 </details>
 
-<details>
+<details markdown="block">
 <summary><strong>GitHub Copilot</strong></summary>
 
 1. Open Copilot Chat: `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Alt+I` (Mac)
@@ -60,10 +60,10 @@ Depending on which tool you're using:
 
 </details>
 
-<details>
+<details markdown="block">
 <summary><strong>Claude Code</strong></summary>
 
-1. Open terminal in VS Code: `` Ctrl+` `` (backtick)
+1. Open terminal in VS Code: `Ctrl+` ` (backtick)
 2. Run: `claude`
 3. Sign in with your Anthropic account if prompted
 
