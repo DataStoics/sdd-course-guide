@@ -1,5 +1,4 @@
 ﻿---
-layout: home
 title: SDD Foundations Course 1
 ---
 
@@ -22,12 +21,12 @@ Welcome to the Spec-Driven Development Foundations course!
 | [Lab 1.3](labs/lab-1.3-implementation.md) | 120 min | First Working Implementation |
 | [Lab 1.4](labs/lab-1.4-order-spec.md) | 120 min | Second Feature: Order Management |
 | [Lab 1.5](labs/lab-1.5-integration.md) | 150 min | Integration |
-| [Lab 1.6](labs/lab-1.6-production.md) | 75 min | Production Readiness |
+| [Lab 1.6](labs/lab-1.6-production.md) | 90 min | Production Readiness |
 
 ## Template Repository
 
 Fork this repository to get started:
-**[sdd-greenfield-template](https://github.com/[instructor]/sdd-greenfield-template)**
+**[sdd-greenfield-template](https://github.com/DataStoics/sdd-greenfield-template)**
 
 ## Reference Materials
 
