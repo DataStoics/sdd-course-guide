@@ -13,24 +13,6 @@ You can now build compliant software from scratch using the spec-first methodolo
 
 ---
 
-## Join the Community
-
-Connect with other Spec-Driven Development practitioners:
-
-| Resource | Purpose |
-|----------|---------|
-| [GitHub Discussions](https://github.com/DataStoics/sdd-course-guide/discussions) | Ask questions, share wins, troubleshoot issues |
-
-### Share Your Experience
-
-We'd love to hear how you're applying Spec-Driven Development:
-- **Case studies**: Did spec-first save your Thursday night? Tell us!
-- **Blog posts**: Write about your experience (we'll promote it)
-
-Email your story to [stories@datastoics.io](mailto:stories@datastoics.io).
-
----
-
 ## Course 2: Brownfield Legacy Flow
 
 Most real-world work isn't greenfield. You inherit legacy systems with implicit requirements, undocumented business logic, and technical debt.
@@ -174,6 +156,5 @@ Now go build something greatspec-first.
 ## Stay Connected
 
 - [Course Guide](https://datastoics.github.io/sdd-course-guide)
-- [GitHub Discussions](https://github.com/DataStoics/sdd-course-guide/discussions)
 - [Starter Template](https://github.com/DataStoics/sdd-greenfield-starter)
 - [Email Training Team](mailto:training@datastoics.io)
