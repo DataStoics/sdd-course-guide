@@ -1,0 +1,58 @@
+﻿title: SDD Foundations Course
+description: Spec-Driven Development - Professional AI-Assisted Development Training
+remote_theme: just-the-docs/just-the-docs
+baseurl: /sdd-course-guide
+url: https://datastoics.github.io
+
+# Color scheme (light/dark)
+color_scheme: light
+
+# Logo and branding
+# logo: "/assets/images/logo.png"
+
+# Aux links (top right)
+aux_links:
+  "GitHub":
+    - "https://github.com/DataStoics/sdd-course-guide"
+
+aux_links_new_tab: true
+
+# Footer
+footer_content: "&copy; 2025 DataStoics. SDD Foundations Course."
+
+# Navigation
+nav_sort: case_insensitive
+
+# Search
+search_enabled: true
+search:
+  heading_level: 2
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+
+# Back to top link
+back_to_top: true
+back_to_top_text: "Back to top"
+
+# Code copy button
+enable_copy_code_button: true
+
+# Mermaid diagrams
+mermaid:
+  version: "10.6.1"
+
+# Callouts
+callouts:
+  warning:
+    title: Warning
+    color: red
+  note:
+    title: Note
+    color: blue
+  tip:
+    title: Tip
+    color: green
+  important:
+    title: Important
+    color: yellow
