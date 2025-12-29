@@ -1,12 +1,17 @@
+﻿---
+title: MCP Integration
+parent: Reference
+nav_order: 3
+---
 # Integrating External Systems with SDD
 
-> **📍 Course 2 Preview**: This guide introduces concepts covered in depth in **SDD Foundations Course 2: Brownfield Repo Flow**. In Course 1, these are optional enhancements. In Course 2, they become essential for working with legacy systems.
+> **ðŸ“ Course 2 Preview**: This guide introduces concepts covered in depth in **SDD Foundations Course 2: Brownfield Repo Flow**. In Course 1, these are optional enhancements. In Course 2, they become essential for working with legacy systems.
 
 ---
 
 ## Why This Matters for Brownfield
 
-In Course 1 (Greenfield), you build from scratch — your AI assistant's training data is often sufficient.
+In Course 1 (Greenfield), you build from scratch â€” your AI assistant's training data is often sufficient.
 
 In Course 2 (Brownfield), you'll work with:
 - **Existing codebases** that need context
@@ -57,26 +62,26 @@ MCP (Model Context Protocol) servers bridge this gap by connecting your AI assis
 ## Preview: Course 2 Workflow
 
 ```
-┌─────────────────────────────────────┐
-│ 1. DISCOVER (understand legacy)     │
-│    - Connect to existing codebase   │
-│    - Query internal documentation   │
-│    - Map undocumented behaviors     │
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ 2. SPECIFY (create missing specs)   │
-│    - Generate specs FROM code       │
-│    - Validate against internal docs │
-│    - Fill governance gaps           │
-└──────────────┬──────────────────────┘
-               ▼
-┌─────────────────────────────────────┐
-│ 3. MODERNIZE (guided by specs)      │
-│    - Research migration paths       │
-│    - Check security implications    │
-│    - Align with current standards   │
-└─────────────────────────────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 1. DISCOVER (understand legacy)     â”‚
+â”‚    - Connect to existing codebase   â”‚
+â”‚    - Query internal documentation   â”‚
+â”‚    - Map undocumented behaviors     â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+               â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 2. SPECIFY (create missing specs)   â”‚
+â”‚    - Generate specs FROM code       â”‚
+â”‚    - Validate against internal docs â”‚
+â”‚    - Fill governance gaps           â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”¬â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
+               â–¼
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚ 3. MODERNIZE (guided by specs)      â”‚
+â”‚    - Research migration paths       â”‚
+â”‚    - Check security implications    â”‚
+â”‚    - Align with current standards   â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ---
@@ -114,5 +119,5 @@ See each server's documentation for setup details.
 ## See Also
 
 - [Course 2 Preview Slides](../../slides/course2-preview.md)
-- [Lab 1.6: Production Readiness](../lab-instructions/lab-1.6-production-ready.md) — includes Course 2 teaser
+- [Lab 1.6: Production Readiness](../lab-instructions/lab-1.6-production-ready.md) â€” includes Course 2 teaser
 - [MCP Specification](https://modelcontextprotocol.io)

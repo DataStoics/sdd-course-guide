@@ -1,3 +1,8 @@
+﻿---
+title: GitHub Copilot
+parent: AI Assistant Tips
+nav_order: 1
+---
 # GitHub Copilot Tips for SDD Labs
 
 This guide helps you get the most out of GitHub Copilot during the spec-driven development labs.
@@ -21,9 +26,9 @@ This guide helps you get the most out of GitHub Copilot during the spec-driven d
 
 When running the `/speckit.specify` command:
 
-- **Be specific** — Copilot uses your spec as context
-- **Review generated artifacts** — Check spec.md, research.md
-- **Iterate** — Refine if something is unclear
+- **Be specific** â€” Copilot uses your spec as context
+- **Review generated artifacts** â€” Check spec.md, research.md
+- **Iterate** â€” Refine if something is unclear
 
 **Tip**: Keep the spec visible in a split pane while coding. Copilot references open files.
 
@@ -31,9 +36,9 @@ When running the `/speckit.specify` command:
 
 During implementation:
 
-- **Open related spec files** — Copilot uses them as context
-- **Reference contracts** — When generating API code, open the relevant contract file
-- **Use @workspace** — Query the entire workspace for context
+- **Open related spec files** â€” Copilot uses them as context
+- **Reference contracts** â€” When generating API code, open the relevant contract file
+- **Use @workspace** â€” Query the entire workspace for context
 
 **Example prompt**:
 ```

@@ -1,3 +1,8 @@
+﻿---
+title: Security Patterns
+parent: Quick Reference
+nav_order: 3
+---
 # Security Patterns Quick Reference
 
 Common secure coding patterns for SDD implementations.
@@ -6,7 +11,7 @@ Common secure coding patterns for SDD implementations.
 
 ## Input Validation
 
-### ✅ Do: Validate All Input
+### âœ… Do: Validate All Input
 ```python
 from pydantic import BaseModel, Field, validator
 
@@ -23,7 +28,7 @@ class PaymentRequest(BaseModel):
         return v
 ```
 
-### ❌ Don't: Trust User Input
+### âŒ Don't: Trust User Input
 ```python
 # NEVER do this
 amount = request.json['amount']  # No validation
@@ -34,7 +39,7 @@ query = f"SELECT * FROM orders WHERE id = {user_input}"  # SQL injection
 
 ## Authentication & Authorization
 
-### ✅ Do: Verify on Every Request
+### âœ… Do: Verify on Every Request
 ```python
 from fastapi import Depends, HTTPException, Header
 
@@ -56,7 +61,7 @@ async def process_payment(
     ...
 ```
 
-### ❌ Don't: Check Auth Once
+### âŒ Don't: Check Auth Once
 ```python
 # NEVER do this - checking only at login
 if logged_in:  # Set at login, never checked again
@@ -67,7 +72,7 @@ if logged_in:  # Set at login, never checked again
 
 ## Secrets Management
 
-### ✅ Do: Use Environment Variables
+### âœ… Do: Use Environment Variables
 ```python
 import os
 
@@ -78,7 +83,7 @@ if not DATABASE_URL or not API_KEY:
     raise RuntimeError("Required environment variables not set")
 ```
 
-### ❌ Don't: Hardcode Secrets
+### âŒ Don't: Hardcode Secrets
 ```python
 # NEVER do this
 DATABASE_URL = "postgresql://admin:password123@db.example.com/prod"
@@ -89,7 +94,7 @@ API_KEY = "sk_live_abc123..."
 
 ## SQL Injection Prevention
 
-### ✅ Do: Use Parameterized Queries
+### âœ… Do: Use Parameterized Queries
 ```python
 # SQLAlchemy
 result = session.execute(
@@ -104,7 +109,7 @@ cursor.execute(
 )
 ```
 
-### ❌ Don't: String Concatenation
+### âŒ Don't: String Concatenation
 ```python
 # NEVER do this
 query = f"SELECT * FROM users WHERE name = '{user_input}'"
@@ -115,7 +120,7 @@ cursor.execute(query)
 
 ## Sensitive Data Logging
 
-### ✅ Do: Mask Sensitive Fields
+### âœ… Do: Mask Sensitive Fields
 ```python
 import logging
 
@@ -131,7 +136,7 @@ def log_payment(payment: PaymentRequest):
     )
 ```
 
-### ❌ Don't: Log Everything
+### âŒ Don't: Log Everything
 ```python
 # NEVER do this
 logging.info(f"Payment request: {request.json()}")  # Logs card numbers!
@@ -141,7 +146,7 @@ logging.info(f"Payment request: {request.json()}")  # Logs card numbers!
 
 ## Password Handling
 
-### ✅ Do: Use Strong Hashing
+### âœ… Do: Use Strong Hashing
 ```python
 import bcrypt
 
@@ -153,7 +158,7 @@ def verify_password(password: str, hashed: str) -> bool:
     return bcrypt.checkpw(password.encode(), hashed.encode())
 ```
 
-### ❌ Don't: Use Weak Hashing
+### âŒ Don't: Use Weak Hashing
 ```python
 # NEVER do this
 import hashlib
@@ -165,7 +170,7 @@ hashed = hashlib.sha256(password.encode()).hexdigest()  # No salt!
 
 ## Error Handling
 
-### ✅ Do: Return Safe Error Messages
+### âœ… Do: Return Safe Error Messages
 ```python
 @app.exception_handler(Exception)
 async def generic_exception_handler(request, exc):
@@ -179,7 +184,7 @@ async def generic_exception_handler(request, exc):
     )
 ```
 
-### ❌ Don't: Expose Internal Details
+### âŒ Don't: Expose Internal Details
 ```python
 # NEVER do this
 except Exception as e:
@@ -190,7 +195,7 @@ except Exception as e:
 
 ## Rate Limiting
 
-### ✅ Do: Implement Rate Limits
+### âœ… Do: Implement Rate Limits
 ```python
 from fastapi_limiter.depends import RateLimiter
 
@@ -204,7 +209,7 @@ async def process_payment(request: PaymentRequest):
 
 ## CORS Configuration
 
-### ✅ Do: Restrict Origins
+### âœ… Do: Restrict Origins
 ```python
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -216,7 +221,7 @@ app.add_middleware(
 )
 ```
 
-### ❌ Don't: Allow Everything
+### âŒ Don't: Allow Everything
 ```python
 # NEVER in production
 app.add_middleware(
@@ -258,7 +263,7 @@ Always include in GOVERNANCE CONSTRAINTS:
 ### Security
 - GC-SEC-001: All endpoints require authentication (Bearer token)
 - GC-SEC-002: Input validation on all user-provided data
-- GC-SEC-003: Passwords hashed with bcrypt (cost ≥ 12)
+- GC-SEC-003: Passwords hashed with bcrypt (cost â‰¥ 12)
 - GC-SEC-004: No sensitive data in logs (card numbers, passwords, SSN)
 - GC-SEC-005: SQL queries use parameterized statements only
 - GC-SEC-006: Rate limiting: 100 requests/minute per user

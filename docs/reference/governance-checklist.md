@@ -1,3 +1,8 @@
+﻿---
+title: Governance Checklist
+parent: Reference
+nav_order: 2
+---
 # Governance Checklist
 
 **Purpose**: Validate that specifications contain proper governance constraints before proceeding to implementation.
@@ -128,16 +133,16 @@ Count your checked items:
 
 | Category | Checked | Required | Status |
 |----------|---------|----------|--------|
-| PCI (if applicable) | [ ] / 8 | All applicable | ❓ |
-| GDPR (if applicable) | [ ] / 10 | All applicable | ❓ |
-| Idempotency (if applicable) | [ ] / 5 | All applicable | ❓ |
-| Security | [ ] / 7 | All | ❓ |
-| Audit | [ ] / 4 | All | ❓ |
+| PCI (if applicable) | [ ] / 8 | All applicable | â“ |
+| GDPR (if applicable) | [ ] / 10 | All applicable | â“ |
+| Idempotency (if applicable) | [ ] / 5 | All applicable | â“ |
+| Security | [ ] / 7 | All | â“ |
+| Audit | [ ] / 4 | All | â“ |
 
 ### Result
 
-- [ ] **PASS** — All applicable checks verified, proceed to `/speckit.plan`
-- [ ] **FAIL** — Update specification to address unchecked items
+- [ ] **PASS** â€” All applicable checks verified, proceed to `/speckit.plan`
+- [ ] **FAIL** â€” Update specification to address unchecked items
 
 ---
 

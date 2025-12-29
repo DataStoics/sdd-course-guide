@@ -1,3 +1,8 @@
+﻿---
+title: Gemini CLI
+parent: AI Assistant Tips
+nav_order: 3
+---
 # Gemini CLI Tips for SDD Labs
 
 This guide helps you get the most out of Gemini CLI during the spec-driven development labs.
@@ -54,7 +59,7 @@ source ~/.bashrc
 When running the `/speckit.specify` command:
 
 - Gemini reads workspace context automatically
-- Provide detailed requirements — Gemini benefits from explicit structure
+- Provide detailed requirements â€” Gemini benefits from explicit structure
 - Review and refine generated specs
 
 **Tip**: Structure your prompts with clear sections. Gemini responds well to organized input.
@@ -233,10 +238,10 @@ List all discrepancies.
 
 ## Gemini CLI Strengths for SDD
 
-1. **Structured reasoning** — Handles complex, multi-part prompts well
-2. **Comparison tasks** — Excellent at comparing spec vs implementation
-3. **Research** — Strong at analyzing options and trade-offs
-4. **Long context** — Can process large specifications effectively
+1. **Structured reasoning** â€” Handles complex, multi-part prompts well
+2. **Comparison tasks** â€” Excellent at comparing spec vs implementation
+3. **Research** â€” Strong at analyzing options and trade-offs
+4. **Long context** â€” Can process large specifications effectively
 
 ---
 

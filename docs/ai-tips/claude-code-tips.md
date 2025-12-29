@@ -1,3 +1,8 @@
+﻿---
+title: Claude Code
+parent: AI Assistant Tips
+nav_order: 2
+---
 # Claude Code Tips for SDD Labs
 
 This guide helps you get the most out of Claude Code during the spec-driven development labs.
@@ -23,7 +28,7 @@ When running the `/speckit.specify` command:
 
 - Claude Code reads your entire workspace automatically
 - Provide clear, detailed requirements in your prompt
-- Review generated artifacts thoroughly — Claude generates comprehensive specs
+- Review generated artifacts thoroughly â€” Claude generates comprehensive specs
 
 **Tip**: Claude Code maintains conversation context. Build on previous responses rather than re-explaining.
 
@@ -33,7 +38,7 @@ During implementation:
 
 - Claude Code automatically reads relevant files
 - Reference specific files when needed: "Look at `contracts/order-service.yaml`"
-- Use iterative refinement — Claude responds well to "adjust X to do Y"
+- Use iterative refinement â€” Claude responds well to "adjust X to do Y"
 
 **Example prompt**:
 ```
@@ -162,10 +167,10 @@ What's missing or incorrect?
 
 ## Claude Code Strengths for SDD
 
-1. **Context retention** — Remembers earlier discussion points
-2. **Multi-file edits** — Can update related files together
-3. **Comprehensive output** — Generates complete implementations
-4. **Explanation** — Excellent at explaining why code is structured a certain way
+1. **Context retention** â€” Remembers earlier discussion points
+2. **Multi-file edits** â€” Can update related files together
+3. **Comprehensive output** â€” Generates complete implementations
+4. **Explanation** â€” Excellent at explaining why code is structured a certain way
 
 ---
 

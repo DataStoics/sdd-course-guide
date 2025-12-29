@@ -1,3 +1,8 @@
+﻿---
+title: Spec Template
+parent: Reference
+nav_order: 1
+---
 # Specification Template
 
 **Feature Branch**: `XXX-feature-name`  
@@ -15,7 +20,7 @@
 
 ## GOVERNANCE CONSTRAINTS
 
-> ⚠️ **REQUIRED SECTION** — Every specification MUST define explicit governance constraints.
+> âš ï¸ **REQUIRED SECTION** â€” Every specification MUST define explicit governance constraints.
 > These constraints ensure AI-generated code meets compliance, security, and audit requirements.
 
 ### Compliance Requirements
@@ -64,9 +69,9 @@
 
 ### Edge Cases
 
-- What happens when [edge case 1]? → [Expected behavior]
-- What happens when [edge case 2]? → [Expected behavior]
-- What happens when [edge case 3]? → [Expected behavior]
+- What happens when [edge case 1]? â†’ [Expected behavior]
+- What happens when [edge case 2]? â†’ [Expected behavior]
+- What happens when [edge case 3]? â†’ [Expected behavior]
 
 ---
 
@@ -120,14 +125,14 @@
 
 ### Session YYYY-MM-DD
 
-- Q: [Question asked] → A: [Answer provided]
+- Q: [Question asked] â†’ A: [Answer provided]
 
 ---
 
 ## Template Usage Notes
 
-1. **GOVERNANCE CONSTRAINTS is mandatory** — Never skip this section
-2. **Be specific** — Vague specs produce vague code
-3. **Think compliance first** — What would an auditor need to see?
-4. **Testable criteria** — Every requirement must be verifiable
-5. **No implementation details** — Specs describe WHAT, not HOW
+1. **GOVERNANCE CONSTRAINTS is mandatory** â€” Never skip this section
+2. **Be specific** â€” Vague specs produce vague code
+3. **Think compliance first** â€” What would an auditor need to see?
+4. **Testable criteria** â€” Every requirement must be verifiable
+5. **No implementation details** â€” Specs describe WHAT, not HOW

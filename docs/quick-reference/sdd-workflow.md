@@ -1,15 +1,20 @@
+﻿---
+title: SDD Workflow
+parent: Quick Reference
+nav_order: 1
+---
 # SDD Workflow Quick Reference
 
 ## The Four-Phase SDD Workflow
 
 ```
-┌─────────────┐     ┌─────────────┐     ┌─────────────┐     ┌─────────────┐
-│   SPECIFY   │ ──▶ │    PLAN     │ ──▶ │  IMPLEMENT  │ ──▶ │   VERIFY    │
-│             │     │             │     │             │     │             │
-│ Create spec │     │ AI creates  │     │ AI executes │     │ Tests +     │
-│ with human  │     │ impl plan   │     │ tasks from  │     │ security    │
-│ governance  │     │ from spec   │     │ plan        │     │ scans       │
-└─────────────┘     └─────────────┘     └─────────────┘     └─────────────┘
+â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”     â”Œâ”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”
+â”‚   SPECIFY   â”‚ â”€â”€â–¶ â”‚    PLAN     â”‚ â”€â”€â–¶ â”‚  IMPLEMENT  â”‚ â”€â”€â–¶ â”‚   VERIFY    â”‚
+â”‚             â”‚     â”‚             â”‚     â”‚             â”‚     â”‚             â”‚
+â”‚ Create spec â”‚     â”‚ AI creates  â”‚     â”‚ AI executes â”‚     â”‚ Tests +     â”‚
+â”‚ with human  â”‚     â”‚ impl plan   â”‚     â”‚ tasks from  â”‚     â”‚ security    â”‚
+â”‚ governance  â”‚     â”‚ from spec   â”‚     â”‚ plan        â”‚     â”‚ scans       â”‚
+â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜     â””â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”˜
 ```
 
 ---
@@ -77,7 +82,7 @@
 
 **Checklist**:
 - [ ] All acceptance scenarios have passing tests
-- [ ] Coverage ≥ 80%
+- [ ] Coverage â‰¥ 80%
 - [ ] Security scan: 0 CRITICAL, 0 HIGH
 - [ ] Governance constraints verified
 - [ ] Documentation updated
@@ -108,7 +113,7 @@ Implement POST /pay per specs/001-payment/spec.md FR-001:
 
 | Problem | Solution |
 |---------|----------|
-| AI generates wrong code | Spec may be vague — add detail |
+| AI generates wrong code | Spec may be vague â€” add detail |
 | Security scan fails | Add security requirement to spec |
 | Tests don't match behavior | Check acceptance scenarios |
 | Plan doesn't match needs | Review spec completeness |
@@ -118,10 +123,10 @@ Implement POST /pay per specs/001-payment/spec.md FR-001:
 ## Golden Rules
 
 1. **Spec First**: Never implement without a spec
-2. **Trace Everything**: Every code decision → spec requirement
+2. **Trace Everything**: Every code decision â†’ spec requirement
 3. **Test Continuously**: Run tests after every change
 4. **Security Built-in**: Security in spec, not bolted on
-5. **Iterate**: Specs evolve — update and regenerate
+5. **Iterate**: Specs evolve â€” update and regenerate
 
 ---
 

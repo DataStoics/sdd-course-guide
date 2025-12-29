@@ -1,3 +1,8 @@
+﻿---
+title: Spec Checklist
+parent: Quick Reference
+nav_order: 2
+---
 # Specification Quality Checklist
 
 Use this checklist to evaluate specification quality before proceeding to implementation.
@@ -6,39 +11,39 @@ Use this checklist to evaluate specification quality before proceeding to implem
 
 ## Essential Sections
 
-### ✅ Business Context
+### âœ… Business Context
 - [ ] Clear problem statement
 - [ ] Who benefits (users/stakeholders)
 - [ ] Success metrics defined
 - [ ] Scope boundaries (what's NOT included)
 
-### ✅ Functional Requirements
+### âœ… Functional Requirements
 - [ ] Each requirement has unique ID (FR-001, FR-002)
 - [ ] Requirements are atomic (one thing each)
 - [ ] Requirements are testable
-- [ ] No implementation details (HOW) — only WHAT
+- [ ] No implementation details (HOW) â€” only WHAT
 
-### ✅ GOVERNANCE CONSTRAINTS
+### âœ… GOVERNANCE CONSTRAINTS
 - [ ] Regulatory requirements identified (PCI, GDPR, HIPAA, SOC2)
 - [ ] Data classification (what's sensitive)
 - [ ] Retention requirements (how long to keep)
 - [ ] Audit requirements (what to log)
 - [ ] Access control requirements
 
-### ✅ Acceptance Scenarios
+### âœ… Acceptance Scenarios
 - [ ] Given/When/Then format
 - [ ] Cover happy path
 - [ ] Cover error cases
 - [ ] Cover edge cases
 - [ ] Specific values (not "valid" or "correct")
 
-### ✅ Non-Functional Requirements
+### âœ… Non-Functional Requirements
 - [ ] Performance targets (response time, throughput)
 - [ ] Availability expectations
 - [ ] Security requirements (authentication, encryption)
 - [ ] Scalability considerations
 
-### ✅ Data Requirements
+### âœ… Data Requirements
 - [ ] Entities defined
 - [ ] Required fields identified
 - [ ] Relationships documented
@@ -48,13 +53,13 @@ Use this checklist to evaluate specification quality before proceeding to implem
 
 ## Quality Indicators
 
-### 🟢 Good Spec Signs
+### ðŸŸ¢ Good Spec Signs
 - Can write tests directly from acceptance scenarios
 - No questions needed to start implementing
 - Security/compliance built into requirements
 - Clear success criteria
 
-### 🔴 Poor Spec Signs
+### ðŸ”´ Poor Spec Signs
 - Uses vague words: "should", "appropriate", "reasonable"
 - Missing acceptance scenarios
 - No governance constraints
@@ -64,7 +69,7 @@ Use this checklist to evaluate specification quality before proceeding to implem
 
 ## Vague vs. Specific
 
-| Vague ❌ | Specific ✅ |
+| Vague âŒ | Specific âœ… |
 |----------|-------------|
 | "Handle errors appropriately" | "Return HTTP 400 with error code and message for invalid input" |
 | "Secure the endpoint" | "Require Bearer token; reject with 401 if missing or invalid" |
@@ -122,10 +127,10 @@ Before running `/speckit.plan`, verify:
 
 When reviewing specs, check for these frequently missed items:
 
-1. **Idempotency** — How do we handle duplicate requests?
-2. **Error messages** — What do users see when things fail?
-3. **Rate limiting** — How do we prevent abuse?
-4. **Timeouts** — What happens when dependencies are slow?
-5. **Partial failure** — What if step 2 of 3 fails?
-6. **Audit trail** — Who did what when?
-7. **Data cleanup** — When/how is data deleted?
+1. **Idempotency** â€” How do we handle duplicate requests?
+2. **Error messages** â€” What do users see when things fail?
+3. **Rate limiting** â€” How do we prevent abuse?
+4. **Timeouts** â€” What happens when dependencies are slow?
+5. **Partial failure** â€” What if step 2 of 3 fails?
+6. **Audit trail** â€” Who did what when?
+7. **Data cleanup** â€” When/how is data deleted?
