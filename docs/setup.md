@@ -224,7 +224,7 @@ Create a file called hello.py with a function that prints 'Hello SDD'
 
 **Success looks like:**
 ```
-âœ“ Created hello.py
+Created hello.py
 ```
 
 The file appears in your file explorer. Type `/quit` to exit Gemini CLI.
