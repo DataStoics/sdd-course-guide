@@ -100,13 +100,13 @@ The init also created:
 
 ### Verify Setup
 
-Your AI assistant should now understand SDD. Test it:
+Confirm spec-kit is working:
 
-```
-What is spec-driven development and how should I create specs in this project?
+```bash
+specify check
 ```
 
-If your AI responds with information about specifications and governance, you're ready to proceed.
+You should see green checkmarks for your AI assistant and required tools.
 
 ---
 
