@@ -242,108 +242,84 @@ After ~4-5 questions, your spec transforms from ambiguous to precise.
 
 ---
 
-## Step 5: Define What "Demoable" Actually Means (10 min)
+## Step 5: Expand Scenarios with /speckit.clarify (15 min)
 
-Now think about demo day. What could still embarrass you?
+Remember - `/speckit.specify` already generated User Scenarios in your spec. Now let's **expand them for demo coverage** using natural language:
 
-### The "Don't Embarrass Me" Test
-
-| Demo Disaster | Prevention (goes in spec) |
-|---------------|---------------------------|
-| User clicks Pay twice - double charge | Idempotency handling ✓ (resolved in clarify) |
-| Payment fails - ugly error | Graceful error responses |
-| "Is this secure?" question | Tokenization, no raw cards |
-| Demo with test data - crashes | Validation for all inputs |
-
-### Translating to Constraints
-
-These demo concerns become technical constraints:
-
-```markdown
-## CONSTRAINTS
-
-### Payment Safety (prevents demo disasters)
-- **No raw card storage**: Use tokens from Mock Payment Gateway (also: real security)
-- **Idempotency required**: Handle "Pay" button double-clicks gracefully
-- **Validation**: Reject bad input with helpful errors, not crashes
+```
+/speckit.clarify I need scenarios that will impress investors. 
+What happens if someone double-clicks the Pay button? 
+What if payment fails - do we show ugly errors? 
+Can we prove the system is auditable?
 ```
 
-### Data Handling (answers investor questions)
+The AI analyzes your concerns and updates the spec with additional scenarios:
 
-If an investor asks "How do you handle data?", you want a confident answer:
+```
+## Scenario Coverage Analysis
 
-```markdown
-### Data Handling
-- **Retention policy**: Transactions kept 7 years (audit-ready from day 1)
-- **Failed attempts**: Cleaned up after 14 days (not cluttering DB)
-- **User data**: Deletable on request (GDPR-ready)
+Your spec currently has 1 scenario (happy path). For investor demo, I recommend:
+
+**Adding Scenario 2: Double-Click Protection**
+Would you like me to add a scenario where a duplicate payment attempt returns the original confirmation?
+
+| Option | Answer | Demo Value |
+|--------|--------|------------|
+| A (Recommended) | Yes, add idempotency scenario | Shows robustness, prevents demo embarrassment |
+| B | No, skip for MVP | Risk: demo could show duplicate charge |
+
+**Your choice**: _[Type A or B]_
 ```
 
-### Audit Trail (proves it's real)
+### The Conversation Expands Your Spec
 
-Investors spot fake demos. Logging proves the system actually works:
+As you answer, the AI adds scenarios to your spec:
 
-```markdown
-### Audit Trail
-- **All transactions logged**: Timestamp, actor, outcome
-- **Correlation IDs**: Can trace any request end-to-end
-- **Immutable**: Logs can't be faked
-```
+- **Q1: Double-click?** → A (Yes, add idempotency scenario)
+- **Q2: Error handling?** → A (Yes, show graceful recovery)
+- **Q3: Audit trail?** → A (Yes, prove enterprise-readiness)
 
----
+### Review Your Expanded Scenarios
 
-## Step 5: Write Demo Scenarios (20 min)
-
-These are the moments you'll show investors. Each scenario becomes a test AND a demo script.
-
-### Scenario 1: The Happy Path (this is the main demo)
+Open `spec.md` and you'll see the AI generated these scenarios **in proper Given/When/Then format**:
 
 ```markdown
+## User Scenarios
+
+### Scenario 1: Successful Payment (Priority: P1)
 **Given** a customer with a valid payment token,
 **When** they submit a payment for $50.00,
-**Then** payment succeeds,
-**And** they see a confirmation with transaction ID,
-**And** the transaction appears in their order history.
-```
+**Then** payment succeeds and they see confirmation with transaction ID.
 
 *Demo moment: "Here's a customer completing checkout..."*
 
-### Scenario 2: The Double-Click (proves robustness)
-
-```markdown
+### Scenario 2: Double-Click Protection (Priority: P1)
 **Given** a payment was just processed,
-**When** the customer clicks Pay again (network hiccup, impatient user),
-**Then** they see the same confirmation (not a duplicate charge),
-**And** we log it as a duplicate attempt.
-```
+**When** the customer clicks Pay again,
+**Then** they see the same confirmation (not a duplicate charge).
 
 *Demo moment: "Watch what happens if I click Pay twice..."*
 
-### Scenario 3: The Error Recovery (proves professionalism)
-
-```markdown
+### Scenario 3: Graceful Error Recovery (Priority: P2)
 **Given** a customer submits an invalid payment token,
 **When** the payment is attempted,
-**Then** they see a helpful error ("Payment method expired, please update"),
-**And** no partial charge occurs,
-**And** they can retry with a new token.
-```
+**Then** they see a helpful error message and can retry.
 
 *Demo moment: "And if something goes wrong, users get a clear message..."*
 
-### Scenario 4: The Audit Question (proves enterprise-readiness)
-
-```markdown
+### Scenario 4: Audit Trail (Priority: P2)
 **Given** a completed transaction,
-**When** an investor asks "Can you trace transactions?",
-**Then** we can show: timestamp, customer, amount, outcome, trace ID.
-```
+**When** an auditor requests the trace,
+**Then** system shows: timestamp, customer, amount, outcome, trace ID.
 
 *Demo moment: "Every transaction is fully auditable from day one."*
+```
+
+**Key insight**: You described what you needed in plain English. The AI structured it into testable scenarios. No manual Given/When/Then writing required.
 
 ---
 
-## Step 7: Verify Your Requirements (5 min)
+## Step 6: Verify Your Requirements (5 min)
 
 After clarification, your requirements should be precise and testable:
 
@@ -364,7 +340,7 @@ Notice: **No `[NEEDS CLARIFICATION]` markers remain.** Every requirement is spec
 
 ---
 
-## Step 8: Generate Quality Checklist with /speckit.checklist (5 min)
+## Step 7: Generate Quality Checklist with /speckit.checklist (5 min)
 
 Instead of a manual checklist, let spec-kit generate one tailored to your spec:
 
@@ -399,7 +375,7 @@ The AI analyzes YOUR spec and generates context-aware validation:
 
 ---
 
-## Step 9: Commit Your Work (5 min)
+## Step 8: Commit Your Work (5 min)
 
 Your first commit should follow conventional commit format:
 
