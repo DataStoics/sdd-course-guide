@@ -124,40 +124,35 @@ The AI will show you what it's implementing. Look for:
 
 ## Step 3: Start Infrastructure (5 min)
 
-Start the services your code needs:
+Ask your AI assistant to start and verify the services:
 
-```bash
-docker-compose up -d
-```
+> "Start the Docker services (Redis and Mock Payment Gateway) and verify they're both running and healthy."
 
-Verify they're running:
+The AI will:
+1. Run `docker-compose up -d`
+2. Check Redis with `redis-cli ping`
+3. Verify the Mock Gateway health endpoint
+4. Report status back to you
 
-```bash
-# Check Redis
-docker-compose exec redis redis-cli ping
-# Expected: PONG
-
-# Check Mock Gateway
-curl http://localhost:8001/health
-# Expected: {"status":"healthy"}
-```
+**Expected**: AI confirms both services are healthy.
 
 ---
 
 ## Step 4: Run Tests (10 min)
 
-Verify the implementation matches your spec:
+Ask your AI to run and verify tests:
 
-```bash
-pytest tests/ -v
-```
+> "Run the test suite and show me the results. All acceptance scenarios from the spec should pass."
+
+The AI will:
+1. Run `pytest tests/ -v`
+2. Show you which tests passed/failed
+3. Link failures back to spec scenarios
 
 **Expected**: All acceptance scenario tests pass.
 
-If tests fail:
-1. Check which scenario failed
-2. Review the spec requirement
-3. Ask your AI to fix: "Test for Scenario 2 (double-click protection) is failing. The spec says we should return the original response. Please fix."
+If tests fail, ask:
+> "Test for Scenario 2 (double-click protection) is failing. The spec says we should return the original response. Please fix."
 
 ---
 
@@ -185,40 +180,19 @@ If the checklist shows incomplete items, ask your AI to address them:
 
 ## Step 6: Verify End-to-End (10 min)
 
-Test the complete flow manually:
+Ask your AI to test the complete flow:
 
-```bash
-# Start the API server
-uvicorn src.app.main:app --reload
+> "Start the API server and test the payment endpoint. Send a $50 payment, then send the same request again to verify double-click protection returns the original response with duplicate=true."
 
-# In another terminal, test a payment
-curl -X POST http://localhost:8000/pay \
-  -H "Content-Type: application/json" \
-  -d '{
-    "token": "tok_test_valid",
-    "amount": 5000,
-    "currency": "usd",
-    "idempotency_key": "test-001"
-  }'
-```
+The AI will:
+1. Start the FastAPI server
+2. Send a test payment request
+3. Send a duplicate request (same idempotency key)
+4. Verify the second request returns `"duplicate": true`
 
-**Expected**: Success response with transaction_id.
-
-### Test Double-Click Protection
-
-```bash
-# Same request again (same idempotency_key)
-curl -X POST http://localhost:8000/pay \
-  -H "Content-Type: application/json" \
-  -d '{
-    "token": "tok_test_valid",
-    "amount": 5000,
-    "currency": "usd",
-    "idempotency_key": "test-001"
-  }'
-```
-
-**Expected**: Same response with `"duplicate": true`.
+**Expected**: 
+- First request: Success with transaction_id
+- Second request: Same response with `"duplicate": true`
 
 **This is the moment**: Lab 0 code would've created a duplicate charge. Your spec prevented it.
 
