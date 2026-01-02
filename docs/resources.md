@@ -9,6 +9,9 @@ permalink: /resources/
 
 Curated reading materials to deepen your Spec-Driven Development practice.
 
+{: .note }
+> Looking for commands and patterns? See the **[Quick Reference](/quick-reference/)** page.
+
 ---
 
 ## Recommended Reading
@@ -25,7 +28,9 @@ Curated reading materials to deepen your Spec-Driven Development practice.
 
 ## Quick Reference
 
-### spec-kit Commands
+For the complete quick reference card with commands, patterns, and checklists, see the dedicated **[Quick Reference](/quick-reference/)** page.
+
+### Key spec-kit Commands
 
 | Command | Purpose |
 |---------|---------|
