@@ -19,6 +19,12 @@ Build the order service, wire it to payments, and prove the full checkout flow w
 
 ---
 
+## Course Progress
+
+![Lab 1.5 Progress](../assets/images/lab-1.5-progress.svg)
+
+---
+
 ## Where We Are in the Week
 
 - **Monday**: [DONE] Payment spec + plan

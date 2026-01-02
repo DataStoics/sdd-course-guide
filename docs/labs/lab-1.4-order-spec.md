@@ -19,6 +19,12 @@ Handle the inevitable scope expansion -- PM wants "one more thing" before Thursd
 
 ---
 
+## Course Progress
+
+![Lab 1.4 Progress](../assets/images/lab-1.4-progress.svg)
+
+---
+
 ## The Wednesday Morning Message
 
 You're feeling good. Payment endpoint works. Demo scenarios pass. Then PM appears:
