@@ -63,23 +63,33 @@ Before coding, clarify what "order history" means for the demo:
 
 ---
 
-## Step 2: Create Order Spec Directory (2 min)
+## Step 2: Create Order Feature Spec (15 min)
 
-Ask your AI:
+Use `/speckit.specify` to create the order feature spec. This automatically:
+- Creates `specs/002-order/` directory
+- Creates a semantic feature branch
+- Generates `spec.md` from template with your requirements
 
-> "Create a new spec directory for the order feature at `specs/002-order/` with an empty `spec.md` file."
+```text
+/speckit.specify Order history feature for checkout flow. Customers create orders, submit payment, and view past orders. Orders track state (created, paid, fulfilled, cancelled). Need idempotent payment callbacks, order history queries, and state transition validation. Demo requires: create order, mark paid after payment, show order history. Governance: 7-year retention for financial audit, immutable audit trail.
+```
+
+{: .note }
+> **What just happened?** The `/speckit.specify` command analyzed your description and generated a structured spec with user stories, acceptance scenarios, functional requirements, and key entities. Review the generated `specs/002-order/spec.md` to see the result.
 
 ---
 
-## Step 3: Write Constraints for Demoability (20 min)
+## Step 3: Refine Constraints for Demoability (10 min)
 
-What could break the order history demo?
+Review the generated spec and enhance the constraints section. What could break the order history demo?
 
 ### Demo Disaster Prevention
 
-Ask your AI to add these constraints to the spec:
+Ask your AI to strengthen the constraints:
 
-> "Add a CONSTRAINTS section to the order spec with requirements for state integrity, demo safety, and audit readiness."
+```text
+/speckit.clarify Focus on state integrity constraints: valid transitions only, no stuck orders, idempotency for duplicate callbacks. Also clarify demo-day requirements: <500ms query response, clear status display, audit-ready history.
+```
 
 **State Integrity** (prevents demo disasters):
 - **Valid transitions only**: Orders can only move through defined states
@@ -104,15 +114,17 @@ These aren't required for Friday, but make "production-ready" easier:
 
 ---
 
-## Step 4: Write Demo Scenarios (25 min)
+## Step 4: Refine Demo Scenarios (15 min)
 
-These are the flows you'll show investors on Friday.
+The generated spec includes acceptance scenarios. Review and refine them for Friday's demo.
 
 ### Demo Flow 1: Create Order and Pay
 
-Describe to your AI:
+If the generated scenarios don't cover the complete checkout flow, ask your AI:
 
-> "Add a scenario for complete checkout: customer creates order, submits payment, order shows paid."
+```text
+Add a scenario for complete checkout: customer creates order, submits payment, order shows paid. Use Given/When/Then format.
+```
 
 **Demo Flow 1: Complete Checkout** (the main demo)
 1. **Given** a customer ready to checkout, **When** they create an order, **Then** order created with status "created" and unique ID.
@@ -122,7 +134,9 @@ Describe to your AI:
 
 ### Demo Flow 2: Order History
 
-> "Add a scenario for viewing order history: user sees list of orders, newly paid order appears at top."
+```text
+Add a scenario for viewing order history: user sees list of orders, newly paid order appears at top. Use Given/When/Then format.
+```
 
 **Demo Flow 2: View Order History** (proves persistence)
 1. **Given** a user with completed orders, **When** they view order history, **Then** see list of orders with status and dates.
@@ -132,7 +146,9 @@ Describe to your AI:
 
 ### Demo Flow 3: Error Handling (proves robustness)
 
-> "Add edge case scenarios: duplicate payment callback handled gracefully, unauthorized access rejected."
+```text
+Add edge case scenarios: duplicate payment callback handled gracefully, unauthorized access rejected. Use Given/When/Then format.
+```
 
 **Demo Flow 3: Edge Cases That Won't Crash**
 1. **Given** an order already marked "paid", **When** payment callback fires again, **Then** graceful response (not duplicate, not error).
@@ -142,11 +158,13 @@ Describe to your AI:
 
 ---
 
-## Step 5: Define Requirements and State Machine (15 min)
+## Step 5: Enhance State Machine Documentation (10 min)
 
-Ask your AI:
+The generated spec includes functional requirements. Ensure the order lifecycle state machine is clearly documented:
 
-> "Add functional requirements for the order feature and document the order lifecycle state machine."
+```text
+Document the order lifecycle state machine with all valid state transitions. States: created, paid, fulfilled, cancelled, archived. Include demo relevance for each state.
+```
 
 **Functional Requirements** (Friday Demo):
 - **FR-001**: Create order with unique ID and "created" status
@@ -173,7 +191,9 @@ Ask your AI:
 
 This is where the two features connect:
 
-> "Document the integration between payment and order services in the spec."
+```text
+Document the integration between payment and order services. Include the API contract for payment success callback and failure handling.
+```
 
 **Integration: Payment → Order**
 
@@ -199,7 +219,9 @@ Order stays in "created" state. No cascading failure. Customer can retry.
 
 What could break the demo?
 
-> "Add edge cases to the spec for demo disaster prevention."
+```text
+Add edge cases to the spec: double payment callback, order not found, invalid state transition, unauthorized access, concurrent updates.
+```
 
 **Edge Cases** (Demo Disaster Prevention):
 - **Double payment callback**: Order already "paid" — return success, no state change
@@ -227,9 +249,9 @@ The generated `specs/002-order/plan.md` should include:
 
 ## Step 9: Commit Your Work (2 min)
 
-Ask your AI:
-
-> "Commit all the order specification work with a conventional commit message."
+```text
+Commit all the order specification work with a conventional commit message.
+```
 
 ---
 
@@ -247,9 +269,9 @@ Your lab is complete when:
 
 ### Validate Your Work
 
-Ask your AI:
-
-> "Run the lab validation script for Lab 1.4 and show me the results."
+```text
+Run the lab validation script for Lab 1.4 and show me the results.
+```
 
 ---
 
