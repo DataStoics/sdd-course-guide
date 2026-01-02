@@ -203,7 +203,7 @@ Run the final checklist:
 
 ## The Week in Review
 
-| Day | What Happened | Without SDD |
+| Day | What Happened | Without Spec-Driven Development |
 |-----|---------------|-------------|
 | **Monday** | Wrote specs, made decisions | Started coding, made assumptions |
 | **Tuesday** | Built payment, tests pass | Built something, "works on my machine" |
@@ -215,39 +215,6 @@ Run the final checklist:
 
 ---
 
-## Course 2 Preview: What About Legacy Code?
-
-This course was the easy path: empty repo, full control.
-
-In Course 2, you'll face the real world:
-
-| Course 1 (Greenfield) | Course 2 (Brownfield) |
-|-----------------------|-----------------------|
-| Empty repo | 5000+ lines of legacy code |
-| You write the spec | Spec is hidden in the code |
-| Full technology control | Tech debt constrains choices |
-| Monday spec  Friday ship | Extract spec FROM existing code |
-
-### Course 2 Challenges
-
-- **Extract implicit specs** from working code
-- **Refactor without breaking** production
-- **Retrofit governance** to legacy systems
-- **Query external systems** via MCP (Jira, Confluence, GitHub)
-
-The spec-first thinking you learned here becomes **spec-extraction** thinking there.
-
-### External Systems You'll Use
-
-| System | Course 2 Purpose |
-|--------|------------------|
-| **Context7** | Get current library docs for legacy dependencies |
-| **Perplexity** | Research CVEs, migration paths, compatibility |
-| **GitHub MCP** | Analyze existing codebase, PR history |
-| **Confluence** | Query company architecture decisions |
-
----
-
 ## Reflection: Lab 0 Callback
 
 Remember Day 1 morning? Lab 0?
@@ -256,7 +223,7 @@ Remember Day 1 morning? Lab 0?
 |------|-----|
 | 30 min of coding, wouldn't demo it | 2 days, confident demo |
 | No idempotency | Double-click safe |
-| "Is this secure?"  "Uh..." | "Yes, here's the spec" |
+| "Is this secure?" — "Uh..." | "Yes, here's the spec" |
 | Thursday night panic | Thursday night beer |
 
 **The difference wasn't skill. It was approach.**
@@ -296,15 +263,43 @@ In two days, you transformed a vague PM request into:
 
 ---
 
-## Next Steps
+## Part 2 Preview: Transforming Legacy Code
 
-1. **Demo day**: Nail the investor pitch
-2. **Apply SDD**: Use this on your next work project
-3. **Share**: Teach a teammate the spec-first approach
-4. **Course 2**: Learn to extract specs from legacy code
+Part 1 was the easy path: empty repo, full control.
+
+In Part 2, you'll face the real world:
+
+| Part 1: Building from Scratch | Part 2: Transforming Legacy Code |
+|-------------------------------|----------------------------------|
+| Empty repo | 5000+ lines of legacy code |
+| You write the spec | Spec is hidden in the code |
+| Full technology control | Tech debt constrains choices |
+| Monday spec → Friday ship | Extract spec FROM existing code |
+
+### What You'll Learn in Part 2
+
+- **Extract implicit specs** from working code
+- **Refactor without breaking** production
+- **Retrofit governance** to legacy systems
+- **Query external systems** via MCP (Jira, Confluence, GitHub)
+
+The spec-first thinking you learned here becomes **spec-extraction** thinking there.
+
+{: .note }
+> **Part 2: Transforming Legacy Code** is coming soon. The discipline you've learned in Part 1 transfers directly.
 
 ---
 
-**Thank you for participating in SDD Foundations Course 1!**
+## Next Steps
+
+1. **Demo day**: Nail the investor pitch
+2. **Apply Spec-Driven Development**: Use this on your next work project
+3. **Share**: Teach a teammate the spec-first approach
+4. **Part 2**: Coming soon — learn to extract specs from legacy code
+5. **Explore**: Check out the [Further Resources](/resources/) for continued learning
+
+---
+
+**Congratulations on completing Part 1: Building from Scratch!**
 
 **Now go demo that checkout flow. **

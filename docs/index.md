@@ -2,14 +2,14 @@
 title: Home
 layout: home
 nav_order: 1
-description: "Spec-Driven Development Foundations Course 1 - Learn to build production-ready software with AI assistants"
+description: "Mastering Spec-Driven Development - Learn to build production-ready software with AI assistants"
 permalink: /
 ---
 
-# Spec-Driven Development Foundations Course 1
+# Mastering Spec-Driven Development
 {: .fs-9 }
 
-From vague idea to production code in a structured workflow.
+Build production-ready software with AI assistants using specification-first methodology.
 {: .fs-6 .fw-300 }
 
 Stop hoping AI understands you. Start giving it what it needs to succeed.
@@ -20,13 +20,29 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 ---
 
-## The SDD Workflow
+## Why Spec-Driven Development?
 
-Most AI coding fails because we skip the thinking. SDD makes the thinking explicit through **human validation at every phase**.
+AI coding assistants are powerful — but most teams struggle to get consistent results. Sound familiar?
 
-![SDD Workflow Diagram](assets/images/sdd-workflow.svg)
+| The Pain | What Happens |
+|:---------|:-------------|
+| **"It works... differently every time"** | Same prompt, different implementations. Inconsistent architecture, naming, and patterns. |
+| **"AI keeps going off the rails"** | It builds features you didn't ask for, ignores constraints, or chooses wrong tech. |
+| **"We spend more time fixing than building"** | AI-generated code requires constant rework because requirements were unclear. |
+| **"I can't explain what I want"** | Translating business needs to technical specs is hard — AI amplifies ambiguity. |
+| **"Security and compliance are afterthoughts"** | Without explicit constraints, AI takes shortcuts that fail audits. |
 
-**What makes this different:** The spec is not just a document -- it is a **conversation** that surfaces hidden assumptions before they become bugs.
+**The root cause:** We ask AI to implement vague ideas instead of validated specifications.
+
+---
+
+## What is Spec-Driven Development?
+
+Spec-Driven Development makes the thinking explicit through **human validation at every phase**. You clarify intent *before* AI writes code.
+
+![Spec-Driven Development Workflow](assets/images/sdd-workflow.svg)
+
+**What makes this different:** The spec is not just documentation — it is a **conversation** that surfaces hidden assumptions before they become bugs.
 
 ---
 
@@ -45,7 +61,14 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 
 ---
 
-## Your Journey This Week
+## Your Learning Path
+
+| Part | Focus | What You'll Build |
+|:-----|:------|:------------------|
+| **Part 1: Building from Scratch** | Greenfield development | Working checkout system from empty repo |
+| **Part 2: Transforming Legacy Code** | Brownfield modernization | *(Coming Soon)* Extract specs from existing code |
+
+### Part 1: This Week's Journey
 
 | Phase | What Happens | The Shift |
 |:------|:-------------|:----------|
@@ -61,4 +84,4 @@ By Friday, you'll have a working checkout system and a repeatable process.
 {: .important }
 > **Complete [Pre-Course Setup](setup) before Day 1.** You'll need your environment ready.
 
-[Start the Labs](labs/){: .btn .btn-outline .fs-5 }
+[Start Part 1](labs/){: .btn .btn-outline .fs-5 }

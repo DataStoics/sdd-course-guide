@@ -1,5 +1,5 @@
-﻿title: SDD Foundations Course
-description: Spec-Driven Development - Professional AI-Assisted Development Training
+﻿title: Mastering Spec-Driven Development
+description: Learn to build production-ready software with AI assistants using specification-first methodology
 remote_theme: just-the-docs/just-the-docs
 baseurl: /sdd-course-guide
 url: https://datastoics.github.io
@@ -18,7 +18,7 @@ aux_links:
 aux_links_new_tab: true
 
 # Footer
-footer_content: "&copy; 2025 DataStoics. SDD Foundations Course."
+footer_content: "Mastering Spec-Driven Development - A Free Learning Track"
 
 # Navigation
 nav_sort: case_insensitive
