@@ -506,4 +506,220 @@ Copy this template for new specs:
 
 ---
 
+## Error Scenario Patterns
+
+Specifying error handling is often overlooked but crucial for production-ready code. Here are patterns for common error categories.
+
+### Input Validation Errors
+
+**Pattern**: Validate early, fail fast, return helpful messages.
+
+```markdown
+### Scenario: Invalid Email Format
+- **Given** a registration request with email "not-an-email"
+- **When** validation runs
+- **Then** HTTP 400 returned
+- **And** body: `{"error": "validation_error", "field": "email", "message": "Invalid email format"}`
+- **And** request is NOT processed
+
+### Scenario: Missing Required Field
+- **Given** a payment request without `amount` field
+- **When** validation runs
+- **Then** HTTP 400 returned
+- **And** body: `{"error": "missing_field", "field": "amount", "message": "Amount is required"}`
+
+### Scenario: Value Out of Range
+- **Given** a payment request with amount = -50.00
+- **When** validation runs
+- **Then** HTTP 400 returned
+- **And** body: `{"error": "invalid_value", "field": "amount", "message": "Amount must be between $0.01 and $10,000"}`
+```
+
+**Error Response Schema**:
+```json
+{
+  "error": "string (error_code)",
+  "field": "string (optional, which field failed)",
+  "message": "string (human-readable)",
+  "details": "object (optional, additional context)"
+}
+```
+
+### Authentication Errors
+
+**Pattern**: Never reveal existence of users, always use generic messages.
+
+```markdown
+### Scenario: Invalid Credentials
+- **Given** a login request with wrong password
+- **When** authentication fails
+- **Then** HTTP 401 returned
+- **And** body: `{"error": "authentication_failed", "message": "Invalid email or password"}`
+- **And** message is IDENTICAL for wrong email vs wrong password (no user enumeration)
+
+### Scenario: Expired Token
+- **Given** a request with expired JWT
+- **When** token validation runs
+- **Then** HTTP 401 returned
+- **And** body: `{"error": "token_expired", "message": "Your session has expired. Please log in again"}`
+
+### Scenario: Missing Authentication
+- **Given** a request to protected endpoint without Authorization header
+- **When** auth middleware runs
+- **Then** HTTP 401 returned
+- **And** body: `{"error": "authentication_required", "message": "Authentication required"}`
+```
+
+### Authorization Errors
+
+**Pattern**: Acknowledge the request but deny access without revealing resource existence.
+
+```markdown
+### Scenario: Insufficient Permissions
+- **Given** a user with role "viewer" accessing admin endpoint
+- **When** authorization check runs
+- **Then** HTTP 403 returned
+- **And** body: `{"error": "forbidden", "message": "You don't have permission to perform this action"}`
+
+### Scenario: Resource Not Owned
+- **Given** user A trying to access user B's order
+- **When** ownership check runs
+- **Then** HTTP 404 returned (NOT 403, to avoid revealing existence)
+- **And** body: `{"error": "not_found", "message": "Order not found"}`
+```
+
+### Resource Errors
+
+**Pattern**: Clear 404s, helpful 409s for conflicts.
+
+```markdown
+### Scenario: Resource Not Found
+- **Given** a request for order ID "ORD-nonexistent"
+- **When** lookup runs
+- **Then** HTTP 404 returned
+- **And** body: `{"error": "not_found", "resource": "order", "message": "Order not found"}`
+
+### Scenario: Resource Already Exists (Conflict)
+- **Given** a create request for username that exists
+- **When** uniqueness check runs
+- **Then** HTTP 409 returned
+- **And** body: `{"error": "conflict", "field": "username", "message": "Username already taken"}`
+
+### Scenario: Stale Resource (Optimistic Locking)
+- **Given** user A and B both loaded order version 1
+- **When** user A saves changes (now version 2)
+- **And** user B tries to save changes to version 1
+- **Then** HTTP 409 returned
+- **And** body: `{"error": "conflict", "message": "Resource was modified. Please reload and try again"}`
+```
+
+### Rate Limiting Errors
+
+**Pattern**: Always include Retry-After header.
+
+```markdown
+### Scenario: Rate Limit Exceeded
+- **Given** API key has made 100 requests in last minute (limit: 60)
+- **When** next request arrives
+- **Then** HTTP 429 returned
+- **And** header: `Retry-After: 45`
+- **And** body: `{"error": "rate_limit_exceeded", "retry_after": 45, "message": "Too many requests. Try again in 45 seconds"}`
+```
+
+### External Service Errors
+
+**Pattern**: Hide internal details, provide actionable messages, include correlation ID.
+
+```markdown
+### Scenario: Payment Gateway Timeout
+- **Given** payment gateway doesn't respond within 10 seconds
+- **When** timeout occurs
+- **Then** HTTP 503 returned
+- **And** body: `{"error": "service_unavailable", "message": "Payment service temporarily unavailable. Please try again.", "correlation_id": "req-abc123"}`
+- **And** internal error is logged with full details
+
+### Scenario: Payment Gateway Error
+- **Given** payment gateway returns unexpected error
+- **When** error is caught
+- **Then** HTTP 502 returned
+- **And** body: `{"error": "upstream_error", "message": "Unable to process payment. Please try again or contact support.", "correlation_id": "req-abc123"}`
+- **And** actual error is NOT exposed to client
+
+### Scenario: Database Connection Lost
+- **Given** database connection fails mid-request
+- **When** query fails
+- **Then** HTTP 503 returned
+- **And** body: `{"error": "service_unavailable", "message": "Service temporarily unavailable. Please try again.", "correlation_id": "req-abc123"}`
+- **And** alert sent to ops team
+```
+
+### Idempotency Errors
+
+**Pattern**: Handle duplicates gracefully.
+
+```markdown
+### Scenario: Duplicate Request (Idempotent)
+- **Given** a payment was processed with idempotency_key "order-123"
+- **When** same request with same key arrives
+- **Then** HTTP 200 returned (NOT 201 or 409)
+- **And** body: original response (exact same)
+- **And** no duplicate processing occurs
+
+### Scenario: Conflicting Idempotency Key
+- **Given** idempotency_key "order-123" was used for $50 payment
+- **When** request with same key but amount $100 arrives
+- **Then** HTTP 422 returned
+- **And** body: `{"error": "idempotency_conflict", "message": "Idempotency key was used with different parameters"}`
+```
+
+### State Machine Errors
+
+**Pattern**: Explain what's wrong and what's allowed.
+
+```markdown
+### Scenario: Invalid State Transition
+- **Given** an order in "delivered" status
+- **When** attempting to transition to "pending"
+- **Then** HTTP 422 returned
+- **And** body: 
+  ```json
+  {
+    "error": "invalid_transition",
+    "current_state": "delivered",
+    "requested_state": "pending",
+    "allowed_transitions": ["refunded"],
+    "message": "Cannot transition from 'delivered' to 'pending'. Allowed: refunded"
+  }
+  ```
+```
+
+### Error Response Best Practices
+
+| Do | Don't |
+|----|-------|
+| Use consistent error schema | Different formats per endpoint |
+| Include correlation/trace ID | Expose internal error messages |
+| Provide actionable messages | "An error occurred" |
+| Use appropriate HTTP codes | 200 for everything |
+| Log full details internally | Expose stack traces to clients |
+| Include `Retry-After` for 429/503 | Force clients to guess |
+
+### HTTP Status Code Quick Reference
+
+| Code | When to Use |
+|------|-------------|
+| 400 | Invalid input, validation failed |
+| 401 | Not authenticated |
+| 403 | Authenticated but not authorized |
+| 404 | Resource not found (also for unauthorized access to hide existence) |
+| 409 | Conflict (duplicate, version mismatch) |
+| 422 | Semantically invalid (e.g., state machine violation) |
+| 429 | Rate limit exceeded |
+| 500 | Unexpected server error (bug) |
+| 502 | Upstream service returned error |
+| 503 | Service temporarily unavailable |
+| 504 | Upstream service timeout |
+
+---
+
 **Remember**: Specs are living documents. Update them as you learn more.
