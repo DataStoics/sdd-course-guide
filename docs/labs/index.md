@@ -1,8 +1,7 @@
 ﻿---
 title: Lab Schedule
 layout: default
-parent: "Part 1: Building from Scratch"
-nav_order: 9
+nav_exclude: true
 permalink: /labs/
 ---
 
