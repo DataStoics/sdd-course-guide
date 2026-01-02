@@ -41,11 +41,45 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ---
 
-## Starting Point
+## Step 0: Launch Your Development Environment (5 min)
 
-- GitHub repository cloned from `sdd-greenfield-template`
-- Working dev container environment
-- AI assistant (GitHub Copilot, Claude Code, or Gemini CLI)
+### Option A: GitHub Codespaces (Recommended)
+
+Click the button below to launch a pre-configured environment in seconds:
+
+[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DataStoics/sdd-greenfield-starter?quickstart=1)
+
+Wait ~2-3 minutes for the environment to build. You'll know it's ready when you see:
+```
+=== Environment Ready ===
+Installed: gemini, specify
+```
+
+### Option B: Local Development
+
+If you prefer working locally:
+
+```bash
+# Clone the starter repository
+git clone https://github.com/DataStoics/sdd-greenfield-starter.git
+cd sdd-greenfield-starter
+
+# Open in VS Code
+code .
+```
+
+When VS Code opens, click **"Reopen in Container"** when prompted. Wait ~3-5 minutes for the dev container to build.
+
+### Verify Your Environment
+
+Once your environment is ready, verify in the terminal:
+
+```bash
+# Check specify CLI is available
+specify check
+```
+
+You should see a list of available AI agents and tools.
 
 ---
 
