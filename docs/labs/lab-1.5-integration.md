@@ -7,9 +7,12 @@ nav_order: 7
 
 # Lab 1.5: Integrate Payment + Order -- Thursday Build Day
 
-**Duration**: 110 minutes  
+**Duration**: 90-150 minutes  
 **Day**: 2 (Morning)  
 **Prerequisites**: Completed Lab 1.4 with order specification
+
+{: .note }
+> This is an **implementation-heavy lab**. Timing varies based on AI model and complexity. If you finish early, use the time to explore the generated code.
 
 ---
 

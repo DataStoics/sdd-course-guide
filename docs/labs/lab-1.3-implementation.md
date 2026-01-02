@@ -6,9 +6,12 @@ nav_order: 5
 ---
 # Lab 1.3: First Working Implementation
 
-**Duration**: 90 minutes  
+**Duration**: 60-120 minutes  
 **Day**: 1 (Afternoon)  
 **Prerequisites**: Completed Lab 1.2 with plan.md and research.md
+
+{: .warning }
+> **Implementation time varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab — budget accordingly.
 
 ---
 
@@ -235,6 +238,35 @@ Your lab is complete when:
 - [ ] `pytest tests/ -v` shows all tests passing
 - [ ] `/speckit.checklist` shows no critical gaps
 - [ ] Manual curl test shows double-click protection working
+
+---
+
+## Finished Early?
+
+If you complete the core tasks with time remaining:
+
+1. **Explore the generated code** — Read through `payment.py` and understand how idempotency is implemented
+2. **Add an edge case** — What happens if amount is negative? Add it to the spec and re-implement
+3. **Try a different scenario** — Add a "payment declined" scenario to your spec
+4. **Review test coverage** — Run `pytest --cov` and examine what's tested
+5. **Help a neighbor** — Debugging someone else's setup reinforces your understanding
+
+{: .tip }
+> Early completion = more experimentation time. The goal is mastery, not speed.
+
+---
+
+## Taking Longer Than Expected?
+
+Implementation-heavy labs are inherently variable. If you're past 90 minutes:
+
+1. **Check for stuck points** — Is Copilot waiting for a "Continue" response?
+2. **Verify infrastructure** — Is Docker/Redis running? (`docker ps`)
+3. **Ask for status** — "What's the current implementation status?"
+4. **Skip to checkpoint** — Use the checkpoint repo if needed to stay on schedule
+
+{: .note }
+> Quality > speed. If tests pass and you understand the code, you're on track.
 
 ---
 

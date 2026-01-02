@@ -33,6 +33,28 @@ This part simulates that week. By the end, you'll have production-ready code you
 
 ---
 
+## About Timing Estimates
+
+Lab timing varies based on several factors:
+
+| Factor | Impact |
+|:-------|:-------|
+| **AI Model** | Claude, GPT-4, GPT-4o have different generation speeds |
+| **Task Type** | Spec/clarify are fast (1-5 min), implement is slow (30-120 min) |
+| **System** | Codespaces, local machine, network latency |
+| **Your Workflow** | Reading code, experimenting, debugging |
+
+**Timing ranges include buffer for experimentation.** If you finish a core task early:
+- Deepen understanding of generated artifacts
+- Try bonus experiments in each lab
+- Explore alternative approaches
+- Help fellow learners
+
+{: .note }
+> **The goal is mastery, not speed.** Take the time you need. Implementation-heavy labs (1.3, 1.5) are inherently variable — that's normal.
+
+---
+
 ## Prerequisites
 
 Before starting Part 1, complete the [Pre-Course Setup](setup) to ensure:
