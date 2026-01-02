@@ -120,10 +120,10 @@ The generated spec includes acceptance scenarios. Review and refine them for Fri
 
 ### Demo Flow 1: Create Order and Pay
 
-If the generated scenarios don't cover the complete checkout flow, ask your AI:
+If the generated scenarios don't cover the complete checkout flow, use `/speckit.clarify` to add them:
 
 ```text
-Add a scenario for complete checkout: customer creates order, submits payment, order shows paid. Use Given/When/Then format.
+/speckit.clarify Add acceptance scenario for complete checkout flow: customer creates order, submits payment, order shows paid. Use Given/When/Then format with clear success criteria.
 ```
 
 **Demo Flow 1: Complete Checkout** (the main demo)
@@ -135,7 +135,7 @@ Add a scenario for complete checkout: customer creates order, submits payment, o
 ### Demo Flow 2: Order History
 
 ```text
-Add a scenario for viewing order history: user sees list of orders, newly paid order appears at top. Use Given/When/Then format.
+/speckit.clarify Add acceptance scenario for viewing order history: user sees list of orders sorted by date, newly paid order appears at top. Use Given/When/Then format.
 ```
 
 **Demo Flow 2: View Order History** (proves persistence)
@@ -147,7 +147,7 @@ Add a scenario for viewing order history: user sees list of orders, newly paid o
 ### Demo Flow 3: Error Handling (proves robustness)
 
 ```text
-Add edge case scenarios: duplicate payment callback handled gracefully, unauthorized access rejected. Use Given/When/Then format.
+/speckit.clarify Add edge case scenarios for robustness: duplicate payment callback handled gracefully (idempotent), unauthorized order access rejected with 401. Use Given/When/Then format.
 ```
 
 **Demo Flow 3: Edge Cases That Won't Crash**
@@ -163,7 +163,7 @@ Add edge case scenarios: duplicate payment callback handled gracefully, unauthor
 The generated spec includes functional requirements. Ensure the order lifecycle state machine is clearly documented:
 
 ```text
-Document the order lifecycle state machine with all valid state transitions. States: created, paid, fulfilled, cancelled, archived. Include demo relevance for each state.
+/speckit.clarify Document the order lifecycle state machine with all valid state transitions. States: created, paid, fulfilled, cancelled, archived. Include which transitions are valid from each state and demo relevance.
 ```
 
 **Functional Requirements** (Friday Demo):
@@ -192,7 +192,7 @@ Document the order lifecycle state machine with all valid state transitions. Sta
 This is where the two features connect:
 
 ```text
-Document the integration between payment and order services. Include the API contract for payment success callback and failure handling.
+/speckit.clarify Document the integration contract between payment and order services. Include API contract for payment success callback (order_id, transaction_id payload) and failure handling strategy.
 ```
 
 **Integration: Payment → Order**
@@ -220,7 +220,7 @@ Order stays in "created" state. No cascading failure. Customer can retry.
 What could break the demo?
 
 ```text
-Add edge cases to the spec: double payment callback, order not found, invalid state transition, unauthorized access, concurrent updates.
+/speckit.clarify Add edge cases for demo disaster prevention: double payment callback (idempotent), order not found (404), invalid state transition (reject with reason), unauthorized access (401), concurrent updates (optimistic locking).
 ```
 
 **Edge Cases** (Demo Disaster Prevention):
