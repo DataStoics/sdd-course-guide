@@ -267,12 +267,6 @@ Your lab is complete when:
 - [ ] Integration with payment service documented
 - [ ] `specs/002-order/plan.md` exists with technology decisions
 
-### Validate Your Work
-
-```text
-Run the lab validation script for Lab 1.4 and show me the results.
-```
-
 ---
 
 ## Reflection Questions

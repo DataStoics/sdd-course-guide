@@ -191,12 +191,6 @@ Your lab is complete when:
 - [ ] `pytest --cov` shows 80%+ coverage
 - [ ] E2E test passes: order - payment - order paid
 
-### Validate Your Work
-
-Ask your AI:
-
-> "Run the lab validation script for Lab 1.5 with coverage check and show me the results."
-
 ---
 
 ## Reflection Questions
