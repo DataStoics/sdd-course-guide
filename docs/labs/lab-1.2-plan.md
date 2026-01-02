@@ -2,7 +2,7 @@
 title: "Lab 1.2: From Spec to Implementation Plan"
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 3
+nav_order: 4
 ---
 
 # Lab 1.2: From Spec to Implementation Plan
@@ -242,9 +242,9 @@ Your lab is complete when:
 
 ---
 
-## Preview: External Research Tools (Course 2)
+## Preview: External Research Tools (Part 2)
 
-In greenfield projects, your AI assistant's training data is usually sufficient. But in **brownfield enterprise work** (Course 2), you'll need live, authoritative sources:
+In greenfield projects, your AI assistant's training data is usually sufficient. But in **brownfield enterprise work** (Part 2), you'll need live, authoritative sources:
 
 | Tool | Use Case |
 |------|----------|
@@ -254,7 +254,7 @@ In greenfield projects, your AI assistant's training data is usually sufficient.
 
 **For now**: Your AI handles research automatically via `/speckit.plan`.
 
-**In Course 2**: You'll learn to integrate MCP tools for verified research — essential when working with legacy codebases.
+**In Part 2**: You'll learn to integrate MCP tools for verified research — essential when working with legacy codebases.
 
 ---
 

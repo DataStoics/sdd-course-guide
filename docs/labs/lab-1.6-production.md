@@ -2,7 +2,7 @@
 title: "Lab 1.6: Production Readiness"
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 7
+nav_order: 8
 ---
 # Lab 1.6: Production Readiness  Friday Morning Polish
 
@@ -223,7 +223,7 @@ Remember Day 1 morning? Lab 0?
 |------|-----|
 | 30 min of coding, wouldn't demo it | 2 days, confident demo |
 | No idempotency | Double-click safe |
-| "Is this secure?" '€” "Uh..." | "Yes, here's the spec" |
+| "Is this secure?" — "Uh..." | "Yes, here's the spec" |
 | Thursday night panic | Thursday night beer |
 
 **The difference wasn't skill. It was approach.**
@@ -274,7 +274,7 @@ In Part 2, you'll face the real world:
 | Empty repo | 5000+ lines of legacy code |
 | You write the spec | Spec is hidden in the code |
 | Full technology control | Tech debt constrains choices |
-| Monday spec '†’ Friday ship | Extract spec FROM existing code |
+| Monday spec → Friday ship | Extract spec FROM existing code |
 
 ### What You'll Learn in Part 2
 
@@ -295,11 +295,11 @@ The spec-first thinking you learned here becomes **spec-extraction** thinking th
 1. **Demo day**: Nail the investor pitch
 2. **Apply Spec-Driven Development**: Use this on your next work project
 3. **Share**: Teach a teammate the spec-first approach
-4. **Part 2**: Coming soon '€” learn to extract specs from legacy code
+4. **Part 2**: Coming soon — learn to extract specs from legacy code
 5. **Explore**: Check out the [Further Resources](/resources/) for continued learning
 
 ---
 
 **Congratulations on completing Part 1: Building from Scratch!**
 
-**Now go demo that checkout flow. **
+**Now go demo that checkout flow.**

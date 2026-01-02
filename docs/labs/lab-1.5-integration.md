@@ -2,7 +2,7 @@
 title: "Lab 1.5: Integrate Payment + Order – Thursday Build Day"
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 6
+nav_order: 7
 ---
 
 # Lab 1.5: Integrate Payment + Order -- Thursday Build Day

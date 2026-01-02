@@ -2,7 +2,7 @@
 title: "Lab 1.1: Init and Spec – Ship Thursday, Demo Friday"
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 2
+nav_order: 3
 ---
 
 # Lab 1.1: Init and Spec -- Ship Thursday, Demo Friday

@@ -2,7 +2,7 @@
 title: "Lab 1.4: Second Feature – \"Can You Also Add Order History?\""
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 5
+nav_order: 6
 ---
 
 # Lab 1.4: Second Feature -- "Can You Also Add Order History?"

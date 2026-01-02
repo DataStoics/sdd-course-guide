@@ -1,12 +1,12 @@
 ﻿---
-title: Further Resources
+title: Lab Schedule
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 8
+nav_order: 9
 permalink: /labs/
 ---
 
-# Lab Resources
+# Lab Schedule & Resources
 
 Hands-on exercises that build on each other. By the end, you'll have a production-ready checkout system.
 

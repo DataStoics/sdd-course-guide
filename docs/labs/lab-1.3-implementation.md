@@ -2,7 +2,7 @@
 title: "Lab 1.3: Implementation"
 layout: default
 parent: "Part 1: Building from Scratch"
-nav_order: 4
+nav_order: 5
 ---
 # Lab 1.3: First Working Implementation
 
