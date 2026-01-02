@@ -1,0 +1,125 @@
+{
+	"folders": [
+		{
+			"name": "payment-service",
+			"path": "../payment-service"
+		},
+		{
+			"name": "legacy-orderflow",
+			"path": "../legacy-orderflow"
+		}
+	],
+	"settings": {
+		"files.exclude": {
+			"**/__pycache__": true,
+			"**/.pytest_cache": true,
+			"**/node_modules": true,
+			"**/.git": true
+		},
+		"editor.formatOnSave": true,
+		"python.analysis.typeCheckingMode": "basic",
+		"terminal.integrated.cwd": "${workspaceFolder:payment-service}"
+	},
+	"extensions": {
+		"recommendations": [
+			"github.copilot",
+			"github.copilot-chat",
+			"ms-python.python",
+			"ms-python.vscode-pylance",
+			"redhat.vscode-yaml"
+		]
+	},
+	"launch": {
+		"version": "0.2.0",
+		"configurations": [
+			{
+				"name": "Run Legacy System",
+				"type": "debugpy",
+				"request": "launch",
+				"program": "${workspaceFolder:legacy-orderflow}/app.py",
+				"cwd": "${workspaceFolder:legacy-orderflow}",
+				"env": {
+					"FLASK_ENV": "development",
+					"PORT": "5001"
+				},
+				"console": "integratedTerminal"
+			},
+			{
+				"name": "Run Payment Service",
+				"type": "debugpy",
+				"request": "launch",
+				"module": "uvicorn",
+				"args": ["src.main:app", "--reload", "--port", "8000"],
+				"cwd": "${workspaceFolder:payment-service}",
+				"console": "integratedTerminal"
+			},
+			{
+				"name": "Run Gateway",
+				"type": "debugpy",
+				"request": "launch",
+				"module": "uvicorn",
+				"args": ["src.gateway.strangler:app", "--reload", "--port", "8080"],
+				"cwd": "${workspaceFolder:payment-service}",
+				"console": "integratedTerminal"
+			}
+		],
+		"compounds": [
+			{
+				"name": "Run All Systems",
+				"configurations": ["Run Legacy System", "Run Payment Service", "Run Gateway"],
+				"stopAll": true
+			}
+		]
+	},
+	"tasks": {
+		"version": "2.0.0",
+		"tasks": [
+			{
+				"label": "Install Legacy Dependencies",
+				"type": "shell",
+				"command": "pip install -r requirements.txt",
+				"options": {
+					"cwd": "${workspaceFolder:legacy-orderflow}"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Install Payment Service Dependencies",
+				"type": "shell",
+				"command": "pip install -r requirements.txt",
+				"options": {
+					"cwd": "${workspaceFolder:payment-service}"
+				},
+				"group": "build"
+			},
+			{
+				"label": "Run Legacy Tests",
+				"type": "shell",
+				"command": "pytest tests/ -v",
+				"options": {
+					"cwd": "${workspaceFolder:legacy-orderflow}"
+				},
+				"group": "test"
+			},
+			{
+				"label": "Run Characterization Tests",
+				"type": "shell",
+				"command": "pytest tests/test_characterization.py -v",
+				"options": {
+					"cwd": "${workspaceFolder:legacy-orderflow}"
+				},
+				"group": "test",
+				"problemMatcher": []
+			},
+			{
+				"label": "Run Payment Service Tests",
+				"type": "shell",
+				"command": "pytest tests/ -v",
+				"options": {
+					"cwd": "${workspaceFolder:payment-service}"
+				},
+				"group": "test"
+			}
+		]
+	}
+}

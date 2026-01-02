@@ -27,11 +27,42 @@ Experience the reality of inheriting undocumented legacy code. Develop systemati
 > 
 > First task: Tell us what this thing actually does."
 
+### Step 0: Multi-Repo Workspace Setup (5 min)
+
+**Clone the legacy system:**
+```bash
+# Clone the acquired company's codebase
+git clone https://github.com/DataStoics/legacy-orderflow
+
+# You should already have payment-service from Part 1
+# If not: git clone https://github.com/DataStoics/sdd-greenfield-template payment-service
+```
+
+**Open the multi-repo workspace:**
+```bash
+# Download the workspace file
+curl -O https://raw.githubusercontent.com/DataStoics/sdd-course-guide/main/workspaces/part2-brownfield.code-workspace
+
+# Open in VS Code
+code part2-brownfield.code-workspace
+```
+
+**Workspace structure:**
+```
+VS Code Workspace
+├── payment-service/          # Your Part 1 code (where new code goes)
+│   └── .specify/             # Specs for new integration work
+└── legacy-orderflow/         # The acquired monolith (read-only initially)
+    └── .specify/             # Specs that document existing behavior
+```
+
+> **Key Concept**: In real acquisitions, you work across repos. The legacy repo is "their code" — you read and understand it. Your repo is where new integration code lives.
+
 ### Step 1: First Contact (10 min)
 
-**Run the application:**
+**Run the legacy application:**
 ```bash
-cd legacy-monolith
+cd legacy-orderflow
 pip install -r requirements.txt
 python app.py
 ```
@@ -101,6 +132,21 @@ Hunt for concerning patterns:
 > "The most dangerous words in software: 'It works, don't touch it.'
 > Before you can fix it, you must understand it."
 
+### Cross-Repo Workflow Pattern
+
+When using Copilot in a multi-repo workspace:
+
+```
+# In the payment-service terminal (your repo):
+> /speckit.specify
+
+Prompt: "Analyze @legacy-orderflow/app.py and create a specification 
+documenting the order creation flow. Focus on the business rules, 
+state transitions, and validation logic."
+```
+
+Copilot reads from `legacy-orderflow/` but creates specs in `payment-service/.specify/`.
+
 ---
 
 ## Lab 2.1: Extract Specs from Code (90 min)
@@ -161,12 +207,17 @@ def client():
 Write tests that capture the order creation flow:
 
 ```text
-/speckit.specify Analyze the order creation flow in legacy-monolith/app.py.
+# In payment-service repo, referencing the legacy code:
+/speckit.specify
+
+Prompt: "Analyze the order creation flow in @legacy-orderflow/app.py.
 Extract the implicit specification by documenting:
 1. User registration and login
 2. Adding items to cart
 3. Creating an order
 4. The exact response format and side effects
+
+Create the spec in .specify/legacy-integration/order-creation.md"
 ```
 
 **Expected test coverage:**
@@ -179,12 +230,15 @@ Extract the implicit specification by documenting:
 Document boundary behavior:
 
 ```text
-/speckit.clarify Based on the order creation spec, clarify edge case behavior:
+/speckit.clarify
+
+Prompt: "Based on .specify/legacy-integration/order-creation.md, 
+clarify edge case behavior by analyzing @legacy-orderflow/app.py:
 - What happens when order total is exactly $100 (minimum)?
 - What happens when order total is exactly $10,000 (maximum)?
 - What happens when order total is exactly $500 (discount threshold)?
 - What happens when cart contains product with 0 stock?
-- What happens when a 'credit' user approaches $5,000 limit?
+- What happens when a 'credit' user approaches $5,000 limit?"
 ```
 
 **Key discovery:** Does the system handle edge cases gracefully or fail silently?
@@ -204,8 +258,8 @@ for the order creation feature documenting current behavior including:
 
 ### Deliverables
 
-1. `tests/test_characterization.py` — Executable behavior documentation
-2. `specs/legacy-order-creation/spec.md` — Formal specification extracted from tests
+1. `legacy-orderflow/tests/test_characterization.py` — Executable behavior documentation (in legacy repo)
+2. `payment-service/.specify/legacy-integration/order-creation.md` — Formal specification extracted from tests (in your repo)
 
 ### Success Criteria
 
@@ -251,12 +305,15 @@ if total > DISCOUNT_THRESHOLD:
 Find all hardcoded values:
 
 ```text
-/speckit.specify Scan the legacy codebase and extract business rules:
+/speckit.specify
+
+Prompt: "Scan @legacy-orderflow/app.py and extract all business rules:
 1. Find all magic numbers (hardcoded numeric values)
 2. Find all magic strings (hardcoded status values, error messages)  
 3. Identify implicit thresholds (conditional boundaries)
 
 For each rule found, document: value, location, apparent purpose, confidence level.
+Create the output in .specify/legacy-integration/business-rules.md"
 ```
 
 **Expected findings:**
@@ -277,8 +334,11 @@ For each rule found, document: value, location, apparent purpose, confidence lev
 Document the order lifecycle:
 
 ```text
-/speckit.specify Map the order state machine from the legacy code.
+/speckit.specify
+
+Prompt: "Map the order state machine from @legacy-orderflow/app.py.
 Document: What states exist? What transitions are allowed? What triggers each transition?
+Add a state diagram to .specify/legacy-integration/order-states.md"
 ```
 
 **Expected state diagram:**
@@ -327,7 +387,7 @@ Flag any rules that seem inconsistent or risky.
 
 ### Deliverable
 
-`specs/legacy-system/business-rules.md`:
+`payment-service/.specify/legacy-integration/business-rules.md`:
 
 ```markdown
 # OrderFlow Inc. Business Rules
@@ -404,22 +464,32 @@ Instead of a risky big-bang migration:
 ### Step 1: Create the Gateway Spec (20 min)
 
 ```text
-/speckit.specify Create a specification for an API Gateway that:
-1. Accepts all requests currently handled by legacy system
+# Working in payment-service repo:
+/speckit.specify
+
+Prompt: "Create a specification for an API Gateway that:
+1. Accepts all requests currently handled by @legacy-orderflow system
 2. Routes to either legacy or new system based on feature flags
 3. Supports percentage-based traffic splitting
 4. Logs routing decisions for analysis
 5. Can fallback to legacy on new system errors
+
+Analyze @legacy-orderflow/app.py to determine all endpoints that need proxying.
+Create the spec in .specify/gateway/strangler-facade.md"
 ```
 
 ### Step 2: Implement Basic Gateway (40 min)
 
 ```text
-/speckit.plan Plan the API Gateway implementation:
+/speckit.plan
+
+Prompt: "Plan the API Gateway implementation based on .specify/gateway/strangler-facade.md:
 - Technology: FastAPI (matches Part 1 stack)
 - Routing: Path-based + feature flag
 - Feature flags: Environment variables initially
 - Logging: Structured JSON for analysis
+
+The gateway will live in payment-service/src/gateway/"
 ```
 
 **Core routing logic:**
@@ -520,10 +590,16 @@ Legacy system has notification logic embedded:
 ### Step 1: Design Event Schema (15 min)
 
 ```text
-/speckit.specify Design the event schema for order notifications:
+/speckit.specify
+
+Prompt: "Design the event schema for order notifications:
 - What events exist? (order.created, order.paid, order.shipped)
 - What data does each event carry?
 - How do we ensure events are delivered?
+
+Analyze notification triggers in both @legacy-orderflow/app.py and 
+payment-service/src/ to ensure schema covers both systems.
+Create .specify/integration/event-schema.md"
 ```
 
 **Event schema:**
@@ -571,11 +647,14 @@ class SimpleEventQueue:
 ### Step 3: Build Notification Service (25 min)
 
 ```text
-/speckit.implement Create a notification service that:
+/speckit.implement
+
+Prompt: "Implement the notification service in payment-service/src/notifications/
+based on .specify/integration/event-schema.md:
 1. Subscribes to order events
 2. Selects appropriate template based on event type
-3. Formats and "sends" notification (log for demo)
-4. Handles failures with retry logic
+3. Formats and 'sends' notification (log for demo)
+4. Handles failures with retry logic"
 ```
 
 **Template approach:**
@@ -717,7 +796,10 @@ A migration plan document that could actually be executed.
 ### Step 1: Define Migration Phases (15 min)
 
 ```text
-/speckit.specify Create a phased migration plan:
+/speckit.specify
+
+Prompt: "Create a phased migration plan for transitioning from 
+@legacy-orderflow to the new payment-service integration:
 - Phase 1: Shadow mode (compare without switching)
 - Phase 2: Canary release (small percentage)
 - Phase 3: Gradual rollout (increasing percentage)
@@ -725,6 +807,7 @@ A migration plan document that could actually be executed.
 - Phase 5: Legacy decommission
 
 For each phase: duration, success criteria, rollback trigger.
+Create .specify/migration/migration-plan.md"
 ```
 
 **Phase template:**
@@ -774,12 +857,17 @@ Identify what could go wrong:
 Operational documentation:
 
 ```text
-/speckit.specify Create an operations runbook covering:
+/speckit.specify
+
+Prompt: "Create an operations runbook for the legacy-to-new migration:
 1. How to check system health during migration
 2. How to adjust traffic percentages
 3. How to perform emergency rollback
 4. How to investigate discrepancies
 5. Escalation contacts and procedures
+
+Include specific commands for the gateway feature flags.
+Create .specify/migration/operations-runbook.md"
 ```
 
 ### Success Criteria
@@ -821,3 +909,35 @@ Day 1: UNDERSTAND                    Day 2: INTEGRATE
 | Clean architecture | Strangler pattern integration |
 | API design | Unified facades and aggregation |
 | Deployment | Migration planning with rollback |
+
+### Multi-Repo Workflow Summary
+
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                     VS Code Multi-Root Workspace                        │
+├─────────────────────────────────┬───────────────────────────────────────┤
+│     legacy-orderflow/           │        payment-service/               │
+│     (READ & UNDERSTAND)         │        (WRITE & IMPLEMENT)            │
+│                                 │                                       │
+│     app.py ◄────────────────────┼─── .specify/                          │
+│     (source of behavior truth)  │     ├── legacy-integration/           │
+│                                 │     │   ├── order-creation.md         │
+│     tests/                      │     │   ├── business-rules.md         │
+│     └── test_characterization.py│     │   └── order-states.md           │
+│         (validates behavior)    │     ├── gateway/                      │
+│                                 │     │   └── strangler-facade.md       │
+│                                 │     ├── integration/                  │
+│                                 │     │   └── event-schema.md           │
+│                                 │     └── migration/                    │
+│                                 │         ├── migration-plan.md         │
+│                                 │         └── operations-runbook.md     │
+│                                 │                                       │
+│                                 │     src/                              │
+│                                 │     ├── gateway/                      │
+│                                 │     │   └── strangler.py              │
+│                                 │     └── notifications/                │
+│                                 │         └── service.py                │
+└─────────────────────────────────┴───────────────────────────────────────┘
+
+Pattern: Copilot reads from legacy-orderflow/, writes to payment-service/
+```
