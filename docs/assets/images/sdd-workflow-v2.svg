@@ -1,0 +1,241 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 720">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <marker id="feedback-arrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#f59e0b"/>
+    </marker>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1100" height="720" fill="#fafafa"/>
+
+  <!-- Title -->
+  <text x="550" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="bold" fill="#1e293b">Spec-Driven Development Workflow v2</text>
+  <text x="550" y="52" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Specification → Architecture → Implementation → Validation with Human Checkpoints</text>
+
+  <!-- Constitution Box at Top -->
+  <g transform="translate(375, 65)">
+    <rect width="350" height="70" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+    <text x="175" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="bold" fill="#b45309">🏛️ CONSTITUTION</text>
+    <text x="175" y="44" text-anchor="middle" font-family="monospace" font-size="10" fill="#78716c">/speckit.constitution</text>
+    <text x="175" y="60" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#92400e">Immutable principles • Tech stack • Security rules • Coding standards</text>
+  </g>
+
+  <!-- Constitution governance border -->
+  <rect x="30" y="145" width="1040" height="430" rx="12" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8,4" opacity="0.4"/>
+  <text x="50" y="163" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#d97706" opacity="0.7">Constitution governs all phases</text>
+
+  <!-- Swimlane Headers -->
+  <rect x="30" y="168" width="1040" height="22" rx="4" fill="#f1f5f9"/>
+  <text x="50" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">SPECIFICATION</text>
+  <text x="295" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">│</text>
+  <text x="315" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">ARCHITECTURE</text>
+  <text x="545" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">│</text>
+  <text x="565" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">EXECUTION</text>
+  <text x="795" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">│</text>
+  <text x="815" y="183" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#64748b">VALIDATION</text>
+
+  <!-- Row 1: SPECIFY → CLARIFY → PLAN → ANALYZE -->
+  
+  <!-- SPECIFY -->
+  <g transform="translate(45, 200)">
+    <!-- Human checkpoint badge -->
+    <rect x="55" y="-16" width="70" height="22" rx="11" fill="#3b82f6" filter="url(#shadow)"/>
+    <text x="90" y="-1" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#fff">👤 Review</text>
+    <!-- Main box -->
+    <rect width="180" height="115" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0369a1">📝 SPECIFY</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.specify</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#bae6fd" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#0284c7">WHAT to build</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#0369a1">User stories</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#0369a1">Requirements • Acceptance</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="230" y1="257" x2="255" y2="257" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- CLARIFY -->
+  <g transform="translate(260, 200)">
+    <rect width="180" height="115" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#15803d">❓ CLARIFY</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.clarify</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#16a34a">Surface unknowns</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#15803d">Edge cases • Constraints</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#15803d">Dependencies • Risks</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="445" y1="257" x2="470" y2="257" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- PLAN -->
+  <g transform="translate(475, 200)">
+    <!-- Human checkpoint badge -->
+    <rect x="50" y="-16" width="80" height="22" rx="11" fill="#f97316" filter="url(#shadow)"/>
+    <text x="90" y="-1" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#fff">👤 Approve</text>
+    <!-- Main box -->
+    <rect width="180" height="115" rx="10" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#b45309">🗺️ PLAN</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.plan</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#fde68a" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#d97706">HOW to build</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#b45309">Architecture • ADRs</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#b45309">Tech choices • IaC</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="660" y1="257" x2="685" y2="257" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- ANALYZE -->
+  <g transform="translate(690, 200)">
+    <rect width="180" height="115" rx="10" fill="#fce7f3" stroke="#db2777" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#be185d">🔍 ANALYZE</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.analyze</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#fbcfe8" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#db2777">Validate consistency</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#be185d">Constitution compliance</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#be185d">Security • Policy-as-code</text>
+  </g>
+
+  <!-- Arrow down from ANALYZE -->
+  <line x1="875" y1="257" x2="920" y2="257" stroke="#475569" stroke-width="2"/>
+  <line x1="920" y1="257" x2="920" y2="340" stroke="#475569" stroke-width="2"/>
+  <line x1="920" y1="340" x2="875" y2="340" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Row 2: TASKS → IMPLEMENT → CHECKLIST -->
+  
+  <!-- TASKS -->
+  <g transform="translate(690, 380)">
+    <rect width="180" height="115" rx="10" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#3730a3">📋 TASKS</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.tasks</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#4f46e5">Break into actions</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#3730a3">Dependencies • Phases</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#3730a3">Environment targeting</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="685" y1="437" x2="660" y2="437" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- IMPLEMENT -->
+  <g transform="translate(475, 380)">
+    <!-- Human checkpoint badge -->
+    <rect x="55" y="-16" width="70" height="22" rx="11" fill="#3b82f6" filter="url(#shadow)"/>
+    <text x="90" y="-1" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#fff">👤 Review</text>
+    <!-- Main box -->
+    <rect width="180" height="115" rx="10" fill="#f3e8ff" stroke="#9333ea" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#7e22ce">⚡ IMPLEMENT</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.implement</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#e9d5ff" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#9333ea">AI generates code</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7e22ce">TDD • Feature flags</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#7e22ce">Progressive delivery</text>
+  </g>
+
+  <!-- Arrow -->
+  <line x1="470" y1="437" x2="445" y2="437" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- CHECKLIST -->
+  <g transform="translate(260, 380)">
+    <!-- Done badge -->
+    <rect x="55" y="-16" width="70" height="22" rx="11" fill="#10b981" filter="url(#shadow)"/>
+    <text x="90" y="-1" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#fff">✅ Done</text>
+    <!-- Main box -->
+    <rect width="180" height="115" rx="10" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" filter="url(#shadow)"/>
+    <text x="90" y="26" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="bold" fill="#0f766e">☑️ CHECKLIST</text>
+    <text x="90" y="42" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.checklist</text>
+    <line x1="20" y1="52" x2="160" y2="52" stroke="#99f6e4" stroke-width="1"/>
+    <text x="90" y="68" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#0d9488">Quality validation</text>
+    <text x="90" y="84" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#0f766e">Security • Tests • UX</text>
+    <text x="90" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#0f766e">Compliance • Audit</text>
+  </g>
+
+  <!-- Feedback Loops Section -->
+  <g transform="translate(45, 380)">
+    <rect width="180" height="115" rx="10" fill="#fefce8" stroke="#eab308" stroke-width="1.5" stroke-dasharray="4,2"/>
+    <text x="90" y="22" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#a16207">🔄 FEEDBACK LOOPS</text>
+    <line x1="20" y1="32" x2="160" y2="32" stroke="#fde047" stroke-width="1"/>
+    <text x="90" y="50" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#854d0e">Test failure → IMPLEMENT</text>
+    <text x="90" y="64" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#854d0e">Constraint found → CLARIFY</text>
+    <text x="90" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#854d0e">Architecture issue → PLAN</text>
+    <text x="90" y="92" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#854d0e">Incident pattern → PLAN</text>
+    <text x="90" y="106" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#854d0e">Scope change → SPECIFY</text>
+  </g>
+
+  <!-- Feedback arrow from CHECKLIST back to CLARIFY -->
+  <path d="M 350 500 Q 350 540 200 540 Q 50 540 50 350 Q 50 257 135 257" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3" fill="none" marker-end="url(#feedback-arrow)" opacity="0.6"/>
+
+  <!-- Environment Progression -->
+  <rect x="900" y="200" width="160" height="295" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="980" y="220" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#475569">🌍 ENVIRONMENTS</text>
+  
+  <g transform="translate(915, 235)">
+    <rect width="130" height="40" rx="5" fill="#dbeafe" stroke="#3b82f6" stroke-width="1"/>
+    <text x="65" y="17" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#1d4ed8">DEV</text>
+    <text x="65" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#3b82f6">Local • Feature branch</text>
+  </g>
+  <line x1="980" y1="280" x2="980" y2="295" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(915, 300)">
+    <rect width="130" height="40" rx="5" fill="#fef3c7" stroke="#f59e0b" stroke-width="1"/>
+    <text x="65" y="17" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#b45309">STAGING</text>
+    <text x="65" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#d97706">Integration • E2E tests</text>
+  </g>
+  <line x1="980" y1="345" x2="980" y2="360" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(915, 365)">
+    <rect width="130" height="40" rx="5" fill="#dcfce7" stroke="#22c55e" stroke-width="1"/>
+    <text x="65" y="17" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#16a34a">PRODUCTION</text>
+    <text x="65" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#22c55e">Canary → Full rollout</text>
+  </g>
+  <line x1="980" y1="410" x2="980" y2="425" stroke="#94a3b8" stroke-width="1" marker-end="url(#arrow)"/>
+  
+  <g transform="translate(915, 430)">
+    <rect width="130" height="50" rx="5" fill="#fef2f2" stroke="#ef4444" stroke-width="1"/>
+    <text x="65" y="17" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#dc2626">📊 OBSERVABILITY</text>
+    <text x="65" y="31" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#ef4444">Metrics • Logs • Traces</text>
+    <text x="65" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#ef4444">Alerts → Incidents</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(45, 590)">
+    <rect width="1015" height="100" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+    <text x="20" y="22" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#1e293b">Legend</text>
+    
+    <!-- Row 1 -->
+    <line x1="20" y1="42" x2="60" y2="42" stroke="#f59e0b" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+    <text x="70" y="46" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Constitution governs all</text>
+    
+    <line x1="200" y1="42" x2="240" y2="42" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="250" y="46" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Workflow progression</text>
+    
+    <line x1="380" y1="42" x2="420" y2="42" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#feedback-arrow)"/>
+    <text x="430" y="46" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Feedback loop</text>
+    
+    <rect x="540" y="32" width="55" height="18" rx="9" fill="#3b82f6"/>
+    <text x="567" y="45" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" font-weight="600" fill="#fff">👤 Action</text>
+    <text x="610" y="46" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Human checkpoint</text>
+    
+    <!-- Row 2 -->
+    <text x="20" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#475569">Phase Categories:</text>
+    <rect x="120" y="62" width="12" height="12" rx="2" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="138" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Specification</text>
+    <rect x="210" y="62" width="12" height="12" rx="2" fill="#fef3c7" stroke="#d97706"/>
+    <text x="228" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Architecture</text>
+    <rect x="305" y="62" width="12" height="12" rx="2" fill="#f3e8ff" stroke="#9333ea"/>
+    <text x="323" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Execution</text>
+    <rect x="390" y="62" width="12" height="12" rx="2" fill="#ccfbf1" stroke="#0d9488"/>
+    <text x="408" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="9" fill="#64748b">Validation</text>
+    
+    <!-- Key improvements note -->
+    <text x="540" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#475569">v2 Improvements:</text>
+    <text x="540" y="86" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">• Swimlane categories • Environment progression • Explicit feedback loops • Observability integration</text>
+  </g>
+</svg>
