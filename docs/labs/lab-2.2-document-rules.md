@@ -370,6 +370,18 @@ This document serves multiple purposes:
 
 ---
 
+## Reflection Questions
+
+1. **Hidden knowledge**: How many business rules did you find that probably only existed in the original developer's head? What would happen during integration without this document?
+
+2. **State diagram value**: Could you have drawn the order state machine by reading the code alone? How does visualizing it change your understanding?
+
+3. **Security vs. timeline**: You found security issues. In a real project, would you fix them now, or document them for later? What factors influence that decision?
+
+4. **Part 1 contrast**: In Part 1, you specified business rules before coding. Here, you're extracting rules from code. Which approach produces better documentation?
+
+---
+
 ## Key Takeaways
 
 1. **Magic numbers have meaning** — Every hardcoded value is a business decision someone made

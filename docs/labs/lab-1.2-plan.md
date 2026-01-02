@@ -205,6 +205,18 @@ Your lab is complete when:
 
 ---
 
+## Reflection Questions
+
+1. **Technology choice confidence**: When an investor asks "Why FastAPI and Redis?", can you answer without hesitation? What would you have said after Lab 0?
+
+2. **The research payoff**: How long did `/speckit.plan` take vs. how long you would have spent debugging a wrong technology choice mid-week?
+
+3. **Dependency discovery**: Did the plan reveal any integration dependencies you hadn't considered? What would discovering them Thursday have cost?
+
+4. **Lab 0 callback**: In the Lab 0 approach, when would you have made these technology decisions? Before coding, during, or while debugging?
+
+---
+
 ## Key Takeaways
 
 1. **One command, multiple artifacts** — `/speckit.plan` generates plan.md, research.md, and data-model.md together.

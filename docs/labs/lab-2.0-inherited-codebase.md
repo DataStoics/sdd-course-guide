@@ -341,6 +341,18 @@ Commit the system-analysis.md with message: docs: initial legacy system analysis
 
 ---
 
+## Reflection Questions
+
+1. **Scale surprise**: How close was your estimate of "how big is this app?" to reality (40+ endpoints)? What does this tell you about legacy systems?
+
+2. **Red flag severity**: Which red flag concerns you most? How would you prioritize fixing it during integration vs. accepting it temporarily?
+
+3. **Part 1 contrast**: In Part 1, you started with an empty repo. How does starting with 2,500 lines of unknown code change your approach to the first hour?
+
+4. **Stakeholder communication**: If you had to brief your PM on this legacy system in 5 minutes, what would you say?
+
+---
+
 ## Key Takeaways
 
 1. **Explore before you read** — Run the app as a user first

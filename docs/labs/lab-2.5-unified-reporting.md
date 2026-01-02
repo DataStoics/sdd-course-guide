@@ -477,6 +477,18 @@ curl "http://localhost:8080/reports/sales?start_date=2026-01-01&end_date=2026-01
 
 ---
 
+## Reflection Questions
+
+1. **Schema mapping complexity**: What surprised you about mapping "the same data" from two systems? Why do you think the original developers used different field names?
+
+2. **Graceful degradation value**: The report returns partial data if one system fails. When would partial data be better than no data? When would it be worse?
+
+3. **Duplicate detection challenge**: Orders might exist in both systems during migration. How confident are you in your duplicate detection logic? What edge cases might it miss?
+
+4. **Part 1 contrast**: In Part 1, all your data was in one schema you designed. Here, you're aggregating schemas you don't control. How does that change your specs?
+
+---
+
 ## Key Takeaways
 
 1. **Query, don't migrate** — Unify at read time, not by moving data

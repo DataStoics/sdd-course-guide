@@ -211,6 +211,18 @@ Your lab is complete when:
 
 ---
 
+## Reflection Questions
+
+1. **TDD experience**: Did watching the AI follow the RED-GREEN-REFACTOR cycle feel different from typical AI-generated code? Why?
+
+2. **Traceability value**: Pick one endpoint. Can you trace it back to a specific FR-xxx requirement and a Given/When/Then scenario? How long would that trace take in Lab 0 code?
+
+3. **Coverage confidence**: Your tests came from spec scenarios. How does that change your confidence in the 80% coverage number vs. AI-invented test cases?
+
+4. **Lab 0 callback**: In Lab 0, how would you have known when "payment processing" was done? What was your definition of done?
+
+---
+
 ## Key Takeaways
 
 1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.

@@ -488,6 +488,18 @@ curl http://localhost:8000/pay -X POST \
 
 ---
 
+## Reflection Questions
+
+1. **Decoupling benefit**: The payment service doesn't know who's listening for events. How does this make adding new notification channels (SMS, Slack) easier?
+
+2. **Event schema as contract**: Why is the event schema the most important document in this lab? What happens if legacy and new systems disagree on the schema?
+
+3. **Retry strategy**: Your notification service retries on failure. What would happen to users if it didn't retry? What if it retried forever?
+
+4. **Part 1 contrast**: In Part 1, you could test notifications in isolation. Here, notifications span two systems. How does that change your testing strategy?
+
+---
+
 ## Key Takeaways
 
 1. **Publish, don't call** — Systems publish events; they don't know who's listening

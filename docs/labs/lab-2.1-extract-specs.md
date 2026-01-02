@@ -405,6 +405,18 @@ git commit -m "docs: extract order creation spec from legacy system"
 
 ---
 
+## Reflection Questions
+
+1. **Surprising behavior**: What was the most unexpected behavior you discovered through characterization testing? Would you have found it during integration?
+
+2. **Test mindset shift**: How does "testing to document reality" feel different from "testing to verify correctness"? Which requires more humility?
+
+3. **Safety net value**: If you had to refactor `place_order()` tomorrow, how confident would you be with these tests vs. without them?
+
+4. **Part 1 contrast**: In Part 1, your tests came from specs you wrote. Here, tests document code someone else wrote. Which approach gives you more confidence?
+
+---
+
 ## Key Takeaways
 
 1. **Test reality, not assumptions** — The code is the only source of truth

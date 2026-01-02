@@ -371,6 +371,18 @@ Your lab is complete when:
 
 ---
 
+## Reflection Questions
+
+1. **The clarification power**: How many `[NEEDS CLARIFICATION]` markers did your AI generate? What would have happened if it had guessed instead of asking?
+
+2. **Scenario coverage**: Look at your 4+ scenarios. In Lab 0, would you have thought of the double-click or error recovery scenarios before Thursday night?
+
+3. **The conversation difference**: Compare prompting "build a checkout system" (Lab 0) vs. the `/speckit.specify` conversation. Which gave you more control over the outcome?
+
+4. **Lab 0 callback**: If you had started Lab 0 with this spec, how much of your rework would have been prevented?
+
+---
+
 ## Key Takeaways
 
 1. **Specs are conversations, not documents** - You described what you needed naturally; the AI structured it.

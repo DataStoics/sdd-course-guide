@@ -403,6 +403,18 @@ feat: implement strangler facade for legacy integration
 
 ---
 
+## Reflection Questions
+
+1. **Gradual migration value**: What would "big bang" migration look like without the strangler pattern? What could go wrong?
+
+2. **Fallback confidence**: The gateway falls back to legacy on 5xx errors. How does this change your risk assessment of deploying new code?
+
+3. **Comparison mode insight**: Why run both systems in parallel and compare responses? What bugs would this catch that tests miss?
+
+4. **Part 1 contrast**: In Part 1, you built from scratch with full control. Here, you're routing between systems you don't fully control. How does that change your spec needs?
+
+---
+
 ## Key Takeaways
 
 1. **Facade before rewrite** — Put a gateway in front before changing anything
