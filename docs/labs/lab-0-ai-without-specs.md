@@ -182,11 +182,24 @@ You'll see how:
 
 ---
 
+## Clean Up: Discard Lab 0 Code
+
+Before starting Lab 1.1, **discard all the code you just created**. Run this in your terminal:
+
+```bash
+git checkout -- .
+git clean -fd
+```
+
+{: .warning }
+> **Why discard?** Lab 0 code was for learning, not building on. Lab 1.1 starts fresh with the spec-driven approach. Keeping Lab 0 code would pollute your clean slate.
+
+---
+
 ## Notes for Participants
 
 - **This is normal** -- everyone struggles with this lab
 - **The mess is the point** -- it reveals a universal problem
 - **Your experience matters** -- share honestly in the debrief
-- **Keep your code** -- you'll compare it to Lab 1.3 output later
 
 > **Pro tip**: Save your chat history. We'll analyze what prompts worked and which created rework.
