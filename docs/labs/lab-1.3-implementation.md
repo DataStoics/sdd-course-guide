@@ -14,11 +14,11 @@ nav_order: 4
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified Ã¢â‚¬â€ including the double-click that would've crashed your Lab 0 code.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified — including the double-click that would've crashed your Lab 0 code.
 
 ---
 
-## The SDD Workflow
+## The Spec-Driven Development Workflow
 
 ![Lab 1.3 Progress](../assets/images/lab-1.3-progress.svg)
 
@@ -46,7 +46,7 @@ Break down the implementation plan into actionable tasks:
 
 The command reads your spec and plan, then generates `specs/001-payment-checkout/tasks.md` with:
 - Dependency-ordered tasks (what must come first)
-- Phase groupings (Setup Ã¢â€ â€™ Foundational Ã¢â€ â€™ Feature Ã¢â€ â€™ Polish)
+- Phase groupings (Setup → Foundational → Feature → Polish)
 - Parallel execution opportunities marked with `[P]`
 
 ### Review the Generated Tasks
@@ -96,19 +96,19 @@ This command:
 ### What Gets Created
 
 Watch as the AI creates:
-- `src/app/main.py` Ã¢â‚¬â€ FastAPI entry point
-- `src/app/models.py` Ã¢â‚¬â€ Pydantic models per data-model.md
-- `src/app/payment.py` Ã¢â‚¬â€ Payment endpoint with idempotency
-- `src/app/config.py` Ã¢â‚¬â€ Environment configuration
-- `tests/test_payment.py` Ã¢â‚¬â€ Acceptance scenario tests
-- `docker-compose.yml` Ã¢â‚¬â€ Redis + Mock Gateway services
+- `src/app/main.py` — FastAPI entry point
+- `src/app/models.py` — Pydantic models per data-model.md
+- `src/app/payment.py` — Payment endpoint with idempotency
+- `src/app/config.py` — Environment configuration
+- `tests/test_payment.py` — Acceptance scenario tests
+- `docker-compose.yml` — Redis + Mock Gateway services
 
 ### Monitor Progress
 
 The AI will show you what it's implementing. Look for:
-- **FR-xxx references** Ã¢â‚¬â€ Code linking back to spec requirements
-- **Scenario coverage** Ã¢â‚¬â€ Tests matching your Given/When/Then scenarios
-- **Error handling** Ã¢â‚¬â€ Graceful failures per your edge cases
+- **FR-xxx references** — Code linking back to spec requirements
+- **Scenario coverage** — Tests matching your Given/When/Then scenarios
+- **Error handling** — Graceful failures per your edge cases
 
 ---
 
@@ -155,10 +155,10 @@ Run the spec-kit validation:
 ```
 
 This checks:
-- Ã¢Å“â€œ All spec requirements have implementation
-- Ã¢Å“â€œ All acceptance scenarios have tests
-- Ã¢Å“â€œ Code coverage meets minimum threshold
-- Ã¢Å“â€œ No critical security findings
+- ✓ All spec requirements have implementation
+- ✓ All acceptance scenarios have tests
+- ✓ Code coverage meets minimum threshold
+- ✓ No critical security findings
 
 ### Address Any Gaps
 
@@ -213,13 +213,13 @@ Your lab is complete when:
 
 ## Key Takeaways
 
-1. **Spec Ã¢â€ â€™ Tasks Ã¢â€ â€™ Code** Ã¢â‚¬â€ `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
+1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
 
-2. **Compare to Lab 0** Ã¢â‚¬â€ Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
+2. **Compare to Lab 0** — Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
 
-3. **Natural language drives everything** Ã¢â‚¬â€ You described requirements; the AI structured and implemented them.
+3. **Natural language drives everything** — You described requirements; the AI structured and implemented them.
 
-4. **Traceability = confidence** Ã¢â‚¬â€ Every function traces to an FR-xxx requirement. That's "production-ready."
+4. **Traceability = confidence** — Every function traces to an FR-xxx requirement. That's "production-ready."
 
 ### Common Pitfalls
 
@@ -242,7 +242,7 @@ During implementation, you might hit API questions your AI can't answer from tra
 
 **For now**: Your AI handles most questions. The spec provides enough context.
 
-**In Part 2**: You can integrate MCP tools for real-time documentation  especially useful when working with complex or frequently-updated APIs.
+**In Part 2**: You can integrate MCP tools for real-time documentation — especially useful when working with complex or frequently-updated APIs.
 
 ---
 
@@ -252,7 +252,7 @@ It's **Wednesday morning**. PM walks over:
 
 > "Great progress! The investors also want to see order history. Can you add that by Thursday?"
 
-In **Lab 1.4**, you'll handle this scope addition Ã¢â‚¬â€ with a spec. No Thursday night panic.
+In **Lab 1.4**, you'll handle this scope addition — with a spec. No Thursday night panic.
 
 **Your payment feature works. Now let's see if the discipline scales.**
 

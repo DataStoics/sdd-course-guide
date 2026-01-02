@@ -1,9 +1,3 @@
-﻿---
-title: "Lab 1.2: Plan"
-layout: default
-parent: Labs
-nav_order: 3
----
 # Lab 1.2: From Spec to Implementation Plan
 
 **Duration**: 45 minutes  
@@ -14,7 +8,7 @@ nav_order: 3
 
 ## Learning Objective
 
-Use `/speckit.plan` to transform your specification into a complete implementation plan. This single command generates research documentation, architecture decisions, data models, and API contracts ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â everything needed before writing code.
+Use `/speckit.plan` to transform your specification into a complete implementation plan. This single command generates research documentation, architecture decisions, data models, and API contracts — everything needed before writing code.
 
 By the end of this lab, you'll understand: **A plan is a commitment. Research documents why you made that commitment.**
 
@@ -22,7 +16,15 @@ By the end of this lab, you'll understand: **A plan is a commitment. Research do
 
 ## The SDD Workflow
 
-![Lab 1.2 Progress](../assets/images/lab-1.2-progress.svg)
+```mermaid
+flowchart TB
+    A["✅ Lab 1.1: Specify<br/>WHAT to build"] --> B["🔵 Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
+    
+    style A fill:#22c55e,stroke:#16a34a,color:#fff
+    style B fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
+```
 
 ---
 
@@ -54,7 +56,6 @@ The command creates multiple artifacts in your feature directory:
 | `research.md` | Technology options analyzed, trade-offs documented |
 | `data-model.md` | Entity definitions, relationships |
 | `contracts/api.json` | API endpoint specifications |
-| `quickstart.md` | Example usage and test flows |
 
 ### The Key Insight: Research Is Built-In
 
@@ -75,11 +76,8 @@ Open `specs/001-payment-checkout/research.md` and you'll see:
 
 ### Decision: Redis
 
-**Rationale**: Native TTL support matches our 60-second cache requirement. 
+**Rationale**: Native TTL support matches our cache requirement. 
 For demo purposes, a single Redis instance is sufficient.
-
-**Alternatives rejected**: In-memory caching would work for a single-server demo 
-but doesn't demonstrate production patterns.
 ```
 
 **This is your audit trail.** When someone asks "why Redis?", point them to research.md.
@@ -107,20 +105,18 @@ Open `specs/001-payment-checkout/plan.md` and verify it contains:
 ## Project Structure
 
 src/
-ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ app/
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ __init__.py
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ main.py          # FastAPI entry point
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ models.py        # Pydantic request/response models
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ payment.py       # Payment service logic
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬Å¡   ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ config.py        # Environment configuration
-ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ tests/
-    ÃƒÂ¢Ã¢â‚¬ÂÃ…â€œÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ __init__.py
-    ÃƒÂ¢Ã¢â‚¬ÂÃ¢â‚¬ÂÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ÃƒÂ¢Ã¢â‚¬ÂÃ¢â€šÂ¬ test_payment.py  # API tests
+├── app/
+│   ├── main.py          # FastAPI entry point
+│   ├── models.py        # Pydantic models
+│   ├── payment.py       # Payment service
+│   └── config.py        # Configuration
+└── tests/
+    └── test_payment.py  # API tests
 ```
 
 ### 2c. Traceability Check
 
-**Every technology should trace to your spec.** Ask yourself:
+**Every technology should trace to your spec:**
 
 | Decision | Why? (Spec Reference) |
 |----------|----------------------|
@@ -129,9 +125,7 @@ src/
 | httpx | Call mock payment gateway |
 | structlog | Audit logging requirement (FR-003) |
 
-If you can't justify a technology from your spec, either:
-- Add the missing requirement to spec.md, OR
-- Remove the unnecessary technology
+If you can't justify a technology from your spec, either add the requirement or remove the technology.
 
 ---
 
@@ -147,15 +141,13 @@ Open `specs/001-payment-checkout/data-model.md`:
 ### PaymentRequest
 - idempotency_key: string (unique)
 - amount: decimal
-- currency: string (default: USD)
+- currency: string
 - payment_token: string
-- created_at: timestamp
 
 ### PaymentResponse  
 - transaction_id: string
 - status: enum (success, failed, pending)
 - amount: decimal
-- processed_at: timestamp
 ```
 
 **Verify**: Do these entities cover your spec's requirements?
@@ -164,17 +156,17 @@ Open `specs/001-payment-checkout/data-model.md`:
 
 ## Step 4: Verify Infrastructure (5 min)
 
-The template includes `docker-compose.yml`. Start the services:
+Start the services:
 
 ```bash
 # Start Redis and Mock Payment Gateway
 docker-compose up -d
 
-# Verify Redis is running
+# Verify Redis
 docker-compose exec redis redis-cli ping
 # Expected: PONG
 
-# Verify Mock Payment Gateway
+# Verify Mock Gateway
 curl http://localhost:8001/health
 # Expected: {"status":"healthy"}
 ```
@@ -183,36 +175,25 @@ curl http://localhost:8001/health
 
 ## Step 5: Run Consistency Check (Optional) (5 min)
 
-Before proceeding to implementation, you can validate that your plan is consistent with your spec:
+Validate your plan is consistent with your spec:
 
 ```
 /speckit.analyze
 ```
 
 This checks:
-- ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“ All spec requirements have corresponding plan elements
-- ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“ No plan elements without spec justification
-- ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“ Data model covers all entities mentioned in spec
-- ÃƒÂ¢Ã…â€œÃ¢â‚¬Å“ API contracts match spec scenarios
-
-If issues are found, fix them before Lab 1.3.
+- ✓ All spec requirements have plan elements
+- ✓ Data model covers all entities
+- ✓ API contracts match spec scenarios
 
 ---
 
 ## Step 6: Commit Your Work (5 min)
 
-**Where does this commit go?** To YOUR repository copy (same as Lab 1.1).
-
 ```bash
 git add .
 git commit -m "feat: implementation plan for payment checkout"
 ```
-
-This commit includes:
-- `specs/001-payment-checkout/plan.md`
-- `specs/001-payment-checkout/research.md`
-- `specs/001-payment-checkout/data-model.md`
-- `specs/001-payment-checkout/contracts/` (if generated)
 
 ---
 
@@ -238,92 +219,40 @@ Your lab is complete when:
 | Answers "why not Y?" | Answers "what are we building?" |
 | Audit trail for decisions | Implementation blueprint |
 
-**Both are generated by `/speckit.plan`** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â research explores options, plan commits to decisions.
+**Both are generated by `/speckit.plan`** — research explores, plan commits.
 
 ---
 
 ## Key Takeaways
 
-1. **One command, multiple artifacts** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â `/speckit.plan` generates plan.md, research.md, data-model.md, and contracts in one step.
+1. **One command, multiple artifacts** — `/speckit.plan` generates plan.md, research.md, and data-model.md together.
 
-2. **Research is built into planning** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â You don't need a separate research phase; the AI analyzes options as part of planning.
+2. **Research is built into planning** — No separate research phase needed.
 
-3. **Traceability matters** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Every technology choice should trace to a spec requirement. If it doesn't, question whether you need it.
+3. **Traceability matters** — Every technology choice should trace to a spec requirement.
 
-4. **Plans are commitments** ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Once you commit to a plan, changes should go through the spec ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ plan ÃƒÂ¢Ã¢â‚¬Â Ã¢â‚¬â„¢ implementation cycle.
+4. **Plans are commitments** — Changes should go through spec → plan → implementation.
+
+---
+
+## Preview: External Research Tools (Course 2)
+
+In greenfield projects, your AI assistant's training data is usually sufficient. But in **brownfield enterprise work** (Course 2), you'll need live, authoritative sources:
+
+| Tool | Use Case |
+|------|----------|
+| **Context7** | Up-to-date library documentation |
+| **Perplexity** | Security advisories, version compatibility |
+| **Confluence/SharePoint** | Company-approved tech lists |
+
+**For now**: Your AI handles research automatically via `/speckit.plan`.
+
+**In Course 2**: You'll learn to integrate MCP tools for verified research — essential when working with legacy codebases.
 
 ---
 
-## The Bigger Picture: Enterprise Integrations
-
-In this greenfield lab, `/speckit.plan` handles research automatically using AI training data. But real enterprise work looks different.
-
-![SDD Enterprise Integration Points](../assets/images/sdd-enterprise-integrations.svg)
-
-### External Systems by SDD Phase
-
-| Phase | Greenfield (This Lab) | Part 2: Transforming Legacy Code |
-|-------|----------------------|----------------------|
-| **SPECIFY** | Write from scratch | Pull from Jira tickets, existing requirements docs |
-| **CLARIFY** | AI surfaces unknowns | Query Confluence ADRs, interview legacy system owners |
-| **PLAN** | AI training data | Context7 for current docs, Perplexity for CVEs, company-approved vendor lists |
-| **ANALYZE** | Basic consistency check | Snyk/SonarQube integration, CVE database queries |
-| **IMPLEMENT** | Generate fresh code | Integrate with Stripe SDKs, navigate legacy codebase |
-| **CHECKLIST** | Run local tests | CI/CD pipeline results, security scan reports |
-
-### Why External Systems Matter
-
-**80% of enterprise work is brownfield.** When you're integrating with existing systems:
-
-| Challenge | Why AI Training Data Isn't Enough |
-|-----------|-----------------------------------|
-| **Version constraints** | Legacy system uses Redis 6.x - does your plan account for missing features in Redis 7? |
-| **CVE verification** | Security team requires proof that dependencies have no critical vulnerabilities in last 6 months |
-| **Approved vendors** | Company policy only allows AWS services - your plan can't suggest Google Cloud |
-| **Existing contracts** | Payment system already uses Stripe - must integrate, not replace |
-| **Schema compatibility** | New feature must work with existing database schema - no greenfield freedom |
-
-### The MCP Integration Pattern (Part 2 Preview)
-
-In Part 2, you'll learn to wire external systems into your SDD workflow using **Model Context Protocol (MCP)**:
-
-```
-+------------------------------------------------------------------+
-|                    YOUR AI ASSISTANT                             |
-+------------------------------------------------------------------+
-|  MCP Server: Context7     -> Library docs (current versions)     |
-|  MCP Server: Perplexity   -> Web search (CVEs, best practices)   |
-|  MCP Server: GitHub       -> Legacy code, existing issues        |
-|  MCP Server: Confluence   -> Architecture decisions, tech stds   |
-|  MCP Server: Snyk         -> Security vulnerabilities            |
-+------------------------------------------------------------------+
-```
-
-**Example brownfield `/speckit.plan` prompt**:
-```
-/speckit.plan
-- Must integrate with existing user-service (see GitHub repo)
-- Use only packages on our approved list (query Confluence)
-- Verify no critical CVEs for any new dependencies (Perplexity)
-- Match existing Redis 6.2 schema (query production config)
-```
-
-### For Now: Trust the AI
-
-In Part 1, we keep it simple:
-- `/speckit.plan` uses AI's built-in knowledge
-- Technology choices are yours (no legacy constraints)
-- Focus on learning the spec discipline
-
-**The discipline you learn here transfers directly to Part 2** - the workflow is identical, but the data sources expand.
-
----
 ## What's Next?
 
 In **Lab 1.3**, you'll use `/speckit.tasks` to break down the plan into implementable tasks, then use `/speckit.implement` to generate your payment endpoint.
 
 **The plan says HOW. Tasks say IN WHAT ORDER.**
-
-**Remember**: You're building toward Thursday. The plan is your implementation contract ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Lab 1.3 implements exactly what's documented.
-
-
