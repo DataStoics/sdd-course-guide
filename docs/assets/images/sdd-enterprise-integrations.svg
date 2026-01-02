@@ -1,4 +1,4 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 620">
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 580">
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
       <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
@@ -12,229 +12,206 @@
   </defs>
 
   <!-- Background -->
-  <rect width="950" height="620" fill="#fafafa"/>
+  <rect width="900" height="580" fill="#fafafa"/>
 
   <!-- Title -->
-  <text x="475" y="28" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">SDD Workflow: Enterprise Integration Points</text>
-  <text x="475" y="46" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Greenfield uses internal research • Brownfield requires external system integration</text>
+  <text x="450" y="28" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e293b">SDD Workflow: Enterprise Integration Points</text>
+  <text x="450" y="46" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#64748b">Greenfield uses internal research • Brownfield requires external system integration</text>
 
-  <!-- External Systems Zone (Top) at y=60, height=95 -->
-  <rect x="15" y="60" width="920" height="95" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- External Systems Zone -->
+  <rect x="15" y="60" width="870" height="95" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"/>
   <text x="30" y="80" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#6366f1">📌 EXTERNAL SYSTEMS (MCP Integration)</text>
   
-  <!-- External System Boxes - 8 boxes starting at y=90, each 100px wide with 15px gaps -->
-  <!-- Jira at x=30, center=80 -->
+  <!-- External System Boxes - 7 boxes -->
+  <!-- Jira -->
   <g transform="translate(30, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">📋 Jira</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Existing tickets</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Requirements</text>
+    <rect width="110" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="55" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">📋 Jira</text>
+    <text x="55" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Existing tickets</text>
+    <text x="55" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Requirements</text>
   </g>
   
-  <!-- Confluence at x=145, center=195 -->
-  <g transform="translate(145, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">📚 Confluence</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Architecture docs</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Tech standards</text>
+  <!-- Confluence -->
+  <g transform="translate(155, 90)">
+    <rect width="110" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="55" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">📚 Confluence</text>
+    <text x="55" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Architecture docs</text>
+    <text x="55" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Tech standards</text>
   </g>
   
-  <!-- Context7 at x=260, center=310 -->
-  <g transform="translate(260, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">📖 Context7</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Library docs</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">API references</text>
+  <!-- Context7 -->
+  <g transform="translate(280, 90)">
+    <rect width="110" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="55" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">📖 Context7</text>
+    <text x="55" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Library docs</text>
+    <text x="55" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">API references</text>
   </g>
   
-  <!-- Perplexity at x=375, center=425 -->
-  <g transform="translate(375, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🔍 Perplexity</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">CVE advisories</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Best practices</text>
+  <!-- Perplexity -->
+  <g transform="translate(405, 90)">
+    <rect width="110" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="55" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🔍 Perplexity</text>
+    <text x="55" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">CVE advisories</text>
+    <text x="55" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Best practices</text>
   </g>
   
-  <!-- Stripe/APIs at x=490, center=540 -->
-  <g transform="translate(490, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">💳 Stripe/APIs</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Vendor APIs</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Contracts</text>
+  <!-- Stripe/APIs -->
+  <g transform="translate(530, 90)">
+    <rect width="110" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="55" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">💳 Vendor APIs</text>
+    <text x="55" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Stripe, Twilio</text>
+    <text x="55" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Contracts</text>
   </g>
   
-  <!-- Snyk/SonarQ at x=605, center=655 -->
-  <g transform="translate(605, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🛡️ Snyk/SonarQ</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Security scans</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Vulnerabilities</text>
+  <!-- Snyk/SonarQ -->
+  <g transform="translate(655, 90)">
+    <rect width="110" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="55" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🛡️ Snyk/SonarQ</text>
+    <text x="55" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Security scans</text>
+    <text x="55" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Vulnerabilities</text>
   </g>
   
-  <!-- GitHub at x=720, center=770 -->
-  <g transform="translate(720, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🔗 GitHub</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Legacy code</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">CI/CD pipelines</text>
-  </g>
-  
-  <!-- Databases at x=835, center=885 -->
-  <g transform="translate(835, 90)">
-    <rect width="100" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
-    <text x="50" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🗄️ Databases</text>
-    <text x="50" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Schema analysis</text>
-    <text x="50" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Migration state</text>
+  <!-- GitHub -->
+  <g transform="translate(780, 90)">
+    <rect width="95" height="50" rx="6" fill="#fff" stroke="#6366f1" stroke-width="1.5" filter="url(#shadow)"/>
+    <text x="47" y="18" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="9" font-weight="600" fill="#4f46e5">🔗 GitHub</text>
+    <text x="47" y="32" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">Legacy code</text>
+    <text x="47" y="43" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#64748b">CI/CD</text>
   </g>
 
-  <!-- SDD Workflow Zone at y=165, height=320 -->
-  <rect x="15" y="165" width="920" height="320" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
+  <!-- SDD Workflow Zone -->
+  <rect x="15" y="165" width="870" height="280" rx="8" fill="#fff" stroke="#e2e8f0" stroke-width="1"/>
   <text x="30" y="185" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="600" fill="#1e293b">⚙️ SDD WORKFLOW PHASES</text>
 
-  <!-- Integration Lines from External Systems (bottom at y=140) to Workflow Phases (top at y=200) -->
-  <!-- Jira (x=80) to SPECIFY (x=110) -->
-  <line x1="80" y1="145" x2="110" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Confluence (x=195) to CLARIFY (x=280) -->
-  <line x1="195" y1="145" x2="280" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Context7 (x=310) to PLAN (x=450) -->
-  <line x1="310" y1="145" x2="450" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Perplexity (x=425) to PLAN (x=450) -->
-  <line x1="425" y1="145" x2="450" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Stripe (x=540) to IMPLEMENT (x=450, y=330) -->
-  <line x1="540" y1="145" x2="450" y2="325" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Snyk (x=655) to ANALYZE (x=620) -->
-  <line x1="655" y1="145" x2="620" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Snyk (x=655) to CHECKLIST (x=280, y=330) -->
-  <line x1="655" y1="145" x2="280" y2="325" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- GitHub (x=770) to TASKS (x=620, y=330) -->
-  <line x1="770" y1="145" x2="620" y2="325" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- GitHub (x=770) to ISSUES (x=790, y=330) -->
-  <line x1="770" y1="145" x2="790" y2="325" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
-  <!-- Database (x=885) to PLAN (x=450) -->
-  <line x1="885" y1="145" x2="480" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Integration Lines from External Systems to Workflow Phases -->
+  <!-- Jira to SPECIFY -->
+  <line x1="85" y1="145" x2="100" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Confluence to CLARIFY -->
+  <line x1="210" y1="145" x2="260" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Context7 to PLAN -->
+  <line x1="335" y1="145" x2="420" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Perplexity to PLAN -->
+  <line x1="460" y1="145" x2="450" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Vendor APIs to IMPLEMENT -->
+  <line x1="585" y1="145" x2="420" y2="320" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Snyk to ANALYZE -->
+  <line x1="710" y1="145" x2="590" y2="195" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- Snyk to CHECKLIST -->
+  <line x1="710" y1="145" x2="260" y2="320" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
+  <!-- GitHub to TASKS -->
+  <line x1="827" y1="145" x2="760" y2="320" stroke="#6366f1" stroke-width="1.5" stroke-dasharray="4,3" marker-end="url(#arrow-ext)"/>
 
   <!-- Row 1: SPECIFY → CLARIFY → PLAN → ANALYZE -->
   
-  <!-- SPECIFY at x=40, y=200, width=140, height=80, center x=110 -->
+  <!-- SPECIFY -->
   <g transform="translate(40, 200)">
-    <rect width="140" height="80" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0369a1">📝 SPECIFY</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.specify</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#bae6fd" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0284c7">📥 Jira tickets</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0284c7">📥 Existing requirements</text>
+    <rect width="130" height="75" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0369a1">📝 SPECIFY</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.specify</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#bae6fd" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0284c7">📥 Jira tickets</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0284c7">📥 Requirements</text>
   </g>
 
-  <!-- Arrow: SPECIFY (ends at x=180) to CLARIFY (starts at x=210) -->
-  <line x1="185" y1="240" x2="205" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrow -->
+  <line x1="175" y1="237" x2="195" y2="237" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- CLARIFY at x=210, y=200, width=140, height=80, center x=280 -->
-  <g transform="translate(210, 200)">
-    <rect width="140" height="80" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#15803d">❓ CLARIFY</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.clarify</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#bbf7d0" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#16a34a">📥 Confluence ADRs</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#16a34a">📥 Legacy constraints</text>
+  <!-- CLARIFY -->
+  <g transform="translate(200, 200)">
+    <rect width="130" height="75" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#15803d">❓ CLARIFY</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.clarify</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#bbf7d0" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#16a34a">📥 Confluence ADRs</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#16a34a">📥 Constraints</text>
   </g>
 
-  <!-- Arrow: CLARIFY (ends at x=350) to PLAN (starts at x=380) -->
-  <line x1="355" y1="240" x2="375" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrow -->
+  <line x1="335" y1="237" x2="355" y2="237" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- PLAN at x=380, y=200, width=140, height=80, center x=450 -->
-  <g transform="translate(380, 200)">
-    <rect width="140" height="80" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#b45309">🗺️ PLAN</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.plan</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#fde68a" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#d97706">📥 Context7 + Perplexity</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#d97706">📥 Vendor APIs + Schema</text>
+  <!-- PLAN -->
+  <g transform="translate(360, 200)">
+    <rect width="130" height="75" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#b45309">🗺️ PLAN</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.plan</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#fde68a" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#d97706">📥 Context7 docs</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#d97706">📥 Perplexity research</text>
   </g>
 
-  <!-- Arrow: PLAN (ends at x=520) to ANALYZE (starts at x=550) -->
-  <line x1="525" y1="240" x2="545" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrow -->
+  <line x1="495" y1="237" x2="515" y2="237" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- ANALYZE at x=550, y=200, width=140, height=80, center x=620 -->
-  <g transform="translate(550, 200)">
-    <rect width="140" height="80" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#be185d">🔍 ANALYZE</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.analyze</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#fbcfe8" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#db2777">📥 Security scanners</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#db2777">📥 CVE databases</text>
+  <!-- ANALYZE -->
+  <g transform="translate(520, 200)">
+    <rect width="130" height="75" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#be185d">🔍 ANALYZE</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.analyze</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#fbcfe8" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#db2777">📥 Security scans</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#db2777">📥 CVE databases</text>
   </g>
 
-  <!-- Arrow down: ANALYZE (bottom at y=280) to TASKS (top at y=330) -->
-  <line x1="620" y1="285" x2="620" y2="325" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrow down -->
+  <line x1="730" y1="237" x2="750" y2="237" stroke="#333" stroke-width="2"/>
+  <line x1="750" y1="237" x2="750" y2="320" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- Row 2: CHECKLIST ← IMPLEMENT ← TASKS (and ISSUES optional) -->
+  <!-- Row 2: CHECKLIST ← IMPLEMENT ← TASKS -->
   
-  <!-- TASKS at x=550, y=330, width=140, height=80, center x=620 -->
-  <g transform="translate(550, 330)">
-    <rect width="140" height="80" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#3730a3">📋 TASKS</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.tasks</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#c7d2fe" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#4f46e5">📥 GitHub Issues</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#4f46e5">📥 Sprint backlog</text>
+  <!-- TASKS -->
+  <g transform="translate(680, 325)">
+    <rect width="130" height="75" rx="6" fill="#e0e7ff" stroke="#4f46e5" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#3730a3">📋 TASKS</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.tasks</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#c7d2fe" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#4f46e5">📥 GitHub issues</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#4f46e5">📥 Sprint backlog</text>
   </g>
 
-  <!-- Arrow left: TASKS (left at x=550) to IMPLEMENT (right at x=520) -->
-  <line x1="545" y1="370" x2="525" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrow -->
+  <line x1="675" y1="362" x2="495" y2="362" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- IMPLEMENT at x=380, y=330, width=140, height=80, center x=450 -->
-  <g transform="translate(380, 330)">
-    <rect width="140" height="80" rx="6" fill="#f3e8ff" stroke="#9333ea" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#7e22ce">⚡ IMPLEMENT</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.implement</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#e9d5ff" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#9333ea">📥 Vendor SDKs</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#9333ea">📥 Legacy codebase</text>
+  <!-- IMPLEMENT -->
+  <g transform="translate(360, 325)">
+    <rect width="130" height="75" rx="6" fill="#f3e8ff" stroke="#9333ea" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#7e22ce">⚡ IMPLEMENT</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.implement</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#e9d5ff" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#9333ea">📥 Vendor SDKs</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#9333ea">📥 Legacy codebase</text>
   </g>
 
-  <!-- Arrow left: IMPLEMENT (left at x=380) to CHECKLIST (right at x=350) -->
-  <line x1="375" y1="370" x2="355" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
+  <!-- Arrow -->
+  <line x1="355" y1="362" x2="335" y2="362" stroke="#333" stroke-width="2" marker-end="url(#arrow)"/>
 
-  <!-- CHECKLIST at x=210, y=330, width=140, height=80, center x=280 -->
-  <g transform="translate(210, 330)">
-    <rect width="140" height="80" rx="6" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" filter="url(#shadow)"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#0f766e">✅ CHECKLIST</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="9" fill="#64748b">/speckit.checklist</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#99f6e4" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0d9488">📥 Snyk/SonarQube</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0d9488">📥 CI/CD results</text>
-  </g>
-
-  <!-- ISSUES (optional) at x=720, y=330, width=140, height=80, center x=790 -->
-  <g transform="translate(720, 330)">
-    <rect width="140" height="80" rx="6" fill="#f5f5f5" stroke="#9ca3af" stroke-width="2" stroke-dasharray="4,2"/>
-    <text x="70" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#6b7280">🎫 ISSUES</text>
-    <text x="70" y="36" text-anchor="middle" font-family="monospace" font-size="8" fill="#9ca3af">/speckit.taskstoissues</text>
-    <line x1="15" y1="44" x2="125" y2="44" stroke="#e5e7eb" stroke-width="1"/>
-    <text x="70" y="58" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#6b7280">📤 Export to GitHub</text>
-    <text x="70" y="70" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#9ca3af">(bidirectional sync)</text>
+  <!-- CHECKLIST -->
+  <g transform="translate(200, 325)">
+    <rect width="130" height="75" rx="6" fill="#ccfbf1" stroke="#0d9488" stroke-width="2" filter="url(#shadow)"/>
+    <text x="65" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" font-weight="bold" fill="#0f766e">✅ CHECKLIST</text>
+    <text x="65" y="35" text-anchor="middle" font-family="monospace" font-size="8" fill="#64748b">/speckit.checklist</text>
+    <line x1="15" y1="42" x2="115" y2="42" stroke="#99f6e4" stroke-width="1"/>
+    <text x="65" y="55" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0d9488">📥 Snyk/SonarQube</text>
+    <text x="65" y="67" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="8" fill="#0d9488">📥 CI/CD results</text>
   </g>
 
   <!-- Comparison Zone -->
-  <!-- Part 1: Greenfield at x=15, y=495, width=450, height=110 -->
-  <g transform="translate(15, 495)">
-    <rect width="450" height="110" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
-    <text x="225" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#16a34a">🌱 PART 1: Greenfield (This Course)</text>
+  <!-- Part 1: Greenfield -->
+  <g transform="translate(15, 460)">
+    <rect width="420" height="105" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="210" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#16a34a">🌱 PART 1: Greenfield (This Course)</text>
     <text x="20" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#166534">• AI training data sufficient for research</text>
     <text x="20" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#166534">• No legacy constraints to navigate</text>
     <text x="20" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#166534">• Technology choices are yours</text>
-    <text x="20" y="88" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#166534">• /speckit.plan handles research automatically</text>
-    <text x="20" y="104" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#166534">• Focus: Learn spec discipline first</text>
+    <text x="20" y="88" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#166534">• Focus: Learn spec discipline first</text>
   </g>
 
-  <!-- Part 2: Brownfield at x=485, y=495, width=450, height=110 -->
-  <g transform="translate(485, 495)">
-    <rect width="450" height="110" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
-    <text x="225" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">🏭 PART 2: Brownfield (Enterprise Reality)</text>
+  <!-- Part 2: Brownfield -->
+  <g transform="translate(465, 460)">
+    <rect width="420" height="105" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.5"/>
+    <text x="210" y="20" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="bold" fill="#dc2626">🏭 PART 2: Brownfield (Enterprise Reality)</text>
     <text x="20" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• Must query live external systems (MCP tools)</text>
     <text x="20" y="56" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• Legacy code constrains every decision</text>
-    <text x="20" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• Company-approved vendor lists required</text>
-    <text x="20" y="88" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• CVE verification before any dependency</text>
-    <text x="20" y="104" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• Focus: Apply spec discipline to 80% of real work</text>
+    <text x="20" y="72" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• CVE verification before any dependency</text>
+    <text x="20" y="88" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#991b1b">• Focus: Apply spec discipline to real work</text>
   </g>
 </svg>
