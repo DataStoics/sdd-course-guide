@@ -29,6 +29,9 @@ For this exercise, you have **30 minutes** instead of 4 days. Same pressure, com
 
 Your challenge: Build a checkout feature that you'd be confident demoing to investors.
 
+{: .note }
+> **Where does your code go?** You're working in your Codespace. All code you create stays in your repository at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. We'll compare this Lab 0 output to the spec-driven approach in Lab 1.3.
+
 ### Your Prompt
 
 > "Build an e-commerce checkout system with payment processing and order management."
