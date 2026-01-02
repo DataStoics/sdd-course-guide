@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.2: Document Business Rules"
 layout: default
@@ -385,4 +384,3 @@ This document serves multiple purposes:
 In **Lab 2.3**, you'll implement the strangler pattern — an API gateway that lets you gradually route traffic between legacy and new systems without downtime or big-bang migrations.
 
 **You've documented what the legacy system does. Now you'll learn how to safely replace it.**
-````

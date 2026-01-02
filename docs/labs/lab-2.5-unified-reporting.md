@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.5: Unified Reporting"
 layout: default
@@ -492,4 +491,3 @@ curl "http://localhost:8080/reports/sales?start_date=2026-01-01&end_date=2026-01
 In **Lab 2.6**, you'll create a migration plan — the operational document that guides a safe transition from legacy to new system.
 
 **You can see unified data. Now plan how to make everything new.**
-````

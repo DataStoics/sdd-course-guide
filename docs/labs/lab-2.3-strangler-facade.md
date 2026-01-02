@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.3: The Strangler Facade"
 layout: default
@@ -418,4 +417,3 @@ feat: implement strangler facade for legacy integration
 In **Lab 2.4**, you'll extract notification logic from the legacy system into a shared event-driven service that both systems can use.
 
 **The gateway routes requests. Events route data changes.**
-````

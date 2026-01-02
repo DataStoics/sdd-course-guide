@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.1: Extract Specs from Code"
 layout: default
@@ -420,4 +419,3 @@ git commit -m "docs: extract order creation spec from legacy system"
 In **Lab 2.2**, you'll extract the business rules hiding in the code — magic numbers, implicit thresholds, and undocumented policies that the previous developer never wrote down.
 
 **Lab 2.1 answered "What does it do?" Lab 2.2 answers "Why does it do that?"**
-````

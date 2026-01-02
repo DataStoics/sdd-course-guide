@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.0: The Inherited Codebase"
 layout: default
@@ -356,4 +355,3 @@ Commit the system-analysis.md with message: docs: initial legacy system analysis
 In **Lab 2.1**, you'll write characterization tests that capture the legacy system's actual behavior — creating executable documentation of "how it works today."
 
 **The first rule of legacy code: Don't change behavior you haven't documented.**
-````

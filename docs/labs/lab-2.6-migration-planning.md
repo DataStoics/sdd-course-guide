@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.6: Migration Planning"
 layout: default
@@ -451,4 +450,3 @@ You've completed **SDD Part 2: Transforming Legacy Code**.
 **Congratulations on completing the SDD Foundations course!**
 
 **Now go make your legacy systems better.**
-````

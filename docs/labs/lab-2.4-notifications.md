@@ -1,4 +1,3 @@
-````markdown
 ---
 title: "Lab 2.4: Notification Integration"
 layout: default
@@ -503,4 +502,3 @@ curl http://localhost:8000/pay -X POST \
 In **Lab 2.5**, you'll create a unified reporting endpoint that aggregates data from both legacy and new systems — seeing the whole picture from one API.
 
 **Events move data changes. Reports aggregate data views.**
-````
