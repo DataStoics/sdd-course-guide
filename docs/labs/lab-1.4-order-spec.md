@@ -37,16 +37,6 @@ You're feeling good. Payment endpoint works. Demo scenarios pass. Then PM appear
 
 ---
 
-## Where We Are in the Week
-
-- **Monday**: [DONE] Spec + Plan (Labs 1.1-1.2)
-- **Tuesday**: [DONE] Payment working (Lab 1.3)
-- **Wednesday**: [HERE] New feature request
-- **Thursday**: Build + Integrate
-- **Friday**: Demo day
-
----
-
 ## Starting Point
 
 - Working payment service from Lab 1.3

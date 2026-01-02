@@ -7,8 +7,8 @@ nav_order: 7
 
 # Lab 1.5: Integrate Payment + Order -- Thursday Build Day
 
-**Duration**: 150 minutes  
-**Day**: 2 (Afternoon)  
+**Duration**: 110 minutes  
+**Day**: 2 (Morning)  
 **Prerequisites**: Completed Lab 1.4 with order specification
 
 ---
@@ -25,18 +25,6 @@ Build the order service, wire it to payments, and prove the full checkout flow w
 
 ---
 
-## Where We Are in the Week
-
-- **Monday**: [DONE] Payment spec + plan
-- **Tuesday**: [DONE] Payment implementation
-- **Wednesday**: [DONE] Order spec (Lab 1.4)
-- **Thursday**: [HERE] Build + Integrate
-- **Friday**: Demo day
-
-**Thursday goal**: Full checkout flow working, tests passing, demo-ready.
-
----
-
 ## Starting Point
 
 - Working payment service from Lab 1.3
@@ -45,124 +33,149 @@ Build the order service, wire it to payments, and prove the full checkout flow w
 
 ---
 
-## Step 1: Generate Order Tasks (15 min)
+## Step 1: Generate Order Tasks (10 min)
 
-Run the tasks command for the order spec:
+Break down the order spec into actionable tasks:
 
 ```
 /speckit.tasks
 ```
 
-Your `specs/002-order/tasks.md` should include:
+The AI analyzes your spec and plan, then generates `specs/002-order/tasks.md` organized by phase:
 
-1. **Database setup tasks**: Models, migrations
-2. **State machine tasks**: Status enum, transition logic
-3. **Endpoint tasks**: Create, update status, get history
-4. **Audit tasks**: Audit entry creation
-5. **Integration tasks**: Payment callback handling
-6. **Test tasks**: Unit and integration tests
+**Phase 1: Setup** — Project structure, dependencies
+**Phase 2: Foundational** — State machine, base models
+**Phase 3: User Story 1** — Order creation and management
+**Phase 4: User Story 2** — Payment integration
+**Phase 5: Polish** — Error handling, audit trail
 
----
+Each task includes:
+- Unique identifier (T001, T002, etc.)
+- Dependencies on other tasks
+- `[P]` markers for tasks that can run in parallel
+- Links back to spec requirements (FR-001, etc.)
 
-## Step 2: Implement Order Models (20 min)
-
-Ask your AI to implement the order models:
-
-> "Based on the order spec and data model, implement the Order models in `src/app/models.py`. Include OrderStatus enum with states from the spec (created, paid, fulfilled, cancelled, refunded, archived), OrderItem, CreateOrderRequest, OrderResponse, MarkOrderPaidRequest, and OrderAuditEntry for the immutable audit trail."
-
-The AI will create Pydantic models that match your spec's data model.
+**Review the generated tasks** — they should match the order spec's requirements and scenarios.
 
 ---
 
-## Step 3: Implement State Machine (15 min)
+## Step 2: Run Pre-Implementation Analysis (5 min)
 
-Ask your AI to implement the state machine:
+Before implementing, verify consistency:
 
-> "Create a state machine module at `src/app/state_machine.py` that enforces valid order transitions based on the spec. Include a VALID_TRANSITIONS dictionary mapping each OrderStatus to its allowed next states, an InvalidTransitionError exception, and validate_transition function."
+```
+/speckit.analyze
+```
 
-The AI will generate:
-- Transition rules matching your spec's state diagram
-- Clear error messages for invalid transitions
-- Helper functions for checking transitions
+This checks:
+- ✓ All spec requirements have corresponding tasks
+- ✓ Data model entities are covered
+- ✓ Test tasks exist for acceptance scenarios
+- ✓ No orphaned tasks without spec backing
 
----
-
-## Step 4: Implement Order Endpoints (40 min)
-
-Ask your AI to implement the order service:
-
-> "Implement the order endpoints in `src/app/order.py` based on the order spec. Include: POST /orders to create an order with idempotency, PATCH /orders/{id}/pay to mark as paid with state machine validation, GET /orders for paginated history, GET /orders/{id} for single order. Each state change must create an audit entry per governance constraints."
-
-The AI will create endpoints that:
-- Use Redis for idempotency (like the payment service)
-- Enforce state transitions via the state machine
-- Create immutable audit entries for every change
-- Return proper error codes for invalid operations
+**If gaps found**: The AI will suggest additions to tasks.md.
 
 ---
 
-## Step 5: Register Order Router (5 min)
+## Step 3: Execute Implementation (60 min)
+
+Now let the AI implement everything:
+
+```
+/speckit.implement
+```
+
+This command:
+1. Reads `tasks.md` for the task order and dependencies
+2. Implements each task following **Test-Driven Development**:
+   - Writes tests first (RED)
+   - Implements code to pass tests (GREEN)
+   - Refactors if needed
+3. Validates against your spec's acceptance scenarios
+4. Creates code that traces back to FR-xxx requirements
+
+### What Gets Created
+
+Watch as the AI builds:
+- `src/app/models.py` — Order models with OrderStatus enum
+- `src/app/state_machine.py` — Valid transition enforcement
+- `src/app/order.py` — Order endpoints with idempotency
+- `tests/test_order.py` — Unit tests per acceptance scenarios
+- `tests/test_integration.py` — E2E checkout flow test
+
+### Monitor the TDD Cycle
+
+For each task, the AI:
+1. **RED**: Writes failing test based on spec scenario
+2. **GREEN**: Implements minimum code to pass
+3. **REFACTOR**: Cleans up while keeping tests green
+
+**Key insight**: The spec scenarios become your tests. The AI doesn't guess what to test — it implements exactly what you specified.
+
+---
+
+## Step 4: Verify Infrastructure (5 min)
 
 Ask your AI:
 
-> "Register the order router in main.py so the order endpoints are available."
+> "Start Docker services and verify Redis and the API are running."
+
+The AI will:
+1. Run `docker-compose up -d`
+2. Check Redis connectivity
+3. Start the FastAPI server
+4. Report health status
 
 ---
 
-## Step 6: Write Order Unit Tests (25 min)
-
-Ask your AI to generate unit tests:
-
-> "Create unit tests in `tests/test_order.py` for the order endpoints. Test create order success and validation, mark order paid with state transitions, and order history retrieval. Reference the acceptance scenarios from the spec."
-
-The AI will generate tests covering:
-- **TestCreateOrder**: Valid order creation, empty items rejection, idempotency
-- **TestMarkOrderPaid**: State transition from created to paid, transaction ID linking
-- **TestOrderHistory**: Empty history, pagination
-
----
-
-## Step 7: Write Integration Tests (30 min)
-
-Ask your AI to generate end-to-end tests:
-
-> "Create integration tests in `tests/test_integration.py` for the complete checkout flow: create order, process payment, mark order paid, verify final state. Also test edge cases: cannot pay cancelled order, double payment rejected."
-
-The AI will generate E2E tests covering:
-- **Complete checkout flow**: Order created → Payment processed → Order marked paid
-- **State machine enforcement**: Cannot pay a cancelled order
-- **Idempotency**: Double payment returns error, not duplicate charge
-
----
-
-## Step 8: Run Coverage Check (10 min)
+## Step 5: Run Test Suite (10 min)
 
 Ask your AI:
 
-> "Run pytest with coverage and verify we have at least 80% coverage. Show me what's missing."
+> "Run the full test suite with coverage. Target is 80%+."
 
-**Target**: 80%+ coverage
+**Expected**: All tests pass, coverage ≥ 80%
 
-If coverage is below 80%, ask:
-> "Add tests to cover the missing lines, especially edge cases for order not found, invalid items, and audit trail entries."
-
----
-
-## Step 9: Run Security Scan (5 min)
-
-Ask your AI:
-
-> "Run security scans on the source code using semgrep and bandit. Report any critical or high severity findings."
-
-**Pass Criteria**: 0 CRITICAL + 0 HIGH
+If tests fail, ask:
+> "The test for [scenario] is failing. Fix it according to the spec."
 
 ---
 
-## Step 10: Commit Your Work (2 min)
+## Step 6: Verify End-to-End Flow (10 min)
 
 Ask your AI:
 
-> "Commit all the order implementation and integration tests with a conventional commit message."
+> "Test the complete checkout flow: create an order, process payment, mark order paid, verify order history shows the paid order."
+
+The AI will execute the full demo scenario:
+1. **POST /orders** — Create order with items
+2. **POST /pay** — Process payment
+3. **PATCH /orders/{id}/pay** — Link payment to order
+4. **GET /orders** — Verify order appears with "paid" status
+
+**This is your Thursday demo rehearsal.**
+
+---
+
+## Step 7: Run Security Scan (5 min)
+
+```
+/speckit.checklist security
+```
+
+Or ask your AI:
+
+> "Run semgrep and bandit security scans. Report any critical or high findings."
+
+**Pass Criteria**: 0 CRITICAL, 0 HIGH
+
+---
+
+## Step 8: Commit Your Work (2 min)
+
+Ask your AI:
+
+> "Commit all the order implementation with a conventional commit message."
 
 ---
 
