@@ -7,7 +7,7 @@ nav_order: 3
 
 # Lab 1.1: Init and Spec -- Ship Thursday, Demo Friday
 
-**Duration**: 90 minutes  
+**Duration**: 45-60 minutes  
 **Day**: 1  
 **Position**: Immediately after Lab 0  
 **Prerequisites**: Working development environment (Codespaces or local Docker)

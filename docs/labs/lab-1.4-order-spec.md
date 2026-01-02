@@ -7,7 +7,7 @@ nav_order: 6
 
 # Lab 1.4: Second Feature -- "Can You Also Add Order History?"
 
-**Duration**: 120 minutes  
+**Duration**: 45-60 minutes  
 **Day**: 2 (Morning)  
 **Prerequisites**: Completed Lab 1.3 with working payment endpoint
 

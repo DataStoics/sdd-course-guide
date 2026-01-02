@@ -180,6 +180,12 @@ Best choice for this course. Tight VS Code integration with powerful agent mode.
 - Type a prompt like "Create a file called hello.py that prints Hello World"
 - Copilot should create the file automatically (not just show you code to copy)
 
+{: .tip }
+> **Approval Workflow**: In Agent mode, Copilot will ask for approval before running commands or creating files. You'll see prompts like "Allow" or "Continue". For a smoother experience during labs:
+> - Click "Allow" to approve individual actions
+> - When Copilot asks "Continue to iterate?", click "Continue" to keep working
+> - Longer implementations may require multiple "Continue" clicks — this is normal
+
 **Official docs:** [GitHub Copilot Quickstart](https://docs.github.com/en/copilot/quickstart)
 
 </details>

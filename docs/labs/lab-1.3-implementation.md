@@ -75,13 +75,24 @@ Open `tasks.md` and verify it makes sense:
 
 ---
 
-## Step 2: Execute Implementation (45 min)
+## Step 2: Execute Implementation (45-90 min)
 
 Now let the AI implement the tasks:
 
 ```text
 /speckit.implement
 ```
+
+{: .note }
+> **Timing varies**: Implementation time depends on project complexity. Simple specs may complete in 30 minutes; complex ones may take 60-90+ minutes. This is normal.
+
+{: .tip }
+> **Working with Copilot**: During implementation, Copilot will:
+> - Request approval for each command (click "Allow" or "Continue")
+> - Periodically ask "Continue to iterate?" — click "Continue" to proceed
+> - Show progress as it creates files and runs tests
+>
+> For a smoother experience, you can approve commands in batches or enable auto-approval in Copilot settings.
 
 This command:
 1. Reads `tasks.md` for the task order
@@ -105,6 +116,22 @@ The AI will show you what it's implementing. Look for:
 - **FR-xxx references** — Code linking back to spec requirements
 - **Scenario coverage** — Tests matching your Given/When/Then scenarios
 - **Error handling** — Graceful failures per your edge cases
+
+### Implementation Checkpoints
+
+As implementation progresses, verify these milestones:
+
+| Phase | Check | How to Verify |
+|-------|-------|---------------|
+| Setup | Project structure exists | `src/app/` directory created |
+| Foundation | Models defined | `src/app/models.py` exists |
+| Feature | Endpoint implemented | `src/app/payment.py` exists |
+| Tests | Test file created | `tests/test_payment.py` exists |
+
+If implementation seems stuck (no progress for 2+ minutes), you can:
+1. Check the file explorer for newly created files
+2. Ask Copilot: "What's the current implementation status?"
+3. If needed, restart with: `/speckit.implement --continue`
 
 ---
 

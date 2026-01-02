@@ -7,7 +7,7 @@ nav_order: 4
 
 # Lab 1.2: From Spec to Implementation Plan
 
-**Duration**: 45 minutes  
+**Duration**: 30-45 minutes  
 **Day**: 1  
 **Prerequisites**: Completed Lab 1.1 with `specs/001-payment-checkout/spec.md`
 

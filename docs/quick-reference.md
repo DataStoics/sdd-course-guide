@@ -281,15 +281,30 @@ def validate_amount(amount):
 
 ## Troubleshooting
 
-### "spec-kit commands not showing"
+### "/speckit.* commands not found"
 ```bash
-# Verify initialization
+# You must run specify init before slash commands work
+specify init . --ai copilot
+
+# Verify initialization succeeded
 ls -la .specify/
 ls -la .github/prompts/  # For Copilot
 
 # Re-initialize if needed
 specify init . --ai copilot --force
 ```
+
+### "Copilot keeps asking for approval"
+This is normal behavior in Agent mode:
+- Click "Allow" or "Continue" to approve actions
+- "Continue to iterate?" prompts appear during long implementations
+- For faster workflow, approve commands in batches when offered
+
+### "Implementation seems stuck"
+- Check file explorer for newly created files
+- Ask: "What's the current implementation status?"
+- If no progress for 2+ minutes, try: `/speckit.implement --continue`
+- Long implementations (60+ minutes) are normal for complex specs
 
 ### "AI ignoring my spec"
 - Check: Is spec file in `specs/NNN-feature/spec.md`?
