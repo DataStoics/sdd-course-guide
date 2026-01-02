@@ -1,0 +1,30 @@
+// Custom styles for SDD Course Guide
+
+// Enable word wrapping in code blocks for better readability
+// Especially important for natural language prompts
+pre.highlight,
+div.highlighter-rouge pre.highlight,
+figure.highlight pre code {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+// Ensure inline code also wraps if needed
+code {
+  word-wrap: break-word;
+}
+
+// Style for prompt/instruction code blocks (text language)
+// Makes them visually distinct from actual code
+div.language-text pre.highlight {
+  background-color: #f8f9fa;
+  border-left: 4px solid #0969da;
+  padding-left: 1rem;
+}
+
+// Dark mode support for prompt blocks
+.dark-mode div.language-text pre.highlight {
+  background-color: #161b22;
+  border-left-color: #58a6ff;
+}
