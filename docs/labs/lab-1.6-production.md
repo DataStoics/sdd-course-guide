@@ -141,7 +141,7 @@ Open `.github/workflows/ci.yml` and confirm:
 Run the final checklist:
 
 ```text
-/speckit.checklist demo-readiness
+/speckit.checklist demo-readiness Check all demo requirements: security (no hardcoded secrets, non-root container), reliability (health checks, idempotency), and professionalism (structured logging, trace IDs, API docs).
 ```
 
 ### The "Would I Demo This?" Questions
