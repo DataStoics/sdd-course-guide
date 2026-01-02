@@ -2,11 +2,11 @@
 	"folders": [
 		{
 			"name": "payment-service",
-			"path": "../payment-service"
+			"path": "../../sdd-greenfield-template"
 		},
 		{
 			"name": "legacy-orderflow",
-			"path": "../legacy-orderflow"
+			"path": "../../legacy-orderflow"
 		}
 	],
 	"settings": {
