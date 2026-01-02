@@ -57,7 +57,7 @@ By the end of Part 2, participants will be able to:
 | Write specs first | **Extract** specs from code |
 | Choose technology freely | Work within existing constraints |
 | Design for compliance | Retrofit compliance |
-| `/speckit.specify` (create) | `/speckit.analyze` (reverse-engineer) |
+| `/speckit.specify` (create new) | `/speckit.specify` (extract from existing) |
 | Full architectural control | Navigate technical debt |
 | Build clean from scratch | Make clean from messy |
 
@@ -204,12 +204,12 @@ You've just been given access to the OrderFlow Inc. repository. Your first task:
 
 Use characterization testing to capture existing behavior as executable specifications.
 
-### The Approach: `/speckit.analyze`
+### The Approach: Extract Specs from Code
 
 Instead of writing specs first (Part 1), you **extract** specs from working code:
 
-```
-/speckit.analyze Analyze the order creation flow in the legacy system. 
+```text
+/speckit.specify Analyze the order creation flow in legacy-monolith/app.py. 
 Extract the implicit business rules and create a specification that 
 documents current behavior, including edge cases and error handling.
 ```
@@ -490,22 +490,48 @@ A migration plan document covering:
 
 ## Appendix: Spec-Kit Commands for Brownfield
 
-### New Commands for Part 2
+### Same Commands, Different Context
 
-| Command | Purpose |
-|---------|---------|
-| `/speckit.analyze` | Reverse-engineer specs from existing code |
-| `/speckit.characterize` | Generate characterization tests |
-| `/speckit.extract-rules` | Find and document business rules |
-| `/speckit.compare` | Compare behavior between systems |
+Part 2 uses the **same spec-kit commands** as Part 1, but with brownfield-appropriate prompts:
 
-### Modified Workflows
+| Command | Part 1 Usage | Part 2 Usage |
+|---------|--------------|--------------|
+| `/speckit.specify` | Create spec from idea | Create spec for NEW components (gateway, notification service) |
+| `/speckit.clarify` | Resolve ambiguities | Validate extracted rules with stakeholders |
+| `/speckit.plan` | Design greenfield architecture | Plan integration and migration work |
+| `/speckit.implement` | Build from spec | Build with awareness of legacy constraints |
+| `/speckit.checklist` | Validate completeness | Validate migration readiness |
 
-The Part 1 commands still work, but with brownfield context:
+### Brownfield Prompt Patterns
 
-- `/speckit.specify` — Create specs for NEW components (gateway, notification service)
-- `/speckit.plan` — Plan integration work, not greenfield builds
-- `/speckit.implement` — Implement with awareness of legacy constraints
+**Extracting specs from legacy code:**
+```text
+/speckit.specify Analyze the order creation flow in legacy-monolith/app.py.
+Extract the implicit business rules and document them as a specification.
+Include: preconditions, validation rules, calculations, side effects.
+```
+
+**Creating characterization tests:**
+```text
+/speckit.implement Create characterization tests for the create_order() function.
+Tests should capture CURRENT behavior (not desired behavior).
+Include happy path, edge cases, and error conditions.
+```
+
+**Documenting business rules:**
+```text
+/speckit.clarify Review the extracted order specification.
+For each magic number and implicit rule, ask me to confirm:
+- Is this the intended business rule?
+- Should this rule be preserved in the new system?
+```
+
+**Planning integration:**
+```text
+/speckit.plan Plan the API Gateway implementation for the strangler pattern.
+Must route to both legacy and new systems based on feature flags.
+Include: routing logic, fallback behavior, comparison mode.
+```
 
 ---
 

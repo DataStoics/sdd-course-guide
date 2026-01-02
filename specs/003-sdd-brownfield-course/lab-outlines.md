@@ -161,8 +161,8 @@ def client():
 Write tests that capture the order creation flow:
 
 ```text
-/speckit.analyze Analyze the order creation flow in the legacy system.
-Create characterization tests that document:
+/speckit.specify Analyze the order creation flow in legacy-monolith/app.py.
+Extract the implicit specification by documenting:
 1. User registration and login
 2. Adding items to cart
 3. Creating an order
@@ -179,12 +179,12 @@ Create characterization tests that document:
 Document boundary behavior:
 
 ```text
-/speckit.characterize What happens when:
-- Order total is exactly $100 (minimum)?
-- Order total is exactly $10,000 (maximum)?
-- Order total is exactly $500 (discount threshold)?
-- Cart contains product with 0 stock?
-- User is a 'credit' type approaching $5,000 limit?
+/speckit.clarify Based on the order creation spec, clarify edge case behavior:
+- What happens when order total is exactly $100 (minimum)?
+- What happens when order total is exactly $10,000 (maximum)?
+- What happens when order total is exactly $500 (discount threshold)?
+- What happens when cart contains product with 0 stock?
+- What happens when a 'credit' user approaches $5,000 limit?
 ```
 
 **Key discovery:** Does the system handle edge cases gracefully or fail silently?
@@ -251,12 +251,12 @@ if total > DISCOUNT_THRESHOLD:
 Find all hardcoded values:
 
 ```text
-/speckit.extract-rules Scan the legacy codebase for:
-1. Magic numbers (hardcoded numeric values)
-2. Magic strings (hardcoded status values, error messages)
-3. Implicit thresholds (conditional boundaries)
+/speckit.specify Scan the legacy codebase and extract business rules:
+1. Find all magic numbers (hardcoded numeric values)
+2. Find all magic strings (hardcoded status values, error messages)  
+3. Identify implicit thresholds (conditional boundaries)
 
-For each, identify: value, location, apparent purpose, confidence level.
+For each rule found, document: value, location, apparent purpose, confidence level.
 ```
 
 **Expected findings:**
@@ -277,8 +277,8 @@ For each, identify: value, location, apparent purpose, confidence level.
 Document the order lifecycle:
 
 ```text
-/speckit.analyze Map the order state machine from the legacy code.
-What states exist? What transitions are allowed? What triggers each transition?
+/speckit.specify Map the order state machine from the legacy code.
+Document: What states exist? What transitions are allowed? What triggers each transition?
 ```
 
 **Expected state diagram:**
