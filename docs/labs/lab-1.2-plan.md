@@ -39,15 +39,11 @@ By the end of this lab, you'll understand: **A plan is a commitment. Research do
 
 The `/speckit.plan` command takes your spec and generates a complete implementation blueprint. You provide the technology preferences.
 
-In your AI assistant, run:
+In your AI assistant, copy and paste:
 
+```text
+/speckit.plan Use Python with FastAPI for the REST API. Use Redis for idempotency caching. Keep it simple — this is for a demo, not production scale.
 ```
-/speckit.plan
-```
-
-Then provide your technology choices:
-
-> "Use Python with FastAPI for the REST API. Use Redis for idempotency caching. Keep it simple — this is for a demo, not production scale."
 
 ### What Gets Generated?
 
@@ -164,7 +160,7 @@ The AI will:
 
 Validate your plan is consistent with your spec:
 
-```
+```text
 /speckit.analyze
 ```
 

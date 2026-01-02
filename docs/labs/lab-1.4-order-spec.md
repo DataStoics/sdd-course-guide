@@ -212,8 +212,8 @@ What could break the demo?
 
 ## Step 8: Generate Plan (10 min)
 
-```
-/speckit.plan
+```text
+/speckit.plan Use the same tech stack as payment service (FastAPI, Redis). Add SQLite for order persistence. Include state machine library for transition validation.
 ```
 
 The generated `specs/002-order/plan.md` should include:

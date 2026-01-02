@@ -140,8 +140,8 @@ Open `.github/workflows/ci.yml` and confirm:
 
 Run the final checklist:
 
-```
-/speckit.checklist
+```text
+/speckit.checklist demo-readiness
 ```
 
 ### The "Would I Demo This?" Questions

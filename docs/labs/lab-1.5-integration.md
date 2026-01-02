@@ -37,7 +37,7 @@ Build the order service, wire it to payments, and prove the full checkout flow w
 
 Break down the order spec into actionable tasks:
 
-```
+```text
 /speckit.tasks
 ```
 
@@ -63,7 +63,7 @@ Each task includes:
 
 Before implementing, verify consistency:
 
-```
+```text
 /speckit.analyze
 ```
 
@@ -81,7 +81,7 @@ This checks:
 
 Now let the AI implement everything:
 
-```
+```text
 /speckit.implement
 ```
 
@@ -159,7 +159,7 @@ The AI will execute the full demo scenario:
 
 ## Step 7: Run Security Scan (5 min)
 
-```
+```text
 /speckit.checklist security
 ```
 

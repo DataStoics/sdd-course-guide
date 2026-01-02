@@ -40,7 +40,7 @@ From Lab 1.2, you have:
 
 Break down the implementation plan into actionable tasks:
 
-```
+```text
 /speckit.tasks
 ```
 
@@ -79,7 +79,7 @@ Open `tasks.md` and verify it makes sense:
 
 Now let the AI implement the tasks:
 
-```
+```text
 /speckit.implement
 ```
 
@@ -146,7 +146,7 @@ If tests fail, ask:
 
 Run the spec-kit validation:
 
-```
+```text
 /speckit.checklist
 ```
 

@@ -106,15 +106,11 @@ Before diving into features, establish the foundational principles that will gui
 
 ### Run the Constitution Command
 
-In GitHub Copilot Chat (Agent mode), run:
+In GitHub Copilot Chat (Agent mode), copy and paste:
 
+```text
+/speckit.constitution This is an investor demo for a payment checkout system. Prioritize professional appearance, graceful error handling, and demo-ability. Code should be clean enough to show investors but pragmatic for the timeline.
 ```
-/speckit.constitution
-```
-
-Then describe what matters for your project:
-
-> "This is an investor demo for a payment checkout system. Prioritize professional appearance, graceful error handling, and demo-ability. Code should be clean enough to show investors but pragmatic for the timeline."
 
 **The beauty of spec-kit**: You don't need to structure your thoughts perfectly. Just describe what matters and the AI will help organize it into a proper constitution.
 
@@ -134,15 +130,11 @@ The command updates `.specify/memory/constitution.md` with principles like:
 
 Now use the conversational specification command. **You don't need to structure your thoughts** — just describe what you're building.
 
-In GitHub Copilot Chat (Agent mode), run:
+In GitHub Copilot Chat (Agent mode), copy and paste:
 
+```text
+/speckit.specify Payment checkout for our investor demo on Friday. Needs to handle credit card payments, show order history, and look professional. Should handle edge cases like double-clicks and invalid cards gracefully.
 ```
-/speckit.specify
-```
-
-Then describe your feature:
-
-> "Payment checkout for our investor demo on Friday. Needs to handle credit card payments, show order history, and look professional. Should handle edge cases like double-clicks and invalid cards gracefully."
 
 ### What Just Happened?
 
@@ -173,7 +165,7 @@ Open the generated `spec.md`. You'll see something powerful - the AI **explicitl
 
 In GitHub Copilot Chat:
 
-```
+```text
 /speckit.clarify
 ```
 
@@ -215,15 +207,11 @@ Respond with your choice. The AI updates the spec and asks the next question:
 
 Remember — `/speckit.specify` already generated User Scenarios in your spec. Now let's **expand them for demo coverage**.
 
-Continue the clarification conversation:
+Copy and paste:
 
+```text
+/speckit.clarify I need scenarios that will impress investors. What happens if someone double-clicks the Pay button? What if payment fails — do we show ugly errors? Can we prove the system is auditable?
 ```
-/speckit.clarify
-```
-
-Then provide additional context:
-
-> "I need scenarios that will impress investors. What happens if someone double-clicks the Pay button? What if payment fails — do we show ugly errors? Can we prove the system is auditable?"
 
 The AI analyzes your concerns and updates the spec with additional scenarios:
 
@@ -282,13 +270,9 @@ Open `spec.md` and you'll see the AI generated scenarios **in proper Given/When/
 
 In GitHub Copilot Chat:
 
+```text
+/speckit.checklist demo-readiness
 ```
-/speckit.checklist
-```
-
-Then specify the checklist type:
-
-> "Generate a demo-readiness checklist."
 
 The AI reads YOUR spec and generates questions specific to your feature:
 
