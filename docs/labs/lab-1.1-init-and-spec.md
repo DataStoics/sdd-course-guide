@@ -37,15 +37,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ## The SDD Workflow
 
-```mermaid
-flowchart TB
-    A["🔵 Lab 1.1: Specify<br/>WHAT to build"] --> B["⚪ Lab 1.2: Plan<br/>HOW to build"]
-    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
-    
-    style A fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style B fill:#f3f4f6,stroke:#d1d5db,color:#374151
-    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
-```
+![Lab 1.1 Progress](../assets/images/lab-1.1-progress.svg)
 
 ---
 
@@ -69,59 +61,30 @@ Same PM message. Same deadline. Different approach.
 
 ## Step 1: Initialize Your AI Assistant (10 min)
 
-Before writing any code or specs, set up your AI assistant with the SDD workflow.
+Before writing any specs, set up your AI assistant with the SDD workflow.
 
-### Run the Init Command
+### Initialize spec-kit
 
-From your repository root, run:
+Open your AI assistant and say:
 
-```bash
-specify init .
-```
+> "Initialize spec-kit in this repository. I'm using GitHub Copilot."
 
-### Select Your AI Assistant
-
-You'll be prompted to choose your AI assistant:
-
-```
-? Select your AI assistant:
-  copilot
-  claude
-  gemini
-```
-
-**Select the one you're using** (the same AI assistant you used in Lab 0).
-
-### What Just Happened?
-
-The init command created the spec-kit structure and slash commands for your selected assistant:
-
-| Assistant | Commands Directory | Format |
-|-----------|-------------------|--------|
-| GitHub Copilot | `.github/prompts/` | Markdown |
-| Claude Code | `.claude/commands/` | Markdown |
-| Gemini CLI | `.gemini/commands/` | TOML |
-
-The init also created:
+The AI will run the initialization and set up the spec-kit structure for your selected assistant. You'll see it create:
 - `.specify/` - Core spec-kit directory with scripts, templates, and memory
 - `.specify/memory/constitution.md` - Project principles (we'll define these next)
-- `.specify/templates/` - Templates for specs, plans, and checklists
+- Command files for your AI assistant
 
-**Open your agent's commands directory** and review it. These slash commands enable the spec-driven workflow:
+### Verify Setup
+
+Ask your AI:
+
+> "Verify that spec-kit is set up correctly and show me what commands are available."
+
+You should see the slash commands that enable the spec-driven workflow:
 - `/speckit.specify` - Transform ideas into structured specifications
 - `/speckit.clarify` - Ask questions to refine ambiguous requirements
 - `/speckit.plan` - Generate implementation plans
 - `/speckit.implement` - Execute implementation with traceability
-
-### Verify Setup
-
-Confirm spec-kit is working:
-
-```bash
-specify check
-```
-
-You should see green checkmarks for your AI assistant and required tools.
 
 ---
 
@@ -176,13 +139,9 @@ The `/speckit.specify` command automatically:
 
 Open the generated `spec.md`. You'll see something powerful - the AI **explicitly marked its uncertainty** instead of guessing:
 
-```markdown
-## Functional Requirements
-
-- **FR-001**: System MUST accept payment tokens [NEEDS CLARIFICATION: which payment gateway?]
-- **FR-002**: System MUST handle duplicate submissions [NEEDS CLARIFICATION: return same response or error?]
-- **FR-003**: System MUST validate payment amounts [NEEDS CLARIFICATION: min/max limits?]
-```
+- **FR-001**: System MUST accept payment tokens `[NEEDS CLARIFICATION: which payment gateway?]`
+- **FR-002**: System MUST handle duplicate submissions `[NEEDS CLARIFICATION: return same response or error?]`
+- **FR-003**: System MUST validate payment amounts `[NEEDS CLARIFICATION: min/max limits?]`
 
 **This is spec-kit's superpower**: Instead of the AI making plausible-but-wrong assumptions, it tells you exactly what's ambiguous. Those `[NEEDS CLARIFICATION]` markers are your Thursday night rework, surfaced on Monday morning.
 
@@ -200,10 +159,9 @@ Open the generated `spec.md`. You'll see something powerful - the AI **explicitl
 
 The AI presents **ONE question at a time** with a recommended answer:
 
-```
-## Question 1: Payment Gateway Integration
+**Question 1: Payment Gateway Integration**
 
-**Context**: FR-001 specifies accepting payment tokens but doesn't specify the gateway.
+*Context*: FR-001 specifies accepting payment tokens but doesn't specify the gateway.
 
 | Option | Answer | Implications |
 |--------|--------|--------------|
@@ -211,8 +169,7 @@ The AI presents **ONE question at a time** with a recommended answer:
 | B | Stripe Test Mode | Real integration, adds complexity |
 | C | Direct card input | Security risk, NOT recommended |
 
-**Your choice**: _[Type A, B, C, or custom]_
-```
+You respond with your choice (A, B, C, or a custom answer).
 
 ### Answer Each Question
 
@@ -247,21 +204,18 @@ Can we prove the system is auditable?
 
 The AI analyzes your concerns and updates the spec with additional scenarios:
 
-```
-## Scenario Coverage Analysis
+**Scenario Coverage Analysis**
 
 Your spec currently has 1 scenario (happy path). For investor demo, I recommend:
 
-**Adding Scenario 2: Double-Click Protection**
+*Adding Scenario 2: Double-Click Protection*
+
 Would you like me to add a scenario where a duplicate payment attempt returns the original confirmation?
 
 | Option | Answer | Demo Value |
 |--------|--------|------------|
 | A (Recommended) | Yes, add idempotency scenario | Shows robustness |
 | B | No, skip for MVP | Risk: demo embarrassment |
-
-**Your choice**: _[Type A or B]_
-```
 
 ### The Conversation Expands Your Spec
 
@@ -275,29 +229,25 @@ As you answer, the AI adds scenarios to your spec:
 
 Open `spec.md` and you'll see the AI generated scenarios **in proper Given/When/Then format**:
 
-```markdown
-## User Scenarios
+**Scenario 1: Successful Payment (Priority: P1)**
+- **Given** a customer with a valid payment token,
+- **When** they submit a payment for $50.00,
+- **Then** payment succeeds and they see confirmation with transaction ID.
 
-### Scenario 1: Successful Payment (Priority: P1)
-**Given** a customer with a valid payment token,
-**When** they submit a payment for $50.00,
-**Then** payment succeeds and they see confirmation with transaction ID.
+**Scenario 2: Double-Click Protection (Priority: P1)**
+- **Given** a payment was just processed,
+- **When** the customer clicks Pay again,
+- **Then** they see the same confirmation (not a duplicate charge).
 
-### Scenario 2: Double-Click Protection (Priority: P1)
-**Given** a payment was just processed,
-**When** the customer clicks Pay again,
-**Then** they see the same confirmation (not a duplicate charge).
+**Scenario 3: Graceful Error Recovery (Priority: P2)**
+- **Given** a customer submits an invalid payment token,
+- **When** the payment is attempted,
+- **Then** they see a helpful error message and can retry.
 
-### Scenario 3: Graceful Error Recovery (Priority: P2)
-**Given** a customer submits an invalid payment token,
-**When** the payment is attempted,
-**Then** they see a helpful error message and can retry.
-
-### Scenario 4: Audit Trail (Priority: P2)
-**Given** a completed transaction,
-**When** an auditor requests the trace,
-**Then** system shows: timestamp, customer, amount, outcome, trace ID.
-```
+**Scenario 4: Audit Trail (Priority: P2)**
+- **Given** a completed transaction,
+- **When** an auditor requests the trace,
+- **Then** system shows: timestamp, customer, amount, outcome, trace ID.
 
 **Key insight**: You described what you needed in plain English. The AI structured it into testable scenarios. No manual Given/When/Then writing required.
 
@@ -307,29 +257,25 @@ Open `spec.md` and you'll see the AI generated scenarios **in proper Given/When/
 
 **Why checklists?** Your spec captures requirements, but checklists catch *gaps* - the things you forgot to specify that will bite you Thursday night.
 
-Run:
-
 ```
 /speckit.checklist demo-readiness
 ```
 
 The AI reads YOUR spec and generates questions specific to your feature:
 
-```markdown
-# Demo Readiness Checklist: Payment Checkout
+**Demo Readiness Checklist: Payment Checkout**
 
-## Functional Completeness
+*Functional Completeness*
 - [ ] FR-001: Payment token acceptance - is gateway integration specified?
 - [ ] FR-002: Idempotency - is duplicate detection mechanism defined?
 
-## Demo Safety
+*Demo Safety*
 - [ ] Happy path scenario covers the main demo flow?
 - [ ] Error scenarios won't crash or show ugly stack traces?
 
-## Investor Questions
+*Investor Questions*
 - [ ] "Is this secure?" - tokenization requirement documented?
 - [ ] "Can you trace transactions?" - audit logging specified?
-```
 
 **How to use it**: Review each item. If you can't check it off, go back to your spec and add the missing detail. Unchecked items = Thursday night rework.
 
@@ -339,17 +285,14 @@ The AI reads YOUR spec and generates questions specific to your feature:
 
 **Where does this commit go?** When you created a Codespace from the template, GitHub made YOUR OWN COPY of the repository under your account. Your commits go to YOUR repo, not the original template.
 
-Commit using conventional format:
+Ask your AI:
 
-```bash
-git add .
-git commit -m "feat: payment checkout specification for investor demo"
-```
+> "Commit all my work with a conventional commit message for the payment checkout specification."
 
-This commit includes:
-- AI assistant configuration (`.github/prompts/` or equivalent)
-- Project constitution (`.specify/memory/constitution.md`)
-- Feature specification (`specs/001-payment-checkout/spec.md`)
+The AI will stage and commit:
+- AI assistant configuration
+- Project constitution
+- Feature specification
 
 ---
 

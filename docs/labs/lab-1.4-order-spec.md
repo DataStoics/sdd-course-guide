@@ -33,13 +33,11 @@ You're feeling good. Payment endpoint works. Demo scenarios pass. Then PM appear
 
 ## Where We Are in the Week
 
-```
-Monday:      [DONE] Spec + Plan (Labs 1.1-1.2)
-Tuesday:     [DONE] Payment working (Lab 1.3)
-Wednesday:   [HERE] New feature request
-Thursday:    Build + Integrate
-Friday:      Demo day
-```
+- **Monday**: [DONE] Spec + Plan (Labs 1.1-1.2)
+- **Tuesday**: [DONE] Payment working (Lab 1.3)
+- **Wednesday**: [HERE] New feature request
+- **Thursday**: Build + Integrate
+- **Friday**: Demo day
 
 ---
 
@@ -71,10 +69,9 @@ Before coding, clarify what "order history" means for the demo:
 
 ## Step 2: Create Order Spec Directory (2 min)
 
-```bash
-mkdir -p specs/002-order
-touch specs/002-order/spec.md
-```
+Ask your AI:
+
+> "Create a new spec directory for the order feature at `specs/002-order/` with an empty `spec.md` file."
 
 ---
 
@@ -84,30 +81,28 @@ What could break the order history demo?
 
 ### Demo Disaster Prevention
 
-```markdown
-## CONSTRAINTS
+Ask your AI to add these constraints to the spec:
 
-### State Integrity (prevents demo disasters)
+> "Add a CONSTRAINTS section to the order spec with requirements for state integrity, demo safety, and audit readiness."
+
+**State Integrity** (prevents demo disasters):
 - **Valid transitions only**: Orders can only move through defined states
 - **No stuck orders**: Every state has a path forward or is terminal
 - **Idempotency**: Duplicate "mark paid" calls don't break anything
 
-### Demo-Day Requirements  
+**Demo-Day Requirements**:
 - **Fast queries**: Order history returns in < 500ms
 - **Clear status**: Each order shows current state and timestamp
-- **Audit ready**: "Can you show me the history of this order?" -- yes
-```
+- **Audit ready**: "Can you show me the history of this order?" — yes
 
 ### Bonus: Production-Path Constraints
 
 These aren't required for Friday, but make "production-ready" easier:
 
-```markdown
-### Future-Proofing (already in spec = no rework later)
+**Future-Proofing** (already in spec = no rework later):
 - **7-year retention**: Financial records for audit compliance
 - **Anonymization**: Personal data cleaned after retention period
 - **Immutable audit trail**: Can't fake order history
-```
 
 **This is the power of spec-first**: Compliance comes free when you specify upfront.
 
@@ -119,68 +114,52 @@ These are the flows you'll show investors on Friday.
 
 ### Demo Flow 1: Create Order and Pay
 
-```markdown
-### Demo Flow 1: Complete Checkout (the main demo)
+Describe to your AI:
 
-1. **Given** a customer ready to checkout,
-   **When** they create an order,
-   **Then** order created with status "created" and unique ID.
+> "Add a scenario for complete checkout: customer creates order, submits payment, order shows paid."
 
-2. **Given** an order with status "created",
-   **When** payment succeeds (links to our payment endpoint),
-   **Then** order moves to "paid", payment ID is linked.
+**Demo Flow 1: Complete Checkout** (the main demo)
+1. **Given** a customer ready to checkout, **When** they create an order, **Then** order created with status "created" and unique ID.
+2. **Given** an order with status "created", **When** payment succeeds (links to our payment endpoint), **Then** order moves to "paid", payment ID is linked.
 
 *Demo script: "Customer creates order... submits payment... order shows paid."*
-```
 
 ### Demo Flow 2: Order History
 
-```markdown
-### Demo Flow 2: View Order History (proves persistence)
+> "Add a scenario for viewing order history: user sees list of orders, newly paid order appears at top."
 
-1. **Given** a user with completed orders,
-   **When** they view order history,
-   **Then** see list of orders with status and dates.
-
-2. **Given** an order was just paid,
-   **When** user refreshes history,
-   **Then** new order appears at top of list.
+**Demo Flow 2: View Order History** (proves persistence)
+1. **Given** a user with completed orders, **When** they view order history, **Then** see list of orders with status and dates.
+2. **Given** an order was just paid, **When** user refreshes history, **Then** new order appears at top of list.
 
 *Demo script: "Let's see the customer's order history... there it is."*
-```
 
 ### Demo Flow 3: Error Handling (proves robustness)
 
-```markdown
-### Demo Flow 3: Edge Cases That Won't Crash
+> "Add edge case scenarios: duplicate payment callback handled gracefully, unauthorized access rejected."
 
-1. **Given** an order already marked "paid",
-   **When** payment callback fires again,
-   **Then** graceful response (not duplicate, not error).
-
-2. **Given** user requests someone else's orders,
-   **When** request processed,
-   **Then** rejected with "unauthorized" (not a crash).
+**Demo Flow 3: Edge Cases That Won't Crash**
+1. **Given** an order already marked "paid", **When** payment callback fires again, **Then** graceful response (not duplicate, not error).
+2. **Given** user requests someone else's orders, **When** request processed, **Then** rejected with "unauthorized" (not a crash).
 
 *Demo script: "And if something goes wrong... helpful error, not a crash."*
-```
 
 ---
 
 ## Step 5: Define Requirements and State Machine (15 min)
 
-```markdown
-## Requirements
+Ask your AI:
 
-### Functional Requirements (Friday Demo)
+> "Add functional requirements for the order feature and document the order lifecycle state machine."
 
+**Functional Requirements** (Friday Demo):
 - **FR-001**: Create order with unique ID and "created" status
 - **FR-002**: Mark order paid when payment succeeds (link transaction_id)
 - **FR-003**: Get order history for authenticated user
 - **FR-004**: Enforce valid state transitions only
 - **FR-005**: Log state changes to audit trail
 
-### Order Lifecycle (State Machine)
+**Order Lifecycle** (State Machine):
 
 | State | Transitions To | Demo Relevance |
 |-------|----------------|----------------|
@@ -189,7 +168,6 @@ These are the flows you'll show investors on Friday.
 | fulfilled | archived | Post-demo (delivery complete) |
 | cancelled | (terminal) | Customer abandons |
 | archived | (terminal) | Long-term storage |
-```
 
 **Why document states in spec?** Your AI will generate valid transition logic instead of spaghetti if-else chains.
 
@@ -199,24 +177,23 @@ These are the flows you'll show investors on Friday.
 
 This is where the two features connect:
 
-```markdown
-## Integration: Payment - Order
+> "Document the integration between payment and order services in the spec."
 
-### Flow
-1. Customer creates order - Order in "created" state
+**Integration: Payment → Order**
+
+*Flow:*
+1. Customer creates order — Order in "created" state
 2. Customer submits payment (to /pay endpoint)
-3. Payment succeeds - Order service marks order "paid"
+3. Payment succeeds — Order service marks order "paid"
 
-### API Contract
+*API Contract:*
 
 | Event | From | To | Payload |
 |-------|------|-----|---------|
 | Payment succeeded | Payment Service | Order Service | { order_id, transaction_id } |
 
-### What If Payment Service Is Down?
-
+*What If Payment Service Is Down?*
 Order stays in "created" state. No cascading failure. Customer can retry.
-```
 
 **This is why you spec integration points**: Avoids "it worked in isolation" demo failures.
 
@@ -226,23 +203,20 @@ Order stays in "created" state. No cascading failure. Customer can retry.
 
 What could break the demo?
 
-```markdown
-### Edge Cases (Demo Disaster Prevention)
+> "Add edge cases to the spec for demo disaster prevention."
 
-- **Double payment callback**: Order already "paid" - return success, no state change
+**Edge Cases** (Demo Disaster Prevention):
+- **Double payment callback**: Order already "paid" — return success, no state change
 - **Order not found**: Return 404 with helpful error, not stack trace  
 - **Invalid state transition**: Reject with "invalid_transition", log the attempt
 - **Unauthorized access**: Return 401, don't leak order data
 - **Concurrent updates**: Use optimistic locking, return "conflict" on race
-```
 
 ---
 
 ## Step 8: Generate Plan (10 min)
 
-Run:
-
-```bash
+```
 /speckit.plan
 ```
 
@@ -257,10 +231,9 @@ The generated `specs/002-order/plan.md` should include:
 
 ## Step 9: Commit Your Work (2 min)
 
-```bash
-git add .
-git commit -m "feat: order management specification with GDPR retention"
-```
+Ask your AI:
+
+> "Commit all the order specification work with a conventional commit message."
 
 ---
 
@@ -278,9 +251,9 @@ Your lab is complete when:
 
 ### Validate Your Work
 
-```bash
-python validate_lab.py --lab 1.4 --repo .
-```
+Ask your AI:
+
+> "Run the lab validation script for Lab 1.4 and show me the results."
 
 ---
 

@@ -53,27 +53,23 @@ The command reads your spec and plan, then generates `specs/001-payment-checkout
 
 Open `tasks.md` and verify it makes sense:
 
-```markdown
-# Task Breakdown: Payment Checkout
-
-## Phase 1: Setup (4 tasks)
+**Phase 1: Setup** (4 tasks)
 - **T001**: Initialize FastAPI project structure
 - **T002**: Configure Redis connection
 - **T003**: Set up Mock Payment Gateway client
 - **T004**: Create environment configuration
 
-## Phase 2: Core Feature (5 tasks)
+**Phase 2: Core Feature** (5 tasks)
 - **T005**: Implement PaymentRequest/Response models
 - **T006**: Implement idempotency cache service
 - **T007**: Implement payment endpoint (POST /pay)
 - **T008**: Add audit logging
 - **T009**: Wire up error handling
 
-## Phase 3: Validation (3 tasks)
+**Phase 3: Validation** (3 tasks)
 - **T010**: Write acceptance tests per spec scenarios
 - **T011**: Run security scan (semgrep/bandit)
 - **T012**: Verify end-to-end flow
-```
 
 **Key insight**: The AI broke down YOUR spec into tasks. Every task traces back to a requirement.
 
@@ -190,10 +186,9 @@ The AI will:
 
 ## Step 7: Commit Your Work (5 min)
 
-```bash
-git add .
-git commit -m "feat: payment endpoint with idempotency and audit logging"
-```
+Ask your AI:
+
+> "Commit all the implementation work with a conventional commit message describing the payment endpoint with idempotency and audit logging."
 
 ---
 

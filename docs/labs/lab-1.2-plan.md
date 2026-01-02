@@ -23,15 +23,7 @@ By the end of this lab, you'll understand: **A plan is a commitment. Research do
 
 ## The SDD Workflow
 
-```mermaid
-flowchart TB
-    A["✅ Lab 1.1: Specify<br/>WHAT to build"] --> B["🔵 Lab 1.2: Plan<br/>HOW to build"]
-    B --> C["⚪ Lab 1.3: Implement<br/>BUILD it"]
-    
-    style A fill:#22c55e,stroke:#16a34a,color:#fff
-    style B fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
-```
+![Lab 1.2 Progress](../assets/images/lab-1.2-progress.svg)
 
 ---
 
@@ -39,7 +31,7 @@ flowchart TB
 
 - Repository with `specs/001-payment-checkout/spec.md` from Lab 1.1
 - All `[NEEDS CLARIFICATION]` markers resolved
-- AI assistant configured (`specify init .` completed)
+- AI assistant configured
 
 ---
 
@@ -70,10 +62,9 @@ Unlike traditional workflows where you research separately, `/speckit.plan` **do
 
 Open `specs/001-payment-checkout/research.md` and you'll see:
 
-```markdown
-## Technology Decision: Idempotency Cache
+**Technology Decision: Idempotency Cache**
 
-### Options Analyzed
+*Options Analyzed:*
 
 | Option | Pros | Cons |
 |--------|------|------|
@@ -81,11 +72,9 @@ Open `specs/001-payment-checkout/research.md` and you'll see:
 | In-memory dict | Simple, no deps | Lost on restart |
 | Database | Persistent | Overkill for short TTL |
 
-### Decision: Redis
+*Decision: Redis*
 
-**Rationale**: Native TTL support matches our cache requirement. 
-For demo purposes, a single Redis instance is sufficient.
-```
+**Rationale**: Native TTL support matches our cache requirement. For demo purposes, a single Redis instance is sufficient.
 
 **This is your audit trail.** When someone asks "why Redis?", point them to research.md.
 
@@ -97,20 +86,17 @@ Open `specs/001-payment-checkout/plan.md` and verify it contains:
 
 ### 2a. Committed Decisions
 
-```markdown
-## Technology Stack
-
+**Technology Stack:**
 - **Framework**: FastAPI (async, OpenAPI docs built-in)
 - **Caching**: Redis (idempotency keys with TTL)
 - **HTTP Client**: httpx (async gateway calls)
 - **Logging**: structlog (JSON format for audit)
-```
 
 ### 2b. Project Structure
 
-```markdown
-## Project Structure
+The plan defines where code will live:
 
+```
 src/
 ├── app/
 │   ├── main.py          # FastAPI entry point
@@ -140,22 +126,18 @@ If you can't justify a technology from your spec, either add the requirement or 
 
 Open `specs/001-payment-checkout/data-model.md`:
 
-```markdown
-# Data Model: Payment Checkout
+**Data Model: Payment Checkout**
 
-## Entities
+*PaymentRequest Entity:*
+- `idempotency_key`: string (unique)
+- `amount`: decimal
+- `currency`: string
+- `payment_token`: string
 
-### PaymentRequest
-- idempotency_key: string (unique)
-- amount: decimal
-- currency: string
-- payment_token: string
-
-### PaymentResponse  
-- transaction_id: string
-- status: enum (success, failed, pending)
-- amount: decimal
-```
+*PaymentResponse Entity:*
+- `transaction_id`: string
+- `status`: enum (success, failed, pending)
+- `amount`: decimal
 
 **Verify**: Do these entities cover your spec's requirements?
 
@@ -163,20 +145,14 @@ Open `specs/001-payment-checkout/data-model.md`:
 
 ## Step 4: Verify Infrastructure (5 min)
 
-Start the services:
+Ask your AI:
 
-```bash
-# Start Redis and Mock Payment Gateway
-docker-compose up -d
+> "Start the Docker services and verify Redis and the Mock Payment Gateway are healthy."
 
-# Verify Redis
-docker-compose exec redis redis-cli ping
-# Expected: PONG
-
-# Verify Mock Gateway
-curl http://localhost:8001/health
-# Expected: {"status":"healthy"}
-```
+The AI will:
+1. Start containers with docker-compose
+2. Test Redis connectivity (expects PONG)
+3. Test Mock Gateway health endpoint (expects healthy status)
 
 ---
 
@@ -197,10 +173,9 @@ This checks:
 
 ## Step 6: Commit Your Work (5 min)
 
-```bash
-git add .
-git commit -m "feat: implementation plan for payment checkout"
-```
+Ask your AI:
+
+> "Commit all the planning artifacts with a conventional commit message."
 
 ---
 
