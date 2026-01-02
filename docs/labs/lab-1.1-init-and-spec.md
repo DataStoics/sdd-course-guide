@@ -34,7 +34,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ---
 
-## The SDD Workflow
+## The Spec-Driven Development Workflow
 
 ![Lab 1.1 Progress](../assets/images/lab-1.1-progress.svg)
 
@@ -44,7 +44,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 - GitHub repository cloned from `sdd-greenfield-template`
 - Working dev container environment
-- AI assistant (GitHub Copilot, Claude Code, or Gemini CLI)
+- AI assistant (GitHub Copilot recommended, or Claude Code, Gemini CLI)
 
 ---
 
@@ -60,7 +60,7 @@ Same PM message. Same deadline. Different approach.
 
 ## Step 1: Initialize Your AI Assistant (10 min)
 
-Before writing any code or specs, set up your AI assistant with the SDD workflow.
+Before writing any code or specs, set up your AI assistant with the Spec-Driven Development workflow.
 
 ### Run the Init Command
 
@@ -386,7 +386,7 @@ This commit includes:
 
 Your lab is complete when:
 
-- [ ] AI assistant configured (`.github/prompts/`, `.claude/commands/`, or `.gemini/commands/` exists)
+- [ ] AI assistant configured (`.github/prompts/` for Copilot, `.claude/commands/`, or `.gemini/commands/` exists)
 - [ ] Constitution defined (`.specify/memory/constitution.md` has your project principles)
 - [ ] Feature branch created by `/speckit.specify` (e.g., `001-payment-checkout`)
 - [ ] `specs/001-payment-checkout/spec.md` exists with structured content
@@ -445,9 +445,10 @@ Your lab is complete when:
 
 | Problem | Solution |
 |---------|----------|
-| Gemini "not authenticated" | Run `gemini auth login` in terminal |
-| Claude API key invalid | Check key at console.anthropic.com |
 | Copilot not responding in agent mode | Ensure you selected "Agent" not "Chat" in the dropdown |
+| Copilot shows code but won't create files | Switch from "Chat" to "Agent" mode |
+| Claude API key invalid | Check key at console.anthropic.com |
+| Gemini "not authenticated" | Run `gemini auth login` in terminal |
 
 {: .tip }
 > **When in doubt**: Delete the `.specify/` directory and re-run `specify init .` to start fresh.
