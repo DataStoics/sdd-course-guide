@@ -59,32 +59,44 @@ Same PM message. Same deadline. Different approach.
 
 ---
 
-## Step 1: Initialize Your AI Assistant (10 min)
+## Step 1: Initialize spec-kit (10 min)
 
-Before writing any specs, set up your AI assistant with the SDD workflow.
+Before writing any specs, set up your project with the spec-kit CLI.
 
-### Initialize spec-kit
+{: .note }
+> The `specify` CLI is **pre-installed** in your Codespace. No installation needed!
 
-Open your AI assistant and say:
+### Initialize spec-kit in Your Repository
 
-> "Initialize spec-kit in this repository. I'm using GitHub Copilot."
+Run the init command in your terminal (NOT through your AI assistant):
 
-The AI will run the initialization and set up the spec-kit structure for your selected assistant. You'll see it create:
-- `.specify/` - Core spec-kit directory with scripts, templates, and memory
-- `.specify/memory/constitution.md` - Project principles (we'll define these next)
-- Command files for your AI assistant
+```bash
+specify init .
+```
+
+The interactive wizard will prompt you to:
+1. **Select your AI assistant** — Use arrow keys to choose GitHub Copilot, Claude Code, Gemini CLI, etc.
+2. **Select script type** — PowerShell (ps) for Windows, Shell (sh) for Mac/Linux
+
+### What Gets Created
+
+The CLI creates:
+- `.specify/` — Core directory with scripts, templates, and memory
+- `.specify/memory/constitution.md` — Project principles (we'll define these next)
+- Agent-specific command files:
+  - **GitHub Copilot**: `.github/prompts/speckit.*.prompt.md`
+  - **Claude Code**: `.claude/commands/speckit.*.md`
+  - **Gemini CLI**: `.gemini/commands/speckit.*.toml`
 
 ### Verify Setup
 
-Ask your AI:
+Open your AI assistant and verify the slash commands are available:
+- `/speckit.specify` — Transform ideas into structured specifications
+- `/speckit.clarify` — Ask questions to refine ambiguous requirements
+- `/speckit.plan` — Generate implementation plans
+- `/speckit.implement` — Execute implementation with traceability
 
-> "Verify that spec-kit is set up correctly and show me what commands are available."
-
-You should see the slash commands that enable the spec-driven workflow:
-- `/speckit.specify` - Transform ideas into structured specifications
-- `/speckit.clarify` - Ask questions to refine ambiguous requirements
-- `/speckit.plan` - Generate implementation plans
-- `/speckit.implement` - Execute implementation with traceability
+**Key distinction**: `specify init` is a CLI tool you run once. The `/speckit.*` commands are AI prompts you use throughout development.
 
 ---
 
@@ -94,13 +106,15 @@ Before diving into features, establish the foundational principles that will gui
 
 ### Run the Constitution Command
 
-Simply describe what matters for your project:
+In GitHub Copilot Chat (Agent mode), run:
 
 ```
-/speckit.constitution This is an investor demo for a payment checkout system. 
-Prioritize professional appearance, graceful error handling, and demo-ability. 
-Code should be clean enough to show investors but pragmatic for the timeline.
+/speckit.constitution
 ```
+
+Then describe what matters for your project:
+
+> "This is an investor demo for a payment checkout system. Prioritize professional appearance, graceful error handling, and demo-ability. Code should be clean enough to show investors but pragmatic for the timeline."
 
 **The beauty of spec-kit**: You don't need to structure your thoughts perfectly. Just describe what matters and the AI will help organize it into a proper constitution.
 
@@ -118,13 +132,17 @@ The command updates `.specify/memory/constitution.md` with principles like:
 
 ## Step 3: Generate Initial Spec with /speckit.specify (10 min)
 
-Now use the conversational specification command. **You don't need to structure your thoughts** - just describe what you're building:
+Now use the conversational specification command. **You don't need to structure your thoughts** — just describe what you're building.
+
+In GitHub Copilot Chat (Agent mode), run:
 
 ```
-/speckit.specify Payment checkout for our investor demo on Friday. 
-Needs to handle credit card payments, show order history, and look professional. 
-Should handle edge cases like double-clicks and invalid cards gracefully.
+/speckit.specify
 ```
+
+Then describe your feature:
+
+> "Payment checkout for our investor demo on Friday. Needs to handle credit card payments, show order history, and look professional. Should handle edge cases like double-clicks and invalid cards gracefully."
 
 ### What Just Happened?
 
@@ -153,11 +171,13 @@ Open the generated `spec.md`. You'll see something powerful - the AI **explicitl
 
 ### Run the Clarify Command
 
+In GitHub Copilot Chat:
+
 ```
 /speckit.clarify
 ```
 
-The AI presents **ONE question at a time** with a recommended answer:
+The AI analyzes your spec and presents **ONE question at a time** with a recommended answer:
 
 **Question 1: Payment Gateway Integration**
 
@@ -193,14 +213,17 @@ Respond with your choice. The AI updates the spec and asks the next question:
 
 ## Step 5: Expand Scenarios with /speckit.clarify (15 min)
 
-Remember - `/speckit.specify` already generated User Scenarios in your spec. Now let's **expand them for demo coverage** using natural language:
+Remember — `/speckit.specify` already generated User Scenarios in your spec. Now let's **expand them for demo coverage**.
+
+Continue the clarification conversation:
 
 ```
-/speckit.clarify I need scenarios that will impress investors. 
-What happens if someone double-clicks the Pay button? 
-What if payment fails - do we show ugly errors? 
-Can we prove the system is auditable?
+/speckit.clarify
 ```
+
+Then provide additional context:
+
+> "I need scenarios that will impress investors. What happens if someone double-clicks the Pay button? What if payment fails — do we show ugly errors? Can we prove the system is auditable?"
 
 The AI analyzes your concerns and updates the spec with additional scenarios:
 
@@ -255,11 +278,17 @@ Open `spec.md` and you'll see the AI generated scenarios **in proper Given/When/
 
 ## Step 6: Generate Quality Checklist with /speckit.checklist (5 min)
 
-**Why checklists?** Your spec captures requirements, but checklists catch *gaps* - the things you forgot to specify that will bite you Thursday night.
+**Why checklists?** Your spec captures requirements, but checklists catch *gaps* — the things you forgot to specify that will bite you Thursday night.
+
+In GitHub Copilot Chat:
 
 ```
-/speckit.checklist demo-readiness
+/speckit.checklist
 ```
+
+Then specify the checklist type:
+
+> "Generate a demo-readiness checklist."
 
 The AI reads YOUR spec and generates questions specific to your feature:
 
@@ -300,13 +329,14 @@ The AI will stage and commit:
 
 Your lab is complete when:
 
-- [ ] AI assistant configured (`.github/prompts/`, `.claude/commands/`, or `.gemini/commands/` exists)
+- [ ] `specify init .` completed (`.specify/` directory exists)
+- [ ] AI assistant configured (`.github/prompts/` for Copilot, `.claude/commands/` for Claude, or `.gemini/commands/` for Gemini)
 - [ ] Constitution defined (`.specify/memory/constitution.md` has your project principles)
 - [ ] Feature branch created by `/speckit.specify` (e.g., `001-payment-checkout`)
 - [ ] `specs/001-payment-checkout/spec.md` exists with structured content
 - [ ] **No `[NEEDS CLARIFICATION]` markers remain** (all resolved via `/speckit.clarify`)
 - [ ] Spec has at least 4 user scenarios (Given/When/Then)
-- [ ] Spec has numbered requirements (FR-001, FR-002, etc.) - all specific and testable
+- [ ] Spec has numbered requirements (FR-001, FR-002, etc.) — all specific and testable
 - [ ] Quality checklist generated via `/speckit.checklist`
 - [ ] Commit message follows convention: `feat: payment specification`
 

@@ -38,7 +38,9 @@ Package for production, run final checks, and make sure nothing embarrassing hap
 
 ## Step 1: Create Production Dockerfile (15 min)
 
-> "/speckit.implement Create a production Dockerfile with:
+Ask your AI to create a production-ready Dockerfile:
+
+> "Create a production Dockerfile with:
 > - Multi-stage build (builder stage for dependencies, production stage for runtime)
 > - Python 3.11-slim base image
 > - Non-root user (appuser) for security
@@ -112,7 +114,9 @@ If issues found:
 
 ## Step 4: CI/CD Pipeline (10 min)
 
-> "/speckit.implement Create .github/workflows/ci.yml with:
+Ask your AI to create the CI/CD configuration:
+
+> "Create .github/workflows/ci.yml with:
 > - Trigger on push/PR to main
 > - Jobs: lint (ruff), security (semgrep + bandit), test (pytest with coverage), build (docker)
 > - Test job needs Redis service container
@@ -136,7 +140,9 @@ Open `.github/workflows/ci.yml` and confirm:
 
 Run the final checklist:
 
-> "/speckit.checklist"
+```
+/speckit.checklist
+```
 
 ### The "Would I Demo This?" Questions
 
