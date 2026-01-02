@@ -1,11 +1,11 @@
 ﻿---
-title: Pre-Course Setup
+title: Prerequisites
 layout: default
 nav_order: 1
 parent: "Part 1: Building from Scratch"
 description: "Complete these setup steps before Day 1"
 ---
-# Pre-Course Setup Guide
+# Prerequisites
 
 **Time Required**: 30-45 minutes
 

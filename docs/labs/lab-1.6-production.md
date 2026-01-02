@@ -38,16 +38,16 @@ Package for production, run final checks, and make sure nothing embarrassing hap
 
 ## Step 1: Create Production Dockerfile (15 min)
 
-Ask your AI to create a production-ready Dockerfile:
-
-> "Create a production Dockerfile with:
-> - Multi-stage build (builder stage for dependencies, production stage for runtime)
-> - Python 3.11-slim base image
-> - Non-root user (appuser) for security
-> - Virtual environment copied from builder
-> - HEALTHCHECK that hits /health endpoint
-> - Environment variables: PYTHONDONTWRITEBYTECODE=1, PYTHONUNBUFFERED=1
-> - Expose port 8000, run with uvicorn"
+```text
+Create a production Dockerfile with:
+- Multi-stage build (builder stage for dependencies, production stage for runtime)
+- Python 3.11-slim base image
+- Non-root user (appuser) for security
+- Virtual environment copied from builder
+- HEALTHCHECK that hits /health endpoint
+- Environment variables: PYTHONDONTWRITEBYTECODE=1, PYTHONUNBUFFERED=1
+- Expose port 8000, run with uvicorn
+```
 
 ### What AI Should Generate
 
@@ -72,7 +72,9 @@ Open the generated `Dockerfile` and confirm:
 
 ## Step 2: Build and Test Container (10 min)
 
-> "Build the Docker image tagged as sdd-workshop:latest. Then run it with Redis and payment gateway URLs pointing to host.docker.internal. Test the health endpoint."
+```text
+Build the Docker image tagged as sdd-workshop:latest. Then run it with Redis and payment gateway URLs pointing to host.docker.internal. Test the health endpoint.
+```
 
 ### Verify Container
 
@@ -83,17 +85,23 @@ Open the generated `Dockerfile` and confirm:
 | Health endpoint | `{"status": "healthy"}` |
 | Container size | < 200MB |
 
-> "Check the container image size. Is it under 200MB?"
+```text
+Check the container image size. Is it under 200MB?
+```
 
-If over 200MB, ask AI to optimize:
+If over 200MB:
 
-> "The container is [X]MB. How can we reduce the size?"
+```text
+The container is [X]MB. How can we reduce the size?
+```
 
 ---
 
 ## Step 3: Final Security Scan (10 min)
 
-> "Run semgrep security scan on src/ with the security-audit config. Then run bandit. Report any CRITICAL or HIGH findings."
+```text
+Run semgrep security scan on src/ with the security-audit config. Then run bandit. Report any CRITICAL or HIGH findings.
+```
 
 ### Pass Criteria
 
@@ -104,24 +112,28 @@ If over 200MB, ask AI to optimize:
 
 If issues found:
 
-> "Fix this security finding: [paste finding]"
+```text
+Fix this security finding: [paste finding]
+```
 
 ### Optional: Container Security
 
-> "If Trivy is available, scan the sdd-workshop:latest image for vulnerabilities."
+```text
+If Trivy is available, scan the sdd-workshop:latest image for vulnerabilities.
+```
 
 ---
 
 ## Step 4: CI/CD Pipeline (10 min)
 
-Ask your AI to create the CI/CD configuration:
-
-> "Create .github/workflows/ci.yml with:
-> - Trigger on push/PR to main
-> - Jobs: lint (ruff), security (semgrep + bandit), test (pytest with coverage), build (docker)
-> - Test job needs Redis service container
-> - Build job depends on lint, security, and test passing
-> - Coverage threshold: 80%"
+```text
+Create .github/workflows/ci.yml with:
+- Trigger on push/PR to main
+- Jobs: lint (ruff), security (semgrep + bandit), test (pytest with coverage), build (docker)
+- Test job needs Redis service container
+- Build job depends on lint, security, and test passing
+- Coverage threshold: 80%
+```
 
 ### Your Verification
 
@@ -132,7 +144,9 @@ Open `.github/workflows/ci.yml` and confirm:
 - [ ] Redis service in test job
 - [ ] `--cov-fail-under=80` in pytest command
 
-> "Push a test commit and verify the CI pipeline runs."
+```text
+Push a test commit and verify the CI pipeline runs.
+```
 
 ---
 
@@ -166,12 +180,14 @@ Run the final checklist:
 
 ## Step 6: Demo Rehearsal (15 min)
 
-> "Start all services with docker-compose. Walk me through the demo:
-> 1. Create an order with 2 items
-> 2. Process payment
-> 3. Mark order as paid
-> 4. Show order history
-> 5. Show what happens on double-click (idempotency)"
+```text
+Start all services with docker-compose. Walk me through the demo:
+1. Create an order with 2 items
+2. Process payment
+3. Mark order as paid
+4. Show order history
+5. Show what happens on double-click (idempotency)
+```
 
 ### Demo Script (Practice This)
 
@@ -189,7 +205,9 @@ Run the final checklist:
 
 ## Step 7: Commit and Breathe (5 min)
 
-> "Commit all changes with message: feat: production-ready for demo day"
+```text
+Commit all changes with message: feat: production-ready for demo day
+```
 
 **You're ready for the Friday demo.**
 

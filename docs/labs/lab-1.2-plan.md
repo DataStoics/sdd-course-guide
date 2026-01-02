@@ -145,9 +145,9 @@ Open `specs/001-payment-checkout/data-model.md`:
 
 ## Step 4: Verify Infrastructure (5 min)
 
-Ask your AI:
-
-> "Start the Docker services and verify Redis and the Mock Payment Gateway are healthy."
+```text
+Start the Docker services and verify Redis and the Mock Payment Gateway are healthy.
+```
 
 The AI will:
 1. Start containers with docker-compose
@@ -173,9 +173,9 @@ This checks:
 
 ## Step 6: Commit Your Work (5 min)
 
-Ask your AI:
-
-> "Commit all the planning artifacts with a conventional commit message."
+```text
+Commit all the planning artifacts with a conventional commit message.
+```
 
 ---
 

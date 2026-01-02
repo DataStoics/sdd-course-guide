@@ -41,45 +41,17 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ---
 
-## Step 0: Launch Your Development Environment (5 min)
+## Starting Point
 
-### Option A: GitHub Codespaces (Recommended)
+{: .important }
+> **Not set up yet?** Complete the [Prerequisites](../setup.md) guide first.
 
-Click the button below to launch a pre-configured environment in seconds:
+- **Your own repository** — When you launched the Codespace from the template, GitHub created YOUR personal copy at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. All commits go to YOUR repo, not the original template.
+- Working dev container environment with `specify` CLI pre-installed
+- AI assistant in **Agent mode** (GitHub Copilot, Claude Code, or Gemini CLI)
 
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/DataStoics/sdd-greenfield-starter?quickstart=1)
-
-Wait ~2-3 minutes for the environment to build. You'll know it's ready when you see:
-```
-=== Environment Ready ===
-Installed: gemini, specify
-```
-
-### Option B: Local Development
-
-If you prefer working locally:
-
-```bash
-# Clone the starter repository
-git clone https://github.com/DataStoics/sdd-greenfield-starter.git
-cd sdd-greenfield-starter
-
-# Open in VS Code
-code .
-```
-
-When VS Code opens, click **"Reopen in Container"** when prompted. Wait ~3-5 minutes for the dev container to build.
-
-### Verify Your Environment
-
-Once your environment is ready, verify in the terminal:
-
-```bash
-# Check specify CLI is available
-specify check
-```
-
-You should see a list of available AI agents and tools.
+{: .tip }
+> **Where do commits go?** Your Codespace is connected to YOUR fork. When you commit, changes push to `github.com/YOUR-USERNAME/sdd-greenfield-starter`. You can verify this by running `git remote -v` in the terminal.
 
 ---
 
@@ -330,11 +302,14 @@ The AI reads YOUR spec and generates questions specific to your feature:
 
 ## Step 7: Commit Your Work (5 min)
 
-**Where does this commit go?** When you created a Codespace from the template, GitHub made YOUR OWN COPY of the repository under your account. Your commits go to YOUR repo, not the original template.
+Ask your AI to commit your work:
 
-Ask your AI:
+```text
+Commit all my work with a conventional commit message for the payment checkout specification.
+```
 
-> "Commit all my work with a conventional commit message for the payment checkout specification."
+{: .note }
+> **How does AI commit?** GitHub Copilot (and other AI assistants) can run git commands directly in Agent mode. If you've configured the GitHub MCP server, it can also push to your repository. Otherwise, push manually with `git push` in the terminal.
 
 The AI will stage and commit:
 - AI assistant configuration

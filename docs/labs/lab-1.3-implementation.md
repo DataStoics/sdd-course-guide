@@ -110,9 +110,9 @@ The AI will show you what it's implementing. Look for:
 
 ## Step 3: Start Infrastructure (5 min)
 
-Ask your AI assistant to start and verify the services:
-
-> "Start the Docker services (Redis and Mock Payment Gateway) and verify they're both running and healthy."
+```text
+Start the Docker services (Redis and Mock Payment Gateway) and verify they're both running and healthy.
+```
 
 The AI will:
 1. Run `docker-compose up -d`
@@ -126,9 +126,9 @@ The AI will:
 
 ## Step 4: Run Tests (10 min)
 
-Ask your AI to run and verify tests:
-
-> "Run the test suite and show me the results. All acceptance scenarios from the spec should pass."
+```text
+Run the test suite and show me the results. All acceptance scenarios from the spec should pass.
+```
 
 The AI will:
 1. Run `pytest tests/ -v`
@@ -137,8 +137,11 @@ The AI will:
 
 **Expected**: All acceptance scenario tests pass.
 
-If tests fail, ask:
-> "Test for Scenario 2 (double-click protection) is failing. The spec says we should return the original response. Please fix."
+If tests fail:
+
+```text
+Test for Scenario 2 (double-click protection) is failing. The spec says we should return the original response. Please fix.
+```
 
 ---
 
@@ -158,17 +161,19 @@ This checks:
 
 ### Address Any Gaps
 
-If the checklist shows incomplete items, ask your AI to address them:
+If the checklist shows incomplete items:
 
-> "The checklist shows FR-003 (audit logging) isn't fully implemented. Please add structured logging for all payment events."
+```text
+The checklist shows FR-003 (audit logging) isn't fully implemented. Please add structured logging for all payment events.
+```
 
 ---
 
 ## Step 6: Verify End-to-End (10 min)
 
-Ask your AI to test the complete flow:
-
-> "Start the API server and test the payment endpoint. Send a $50 payment, then send the same request again to verify double-click protection returns the original response with duplicate=true."
+```text
+Start the API server and test the payment endpoint. Send a $50 payment, then send the same request again to verify double-click protection returns the original response with duplicate=true.
+```
 
 The AI will:
 1. Start the FastAPI server
@@ -186,9 +191,9 @@ The AI will:
 
 ## Step 7: Commit Your Work (5 min)
 
-Ask your AI:
-
-> "Commit all the implementation work with a conventional commit message describing the payment endpoint with idempotency and audit logging."
+```text
+Commit all the implementation work with a conventional commit message describing the payment endpoint with idempotency and audit logging.
+```
 
 ---
 

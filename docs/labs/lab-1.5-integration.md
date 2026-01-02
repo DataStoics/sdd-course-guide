@@ -116,9 +116,9 @@ For each task, the AI:
 
 ## Step 4: Verify Infrastructure (5 min)
 
-Ask your AI:
-
-> "Start Docker services and verify Redis and the API are running."
+```text
+Start Docker services and verify Redis and the API are running.
+```
 
 The AI will:
 1. Run `docker-compose up -d`
@@ -130,22 +130,25 @@ The AI will:
 
 ## Step 5: Run Test Suite (10 min)
 
-Ask your AI:
-
-> "Run the full test suite with coverage. Target is 80%+."
+```text
+Run the full test suite with coverage. Target is 80%+.
+```
 
 **Expected**: All tests pass, coverage ≥ 80%
 
-If tests fail, ask:
-> "The test for [scenario] is failing. Fix it according to the spec."
+If tests fail:
+
+```text
+The test for [scenario] is failing. Fix it according to the spec.
+```
 
 ---
 
 ## Step 6: Verify End-to-End Flow (10 min)
 
-Ask your AI:
-
-> "Test the complete checkout flow: create an order, process payment, mark order paid, verify order history shows the paid order."
+```text
+Test the complete checkout flow: create an order, process payment, mark order paid, verify order history shows the paid order.
+```
 
 The AI will execute the full demo scenario:
 1. **POST /orders** — Create order with items
@@ -163,9 +166,11 @@ The AI will execute the full demo scenario:
 /speckit.checklist security
 ```
 
-Or ask your AI:
+Alternatively:
 
-> "Run semgrep and bandit security scans. Report any critical or high findings."
+```text
+Run semgrep and bandit security scans. Report any critical or high findings.
+```
 
 **Pass Criteria**: 0 CRITICAL, 0 HIGH
 
@@ -173,9 +178,9 @@ Or ask your AI:
 
 ## Step 8: Commit Your Work (2 min)
 
-Ask your AI:
-
-> "Commit all the order implementation with a conventional commit message."
+```text
+Commit all the order implementation with a conventional commit message.
+```
 
 ---
 
