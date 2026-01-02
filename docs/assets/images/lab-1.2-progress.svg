@@ -13,23 +13,23 @@
   
   <!-- Lab 1.1 - COMPLETED (Green) -->
   <rect x="30" y="50" width="160" height="70" rx="8" fill="#22c55e" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="110" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">âœ… Lab 1.1: Specify</text>
+  <text x="110" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">✅ Lab 1.1: Specify</text>
   <text x="110" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#dcfce7">WHAT to build</text>
   
-  <!-- Arrow 1 -->
+  <!-- Arrow 1: from Lab 1.1 (ends at x=190) to Lab 1.2 (starts at x=220) -->
   <line x1="195" y1="85" x2="215" y2="85" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow-gray)"/>
   
   <!-- Lab 1.2 - CURRENT (Blue) -->
   <rect x="220" y="50" width="160" height="70" rx="8" fill="#2563eb" stroke="#1d4ed8" stroke-width="2" filter="url(#shadow)"/>
-  <text x="300" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">ðŸ”µ Lab 1.2: Plan</text>
+  <text x="300" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#ffffff">🔵 Lab 1.2: Plan</text>
   <text x="300" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#dbeafe">HOW to build</text>
   
-  <!-- Arrow 2 -->
+  <!-- Arrow 2: from Lab 1.2 (ends at x=380) to Lab 1.3 (starts at x=410) -->
   <line x1="385" y1="85" x2="405" y2="85" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow-gray)"/>
   
   <!-- Lab 1.3 - NOT STARTED (Gray) -->
   <rect x="410" y="50" width="160" height="70" rx="8" fill="#f3f4f6" stroke="#d1d5db" stroke-width="2"/>
-  <text x="490" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#374151">âšª Lab 1.3: Implement</text>
+  <text x="490" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" font-weight="600" fill="#374151">⚪ Lab 1.3: Implement</text>
   <text x="490" y="98" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#6b7280">BUILD it</text>
   
   <!-- Legend -->

@@ -11,41 +11,41 @@
   <!-- Title -->
   <text x="390" y="25" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#374151">Part 1 Progress</text>
   
-  <!-- Lab 1.1 - COMPLETED (Green) -->
+  <!-- Lab 1.1 - COMPLETED (Green) at x=20, width=130, ends at x=150 -->
   <rect x="20" y="50" width="130" height="70" rx="8" fill="#22c55e" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="85" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">âœ… Lab 1.1</text>
+  <text x="85" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">✅ Lab 1.1</text>
   <text x="85" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#dcfce7">Specify</text>
   
-  <!-- Arrow 1 -->
+  <!-- Arrow 1: from x=150 to Lab 1.2 at x=175 -->
   <line x1="155" y1="85" x2="170" y2="85" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow-gray)"/>
   
-  <!-- Lab 1.2 - COMPLETED (Green) -->
+  <!-- Lab 1.2 - COMPLETED (Green) at x=175, width=130, ends at x=305 -->
   <rect x="175" y="50" width="130" height="70" rx="8" fill="#22c55e" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="240" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">âœ… Lab 1.2</text>
+  <text x="240" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">✅ Lab 1.2</text>
   <text x="240" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#dcfce7">Plan</text>
   
-  <!-- Arrow 2 -->
+  <!-- Arrow 2: from x=305 to Lab 1.3 at x=330 -->
   <line x1="310" y1="85" x2="325" y2="85" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow-gray)"/>
   
-  <!-- Lab 1.3 - COMPLETED (Green) -->
+  <!-- Lab 1.3 - COMPLETED (Green) at x=330, width=130, ends at x=460 -->
   <rect x="330" y="50" width="130" height="70" rx="8" fill="#22c55e" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="395" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">âœ… Lab 1.3</text>
+  <text x="395" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">✅ Lab 1.3</text>
   <text x="395" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#dcfce7">Implement</text>
   
-  <!-- Arrow 3 -->
+  <!-- Arrow 3: from x=460 to Lab 1.4 at x=485 -->
   <line x1="465" y1="85" x2="480" y2="85" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow-gray)"/>
   
-  <!-- Lab 1.4 - COMPLETED (Green) -->
+  <!-- Lab 1.4 - COMPLETED (Green) at x=485, width=130, ends at x=615 -->
   <rect x="485" y="50" width="130" height="70" rx="8" fill="#22c55e" stroke="#16a34a" stroke-width="2" filter="url(#shadow)"/>
-  <text x="550" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">âœ… Lab 1.4</text>
+  <text x="550" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">✅ Lab 1.4</text>
   <text x="550" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#dcfce7">Order Spec</text>
   
-  <!-- Arrow 4 -->
+  <!-- Arrow 4: from x=615 to Lab 1.5 at x=640 -->
   <line x1="620" y1="85" x2="635" y2="85" stroke="#9ca3af" stroke-width="2" marker-end="url(#arrow-gray)"/>
   
-  <!-- Lab 1.5 - CURRENT (Blue) -->
+  <!-- Lab 1.5 - CURRENT (Blue) at x=640, width=120, ends at x=760 -->
   <rect x="640" y="50" width="120" height="70" rx="8" fill="#2563eb" stroke="#1d4ed8" stroke-width="2" filter="url(#shadow)"/>
-  <text x="700" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">ðŸ”µ Lab 1.5</text>
+  <text x="700" y="78" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="11" font-weight="600" fill="#ffffff">🔵 Lab 1.5</text>
   <text x="700" y="95" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="10" fill="#dbeafe">Integration</text>
   
   <!-- Legend -->
