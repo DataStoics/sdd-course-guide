@@ -1,12 +1,12 @@
----
+﻿---
 title: Home
 layout: home
 nav_order: 1
-description: "Spec-Driven Development Foundations Course 1 - Learn to build production-ready software with AI assistants"
+description: "SDD Foundations Course 1 - Learn to build production-ready software with AI assistants"
 permalink: /
 ---
 
-# Spec-Driven Development Foundations Course 1
+# SDD Foundations Course 1
 {: .fs-9 }
 
 From vague idea to production code in a structured workflow.
@@ -24,7 +24,42 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 Most AI coding fails because we skip the thinking. SDD makes the thinking explicit through **human validation at every phase**.
 
-![SDD Workflow Diagram](assets/images/sdd-workflow.svg)
+```mermaid
+flowchart TB
+    subgraph GOVERN["GOVERN"]
+        G1["Constitution"]
+        G2["Security & Compliance Rules"]
+        G3["Immutable Constraints"]
+    end
+    
+    subgraph SPECIFY["SPECIFY"]
+        S1["Vague Idea"]
+        S2["Clarifying Questions"]
+        S3["Robust Specification"]
+        S1 --> S2 --> S3
+    end
+    
+    subgraph PLAN["PLAN"]
+        P1["Research Options"]
+        P2["Technical Decisions"]
+        P3["Implementation Blueprint"]
+        P1 --> P2 --> P3
+    end
+    
+    subgraph IMPLEMENT["IMPLEMENT"]
+        I1["AI Generates Code"]
+        I2["Tests & Security Scan"]
+        I3["Production Ready"]
+        I1 --> I2 --> I3
+    end
+    
+    GOVERN -.->|"Constraints feed every phase"| SPECIFY
+    GOVERN -.-> PLAN
+    GOVERN -.-> IMPLEMENT
+    
+    SPECIFY -->|"Human validates spec"| PLAN
+    PLAN -->|"Human approves design"| IMPLEMENT
+```
 
 **What makes this different:** The spec is not just a document -- it is a **conversation** that surfaces hidden assumptions before they become bugs.
 
@@ -62,3 +97,4 @@ By Friday, you'll have a working checkout system and a repeatable process.
 > **Complete [Pre-Course Setup](setup) before Day 1.** You'll need your environment ready.
 
 [Start the Labs](labs/){: .btn .btn-outline .fs-5 }
+

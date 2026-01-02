@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 1.1: Init and Spec"
 layout: default
 parent: Labs
@@ -36,7 +36,15 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ## The SDD Workflow
 
-![Lab 1.1 Progress](../assets/images/lab-1.1-progress.svg)
+```mermaid
+flowchart TB
+    A["ðŸ”µ Lab 1.1: Specify<br/>WHAT to build"] --> B["âšª Lab 1.2: Plan<br/>HOW to build"]
+    B --> C["âšª Lab 1.3: Implement<br/>BUILD it"]
+    
+    style A fill:#2563eb,stroke:#1d4ed8,color:#fff
+    style B fill:#f3f4f6,stroke:#d1d5db,color:#374151
+    style C fill:#f3f4f6,stroke:#d1d5db,color:#374151
+```
 
 ---
 
@@ -168,37 +176,20 @@ The `/speckit.specify` command automatically:
 Open the generated `spec.md`. You'll see something powerful - the AI **explicitly marked its uncertainty** instead of guessing:
 
 ```markdown
-## User Scenarios
-
-### Scenario 1: Successful Payment (Priority: P1)
-**Given** a customer with a valid payment token,
-**When** they submit a payment for $50.00,
-**Then** payment succeeds and confirmation displays.
-
 ## Functional Requirements
 
 - **FR-001**: System MUST accept payment tokens [NEEDS CLARIFICATION: which payment gateway?]
 - **FR-002**: System MUST handle duplicate submissions [NEEDS CLARIFICATION: return same response or error?]
 - **FR-003**: System MUST validate payment amounts [NEEDS CLARIFICATION: min/max limits?]
-- **FR-004**: System MUST display order history [NEEDS CLARIFICATION: how many past orders?]
 ```
 
 **This is spec-kit's superpower**: Instead of the AI making plausible-but-wrong assumptions, it tells you exactly what's ambiguous. Those `[NEEDS CLARIFICATION]` markers are your Thursday night rework, surfaced on Monday morning.
-
-### Review the Generated Structure
-
-Your spec should have:
-- Summary (what we're building)
-- User Scenarios (Given/When/Then format)
-- Functional Requirements (FR-001, FR-002... with uncertainty markers)
-- Success Criteria (measurable outcomes)
-- Key Entities (data structures involved)
 
 ---
 
 ## Step 4: Resolve Ambiguities with /speckit.clarify (15 min)
 
-**This is where Thursday night rework gets prevented.** Those `[NEEDS CLARIFICATION]` markers? Let's resolve them now, not at 11pm Thursday.
+**This is where Thursday night rework gets prevented.** Those `[NEEDS CLARIFICATION]` markers? Let's resolve them now.
 
 ### Run the Clarify Command
 
@@ -206,34 +197,30 @@ Your spec should have:
 /speckit.clarify
 ```
 
-The AI analyzes your spec and presents **ONE question at a time** with a recommended answer:
+The AI presents **ONE question at a time** with a recommended answer:
 
 ```
 ## Question 1: Payment Gateway Integration
 
 **Context**: FR-001 specifies accepting payment tokens but doesn't specify the gateway.
 
-**What we need to know**: Which payment gateway should we integrate with?
-
 | Option | Answer | Implications |
 |--------|--------|--------------|
-| A (Recommended) | Mock Payment Gateway | Fast to implement, perfect for demo, easy to swap later |
-| B | Stripe Test Mode | Real integration, but adds complexity and API keys |
-| C | Direct card input | Security risk, NOT recommended for any demo |
+| A (Recommended) | Mock Payment Gateway | Fast to implement, perfect for demo |
+| B | Stripe Test Mode | Real integration, adds complexity |
+| C | Direct card input | Security risk, NOT recommended |
 
-**Your choice**: _[Type A, B, C, or provide custom answer]_
+**Your choice**: _[Type A, B, C, or custom]_
 ```
 
 ### Answer Each Question
 
 Respond with your choice. The AI updates the spec and asks the next question:
 
-- **Q1: Payment Gateway** Ã¢â€ â€™ A (Mock gateway for demo)
-- **Q2: Duplicate handling** Ã¢â€ â€™ Return original response (idempotent)
-- **Q3: Amount limits** Ã¢â€ â€™ $0.01 - $10,000 USD
-- **Q4: Order history depth** Ã¢â€ â€™ Last 10 orders
-
-After ~4-5 questions, your spec transforms from ambiguous to precise.
+- **Q1: Payment Gateway** â†’ A (Mock gateway for demo)
+- **Q2: Duplicate handling** â†’ Return original response (idempotent)
+- **Q3: Amount limits** â†’ $0.01 - $10,000 USD
+- **Q4: Order history depth** â†’ Last 10 orders
 
 ### Before vs. After Clarification
 
@@ -241,7 +228,6 @@ After ~4-5 questions, your spec transforms from ambiguous to precise.
 |--------|-------|
 | `[NEEDS CLARIFICATION: which payment gateway?]` | Mock Payment Gateway with Stripe-compatible tokens |
 | `[NEEDS CLARIFICATION: return same response or error?]` | Return original confirmation (idempotent) |
-| `[NEEDS CLARIFICATION: min/max limits?]` | $0.01 - $10,000 USD |
 
 **This is the conversation that prevents Thursday rework.**
 
@@ -270,8 +256,8 @@ Would you like me to add a scenario where a duplicate payment attempt returns th
 
 | Option | Answer | Demo Value |
 |--------|--------|------------|
-| A (Recommended) | Yes, add idempotency scenario | Shows robustness, prevents demo embarrassment |
-| B | No, skip for MVP | Risk: demo could show duplicate charge |
+| A (Recommended) | Yes, add idempotency scenario | Shows robustness |
+| B | No, skip for MVP | Risk: demo embarrassment |
 
 **Your choice**: _[Type A or B]_
 ```
@@ -280,13 +266,13 @@ Would you like me to add a scenario where a duplicate payment attempt returns th
 
 As you answer, the AI adds scenarios to your spec:
 
-- **Q1: Double-click?** Ã¢â€ â€™ A (Yes, add idempotency scenario)
-- **Q2: Error handling?** Ã¢â€ â€™ A (Yes, show graceful recovery)
-- **Q3: Audit trail?** Ã¢â€ â€™ A (Yes, prove enterprise-readiness)
+- **Q1: Double-click?** â†’ A (Yes, add idempotency scenario)
+- **Q2: Error handling?** â†’ A (Yes, show graceful recovery)
+- **Q3: Audit trail?** â†’ A (Yes, prove enterprise-readiness)
 
 ### Review Your Expanded Scenarios
 
-Open `spec.md` and you'll see the AI generated these scenarios **in proper Given/When/Then format**:
+Open `spec.md` and you'll see the AI generated scenarios **in proper Given/When/Then format**:
 
 ```markdown
 ## User Scenarios
@@ -296,28 +282,20 @@ Open `spec.md` and you'll see the AI generated these scenarios **in proper Given
 **When** they submit a payment for $50.00,
 **Then** payment succeeds and they see confirmation with transaction ID.
 
-*Demo moment: "Here's a customer completing checkout..."*
-
 ### Scenario 2: Double-Click Protection (Priority: P1)
 **Given** a payment was just processed,
 **When** the customer clicks Pay again,
 **Then** they see the same confirmation (not a duplicate charge).
-
-*Demo moment: "Watch what happens if I click Pay twice..."*
 
 ### Scenario 3: Graceful Error Recovery (Priority: P2)
 **Given** a customer submits an invalid payment token,
 **When** the payment is attempted,
 **Then** they see a helpful error message and can retry.
 
-*Demo moment: "And if something goes wrong, users get a clear message..."*
-
 ### Scenario 4: Audit Trail (Priority: P2)
 **Given** a completed transaction,
 **When** an auditor requests the trace,
 **Then** system shows: timestamp, customer, amount, outcome, trace ID.
-
-*Demo moment: "Every transaction is fully auditable from day one."*
 ```
 
 **Key insight**: You described what you needed in plain English. The AI structured it into testable scenarios. No manual Given/When/Then writing required.
@@ -342,25 +320,17 @@ The AI reads YOUR spec and generates questions specific to your feature:
 ## Functional Completeness
 - [ ] FR-001: Payment token acceptance - is gateway integration specified?
 - [ ] FR-002: Idempotency - is duplicate detection mechanism defined?
-- [ ] FR-005: Order history - is pagination/limit specified?
 
 ## Demo Safety
 - [ ] Happy path scenario covers the main demo flow?
 - [ ] Error scenarios won't crash or show ugly stack traces?
-- [ ] Double-click protection explicitly required?
 
 ## Investor Questions
 - [ ] "Is this secure?" - tokenization requirement documented?
 - [ ] "Can you trace transactions?" - audit logging specified?
-- [ ] "How do you handle failures?" - error recovery defined?
 ```
 
 **How to use it**: Review each item. If you can't check it off, go back to your spec and add the missing detail. Unchecked items = Thursday night rework.
-
-**Different focus areas**:
-- `/speckit.checklist security` - authentication, authorization, data protection
-- `/speckit.checklist ux` - user flows, error messages, edge cases
-- `/speckit.checklist testing` - testability, acceptance criteria coverage
 
 ---
 
@@ -410,48 +380,6 @@ Your lab is complete when:
 | Friday demo | Hoping nothing breaks | Confident walkthrough |
 
 **Same effort, different outcome.**
-
----
-
-## Troubleshooting
-
-### spec-kit Commands Not Working
-
-| Problem | Solution |
-|---------|----------|
-| `/speckit.specify` not recognized | Run `specify init .` first to create command files |
-| "No AI assistant configured" | Re-run `specify init .` and select your assistant |
-| Commands exist but AI ignores them | Make sure you're in the repo root directory |
-| Gemini shows "command not found" | Check `.gemini/commands/` directory exists |
-
-### Specification Generation Issues
-
-| Problem | Solution |
-|---------|----------|
-| Spec is too vague | Add more detail to your initial description |
-| Too many `[NEEDS CLARIFICATION]` markers | This is good! Run `/speckit.clarify` to resolve them |
-| Spec has wrong assumptions | Edit `spec.md` directly, then run `/speckit.clarify` |
-| AI generates code instead of spec | Remind AI: "Generate specification only, no code yet" |
-
-### Branch and File Issues
-
-| Problem | Solution |
-|---------|----------|
-| Feature branch not created | Check git status; manually create with `git checkout -b 001-feature-name` |
-| `specs/` directory missing | Create manually: `mkdir -p specs/001-payment-checkout` |
-| `.specify/` directory missing | Re-run `specify init .` |
-
-### Authentication Issues
-
-| Problem | Solution |
-|---------|----------|
-| Gemini "not authenticated" | Run `gemini auth login` in terminal |
-| Claude API key invalid | Check key at console.anthropic.com |
-| Copilot not responding in agent mode | Ensure you selected "Agent" not "Chat" in the dropdown |
-
-{: .tip }
-> **When in doubt**: Delete the `.specify/` directory and re-run `specify init .` to start fresh.
-
 
 ---
 
