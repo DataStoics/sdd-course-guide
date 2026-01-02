@@ -1,3 +1,10 @@
+---
+title: "Lab 1.1: Init and Spec – Ship Thursday, Demo Friday"
+layout: default
+parent: "Part 1: Building from Scratch"
+nav_order: 2
+---
+
 # Lab 1.1: Init and Spec -- Ship Thursday, Demo Friday
 
 **Duration**: 90 minutes  

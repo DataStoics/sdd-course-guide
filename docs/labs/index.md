@@ -1,13 +1,12 @@
 ﻿---
-title: Labs
+title: Further Resources
 layout: default
-nav_order: 2
-has_children: true
 parent: "Part 1: Building from Scratch"
+nav_order: 8
 permalink: /labs/
 ---
 
-# Part 1 Labs
+# Lab Resources
 
 Hands-on exercises that build on each other. By the end, you'll have a production-ready checkout system.
 

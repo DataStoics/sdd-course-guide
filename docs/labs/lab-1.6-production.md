@@ -1,7 +1,7 @@
 ﻿---
-title: "Lab 1.6: Production"
+title: "Lab 1.6: Production Readiness"
 layout: default
-parent: Labs
+parent: "Part 1: Building from Scratch"
 nav_order: 7
 ---
 # Lab 1.6: Production Readiness  Friday Morning Polish

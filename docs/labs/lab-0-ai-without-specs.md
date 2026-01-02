@@ -1,3 +1,10 @@
+---
+title: "Lab 0: AI Without Specs"
+layout: default
+parent: "Part 1: Building from Scratch"
+nav_order: 1
+---
+
 # Lab 0: AI Without Specs
 
 **Duration**: 45 minutes (30 min build + 15 min debrief)  

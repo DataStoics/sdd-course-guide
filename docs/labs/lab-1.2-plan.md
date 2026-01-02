@@ -1,3 +1,10 @@
+---
+title: "Lab 1.2: From Spec to Implementation Plan"
+layout: default
+parent: "Part 1: Building from Scratch"
+nav_order: 3
+---
+
 # Lab 1.2: From Spec to Implementation Plan
 
 **Duration**: 45 minutes  
