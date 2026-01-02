@@ -1,7 +1,7 @@
-﻿---
+---
 title: Labs
 layout: default
-nav_order: 3
+nav_order: 4
 has_children: true
 permalink: /labs/
 ---
@@ -22,10 +22,10 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 | Time | Lab | What You'll Build |
 |:-----|:----|:------------------|
-| Morning | [Lab 0: AI Without Specs](lab-0-ai-without-specs) | 30 min of chaos -- AI coding without guidance |
-| Morning | [Lab 1.1: Init and Spec](lab-1.1-init-and-spec) | Your first governance-ready specification |
-| Afternoon | [Lab 1.2: Research and Plan](lab-1.2-research-and-plan) | Technology decisions with trade-off docs |
-| Afternoon | [Lab 1.3: Implementation](lab-1.3-implementation) | Working payment endpoint with tests |
+| Morning | [Lab 0: AI Without Specs](lab-0-ai-without-specs.md) | 30 min of chaos -- AI coding without guidance |
+| Morning | [Lab 1.1: Init and Spec](lab-1.1-init-and-spec.md) | Your first governance-ready specification |
+| Afternoon | [Lab 1.2: Plan](lab-1.2-plan.md) | Technology decisions with trade-off docs |
+| Afternoon | [Lab 1.3: Implementation](lab-1.3-implementation.md) | Working payment endpoint with tests |
 
 **Day 1 Outcome:** Payment service that handles idempotency and passes security scan.
 
@@ -37,16 +37,15 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 | Time | Lab | What You'll Build |
 |:-----|:----|:------------------|
-| Morning | [Lab 1.4: Order Spec](lab-1.4-order-spec) | Second feature spec with state machine |
-| Afternoon | [Lab 1.5: Integration](lab-1.5-integration) | Full checkout flow: order - payment - confirmation |
-| Afternoon | [Lab 1.6: Production](lab-1.6-production) | Docker, CI/CD, final security check |
+| Morning | [Lab 1.4: Order Spec](lab-1.4-order-spec.md) | Second feature spec with state machine |
+| Afternoon | [Lab 1.5: Integration](lab-1.5-integration.md) | Full checkout flow: order - payment - confirmation |
+| Afternoon | [Lab 1.6: Production](lab-1.6-production.md) | Docker, CI/CD, final security check |
 
 **Day 2 Outcome:** Complete checkout system ready for the Friday investor demo.
 
 ---
 
-{: .important }
-> **Each lab builds on the previous one.** If you fall behind, use checkpoint repositories to catch up.
+> Ã¢Å¡Â Ã¯Â¸Â **Important**: Each lab builds on the previous one. If you fall behind, use checkpoint repositories to catch up.
 
 ---
 
@@ -54,7 +53,7 @@ This course simulates that week. By the end, you'll have production-ready code y
 
 | Session | Focus | Labs |
 |:--------|:------|:-----|
-| Day 1 Morning | Experience + Specify | Lab 0, Lab 1.1 |
+| Day 1 Morning | Contrast + Specify | Lab 0, Lab 1.1 |
 | Day 1 Afternoon | Research + Build | Labs 1.2, 1.3 |
 | Day 2 Morning | Second Feature | Lab 1.4 |
 | Day 2 Afternoon | Integrate + Ship | Labs 1.5, 1.6 |

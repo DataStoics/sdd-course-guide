@@ -1,13 +1,13 @@
-﻿---
+---
 title: "Lab 1.6: Production"
 layout: default
 parent: Labs
 nav_order: 7
 ---
-# Lab 1.6: Production Readiness -- Friday Morning Polish
+# Lab 1.6: Production Readiness  Friday Morning Polish
 
-**Duration**: 90 minutes  
-**Day**: 2 (Final Lab)  
+**Duration**: 75 minutes
+**Day**: 2 (Final Lab)
 **Prerequisites**: Completed Lab 1.5 with integrated features
 
 ---
@@ -16,18 +16,13 @@ nav_order: 7
 
 Package for production, run final checks, and make sure nothing embarrassing happens during the demo. By end of this lab, you're ready for the Friday investor pitch.
 
+**Key principle**: Production readiness is about confidence, not perfection.
+
 ---
 
-## Where We Are in the Week
+## Course Progress
 
-```
-Monday:      [DONE] Spec + Plan
-Tuesday:     [DONE] Payment built
-Wednesday:   [DONE] Order spec
-Thursday:    [DONE] Integration complete
-Friday AM:   [HERE] Final polish
-Friday PM:   Demo day
-```
+![Lab 1.6 Progress](../assets/images/lab-1.6-progress.svg)
 
 **Friday morning goal**: Production container, security check, demo rehearsal.
 
@@ -41,265 +36,146 @@ Friday PM:   Demo day
 
 ---
 
-## Step 1: Create Production Dockerfile (20 min)
+## Step 1: Create Production Dockerfile (15 min)
 
-Create a multi-stage `Dockerfile` in the project root:
+> "/speckit.implement Create a production Dockerfile with:
+> - Multi-stage build (builder stage for dependencies, production stage for runtime)
+> - Python 3.11-slim base image
+> - Non-root user (appuser) for security
+> - Virtual environment copied from builder
+> - HEALTHCHECK that hits /health endpoint
+> - Environment variables: PYTHONDONTWRITEBYTECODE=1, PYTHONUNBUFFERED=1
+> - Expose port 8000, run with uvicorn"
 
-```dockerfile
-# =============================================================================
-# Stage 1: Builder
-# =============================================================================
-FROM python:3.11-slim as builder
+### What AI Should Generate
 
-WORKDIR /app
-
-# Install build dependencies
-RUN apt-get update && apt-get install -y --no-install-recommends \
-    build-essential \
-    && rm -rf /var/lib/apt/lists/*
-
-# Create virtual environment
-RUN python -m venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Install Python dependencies
-COPY requirements.txt .
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirements.txt
-
-
-# =============================================================================
-# Stage 2: Production
-# =============================================================================
-FROM python:3.11-slim as production
-
-# Create non-root user for security
-RUN groupadd --gid 1000 appgroup && \
-    useradd --uid 1000 --gid appgroup --shell /bin/bash --create-home appuser
-
-WORKDIR /app
-
-# Copy virtual environment from builder
-COPY --from=builder /opt/venv /opt/venv
-ENV PATH="/opt/venv/bin:$PATH"
-
-# Copy application code
-COPY --chown=appuser:appgroup src/ ./src/
-
-# Set Python environment
-ENV PYTHONDONTWRITEBYTECODE=1 \
-    PYTHONUNBUFFERED=1 \
-    PYTHONPATH=/app
-
-# Switch to non-root user
-USER appuser
-
-# Health check
-HEALTHCHECK --interval=30s --timeout=5s --start-period=5s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')" || exit 1
-
-# Expose port
-EXPOSE 8000
-
-# Run the application
-CMD ["uvicorn", "src.app.main:app", "--host", "0.0.0.0", "--port", "8000"]
-```
-
-### Key Production Patterns
-
-| Pattern | Reason |
-|---------|--------|
+| Pattern | Purpose |
+|---------|---------|
 | Multi-stage build | Smaller final image (no build tools) |
 | Non-root user | Security best practice |
 | HEALTHCHECK | Container orchestration support |
 | PYTHONDONTWRITEBYTECODE | Avoid .pyc files in container |
 
----
+### Your Verification
 
-## Step 2: Build and Test Container (15 min)
+Open the generated `Dockerfile` and confirm:
 
-```bash
-# Build the production image
-docker build -t sdd-workshop:latest .
-
-# Run the container
-docker run -d --name sdd-test \
-  -p 8000:8000 \
-  -e REDIS_URL=redis://host.docker.internal:6379 \
-  -e PAYMENT_GATEWAY_URL=http://host.docker.internal:8001 \
-  sdd-workshop:latest
-
-# Test health endpoint
-curl http://localhost:8000/health
-
-# View logs
-docker logs sdd-test
-
-# Clean up
-docker stop sdd-test && docker rm sdd-test
-```
-
-### Verify Container Size
-
-```bash
-docker images sdd-workshop:latest --format "table {{.Repository}}\t{{.Tag}}\t{{.Size}}"
-```
-
-**Target**: < 200MB (Python slim base + dependencies)
+- [ ] Two stages: `builder` and `production`
+- [ ] `USER appuser` appears before `CMD`
+- [ ] `HEALTHCHECK` instruction present
+- [ ] No secrets or credentials in the file
+- [ ] `COPY --chown=appuser:appgroup` for app code
 
 ---
 
-## Step 3: Final Security Scan (15 min)
+## Step 2: Build and Test Container (10 min)
 
-### Semgrep Scan
+> "Build the Docker image tagged as sdd-workshop:latest. Then run it with Redis and payment gateway URLs pointing to host.docker.internal. Test the health endpoint."
 
-```bash
-semgrep --config p/security-audit src/
-```
+### Verify Container
 
-**Pass Criteria**: 0 CRITICAL + 0 HIGH findings
+| Check | Expected |
+|-------|----------|
+| Build succeeds | No errors |
+| Container starts | No crash on startup |
+| Health endpoint | `{"status": "healthy"}` |
+| Container size | < 200MB |
 
-### Bandit Scan
+> "Check the container image size. Is it under 200MB?"
 
-```bash
-bandit -r src/ -ll
-```
+If over 200MB, ask AI to optimize:
 
-**Pass Criteria**: No high-severity issues
-
-### Container Security
-
-```bash
-# Scan the built image (if Trivy is available)
-trivy image sdd-workshop:latest
-```
+> "The container is [X]MB. How can we reduce the size?"
 
 ---
 
-## Step 4: CI/CD Pipeline Verification (15 min)
+## Step 3: Final Security Scan (10 min)
 
-Verify your `.github/workflows/ci.yml` includes production checks:
+> "Run semgrep security scan on src/ with the security-audit config. Then run bandit. Report any CRITICAL or HIGH findings."
 
-```yaml
-name: CI Pipeline
+### Pass Criteria
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-    branches: [main]
+| Tool | Threshold |
+|------|-----------|
+| Semgrep | 0 CRITICAL, 0 HIGH |
+| Bandit | No high-severity issues |
 
-jobs:
-  lint:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install dependencies
-        run: pip install ruff
-      - name: Run linter
-        run: ruff check src/
+If issues found:
 
-  security:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Run Semgrep
-        uses: returntocorp/semgrep-action@v1
-        with:
-          config: p/security-audit
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install Bandit
-        run: pip install bandit
-      - name: Run Bandit
-        run: bandit -r src/ -ll
+> "Fix this security finding: [paste finding]"
 
-  test:
-    runs-on: ubuntu-latest
-    services:
-      redis:
-        image: redis:7-alpine
-        ports:
-          - 6379:6379
-    steps:
-      - uses: actions/checkout@v4
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-      - name: Run tests with coverage
-        run: pytest --cov=src --cov-report=xml --cov-fail-under=80
-        env:
-          REDIS_URL: redis://localhost:6379
+### Optional: Container Security
 
-  build:
-    runs-on: ubuntu-latest
-    needs: [lint, security, test]
-    steps:
-      - uses: actions/checkout@v4
-      - name: Build Docker image
-        run: docker build -t sdd-workshop:${{ github.sha }} .
-```
+> "If Trivy is available, scan the sdd-workshop:latest image for vulnerabilities."
 
-Push a commit and verify all jobs pass.
+---
+
+## Step 4: CI/CD Pipeline (10 min)
+
+> "/speckit.implement Create .github/workflows/ci.yml with:
+> - Trigger on push/PR to main
+> - Jobs: lint (ruff), security (semgrep + bandit), test (pytest with coverage), build (docker)
+> - Test job needs Redis service container
+> - Build job depends on lint, security, and test passing
+> - Coverage threshold: 80%"
+
+### Your Verification
+
+Open `.github/workflows/ci.yml` and confirm:
+
+- [ ] Four jobs: lint, security, test, build
+- [ ] `needs: [lint, security, test]` on build job
+- [ ] Redis service in test job
+- [ ] `--cov-fail-under=80` in pytest command
+
+> "Push a test commit and verify the CI pipeline runs."
 
 ---
 
 ## Step 5: Demo Day Checklist (10 min)
 
-**The "Would I Demo This?" Checklist**:
+Run the final checklist:
 
-### Security (investor Q: "Is this secure?")
+> "/speckit.checklist"
 
+### The "Would I Demo This?" Questions
+
+**Security** (investor Q: "Is this secure?")
 - [ ] No hardcoded secrets in code
 - [ ] Environment variables for config
 - [ ] Non-root user in container
 - [ ] Security scan passing
 
-### Reliability (investor Q: "Will it crash?")
-
+**Reliability** (investor Q: "Will it crash?")
 - [ ] Health check endpoint works
-- [ ] Double-click handled gracefully
-- [ ] Error responses are helpful
+- [ ] Double-click handled gracefully (idempotency)
+- [ ] Error responses are helpful, not stack traces
 
-### Professionalism (investor Q: "Is this real?")
-
+**Professionalism** (investor Q: "Is this real?")
 - [ ] Structured JSON logging
-- [ ] Trace IDs work
-- [ ] API docs auto-generated
+- [ ] Trace IDs propagate through requests
+- [ ] API docs auto-generated at /docs
 
 ---
 
-## Step 6: Demo Rehearsal (10 min)
+## Step 6: Demo Rehearsal (15 min)
 
-Run through the demo script:
+> "Start all services with docker-compose. Walk me through the demo:
+> 1. Create an order with 2 items
+> 2. Process payment
+> 3. Mark order as paid
+> 4. Show order history
+> 5. Show what happens on double-click (idempotency)"
 
-```bash
-# Start services
-docker-compose up -d
+### Demo Script (Practice This)
 
-# Demo Flow 1: Create order and pay
-curl -X POST http://localhost:8000/orders -H "Content-Type: application/json" \
-  -d '{"items": [{"product_id": "p1", "quantity": 2, "unit_price": 2500}], "idempotency_key": "demo-001"}'
-
-# Get token and pay
-curl -X POST http://localhost:8001/tokenize -d '...'
-curl -X POST http://localhost:8000/pay -d '...'
-
-# Demo Flow 2: View order history
-curl http://localhost:8000/orders
-
-# Demo Flow 3: Show audit trail
-curl http://localhost:8000/orders/{id}/audit
-```
+| Step | What You Say | What You Show |
+|------|--------------|---------------|
+| 1 | "Customer adds items to cart..." | POST /orders response |
+| 2 | "Customer submits payment..." | POST /pay response |
+| 3 | "System confirms the order..." | PATCH /orders/{id}/pay |
+| 4 | "Customer views their history..." | GET /orders |
+| 5 | "And if they double-click?..." | Same response, no duplicate |
 
 **Rehearse until it's smooth.** Know what to say at each step.
 
@@ -307,10 +183,7 @@ curl http://localhost:8000/orders/{id}/audit
 
 ## Step 7: Commit and Breathe (5 min)
 
-```bash
-git add .
-git commit -m "feat: production-ready for demo day"
-```
+> "Commit all changes with message: feat: production-ready for demo day"
 
 **You're ready for the Friday demo.**
 
@@ -318,20 +191,13 @@ git commit -m "feat: production-ready for demo day"
 
 ## Success Criteria
 
-Your lab is complete when:
-
 - [ ] `Dockerfile` exists with multi-stage build
-- [ ] `docker build` succeeds  
-- [ ] `docker run` starts the application
-- [ ] Health check returns healthy
+- [ ] `docker build` succeeds
+- [ ] Container starts and health check passes
+- [ ] Security scan: 0 CRITICAL, 0 HIGH
+- [ ] CI/CD pipeline runs successfully
 - [ ] Demo rehearsal runs smoothly
-- [ ] You'd confidently demo this to investors
-
-### Validate Your Work
-
-```bash
-python validate_lab.py --lab 1.6 --repo . --security-scan
-```
+- [ ] **You'd confidently demo this to investors**
 
 ---
 
@@ -355,28 +221,30 @@ This course was the easy path: empty repo, full control.
 
 In Course 2, you'll face the real world:
 
-```
-            Course 1                    Course 2
-       +------------------+        +------------------+
-       |  Greenfield      |        |  Brownfield      |
-       |  Empty repo      |        |  5000+ lines     |
-       |  You write spec  |        |  Spec is hidden  |
-       |  Full control    |        |  Tech debt       |
-       +------------------+        +------------------+
-              |                          |
-              v                          v
-       Monday spec,         vs    Extract spec FROM
-       Friday ship                 existing code
-```
+| Course 1 (Greenfield) | Course 2 (Brownfield) |
+|-----------------------|-----------------------|
+| Empty repo | 5000+ lines of legacy code |
+| You write the spec | Spec is hidden in the code |
+| Full technology control | Tech debt constrains choices |
+| Monday spec  Friday ship | Extract spec FROM existing code |
 
 ### Course 2 Challenges
 
 - **Extract implicit specs** from working code
-- **Refactor without breaking** production  
+- **Refactor without breaking** production
 - **Retrofit governance** to legacy systems
-- **Work with MCP servers** for internal knowledge
+- **Query external systems** via MCP (Jira, Confluence, GitHub)
 
 The spec-first thinking you learned here becomes **spec-extraction** thinking there.
+
+### External Systems You'll Use
+
+| System | Course 2 Purpose |
+|--------|------------------|
+| **Context7** | Get current library docs for legacy dependencies |
+| **Perplexity** | Research CVEs, migration paths, compatibility |
+| **GitHub MCP** | Analyze existing codebase, PR history |
+| **Confluence** | Query company architecture decisions |
 
 ---
 
@@ -388,7 +256,7 @@ Remember Day 1 morning? Lab 0?
 |------|-----|
 | 30 min of coding, wouldn't demo it | 2 days, confident demo |
 | No idempotency | Double-click safe |
-| "Is this secure?" -- "Uh..." | "Yes, here's the spec" |
+| "Is this secure?"  "Uh..." | "Yes, here's the spec" |
 | Thursday night panic | Thursday night beer |
 
 **The difference wasn't skill. It was approach.**
@@ -399,27 +267,44 @@ Remember Day 1 morning? Lab 0?
 
 In two days, you transformed a vague PM request into:
 
-- Authoritative specifications with governance constraints
-- Researched technology decisions with documented trade-offs
-- Working payment endpoint with idempotency
-- Order service with state machine
-- Integrated checkout flow
-- 80%+ test coverage
-- Security scan passing
-- Production-ready container
-- **A demo you're confident giving**
+-  Authoritative specifications with governance constraints
+-  Researched technology decisions with documented trade-offs
+-  Working payment endpoint with idempotency
+-  Order service with state machine
+-  Integrated checkout flow
+-  80%+ test coverage
+-  Security scan passing
+-  Production-ready container
+-  **A demo you're confident giving**
 
 **Same effort as the Lab 0 approach. Different outcome.**
+
+---
+
+## The AI-Human Partnership (Course Summary)
+
+| You Did | AI Did |
+|---------|--------|
+| Wrote specs with governance constraints | Generated code from specs |
+| Made technology decisions | Implemented those decisions |
+| Designed state machine | Coded transition logic |
+| Defined test scenarios | Wrote test implementations |
+| Verified correctness | Produced boilerplate |
+| Owned the demo | Handled the syntax |
+
+**The spec is the contract. AI implements it. You validate and demo.**
 
 ---
 
 ## Next Steps
 
 1. **Demo day**: Nail the investor pitch
-2. **Apply SDD**: Use this on your next work project  
+2. **Apply SDD**: Use this on your next work project
 3. **Share**: Teach a teammate the spec-first approach
 4. **Course 2**: Learn to extract specs from legacy code
 
+---
+
 **Thank you for participating in SDD Foundations Course 1!**
 
-**Now go demo that checkout flow.**
+**Now go demo that checkout flow. **

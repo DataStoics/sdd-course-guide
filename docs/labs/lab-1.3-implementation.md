@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.3: Implementation"
 layout: default
 parent: Labs
@@ -14,96 +14,177 @@ nav_order: 4
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end, you'll have a demoable payment endpoint â€” including double-click protection that Lab 0 lacked.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified â€” including the double-click that would've crashed your Lab 0 code.
 
 ---
 
 ## The SDD Workflow
 
-```mermaid
-flowchart TB
-    A["âœ… Lab 1.1: Specify<br/>WHAT to build"] --> B["âœ… Lab 1.2: Plan<br/>HOW to build"]
-    B --> C["ðŸ”µ Lab 1.3: Implement<br/>BUILD it"]
-    C --> D["âšª Lab 1.4: Scale<br/>Second feature"]
-    
-    style A fill:#22c55e,stroke:#16a34a,color:#fff
-    style B fill:#22c55e,stroke:#16a34a,color:#fff
-    style C fill:#2563eb,stroke:#1d4ed8,color:#fff
-    style D fill:#f3f4f6,stroke:#d1d5db,color:#374151
-```
+![Lab 1.3 Progress](../assets/images/lab-1.3-progress.svg)
 
 ---
 
 ## Starting Point
 
-From Lab 1.2:
-- `specs/001-payment-checkout/spec.md` â€” demo scenarios
-- `specs/001-payment-checkout/plan.md` â€” technology decisions
-- `specs/001-payment-checkout/research.md` â€” trade-off documentation
-- `specs/001-payment-checkout/data-model.md` â€” entity definitions
+From Lab 1.2, you have:
+- `specs/001-payment-checkout/spec.md` with demo scenarios
+- `specs/001-payment-checkout/plan.md` with technology decisions
+- `specs/001-payment-checkout/research.md` with trade-off documentation
+- `specs/001-payment-checkout/data-model.md` with entity definitions
 
-**Note**: No code yet. This lab creates it.
+**Note**: No code exists yet. This lab creates the implementation.
 
 ---
 
 ## Step 1: Generate Task Breakdown (10 min)
 
+Break down the implementation plan into actionable tasks:
+
 ```
 /speckit.tasks
 ```
 
-Creates `tasks.md` with dependency-ordered tasks.
+The command reads your spec and plan, then generates `specs/001-payment-checkout/tasks.md` with:
+- Dependency-ordered tasks (what must come first)
+- Phase groupings (Setup â†’ Foundational â†’ Feature â†’ Polish)
+- Parallel execution opportunities marked with `[P]`
+
+### Review the Generated Tasks
+
+Open `tasks.md` and verify it makes sense:
+
+```markdown
+# Task Breakdown: Payment Checkout
+
+## Phase 1: Setup (4 tasks)
+- **T001**: Initialize FastAPI project structure
+- **T002**: Configure Redis connection
+- **T003**: Set up Mock Payment Gateway client
+- **T004**: Create environment configuration
+
+## Phase 2: Core Feature (5 tasks)
+- **T005**: Implement PaymentRequest/Response models
+- **T006**: Implement idempotency cache service
+- **T007**: Implement payment endpoint (POST /pay)
+- **T008**: Add audit logging
+- **T009**: Wire up error handling
+
+## Phase 3: Validation (3 tasks)
+- **T010**: Write acceptance tests per spec scenarios
+- **T011**: Run security scan (semgrep/bandit)
+- **T012**: Verify end-to-end flow
+```
+
+**Key insight**: The AI broke down YOUR spec into tasks. Every task traces back to a requirement.
 
 ---
 
 ## Step 2: Execute Implementation (45 min)
 
+Now let the AI implement the tasks:
+
 ```
 /speckit.implement
 ```
 
-Watch the AI create:
+This command:
+1. Reads `tasks.md` for the task order
+2. Implements each task following TDD approach
+3. Validates against checklists as it progresses
+4. Creates code that traces to spec requirements
+
+### What Gets Created
+
+Watch as the AI creates:
 - `src/app/main.py` â€” FastAPI entry point
-- `src/app/models.py` â€” Pydantic models
-- `src/app/payment.py` â€” Payment endpoint
-- `tests/test_payment.py` â€” Acceptance tests
-- `docker-compose.yml` â€” Infrastructure
+- `src/app/models.py` â€” Pydantic models per data-model.md
+- `src/app/payment.py` â€” Payment endpoint with idempotency
+- `src/app/config.py` â€” Environment configuration
+- `tests/test_payment.py` â€” Acceptance scenario tests
+- `docker-compose.yml` â€” Redis + Mock Gateway services
+
+### Monitor Progress
+
+The AI will show you what it's implementing. Look for:
+- **FR-xxx references** â€” Code linking back to spec requirements
+- **Scenario coverage** â€” Tests matching your Given/When/Then scenarios
+- **Error handling** â€” Graceful failures per your edge cases
 
 ---
 
 ## Step 3: Start Infrastructure (5 min)
 
-> "Start the Docker services and verify Redis and the Mock Gateway are healthy."
+Ask your AI assistant to start and verify the services:
 
-AI runs `docker-compose up -d` and verifies both services.
+> "Start the Docker services (Redis and Mock Payment Gateway) and verify they're both running and healthy."
+
+The AI will:
+1. Run `docker-compose up -d`
+2. Check Redis with `redis-cli ping`
+3. Verify the Mock Gateway health endpoint
+4. Report status back to you
+
+**Expected**: AI confirms both services are healthy.
 
 ---
 
 ## Step 4: Run Tests (10 min)
 
-> "Run the test suite. All acceptance scenarios should pass."
+Ask your AI to run and verify tests:
 
-AI runs `pytest tests/ -v` and reports results.
+> "Run the test suite and show me the results. All acceptance scenarios from the spec should pass."
+
+The AI will:
+1. Run `pytest tests/ -v`
+2. Show you which tests passed/failed
+3. Link failures back to spec scenarios
+
+**Expected**: All acceptance scenario tests pass.
+
+If tests fail, ask:
+> "Test for Scenario 2 (double-click protection) is failing. The spec says we should return the original response. Please fix."
 
 ---
 
 ## Step 5: Validate with Checklist (5 min)
 
+Run the spec-kit validation:
+
 ```
 /speckit.checklist
 ```
 
-Address any gaps the AI identifies.
+This checks:
+- âœ“ All spec requirements have implementation
+- âœ“ All acceptance scenarios have tests
+- âœ“ Code coverage meets minimum threshold
+- âœ“ No critical security findings
+
+### Address Any Gaps
+
+If the checklist shows incomplete items, ask your AI to address them:
+
+> "The checklist shows FR-003 (audit logging) isn't fully implemented. Please add structured logging for all payment events."
 
 ---
 
 ## Step 6: Verify End-to-End (10 min)
 
-> "Start the API and test the payment endpoint. Send a $50 payment, then send the same request again to verify double-click protection."
+Ask your AI to test the complete flow:
 
-AI tests and confirms:
+> "Start the API server and test the payment endpoint. Send a $50 payment, then send the same request again to verify double-click protection returns the original response with duplicate=true."
+
+The AI will:
+1. Start the FastAPI server
+2. Send a test payment request
+3. Send a duplicate request (same idempotency key)
+4. Verify the second request returns `"duplicate": true`
+
+**Expected**: 
 - First request: Success with transaction_id
 - Second request: Same response with `"duplicate": true`
+
+**This is the moment**: Lab 0 code would've created a duplicate charge. Your spec prevented it.
 
 ---
 
@@ -118,27 +199,59 @@ git commit -m "feat: payment endpoint with idempotency and audit logging"
 
 ## Success Criteria
 
-- [ ] `tasks.md` exists with task breakdown
+Your lab is complete when:
+
+- [ ] `specs/001-payment-checkout/tasks.md` exists with task breakdown
 - [ ] `src/app/payment.py` exists with POST /pay endpoint
-- [ ] `tests/test_payment.py` has acceptance tests
-- [ ] `pytest tests/ -v` passes
+- [ ] `src/app/models.py` has PaymentRequest, PaymentResponse, PaymentError
+- [ ] `tests/test_payment.py` has tests for all acceptance scenarios
+- [ ] `pytest tests/ -v` shows all tests passing
 - [ ] `/speckit.checklist` shows no critical gaps
-- [ ] Double-click protection works
+- [ ] Manual curl test shows double-click protection working
 
 ---
 
 ## Key Takeaways
 
-1. **Spec â†’ Tasks â†’ Code** â€” `/speckit.tasks` breaks down the spec, `/speckit.implement` generates code.
+1. **Spec â†’ Tasks â†’ Code** â€” `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
 
-2. **Compare to Lab 0** â€” Your endpoint handles double-clicks. Lab 0's didn't.
+2. **Compare to Lab 0** â€” Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
 
-3. **Natural language drives everything** â€” You described requirements; the AI built them.
+3. **Natural language drives everything** â€” You described requirements; the AI structured and implemented them.
 
-4. **Traceability = confidence** â€” Every function traces to an FR-xxx requirement.
+4. **Traceability = confidence** â€” Every function traces to an FR-xxx requirement. That's "production-ready."
+
+### Common Pitfalls
+
+| Pitfall | Why It Matters |
+|---------|---------------|
+| Skipping `/speckit.tasks` | Implementation order matters; dependencies break |
+| Not running tests | Can't prove it works |
+| Ignoring checklist gaps | Incomplete coverage = demo risk |
+
+---
+
+## Preview: External Research Tools (Course 2)
+
+During implementation, you might hit API questions your AI can't answer from training data:
+
+| Situation | Tool | Example |
+|-----------|------|--------|
+| "How do I mock httpx in pytest?" | **Context7** | Get current httpx/pytest docs |
+| "Is this Redis pattern safe?" | **Perplexity** | Search for known issues |
+
+**For now**: Your AI handles most questions. The spec provides enough context.
+
+**In Course 2**: You'll integrate MCP tools for real-time documentation â€” essential when working with legacy APIs.
 
 ---
 
 ## What's Next?
 
-In **Lab 1.4**, PM asks for order history. You'll handle scope addition â€” with a spec.
+It's **Wednesday morning**. PM walks over:
+
+> "Great progress! The investors also want to see order history. Can you add that by Thursday?"
+
+In **Lab 1.4**, you'll handle this scope addition â€” with a spec. No Thursday night panic.
+
+**Your payment feature works. Now let's see if the discipline scales.**

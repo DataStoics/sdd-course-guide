@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 0: AI Without Specs"
 layout: default
 parent: Labs
@@ -28,6 +28,17 @@ For this exercise, you have **30 minutes** instead of 4 days. Same pressure, com
 
 Your challenge: Build a checkout feature that you'd be confident demoing to investors.
 
+---
+
+## Starting Point
+
+- Empty project or minimal template
+- Your AI assistant (GitHub Copilot, Claude Code, or Gemini CLI)
+- No spec, no structure, no constraints
+- Just you and a deadline
+
+---
+
 ### Your Prompt
 
 > "Build an e-commerce checkout system with payment processing and order management."
@@ -42,30 +53,33 @@ That's all the guidance you get. No spec. No constraints. Just you, your AI assi
 
 Depending on which tool you're using:
 
-<details open markdown="block">
-<summary><strong>Gemini CLI</strong> (Recommended)</summary>
-
-1. Open terminal in VS Code: `Ctrl+` ` (backtick)
-2. Run: `gemini`
-3. Sign in with your Google account if prompted
-
-</details>
-
 <details markdown="block">
 <summary><strong>GitHub Copilot</strong></summary>
 
-1. Open Copilot Chat: `Ctrl+Alt+I` (Windows/Linux) or `Cmd+Alt+I` (Mac)
-2. Select **Agent** mode at the top of the chat panel
-3. Ensure you're signed in to GitHub
+1. Open Copilot Chat: `Ctrl+Shift+I` (Windows/Linux) or `Cmd+Shift+I` (Mac)
+2. Ensure you're signed in to GitHub
 
 </details>
 
 <details markdown="block">
 <summary><strong>Claude Code</strong></summary>
 
-1. Open terminal in VS Code: `Ctrl+` ` (backtick)
-2. Run: `claude`
-3. Sign in with your Anthropic account if prompted
+In your terminal, run:
+```bash
+claude
+```
+Sign in with your Anthropic account when prompted.
+
+</details>
+
+<details markdown="block">
+<summary><strong>Gemini CLI</strong></summary>
+
+In your terminal, run:
+```bash
+gemini
+```
+Sign in with your Google account when prompted.
 
 </details>
 
@@ -144,13 +158,13 @@ Your instructor will lead a discussion using these questions:
 
 ## Key Takeaways
 
-1. **Speed is an illusion** â€” Code appears fast, but debug time adds up. Research shows 19% slower due to rework. (METR 2025)
+1. **Speed is an illusion** — Code appears fast, but debug time adds up. Research shows developers estimate 20% speedup with AI but measure 19% *slower* due to rework. (METR 2025 Study)
 
-2. **Consistency beats velocity** â€” You got 3 different patterns when you needed one consistent approach.
+2. **Consistency beats velocity** — You got 3 different patterns when you needed one consistent approach. Happy path only when you needed error handling.
 
-3. **Thursday reveals the truth** â€” The code that ships Friday isn't the code you started Monday.
+3. **Thursday reveals the truth** — The code that ships Friday isn't the code you started Monday. Without a spec, you built three apps and spent Thursday merging them.
 
-4. **"Works" â‰  "Demoable"** â€” "Works on my machine" isn't "works on demo day."
+4. **"Works" ≠ "Demoable"** — "Works on my machine" isn't "works on demo day." Code you can't explain isn't code you can defend.
 
 ### The Speed Trap (Visual)
 
@@ -159,6 +173,7 @@ Your instructor will lead a discussion using these questions:
 | Code appears in seconds | Debug time adds up |
 | Features pile up quickly | Integration breaks things |
 | "Almost done" by Wednesday | Thursday night rewrites |
+| Demo works (barely) | Production requires rebuild |
 
 ---
 

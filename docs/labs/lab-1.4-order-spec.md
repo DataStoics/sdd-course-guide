@@ -1,4 +1,4 @@
-﻿---
+---
 title: "Lab 1.4: Order Spec"
 layout: default
 parent: Labs
@@ -30,15 +30,11 @@ You're feeling good. Payment endpoint works. Demo scenarios pass. Then PM appear
 
 ---
 
-## Where We Are in the Week
+## Course Progress
 
-```
-Monday:      [DONE] Spec + Plan (Labs 1.1-1.2)
-Tuesday:     [DONE] Payment working (Lab 1.3)
-Wednesday:   [HERE] New feature request
-Thursday:    Build + Integrate
-Friday:      Demo day
-```
+![Lab 1.4 Progress](../assets/images/lab-1.4-progress.svg)
+
+**Wednesday**: PM wants "one more thing" before Thursday. This is where spec discipline pays off.
 
 ---
 
@@ -278,7 +274,7 @@ Your lab is complete when:
 ### Validate Your Work
 
 ```bash
-python validate_lab.py --lab 1.4 --repo .
+/speckit.analyze
 ```
 
 ---
