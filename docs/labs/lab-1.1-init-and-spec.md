@@ -65,7 +65,7 @@ Same PM message. Same deadline. Different approach.
 
 ---
 
-## Step 1: Initialize spec-kit (10 min)
+## Step 1: Initialize spec-kit (5 min)
 
 Before writing any specs, set up your project with the spec-kit CLI.
 
@@ -76,18 +76,39 @@ Before writing any specs, set up your project with the spec-kit CLI.
 
 Run the init command in your terminal (NOT through your AI assistant):
 
+<details open markdown="block">
+<summary><strong>GitHub Copilot</strong> (Recommended)</summary>
+
 ```bash
-specify init .
+specify init . --ai copilot
 ```
 
-The interactive wizard will prompt you to:
-1. **Select your AI assistant** — Use arrow keys to choose GitHub Copilot, Claude Code, Gemini CLI, etc.
-2. **Select script type** — PowerShell (ps) for Windows, Shell (sh) for Mac/Linux
+</details>
+
+<details markdown="block">
+<summary><strong>Claude Code</strong></summary>
+
+```bash
+specify init . --ai claude
+```
+
+</details>
+
+<details markdown="block">
+<summary><strong>Gemini CLI</strong></summary>
+
+```bash
+specify init . --ai gemini
+```
+
+</details>
+
+The `--ai` flag tells spec-kit which AI assistant you're using, so it creates the correct command files.
 
 ### What Gets Created
 
 The CLI creates:
-- `.specify/` — Core directory with scripts, templates, and memory
+- `.specify/` — Core directory with shell scripts, templates, and memory
 - `.specify/memory/constitution.md` — Project principles (we'll define these next)
 - Agent-specific command files:
   - **GitHub Copilot**: `.github/prompts/speckit.*.prompt.md`
