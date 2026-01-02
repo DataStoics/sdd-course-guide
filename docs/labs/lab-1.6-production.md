@@ -6,7 +6,7 @@ nav_order: 8
 ---
 # Lab 1.6: Production Readiness  Friday Morning Polish
 
-**Duration**: 75 minutes
+**Duration**: 45-75 minutes
 **Day**: 2 (Final Lab)
 **Prerequisites**: Completed Lab 1.5 with integrated features
 
@@ -222,6 +222,31 @@ Commit all changes with message: feat: production-ready for demo day
 - [ ] CI/CD pipeline runs successfully
 - [ ] Demo rehearsal runs smoothly
 - [ ] **You'd confidently demo this to investors**
+
+---
+
+## Finished Early?
+
+Use the extra time wisely — demo day is tomorrow:
+
+1. **Polish your demo script** — Practice the 5-step flow until it's automatic
+2. **Try breaking things** — What error messages do users see? Are they helpful?
+3. **Review security findings** — Even LOW severity items are learning opportunities
+4. **Document what you'd improve** — What would v2 look like?
+
+---
+
+## Taking Longer?
+
+Docker builds and CI setup can have unexpected hiccups:
+
+1. **Build failing?** — Check Docker daemon is running; try `docker system prune` if disk full
+2. **Security scan stuck?** — Some scans timeout; proceed if no CRITICAL/HIGH found
+3. **CI pipeline issues?** — Focus on local verification; CI is polish, not essential for demo
+4. **Short on time?** — Demo rehearsal is the priority. Skip CI if needed.
+
+{: .note }
+> The checkpoint repo has a working Dockerfile if you need to move on.
 
 ---
 

@@ -201,6 +201,35 @@ Your lab is complete when:
 
 ---
 
+## Finished Early?
+
+If you complete the core tasks with time remaining:
+
+1. **Explore the state machine** — Read `state_machine.py` and trace how invalid transitions are rejected
+2. **Add a cancellation flow** — What happens if an order is cancelled after creation but before payment?
+3. **Test edge cases manually** — Try creating an order with invalid data via curl
+4. **Review integration tests** — How does the E2E test differ from unit tests?
+5. **Prepare demo notes** — Write down what you'd say at each step of the demo
+
+{: .tip }
+> Tomorrow is demo day. Extra time now = confidence then.
+
+---
+
+## Taking Longer Than Expected?
+
+This is the second implementation-heavy lab. If you're past 120 minutes:
+
+1. **Check the usual suspects** — Is Copilot waiting for "Continue"? Is Docker running?
+2. **Focus on the critical path** — Order creation + payment integration are essential; polish is optional
+3. **Skip to checkpoint** — The checkpoint repo has a working implementation
+4. **Ask for help** — Debugging together is faster than struggling alone
+
+{: .note }
+> The integration test passing is the key milestone. If that works, you're demo-ready.
+
+---
+
 ## Reflection Questions
 
 1. **Demo readiness**: Could you demo this to investors right now? What would you polish tonight?
