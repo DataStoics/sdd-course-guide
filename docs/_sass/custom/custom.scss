@@ -1,30 +1,103 @@
 // Custom styles for SDD Course Guide
+// ====================================
 
-// Enable word wrapping in code blocks for better readability
-// Especially important for natural language prompts
-pre.highlight,
-div.highlighter-rouge pre.highlight,
-figure.highlight pre code {
-  white-space: pre-wrap;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
+// ===========================================
+// CODE BLOCK WRAPPING - Force wrap long lines
+// ===========================================
+// Just the Docs default uses overflow-x: auto (horizontal scroll)
+// We override to wrap for better readability of natural language prompts
+
+// Target ALL code blocks with high specificity
+.main-content {
+  // Code blocks (fenced ```code```)
+  div.highlighter-rouge {
+    pre.highlight {
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+      overflow-x: visible !important;
+      
+      code {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+        overflow-wrap: break-word !important;
+      }
+    }
+  }
+  
+  // Also handle figure-based highlights
+  figure.highlight {
+    pre {
+      white-space: pre-wrap !important;
+      word-wrap: break-word !important;
+      overflow-x: visible !important;
+      
+      code {
+        white-space: pre-wrap !important;
+        word-wrap: break-word !important;
+      }
+    }
+  }
+  
+  // Generic pre and code
+  pre {
+    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    overflow-x: visible !important;
+  }
+  
+  code {
+    word-wrap: break-word !important;
+    word-break: break-word !important;
+  }
 }
 
-// Ensure inline code also wraps if needed
-code {
-  word-wrap: break-word;
+// ===========================================
+// PROMPT/TEXT CODE BLOCKS - Visual distinction
+// ===========================================
+// Makes natural language prompts visually distinct from actual code
+
+div.language-text,
+div.language-plaintext {
+  pre.highlight {
+    background-color: #f6f8fa !important;
+    border-left: 4px solid #0969da;
+    border-radius: 6px;
+    padding: 1rem 1rem 1rem 1.25rem;
+    
+    // Slightly larger text for readability
+    code {
+      font-size: 0.95em;
+      line-height: 1.6;
+    }
+  }
 }
 
-// Style for prompt/instruction code blocks (text language)
-// Makes them visually distinct from actual code
-div.language-text pre.highlight {
-  background-color: #f8f9fa;
-  border-left: 4px solid #0969da;
-  padding-left: 1rem;
+// Dark mode support
+[data-theme="dark"],
+.dark-mode {
+  div.language-text,
+  div.language-plaintext {
+    pre.highlight {
+      background-color: #161b22 !important;
+      border-left-color: #58a6ff;
+    }
+  }
 }
 
-// Dark mode support for prompt blocks
-.dark-mode div.language-text pre.highlight {
-  background-color: #161b22;
-  border-left-color: #58a6ff;
+// ===========================================
+// READABILITY IMPROVEMENTS
+// ===========================================
+
+// Better line height in code blocks
+.main-content pre code {
+  line-height: 1.5;
+}
+
+// Ensure code doesn't overflow containers
+.main-content .highlighter-rouge {
+  max-width: 100%;
+  overflow: hidden;
 }
