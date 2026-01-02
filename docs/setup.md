@@ -1,7 +1,8 @@
 ﻿---
 title: Pre-Course Setup
 layout: default
-nav_order: 3
+nav_order: 1
+parent: "Part 1: Building from Scratch"
 description: "Complete these setup steps before Day 1"
 ---
 # Pre-Course Setup Guide

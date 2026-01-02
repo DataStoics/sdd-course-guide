@@ -65,8 +65,8 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 
 | Part | Focus | What You'll Build |
 |:-----|:------|:------------------|
-| **Part 1: Building from Scratch** | Greenfield development | Working checkout system from empty repo |
-| **Part 2: Transforming Legacy Code** | Brownfield modernization | *(Coming Soon)* Extract specs from existing code |
+| [**Part 1: Building from Scratch**](/part1/) | Greenfield development | Working checkout system from empty repo |
+| [**Part 2: Transforming Legacy Code**](/part2/) | Brownfield modernization | *(Coming Soon)* Extract specs from existing code |
 
 ### Part 1: This Week's Journey
 
@@ -82,6 +82,7 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 By Friday, you'll have a working checkout system and a repeatable process.
 
 {: .important }
-> **Complete [Pre-Course Setup](setup) before Day 1.** You'll need your environment ready.
+> **Complete [Pre-Course Setup](/part1/setup) before Day 1.** You'll need your environment ready.
 
-[Start Part 1](labs/){: .btn .btn-outline .fs-5 }
+[Start Part 1](/part1/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[View Resources](/resources/){: .btn .fs-5 .mb-4 .mb-md-0 }

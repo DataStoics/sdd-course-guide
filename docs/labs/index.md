@@ -1,18 +1,15 @@
 ﻿---
 title: Labs
 layout: default
-nav_order: 4
+nav_order: 2
 has_children: true
+parent: "Part 1: Building from Scratch"
 permalink: /labs/
 ---
 
-# The Friday Demo Challenge
+# Part 1 Labs
 
-You just got this message from your PM:
-
-> *"We're pitching to investors on Friday. Can you build a working checkout flow by then? Needs to handle payments and track orders. Oh, and it has to be compliant."*
-
-This course simulates that week. By the end, you'll have production-ready code you'd confidently demo.
+Hands-on exercises that build on each other. By the end, you'll have a production-ready checkout system.
 
 ---
 
