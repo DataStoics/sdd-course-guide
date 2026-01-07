@@ -65,7 +65,7 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 | Part | Focus | What You'll Build |
 |:-----|:------|:------------------|
 | [**Part 1: Building from Scratch**](labs/part1/) | Greenfield development | Working checkout system from empty repo |
-| [**Part 2: Transforming Legacy Code**](labs/part2/) | Brownfield modernization | *(Coming Soon)* Extract specs from existing code |
+| [**Part 2: Transforming Legacy Code**](labs/part2/) | Brownfield modernization | Integration layer and migration path for legacy monolith |
 
 ### Part 1: This Week's Journey
 
@@ -80,8 +80,18 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 
 By Friday, you'll have a working checkout system and a repeatable process.
 
+### Part 2: The Legacy Challenge
+
+| Phase | What Happens | The Shift |
+|:------|:-------------|:----------|
+| **Explore** | Map a 2,500 line monolith | Understanding by testing, not just reading |
+| **Extract** | Turn code into specs | Making implicit rules explicit |
+| **Integrate** | Connect old and new systems | Strangler pattern vs Big Bang rewrite |
+| **Migrate** | Safe data transition | Zero-downtime evolution |
+
+Master the art of brownfield development where 90% of real work happens.
+
 {: .important }
 > **Complete [Prerequisites](prerequisites.html) before Day 1.** You'll need your environment ready.
 
 [Start Part 1](labs/part1/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View Resources](/resources/){: .btn .fs-5 .mb-4 .mb-md-0 }
