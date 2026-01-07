@@ -1,4 +1,4 @@
-﻿---
+﻿﻿---
 title: "Lab 1.3: Implementation"
 layout: default
 parent: "Part 1: Building from Scratch"
@@ -30,7 +30,7 @@ Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`
 
 ## The Spec-Driven Development Workflow
 
-![Lab 1.3 Progress](../assets/images/lab-1.3-progress.svg)
+![Lab 1.3 Progress](../../assets/images/lab-1.3-progress.svg)
 
 ---
 
@@ -294,9 +294,9 @@ Implementation-heavy labs are inherently variable. If you're past 90 minutes:
 {: .highlight }
 > **Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.**
 
-1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code
-2. **Natural language drives everything** — You described requirements; the AI structured and implemented them
-3. **Traceability = confidence** — Every function traces to an FR-xxx requirement
+1. **Spec → Tasks → Code** -- `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code
+2. **Natural language drives everything** -- You described requirements; the AI structured and implemented them
+3. **Traceability = confidence** -- Every function traces to an FR-xxx requirement
 
 ### Common Pitfalls
 

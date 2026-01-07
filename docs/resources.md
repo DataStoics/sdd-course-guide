@@ -1,5 +1,5 @@
 ---
-title: Further Resources
+title: Resources
 layout: default
 nav_order: 99
 permalink: /resources/
@@ -9,16 +9,13 @@ permalink: /resources/
 
 Curated reading materials to deepen your Spec-Driven Development practice.
 
-{: .note }
-> Looking for commands and patterns? See the **[Quick Reference](/quick-reference/)** page.
-
 ---
 
 ## Recommended Reading
 
 | Resource | Why Read It |
 |:---------|:------------|
-| [GitHub spec-kit Repository](https://github.com/github/spec-kit) | Official toolkit — explore advanced features and examples |
+| [GitHub spec-kit Repository](https://github.com/github/spec-kit) | Official toolkit - explore advanced features and examples |
 | [Anthropic: Context Engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents) | Deep dive on managing AI context effectively |
 | [Martin Fowler: Exploring SDD Tools](https://martinfowler.com/articles/exploring-gen-ai/sdd-3-tools.html) | Compare spec-kit, Kiro, Tessl approaches |
 | [Claude Code Best Practices](https://www.anthropic.com/engineering/claude-code-best-practices) | If you're using Claude for implementation |

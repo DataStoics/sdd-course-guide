@@ -29,7 +29,7 @@ Package for production, run final checks, and make sure nothing embarrassing hap
 
 ## Course Progress
 
-![Lab 1.6 Progress](../assets/images/lab-1.6-progress.svg)
+![Lab 1.6 Progress](../../assets/images/lab-1.6-progress.svg)
 
 **Friday morning goal**: Production container, security check, demo rehearsal.
 

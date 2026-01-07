@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.3: The Strangler Facade"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -420,10 +420,10 @@ feat: implement strangler facade for legacy integration
 
 ## Key Takeaways
 
-1. **Facade before rewrite** — Put a gateway in front before changing anything
-2. **Gradual is safe** — 0% → 1% → 10% → 50% → 100% with validation at each step
-3. **Fallback is mandatory** — If new fails, legacy saves you
-4. **Compare before commit** — Validate responses match before real traffic
+1. **Facade before rewrite** -- Put a gateway in front before changing anything
+2. **Gradual is safe** -- 0% → 1% → 10% → 50% → 100% with validation at each step
+3. **Fallback is mandatory** -- If new fails, legacy saves you
+4. **Compare before commit** -- Validate responses match before real traffic
 
 ---
 

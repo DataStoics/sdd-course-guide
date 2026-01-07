@@ -1,4 +1,4 @@
-﻿---
+﻿﻿---
 title: Prerequisites
 layout: default
 nav_order: 2
@@ -40,7 +40,7 @@ You should be comfortable with:
 
 ## The Big Picture
 
-This course teaches **Spec-Driven Development** — a methodology that works with any modern AI coding assistant.
+This course teaches **Spec-Driven Development** -- a methodology that works with any modern AI coding assistant.
 
 {: .note }
 > **Tool choice is flexible.** GitHub Copilot (recommended), Claude Code, and Gemini CLI all support the SDD workflow. Pick whichever you have access to.
@@ -80,7 +80,7 @@ We recommend **GitHub Codespaces** for a zero-install experience.
 3. **Verify:** VS Code loads with a terminal prompt
 
 {: .tip }
-> **Save your work:** When you commit, VS Code prompts "Publish to GitHub" — this creates your own copy.
+> **Save your work:** When you commit, VS Code prompts "Publish to GitHub" -- this creates your own copy.
 
 📖 [GitHub Codespaces Quickstart](https://docs.github.com/en/codespaces/getting-started/quickstart)
 
@@ -124,7 +124,7 @@ Pre-installed in Codespaces. Just sign in.
 3. Select **"Agent"** mode at the top of the chat panel
 
 {: .warning }
-> **Agent mode is required.** Regular Chat mode cannot create files or run commands — you need Agent mode for this course.
+> **Agent mode is required.** Regular Chat mode cannot create files or run commands -- you need Agent mode for this course.
 
 | Tier | Cost | Limits |
 |:-----|:-----|:-------|
@@ -198,6 +198,6 @@ Quick check that everything works:
 
 ## Ready to Begin?
 
-First activity: A hands-on contrast lab where you'll build something with AI — then discover why specs change everything.
+First activity: A hands-on contrast lab where you'll build something with AI -- then discover why specs change everything.
 
 [Start Part 1: Greenfield Development](labs/part1/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 }

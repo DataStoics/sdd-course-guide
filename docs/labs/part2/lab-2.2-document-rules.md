@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.2: Document Business Rules"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -308,9 +308,9 @@ For each: issue, location, risk level, recommended action.
    - Action: Replace with proper role-based auth before production
 
 2. **Debug Endpoints in Production**: `/debug/*` endpoints expose secrets
-   - `/debug/env` — leaks all environment variables including API keys
-   - `/debug/users` — exposes password hashes
-   - `/debug/sessions` — exposes all active session tokens
+   - `/debug/env` -- leaks all environment variables including API keys
+   - `/debug/users` -- exposes password hashes
+   - `/debug/sessions` -- exposes all active session tokens
    - Action: Remove or protect before integration
 
 3. **MD5 Password Hashing**: Cryptographically broken
@@ -386,15 +386,15 @@ This document serves multiple purposes:
 
 ## Key Takeaways
 
-1. **Magic numbers have meaning** — Every hardcoded value is a business decision someone made
-2. **State machines hide complexity** — Order lifecycles are more complex than they look
-3. **Security debt accumulates** — Legacy code collects auth shortcuts and debug backdoors
-4. **Document the dangers** — Flagged issues inform what to fix vs. what to accept
+1. **Magic numbers have meaning** -- Every hardcoded value is a business decision someone made
+2. **State machines hide complexity** -- Order lifecycles are more complex than they look
+3. **Security debt accumulates** -- Legacy code collects auth shortcuts and debug backdoors
+4. **Document the dangers** -- Flagged issues inform what to fix vs. what to accept
 
 ---
 
 ## What's Next?
 
-In **Lab 2.3**, you'll implement the strangler pattern — an API gateway that lets you gradually route traffic between legacy and new systems without downtime or big-bang migrations.
+In **Lab 2.3**, you'll implement the strangler pattern -- an API gateway that lets you gradually route traffic between legacy and new systems without downtime or big-bang migrations.
 
 **You've documented what the legacy system does. Now you'll learn how to safely replace it.**

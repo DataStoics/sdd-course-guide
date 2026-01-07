@@ -1,4 +1,4 @@
----
+﻿---
 title: "Part 2: Transforming Legacy Code"
 layout: default
 nav_order: 4
@@ -9,13 +9,13 @@ permalink: /labs/part2/
 # Part 2: Transforming Legacy Code
 
 {: .note }
-> **Coming Soon** — Most real-world work isn't greenfield. Part 2 tackles the hard stuff.
+> **Coming Soon** -- Most real-world work isn't greenfield. Part 2 tackles the hard stuff.
 
 ---
 
 ## The Storyline: The Acquisition Integration
 
-Three months after your successful Friday demo, the company acquired **OrderFlow Inc.** — a smaller competitor with ~200 orders/day. Now you need to integrate their system with yours.
+Three months after your successful Friday demo, the company acquired **OrderFlow Inc.** -- a smaller competitor with ~200 orders/day. Now you need to integrate their system with yours.
 
 ### The Challenge
 
@@ -113,12 +113,12 @@ Part 2 teaches integration patterns with **minimal external dependencies**:
 
 By completing Part 2, you'll be able to:
 
-1. **Analyze Legacy Code** — Systematically explore undocumented systems
-2. **Extract Specifications** — Reverse-engineer specs using characterization tests
-3. **Apply Strangler Pattern** — Incrementally replace legacy without rewrites
-4. **Design Integration Facades** — Abstract legacy complexity behind clean APIs
-5. **Handle Data Synchronization** — Manage consistency across systems
-6. **Plan Safe Migrations** — Create rollback-capable cutover strategies
+1. **Analyze Legacy Code** -- Systematically explore undocumented systems
+2. **Extract Specifications** -- Reverse-engineer specs using characterization tests
+3. **Apply Strangler Pattern** -- Incrementally replace legacy without rewrites
+4. **Design Integration Facades** -- Abstract legacy complexity behind clean APIs
+5. **Handle Data Synchronization** -- Manage consistency across systems
+6. **Plan Safe Migrations** -- Create rollback-capable cutover strategies
 
 ---
 

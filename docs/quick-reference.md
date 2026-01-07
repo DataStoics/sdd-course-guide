@@ -1,4 +1,4 @@
----
+﻿---
 title: Quick Reference
 layout: default
 nav_order: 10
@@ -314,7 +314,7 @@ This is normal behavior in Agent mode:
 ### "Tests failing unexpectedly"
 - Check: Are you testing the spec or testing assumptions?
 - Check: Did characterization tests change? (Part 2)
-- Try: Re-read the scenario — does code match spec?
+- Try: Re-read the scenario -- does code match spec?
 
 ### "Docker won't build"
 ```bash

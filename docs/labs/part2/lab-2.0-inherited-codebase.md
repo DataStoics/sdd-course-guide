@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.0: The Inherited Codebase"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -45,8 +45,8 @@ You shipped your demo on Friday. Investors loved it. Monday morning, your PM has
 
 Part 2 requires working across **two repositories**:
 
-1. **Your greenfield repo** from Part 1 (payment service) — where you'll write integration code
-2. **legacy-orderflow** — the acquired codebase you need to understand
+1. **Your greenfield repo** from Part 1 (payment service) -- where you'll write integration code
+2. **legacy-orderflow** -- the acquired codebase you need to understand
 
 ### Clone the Legacy Repo
 
@@ -169,7 +169,7 @@ Create a simple exploration log:
 
 ## Step 2: Code Archaeology (20 min)
 
-Now open `app.py` and systematically explore. **Don't try to understand everything** — map the territory first.
+Now open `app.py` and systematically explore. **Don't try to understand everything** -- map the territory first.
 
 ### Ask Your AI to Map the Codebase
 
@@ -209,10 +209,10 @@ Format as a markdown table for endpoints and a list for helpers/state.
 
 You'll find this is no simple app:
 
-- **40+ endpoints** — way more than the PM described
-- **In-memory storage** — no database, just Python dicts
-- **Global state everywhere** — users, orders, products, sessions...
-- **Mixed concerns** — auth, orders, payments, admin, reports all in one file
+- **40+ endpoints** -- way more than the PM described
+- **In-memory storage** -- no database, just Python dicts
+- **Global state everywhere** -- users, orders, products, sessions...
+- **Mixed concerns** -- auth, orders, payments, admin, reports all in one file
 
 {: .warning }
 > This is a ~2,500 line Flask monolith. It handles: user registration, authentication, products, shopping cart, orders, payments, refunds, promos, wishlists, reviews, admin panel, reports, and more.
@@ -358,15 +358,15 @@ Commit the system-analysis.md with message: docs: initial legacy system analysis
 
 ## Key Takeaways
 
-1. **Explore before you read** — Run the app as a user first
-2. **Map before you modify** — Understand the structure before changing anything
-3. **Document the dangers** — Red flags inform integration strategy
-4. **Two repos, one project** — Your code and their code stay separate (for now)
+1. **Explore before you read** -- Run the app as a user first
+2. **Map before you modify** -- Understand the structure before changing anything
+3. **Document the dangers** -- Red flags inform integration strategy
+4. **Two repos, one project** -- Your code and their code stay separate (for now)
 
 ---
 
 ## What's Next?
 
-In **Lab 2.1**, you'll write characterization tests that capture the legacy system's actual behavior — creating executable documentation of "how it works today."
+In **Lab 2.1**, you'll write characterization tests that capture the legacy system's actual behavior -- creating executable documentation of "how it works today."
 
 **The first rule of legacy code: Don't change behavior you haven't documented.**

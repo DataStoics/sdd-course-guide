@@ -1,4 +1,4 @@
----
+﻿---
 title: Home
 layout: home
 nav_order: 1
@@ -22,7 +22,7 @@ Stop hoping AI understands you. Start giving it what it needs to succeed.
 
 ## Why Spec-Driven Development?
 
-AI coding assistants are powerful — but most teams struggle to get consistent results.
+AI coding assistants are powerful -- but most teams struggle to get consistent results.
 
 {: .highlight }
 > **The root cause:** We ask AI to implement vague ideas instead of validated specifications.
@@ -43,13 +43,13 @@ Spec-Driven Development makes the thinking explicit through **human validation a
 ![Spec-Driven Development Workflow](assets/images/sdd-workflow.svg)
 
 {: .note }
-> **What makes this different:** The spec is not just documentation — it's a **conversation** that surfaces hidden assumptions before they become bugs.
+> **What makes this different:** The spec is not just documentation -- it's a **conversation** that surfaces hidden assumptions before they become bugs.
 
 ---
 
 ## From Vague to Validated
 
-The magic of SDD is the **clarification process**. AI doesn't guess — you decide.
+The magic of SDD is the **clarification process**. AI doesn't guess -- you decide.
 
 | You Say | AI Asks | You Clarify | Spec Captures |
 |:--------|:--------|:------------|:--------------|

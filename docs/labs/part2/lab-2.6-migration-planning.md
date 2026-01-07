@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.6: Migration Planning"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -405,16 +405,16 @@ Most software work isn't greenfield. Most of your career will involve:
 - Systems that "just work" (until they don't)
 - Migrations that can't fail
 
-The skills you've learned in Part 2 — systematic exploration, characterization testing, safe migration patterns — are the skills that make senior engineers valuable.
+The skills you've learned in Part 2 -- systematic exploration, characterization testing, safe migration patterns -- are the skills that make senior engineers valuable.
 
 ---
 
 ## Key Takeaways
 
-1. **Specs work both directions** — Write specs for new code, extract specs from existing code
-2. **Migration is a spec** — The plan is the authoritative document for the migration
-3. **Rollback is not failure** — It's a successful risk mitigation
-4. **Phase gates protect you** — Don't skip entry criteria, even under pressure
+1. **Specs work both directions** -- Write specs for new code, extract specs from existing code
+2. **Migration is a spec** -- The plan is the authoritative document for the migration
+3. **Rollback is not failure** -- It's a successful risk mitigation
+4. **Phase gates protect you** -- Don't skip entry criteria, even under pressure
 
 ---
 

@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.4: Notification Integration"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -19,7 +19,7 @@ Events, Not Coupling
 
 Extract notification logic into a shared service using event-driven patterns.
 
-> **Event-driven architecture decouples systems. The legacy system doesn't need to know about new services — it just publishes events.**
+> **Event-driven architecture decouples systems. The legacy system doesn't need to know about new services -- it just publishes events.**
 {: .highlight }
 
 ---
@@ -504,15 +504,15 @@ curl http://localhost:8000/pay -X POST \
 
 ## Key Takeaways
 
-1. **Publish, don't call** — Systems publish events; they don't know who's listening
-2. **Schema is contract** — Event schema defines the interface between systems
-3. **Retry is mandatory** — Notifications fail; have a strategy
-4. **Correlation IDs trace everything** — One ID follows request through all systems
+1. **Publish, don't call** -- Systems publish events; they don't know who's listening
+2. **Schema is contract** -- Event schema defines the interface between systems
+3. **Retry is mandatory** -- Notifications fail; have a strategy
+4. **Correlation IDs trace everything** -- One ID follows request through all systems
 
 ---
 
 ## What's Next?
 
-In **Lab 2.5**, you'll create a unified reporting endpoint that aggregates data from both legacy and new systems — seeing the whole picture from one API.
+In **Lab 2.5**, you'll create a unified reporting endpoint that aggregates data from both legacy and new systems -- seeing the whole picture from one API.
 
 **Events move data changes. Reports aggregate data views.**

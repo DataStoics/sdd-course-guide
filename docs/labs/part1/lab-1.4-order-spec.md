@@ -1,5 +1,5 @@
----
-title: "Lab 1.4: Second Feature – \"Can You Also Add Order History?\""
+﻿---
+title: "Lab 1.4: Second Feature - \"Can You Also Add Order History?\""
 layout: default
 parent: "Part 1: Building from Scratch"
 nav_order: 6
@@ -18,13 +18,13 @@ Handle scope expansion with spec-first discipline.
 
 ## Learning Objective
 
-Handle the inevitable scope expansion — PM wants "one more thing" before Thursday. Apply spec-first discipline to prevent the Thursday night scramble.
+Handle the inevitable scope expansion -- PM wants "one more thing" before Thursday. Apply spec-first discipline to prevent the Thursday night scramble.
 
 ---
 
 ## Course Progress
 
-![Lab 1.4 Progress](../assets/images/lab-1.4-progress.svg)
+![Lab 1.4 Progress](../../assets/images/lab-1.4-progress.svg)
 
 ---
 
@@ -102,7 +102,7 @@ Ask your AI to strengthen the constraints:
 **Demo-Day Requirements**:
 - **Fast queries**: Order history returns in < 500ms
 - **Clear status**: Each order shows current state and timestamp
-- **Audit ready**: "Can you show me the history of this order?" — yes
+- **Audit ready**: "Can you show me the history of this order?" -- yes
 
 ### Bonus: Production-Path Constraints
 
@@ -201,9 +201,9 @@ This is where the two features connect:
 **Integration: Payment → Order**
 
 *Flow:*
-1. Customer creates order — Order in "created" state
+1. Customer creates order -- Order in "created" state
 2. Customer submits payment (to /pay endpoint)
-3. Payment succeeds — Order service marks order "paid"
+3. Payment succeeds -- Order service marks order "paid"
 
 *API Contract:*
 
@@ -227,7 +227,7 @@ What could break the demo?
 ```
 
 **Edge Cases** (Demo Disaster Prevention):
-- **Double payment callback**: Order already "paid" — return success, no state change
+- **Double payment callback**: Order already "paid" -- return success, no state change
 - **Order not found**: Return 404 with helpful error, not stack trace  
 - **Invalid state transition**: Reject with "invalid_transition", log the attempt
 - **Unauthorized access**: Return 401, don't leak order data

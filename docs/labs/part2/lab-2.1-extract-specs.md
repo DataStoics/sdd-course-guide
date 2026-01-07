@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.1: Extract Specs from Code"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -34,7 +34,7 @@ Your PM asks a reasonable question:
 
 **The answer**: Characterization tests. Tests that capture *current behavior*, not *desired behavior*.
 
-If a characterization test fails after a change, you changed behavior — investigate before "fixing" the test.
+If a characterization test fails after a change, you changed behavior -- investigate before "fixing" the test.
 
 ---
 
@@ -122,7 +122,7 @@ def client():
 
 ## Step 2: Characterize the Happy Path (30 min)
 
-Document the order creation flow — the core behavior that must not break.
+Document the order creation flow -- the core behavior that must not break.
 
 ### Extract the Order Flow Spec
 
@@ -208,7 +208,7 @@ pytest tests/test_characterization.py -v
 ```
 
 {: .important }
-> All tests should **pass against current code**. If a test fails, you misunderstood the behavior — adjust the test to match reality.
+> All tests should **pass against current code**. If a test fails, you misunderstood the behavior -- adjust the test to match reality.
 
 ---
 
@@ -404,7 +404,7 @@ git commit -m "docs: extract order creation spec from legacy system"
 | "Fix the code" | "Investigate the change" |
 | Document intent | Document reality |
 
-**Key insight**: Characterization tests are a safety net for refactoring. They tell you "this is how it works today." Breaking one means you changed behavior — intentionally or not.
+**Key insight**: Characterization tests are a safety net for refactoring. They tell you "this is how it works today." Breaking one means you changed behavior -- intentionally or not.
 
 ---
 
@@ -422,15 +422,15 @@ git commit -m "docs: extract order creation spec from legacy system"
 
 ## Key Takeaways
 
-1. **Test reality, not assumptions** — The code is the only source of truth
-2. **Boundaries reveal bugs** — Test at min, max, and threshold values
-3. **Document surprises** — Unexpected behavior is integration risk
-4. **Tests are executable specs** — They prove what the system does today
+1. **Test reality, not assumptions** -- The code is the only source of truth
+2. **Boundaries reveal bugs** -- Test at min, max, and threshold values
+3. **Document surprises** -- Unexpected behavior is integration risk
+4. **Tests are executable specs** -- They prove what the system does today
 
 ---
 
 ## What's Next?
 
-In **Lab 2.2**, you'll extract the business rules hiding in the code — magic numbers, implicit thresholds, and undocumented policies that the previous developer never wrote down.
+In **Lab 2.2**, you'll extract the business rules hiding in the code -- magic numbers, implicit thresholds, and undocumented policies that the previous developer never wrote down.
 
 **Lab 2.1 answered "What does it do?" Lab 2.2 answers "Why does it do that?"**

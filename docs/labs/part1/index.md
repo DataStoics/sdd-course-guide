@@ -1,4 +1,4 @@
----
+﻿---
 title: "Part 1: Building from Scratch"
 layout: default
 nav_order: 3
@@ -51,7 +51,7 @@ Lab timing varies based on several factors:
 - Help fellow learners
 
 {: .note }
-> **The goal is mastery, not speed.** Take the time you need. Implementation-heavy labs (1.3, 1.5) are inherently variable — that's normal.
+> **The goal is mastery, not speed.** Take the time you need. Implementation-heavy labs (1.3, 1.5) are inherently variable -- that's normal.
 
 ---
 

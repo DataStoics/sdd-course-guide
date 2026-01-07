@@ -1,5 +1,5 @@
----
-title: "Lab 1.1: Init and Spec – Ship Thursday, Demo Friday"
+﻿---
+title: "Lab 1.1: Init and Spec - Ship Thursday, Demo Friday"
 layout: default
 parent: "Part 1: Building from Scratch"
 nav_order: 3
@@ -20,7 +20,8 @@ Transform vague requirements into a validated specification.
 
 Set up your AI assistant using `specify init .`, then transform the vague "Friday Demo" requirement into a spec that gets you to Thursday with demoable, production-path code.
 
-By the end of this lab, you'll understand: **30 minutes of spec writing saves hours of Thursday night rework.**
+> **30 minutes of spec writing saves hours of Thursday night rework.**
+{: .highlight }
 
 ---
 
@@ -39,7 +40,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 
 ## The SDD Workflow
 
-![Lab 1.1 Progress](../assets/images/lab-1.1-progress.svg)
+![Lab 1.1 Progress](../../assets/images/lab-1.1-progress.svg)
 
 ---
 
@@ -48,7 +49,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 {: .important }
 > **Not set up yet?** Complete the [Prerequisites](../prerequisites.html) guide first.
 
-- **Your own repository** — When you launched the Codespace from the template, GitHub created YOUR personal copy at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. All commits go to YOUR repo, not the original template.
+- **Your own repository** -- When you launched the Codespace from the template, GitHub created YOUR personal copy at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. All commits go to YOUR repo, not the original template.
 - Working dev container environment with `specify` CLI pre-installed
 - AI assistant in **Agent mode** (GitHub Copilot, Claude Code, or Gemini CLI)
 
@@ -110,8 +111,8 @@ The `--ai` flag tells spec-kit which AI assistant you're using, so it creates th
 ### What Gets Created
 
 The CLI creates:
-- `.specify/` — Core directory with shell scripts, templates, and memory
-- `.specify/memory/constitution.md` — Project principles (we'll define these next)
+- `.specify/` -- Core directory with shell scripts, templates, and memory
+- `.specify/memory/constitution.md` -- Project principles (we'll define these next)
 - Agent-specific command files:
   - **GitHub Copilot**: `.github/prompts/speckit.*.prompt.md`
   - **Claude Code**: `.claude/commands/speckit.*.md`
@@ -120,10 +121,10 @@ The CLI creates:
 ### Verify Setup
 
 Open your AI assistant and verify the slash commands are available:
-- `/speckit.specify` — Transform ideas into structured specifications
-- `/speckit.clarify` — Ask questions to refine ambiguous requirements
-- `/speckit.plan` — Generate implementation plans
-- `/speckit.implement` — Execute implementation with traceability
+- `/speckit.specify` -- Transform ideas into structured specifications
+- `/speckit.clarify` -- Ask questions to refine ambiguous requirements
+- `/speckit.plan` -- Generate implementation plans
+- `/speckit.implement` -- Execute implementation with traceability
 
 **Key distinction**: `specify init` is a CLI tool you run once. The `/speckit.*` commands are AI prompts you use throughout development.
 
@@ -157,7 +158,7 @@ The command updates `.specify/memory/constitution.md` with principles like:
 
 ## Step 3: Generate Initial Spec with /speckit.specify (10 min)
 
-Now use the conversational specification command. **You don't need to structure your thoughts** — just describe what you're building.
+Now use the conversational specification command. **You don't need to structure your thoughts** -- just describe what you're building.
 
 In GitHub Copilot Chat (Agent mode), copy and paste:
 
@@ -234,12 +235,12 @@ Respond with your choice. The AI updates the spec and asks the next question:
 
 ## Step 5: Expand Scenarios with /speckit.clarify (15 min)
 
-Remember — `/speckit.specify` already generated User Scenarios in your spec. Now let's **expand them for demo coverage**.
+Remember -- `/speckit.specify` already generated User Scenarios in your spec. Now let's **expand them for demo coverage**.
 
 Copy and paste:
 
 ```text
-/speckit.clarify I need scenarios that will impress investors. What happens if someone double-clicks the Pay button? What if payment fails — do we show ugly errors? Can we prove the system is auditable?
+/speckit.clarify I need scenarios that will impress investors. What happens if someone double-clicks the Pay button? What if payment fails -- do we show ugly errors? Can we prove the system is auditable?
 ```
 
 The AI analyzes your concerns and updates the spec with additional scenarios:
@@ -295,7 +296,7 @@ Open `spec.md` and you'll see the AI generated scenarios **in proper Given/When/
 
 ## Step 6: Generate Quality Checklist with /speckit.checklist (5 min)
 
-**Why checklists?** Your spec captures requirements, but checklists catch *gaps* — the things you forgot to specify that will bite you Thursday night.
+**Why checklists?** Your spec captures requirements, but checklists catch *gaps* -- the things you forgot to specify that will bite you Thursday night.
 
 In GitHub Copilot Chat:
 
@@ -352,7 +353,7 @@ Your lab is complete when:
 - [ ] `specs/001-payment-checkout/spec.md` exists with structured content
 - [ ] **No `[NEEDS CLARIFICATION]` markers remain** (all resolved via `/speckit.clarify`)
 - [ ] Spec has at least 4 user scenarios (Given/When/Then)
-- [ ] Spec has numbered requirements (FR-001, FR-002, etc.) — all specific and testable
+- [ ] Spec has numbered requirements (FR-001, FR-002, etc.) -- all specific and testable
 - [ ] Quality checklist generated via `/speckit.checklist`
 - [ ] Commit message follows convention: `feat: payment specification`
 
@@ -390,10 +391,10 @@ Your lab is complete when:
 {: .highlight }
 > **30 minutes of spec writing saves hours of Thursday night rework.**
 
-1. **Specs are conversations, not documents** — You described what you needed naturally; the AI structured it
-2. **`[NEEDS CLARIFICATION]` is a feature** — The AI asking instead of guessing prevents Thursday rewrites
-3. **Checklists catch what specs miss** — Requirements say what to build; checklists ask "did you forget anything?"
-4. **30 minutes now saves hours later** — Every ambiguity resolved in spec is a bug that won't appear Thursday night
+1. **Specs are conversations, not documents** -- You described what you needed naturally; the AI structured it
+2. **`[NEEDS CLARIFICATION]` is a feature** -- The AI asking instead of guessing prevents Thursday rewrites
+3. **Checklists catch what specs miss** -- Requirements say what to build; checklists ask "did you forget anything?"
+4. **30 minutes now saves hours later** -- Every ambiguity resolved in spec is a bug that won't appear Thursday night
 
 ---
 

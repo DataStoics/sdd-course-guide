@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 0: AI Without Specs"
 layout: default
 parent: "Part 1: Building from Scratch"
@@ -155,12 +155,12 @@ Your instructor will lead a discussion using these questions:
 ## Key Takeaways
 
 {: .highlight }
-> **The mess is the lesson.** This lab reveals a universal problem — not a personal failure.
+> **The mess is the lesson.** This lab reveals a universal problem -- not a personal failure.
 
-1. **Speed is an illusion** — Code appears fast, but debug time adds up
-2. **Consistency beats velocity** — Same prompt, different results across the room
-3. **Thursday reveals the truth** — The code that ships Friday isn't the code you started Monday
-4. **"Works" ≠ "Demoable"** — "Works on my machine" isn't "works on demo day"
+1. **Speed is an illusion** -- Code appears fast, but debug time adds up
+2. **Consistency beats velocity** -- Same prompt, different results across the room
+3. **Thursday reveals the truth** -- The code that ships Friday isn't the code you started Monday
+4. **"Works" ≠ "Demoable"** -- "Works on my machine" isn't "works on demo day"
 
 ### The Speed Trap (Visual)
 

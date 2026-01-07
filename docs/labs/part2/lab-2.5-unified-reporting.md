@@ -1,4 +1,4 @@
----
+﻿---
 title: "Lab 2.5: Unified Reporting"
 layout: default
 parent: "Part 2: Transforming Legacy Code"
@@ -48,7 +48,7 @@ Instead of migrating data (risky) or syncing databases (complex), we'll:
 2. Transform responses to a common schema
 3. Aggregate and return unified results
 
-This is a lightweight version of CQRS (Command Query Responsibility Segregation) — separate models for reads and writes.
+This is a lightweight version of CQRS (Command Query Responsibility Segregation) -- separate models for reads and writes.
 
 ---
 
@@ -114,7 +114,7 @@ Include: field mappings, value transformations, null handling.
 | `status` | `status` | `order_status` | Normalize values |
 | `created_timestamp` | `created` | `created_at` | ISO8601 UTC |
 | `customer_id` | `user_id` | `customer_id` | String |
-| `source` | — | — | "legacy" or "new" |
+| `source` | -- | -- | "legacy" or "new" |
 
 **Status Value Mapping:**
 
@@ -493,15 +493,15 @@ curl "http://localhost:8080/reports/sales?start_date=2026-01-01&end_date=2026-01
 
 ## Key Takeaways
 
-1. **Query, don't migrate** — Unify at read time, not by moving data
-2. **Schema mapping is the contract** — Document transformations explicitly
-3. **Graceful degradation** — Partial data is better than no data
-4. **Source attribution matters** — Always know where data came from
+1. **Query, don't migrate** -- Unify at read time, not by moving data
+2. **Schema mapping is the contract** -- Document transformations explicitly
+3. **Graceful degradation** -- Partial data is better than no data
+4. **Source attribution matters** -- Always know where data came from
 
 ---
 
 ## What's Next?
 
-In **Lab 2.6**, you'll create a migration plan — the operational document that guides a safe transition from legacy to new system.
+In **Lab 2.6**, you'll create a migration plan -- the operational document that guides a safe transition from legacy to new system.
 
 **You can see unified data. Now plan how to make everything new.**

@@ -1,5 +1,5 @@
----
-title: "Lab 1.5: Integrate Payment + Order – Thursday Build Day"
+﻿---
+title: "Lab 1.5: Integrate Payment + Order - Thursday Build Day"
 layout: default
 parent: "Part 1: Building from Scratch"
 nav_order: 7
@@ -30,7 +30,7 @@ Build the order service, wire it to payments, and prove the full checkout flow w
 
 ## Course Progress
 
-![Lab 1.5 Progress](../assets/images/lab-1.5-progress.svg)
+![Lab 1.5 Progress](../../assets/images/lab-1.5-progress.svg)
 
 ---
 
@@ -52,11 +52,11 @@ Break down the order spec into actionable tasks:
 
 The AI analyzes your spec and plan, then generates `specs/002-order/tasks.md` organized by phase:
 
-**Phase 1: Setup** — Project structure, dependencies
-**Phase 2: Foundational** — State machine, base models
-**Phase 3: User Story 1** — Order creation and management
-**Phase 4: User Story 2** — Payment integration
-**Phase 5: Polish** — Error handling, audit trail
+**Phase 1: Setup** -- Project structure, dependencies
+**Phase 2: Foundational** -- State machine, base models
+**Phase 3: User Story 1** -- Order creation and management
+**Phase 4: User Story 2** -- Payment integration
+**Phase 5: Polish** -- Error handling, audit trail
 
 Each task includes:
 - Unique identifier (T001, T002, etc.)
@@ -64,7 +64,7 @@ Each task includes:
 - `[P]` markers for tasks that can run in parallel
 - Links back to spec requirements (FR-001, etc.)
 
-**Review the generated tasks** — they should match the order spec's requirements and scenarios.
+**Review the generated tasks** -- they should match the order spec's requirements and scenarios.
 
 ---
 
@@ -106,11 +106,11 @@ This command:
 ### What Gets Created
 
 Watch as the AI builds:
-- `src/app/models.py` — Order models with OrderStatus enum
-- `src/app/state_machine.py` — Valid transition enforcement
-- `src/app/order.py` — Order endpoints with idempotency
-- `tests/test_order.py` — Unit tests per acceptance scenarios
-- `tests/test_integration.py` — E2E checkout flow test
+- `src/app/models.py` -- Order models with OrderStatus enum
+- `src/app/state_machine.py` -- Valid transition enforcement
+- `src/app/order.py` -- Order endpoints with idempotency
+- `tests/test_order.py` -- Unit tests per acceptance scenarios
+- `tests/test_integration.py` -- E2E checkout flow test
 
 ### Monitor the TDD Cycle
 
@@ -119,7 +119,7 @@ For each task, the AI:
 2. **GREEN**: Implements minimum code to pass
 3. **REFACTOR**: Cleans up while keeping tests green
 
-**Key insight**: The spec scenarios become your tests. The AI doesn't guess what to test — it implements exactly what you specified.
+**Key insight**: The spec scenarios become your tests. The AI doesn't guess what to test -- it implements exactly what you specified.
 
 ---
 
@@ -160,10 +160,10 @@ Test the complete checkout flow: create an order, process payment, mark order pa
 ```
 
 The AI will execute the full demo scenario:
-1. **POST /orders** — Create order with items
-2. **POST /pay** — Process payment
-3. **PATCH /orders/{id}/pay** — Link payment to order
-4. **GET /orders** — Verify order appears with "paid" status
+1. **POST /orders** -- Create order with items
+2. **POST /pay** -- Process payment
+3. **PATCH /orders/{id}/pay** -- Link payment to order
+4. **GET /orders** -- Verify order appears with "paid" status
 
 **This is your Thursday demo rehearsal.**
 
@@ -211,11 +211,11 @@ Your lab is complete when:
 
 If you complete the core tasks with time remaining:
 
-1. **Explore the state machine** — Read `state_machine.py` and trace how invalid transitions are rejected
-2. **Add a cancellation flow** — What happens if an order is cancelled after creation but before payment?
-3. **Test edge cases manually** — Try creating an order with invalid data via curl
-4. **Review integration tests** — How does the E2E test differ from unit tests?
-5. **Prepare demo notes** — Write down what you'd say at each step of the demo
+1. **Explore the state machine** -- Read `state_machine.py` and trace how invalid transitions are rejected
+2. **Add a cancellation flow** -- What happens if an order is cancelled after creation but before payment?
+3. **Test edge cases manually** -- Try creating an order with invalid data via curl
+4. **Review integration tests** -- How does the E2E test differ from unit tests?
+5. **Prepare demo notes** -- Write down what you'd say at each step of the demo
 
 {: .tip }
 > Tomorrow is demo day. Extra time now = confidence then.
@@ -226,10 +226,10 @@ If you complete the core tasks with time remaining:
 
 This is the second implementation-heavy lab. If you're past 120 minutes:
 
-1. **Check the usual suspects** — Is Copilot waiting for "Continue"? Is Docker running?
-2. **Focus on the critical path** — Order creation + payment integration are essential; polish is optional
-3. **Skip to checkpoint** — The checkpoint repo has a working implementation
-4. **Ask for help** — Debugging together is faster than struggling alone
+1. **Check the usual suspects** -- Is Copilot waiting for "Continue"? Is Docker running?
+2. **Focus on the critical path** -- Order creation + payment integration are essential; polish is optional
+3. **Skip to checkpoint** -- The checkpoint repo has a working implementation
+4. **Ask for help** -- Debugging together is faster than struggling alone
 
 {: .note }
 > The integration test passing is the key milestone. If that works, you're demo-ready.
