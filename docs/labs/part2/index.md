@@ -125,7 +125,7 @@ By completing Part 2, you'll be able to:
 ## Prerequisites
 
 {: .important }
-> Complete [Part 1: Building from Scratch](/labs/part1/) first. The greenfield discipline is prerequisite knowledge for brownfield work.
+> Complete [Part 1: Building from Scratch](../part1/) first. The greenfield discipline is prerequisite knowledge for brownfield work.
 
 The spec-first discipline you learned in Part 1 becomes **spec-extraction** thinking in Part 2.
 

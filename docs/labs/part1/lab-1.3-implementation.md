@@ -1,4 +1,4 @@
----
+ï»¿---
 title: "Lab 1.3: Implementation"
 layout: default
 parent: "Part 1: Building from Scratch"
@@ -11,13 +11,13 @@ nav_order: 5
 **Prerequisites**: Completed Lab 1.2 with plan.md and research.md
 
 {: .warning }
-> **Implementation time varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab — budget accordingly.
+> **Implementation time varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab ï¿½ budget accordingly.
 
 ---
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified — including the double-click that would've crashed your Lab 0 code.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified ï¿½ including the double-click that would've crashed your Lab 0 code.
 
 ---
 
@@ -92,7 +92,7 @@ Now let the AI implement the tasks:
 {: .tip }
 > **Working with Copilot**: During implementation, Copilot will:
 > - Request approval for each command (click "Allow" or "Continue")
-> - Periodically ask "Continue to iterate?" — click "Continue" to proceed
+> - Periodically ask "Continue to iterate?" ï¿½ click "Continue" to proceed
 > - Show progress as it creates files and runs tests
 >
 > For a smoother experience, you can approve commands in batches or enable auto-approval in Copilot settings.
@@ -106,19 +106,19 @@ This command:
 ### What Gets Created
 
 Watch as the AI creates:
-- `src/app/main.py` — FastAPI entry point
-- `src/app/models.py` — Pydantic models per data-model.md
-- `src/app/payment.py` — Payment endpoint with idempotency
-- `src/app/config.py` — Environment configuration
-- `tests/test_payment.py` — Acceptance scenario tests
-- `docker-compose.yml` — Redis + Mock Gateway services
+- `src/app/main.py` ï¿½ FastAPI entry point
+- `src/app/models.py` ï¿½ Pydantic models per data-model.md
+- `src/app/payment.py` ï¿½ Payment endpoint with idempotency
+- `src/app/config.py` ï¿½ Environment configuration
+- `tests/test_payment.py` ï¿½ Acceptance scenario tests
+- `docker-compose.yml` ï¿½ Redis + Mock Gateway services
 
 ### Monitor Progress
 
 The AI will show you what it's implementing. Look for:
-- **FR-xxx references** — Code linking back to spec requirements
-- **Scenario coverage** — Tests matching your Given/When/Then scenarios
-- **Error handling** — Graceful failures per your edge cases
+- **FR-xxx references** ï¿½ Code linking back to spec requirements
+- **Scenario coverage** ï¿½ Tests matching your Given/When/Then scenarios
+- **Error handling** ï¿½ Graceful failures per your edge cases
 
 ### Implementation Checkpoints
 
@@ -245,11 +245,11 @@ Your lab is complete when:
 
 If you complete the core tasks with time remaining:
 
-1. **Explore the generated code** — Read through `payment.py` and understand how idempotency is implemented
-2. **Add an edge case** — What happens if amount is negative? Add it to the spec and re-implement
-3. **Try a different scenario** — Add a "payment declined" scenario to your spec
-4. **Review test coverage** — Run `pytest --cov` and examine what's tested
-5. **Help a neighbor** — Debugging someone else's setup reinforces your understanding
+1. **Explore the generated code** ï¿½ Read through `payment.py` and understand how idempotency is implemented
+2. **Add an edge case** ï¿½ What happens if amount is negative? Add it to the spec and re-implement
+3. **Try a different scenario** ï¿½ Add a "payment declined" scenario to your spec
+4. **Review test coverage** ï¿½ Run `pytest --cov` and examine what's tested
+5. **Help a neighbor** ï¿½ Debugging someone else's setup reinforces your understanding
 
 {: .tip }
 > Early completion = more experimentation time. The goal is mastery, not speed.
@@ -260,10 +260,10 @@ If you complete the core tasks with time remaining:
 
 Implementation-heavy labs are inherently variable. If you're past 90 minutes:
 
-1. **Check for stuck points** — Is Copilot waiting for a "Continue" response?
-2. **Verify infrastructure** — Is Docker/Redis running? (`docker ps`)
-3. **Ask for status** — "What's the current implementation status?"
-4. **Skip to checkpoint** — Use the checkpoint repo if needed to stay on schedule
+1. **Check for stuck points** ï¿½ Is Copilot waiting for a "Continue" response?
+2. **Verify infrastructure** ï¿½ Is Docker/Redis running? (`docker ps`)
+3. **Ask for status** ï¿½ "What's the current implementation status?"
+4. **Skip to checkpoint** ï¿½ Use the checkpoint repo if needed to stay on schedule
 
 {: .note }
 > Quality > speed. If tests pass and you understand the code, you're on track.
@@ -284,13 +284,13 @@ Implementation-heavy labs are inherently variable. If you're past 90 minutes:
 
 ## Key Takeaways
 
-1. **Spec ? Tasks ? Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
+1. **Spec ? Tasks ? Code** ï¿½ `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
 
-2. **Compare to Lab 0** — Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
+2. **Compare to Lab 0** ï¿½ Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
 
-3. **Natural language drives everything** — You described requirements; the AI structured and implemented them.
+3. **Natural language drives everything** ï¿½ You described requirements; the AI structured and implemented them.
 
-4. **Traceability = confidence** — Every function traces to an FR-xxx requirement. That's "production-ready."
+4. **Traceability = confidence** ï¿½ Every function traces to an FR-xxx requirement. That's "production-ready."
 
 ### Common Pitfalls
 
@@ -313,7 +313,7 @@ During implementation, you might hit API questions your AI can't answer from tra
 
 **For now**: Your AI handles most questions. The spec provides enough context.
 
-**In Part 2**: You can integrate MCP tools for real-time documentation — especially useful when working with complex or frequently-updated APIs.
+**In Part 2**: You can integrate MCP tools for real-time documentation ï¿½ especially useful when working with complex or frequently-updated APIs.
 
 ---
 
@@ -323,7 +323,7 @@ It's **Wednesday morning**. PM walks over:
 
 > "Great progress! The investors also want to see order history. Can you add that by Thursday?"
 
-In **Lab 1.4**, you'll handle this scope addition — with a spec. No Thursday night panic.
+In **Lab 1.4**, you'll handle this scope addition ï¿½ with a spec. No Thursday night panic.
 
 **Your payment feature works. Now let's see if the discipline scales.**
 
