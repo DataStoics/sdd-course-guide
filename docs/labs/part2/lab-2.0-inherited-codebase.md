@@ -11,8 +11,8 @@ nav_order: 1
 Monday Morning Surprise
 {: .fs-6 .fw-300 }
 
-[~45 min]{: .label .label-blue }
-[Exploration]{: .label .label-green }
+~45 min
+{: .label .label-blue }
 
 ---
 

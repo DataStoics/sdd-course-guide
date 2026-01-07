@@ -12,10 +12,7 @@ Experience the chaos of unstructured AI development.
 {: .fs-6 .fw-300 }
 
 45 min
-{: .label .label-yellow }
-
-Hands-On
-{: .label .label-green }
+{: .label .label-blue }
 
 ---
 

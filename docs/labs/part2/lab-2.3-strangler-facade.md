@@ -11,8 +11,11 @@ nav_order: 4
 Route, Don't Rewrite
 {: .fs-6 .fw-300 }
 
-[~90 min]{: .label .label-purple }
-[Implementation-Heavy]{: .label .label-yellow }
+~90 min
+{: .label .label-blue }
+
+Implementation-Heavy
+{: .label .label-yellow }
 
 ---
 

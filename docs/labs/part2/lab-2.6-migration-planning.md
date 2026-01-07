@@ -11,8 +11,8 @@ nav_order: 7
 From Legacy to Done
 {: .fs-6 .fw-300 }
 
-[~45 min]{: .label .label-blue }
-[Final Lab]{: .label .label-green }
+~45 min
+{: .label .label-blue }
 
 ---
 

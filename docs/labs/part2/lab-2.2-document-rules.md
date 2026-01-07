@@ -11,7 +11,8 @@ nav_order: 3
 Why Does It Do That?
 {: .fs-6 .fw-300 }
 
-[~60 min]{: .label .label-blue }
+~60 min
+{: .label .label-blue }
 
 ---
 

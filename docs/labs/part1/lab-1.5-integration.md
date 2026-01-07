@@ -12,7 +12,7 @@ Build the order service and wire it to payments.
 {: .fs-6 .fw-300 }
 
 90-150 min
-{: .label .label-purple }
+{: .label .label-blue }
 
 Implementation-Heavy
 {: .label .label-yellow }

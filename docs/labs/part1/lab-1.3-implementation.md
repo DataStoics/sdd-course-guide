@@ -1,4 +1,4 @@
-﻿﻿---
+﻿---
 title: "Lab 1.3: Implementation"
 layout: default
 parent: "Part 1: Building from Scratch"
@@ -12,7 +12,7 @@ Turn your spec into working, tested code.
 {: .fs-6 .fw-300 }
 
 60-120 min
-{: .label .label-purple }
+{: .label .label-blue }
 
 Implementation-Heavy
 {: .label .label-yellow }

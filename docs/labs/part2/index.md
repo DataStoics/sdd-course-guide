@@ -7,9 +7,10 @@ permalink: /labs/part2/
 ---
 
 # Part 2: Transforming Legacy Code
+{: .fs-9 }
 
-{: .note }
-> **Coming Soon** -- Most real-world work isn't greenfield. Part 2 tackles the hard stuff.
+Most real-world work isn't greenfield. Part 2 tackles the hard stuff.
+{: .fs-6 .fw-300 }
 
 ---
 

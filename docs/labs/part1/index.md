@@ -7,8 +7,10 @@ permalink: /labs/part1/
 ---
 
 # Part 1: Building from Scratch
+{: .fs-9 }
 
 Start with an empty repo and full control. Learn the spec-first discipline that transforms how you work with AI coding assistants.
+{: .fs-6 .fw-300 }
 
 ---
 

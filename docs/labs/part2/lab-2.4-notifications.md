@@ -11,7 +11,8 @@ nav_order: 5
 Events, Not Coupling
 {: .fs-6 .fw-300 }
 
-[~60 min]{: .label .label-blue }
+~60 min
+{: .label .label-blue }
 
 ---
 

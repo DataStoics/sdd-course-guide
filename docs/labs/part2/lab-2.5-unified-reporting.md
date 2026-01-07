@@ -11,7 +11,8 @@ nav_order: 6
 One View, Two Systems
 {: .fs-6 .fw-300 }
 
-[~45 min]{: .label .label-blue }
+~45 min
+{: .label .label-blue }
 
 ---
 
