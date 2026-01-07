@@ -57,7 +57,7 @@ Lab timing varies based on several factors:
 
 ## Prerequisites
 
-Before starting Part 1, complete the [Pre-Course Setup](setup) to ensure:
+Before starting Part 1, complete the [Prerequisites](prerequisites) to ensure:
 - GitHub Codespaces environment is ready
 - AI assistant (GitHub Copilot recommended) is configured
 - You can create files using agentic mode
@@ -67,5 +67,5 @@ Before starting Part 1, complete the [Pre-Course Setup](setup) to ensure:
 {: .important }
 > Each lab builds on the previous one. If you fall behind, checkpoint repositories help you catch up.
 
-[Start with Pre-Course Setup](setup){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Start with Prerequisites](prerequisites){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [Jump to Labs](labs/){: .btn .fs-5 .mb-4 .mb-md-0 }

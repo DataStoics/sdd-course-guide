@@ -15,7 +15,7 @@ Build production-ready software with AI assistants using specification-first met
 Stop hoping AI understands you. Start giving it what it needs to succeed.
 {: .fs-5 .fw-300 }
 
-[Get Started](setup){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Get Started](prerequisites){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View Labs](labs/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
 ---
@@ -82,7 +82,7 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 By Friday, you'll have a working checkout system and a repeatable process.
 
 {: .important }
-> **Complete [Pre-Course Setup](/part1/setup) before Day 1.** You'll need your environment ready.
+> **Complete [Prerequisites](/part1/prerequisites) before Day 1.** You'll need your environment ready.
 
 [Start Part 1](/part1/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View Resources](/resources/){: .btn .fs-5 .mb-4 .mb-md-0 }
