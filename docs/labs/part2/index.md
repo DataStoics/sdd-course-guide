@@ -1,9 +1,9 @@
 ---
 title: "Part 2: Transforming Legacy Code"
 layout: default
-nav_order: 3
+nav_order: 4
 has_children: true
-permalink: /part2/
+permalink: /labs/part2/
 ---
 
 # Part 2: Transforming Legacy Code
@@ -125,7 +125,7 @@ By completing Part 2, you'll be able to:
 ## Prerequisites
 
 {: .important }
-> Complete [Part 1: Building from Scratch](/part1/) first. The greenfield discipline is prerequisite knowledge for brownfield work.
+> Complete [Part 1: Building from Scratch](/labs/part1/) first. The greenfield discipline is prerequisite knowledge for brownfield work.
 
 The spec-first discipline you learned in Part 1 becomes **spec-extraction** thinking in Part 2.
 
@@ -133,4 +133,4 @@ The spec-first discipline you learned in Part 1 becomes **spec-extraction** thin
 
 **Part 2 labs coming soon.**
 
-[Review Part 1](part1){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }
+[Review Part 1](../part1/){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }

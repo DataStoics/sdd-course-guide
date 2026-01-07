@@ -1,4 +1,4 @@
-ï»¿---
+---
 title: "Lab 1.6: Production Readiness"
 layout: default
 parent: "Part 1: Building from Scratch"
@@ -227,12 +227,12 @@ Commit all changes with message: feat: production-ready for demo day
 
 ## Finished Early?
 
-Use the extra time wisely â€” demo day is tomorrow:
+Use the extra time wisely — demo day is tomorrow:
 
-1. **Polish your demo script** â€” Practice the 5-step flow until it's automatic
-2. **Try breaking things** â€” What error messages do users see? Are they helpful?
-3. **Review security findings** â€” Even LOW severity items are learning opportunities
-4. **Document what you'd improve** â€” What would v2 look like?
+1. **Polish your demo script** — Practice the 5-step flow until it's automatic
+2. **Try breaking things** — What error messages do users see? Are they helpful?
+3. **Review security findings** — Even LOW severity items are learning opportunities
+4. **Document what you'd improve** — What would v2 look like?
 
 ---
 
@@ -240,10 +240,10 @@ Use the extra time wisely â€” demo day is tomorrow:
 
 Docker builds and CI setup can have unexpected hiccups:
 
-1. **Build failing?** â€” Check Docker daemon is running; try `docker system prune` if disk full
-2. **Security scan stuck?** â€” Some scans timeout; proceed if no CRITICAL/HIGH found
-3. **CI pipeline issues?** â€” Focus on local verification; CI is polish, not essential for demo
-4. **Short on time?** â€” Demo rehearsal is the priority. Skip CI if needed.
+1. **Build failing?** — Check Docker daemon is running; try `docker system prune` if disk full
+2. **Security scan stuck?** — Some scans timeout; proceed if no CRITICAL/HIGH found
+3. **CI pipeline issues?** — Focus on local verification; CI is polish, not essential for demo
+4. **Short on time?** — Demo rehearsal is the priority. Skip CI if needed.
 
 {: .note }
 > The checkpoint repo has a working Dockerfile if you need to move on.
@@ -272,7 +272,7 @@ Remember Day 1 morning? Lab 0?
 |------|-----|
 | 30 min of coding, wouldn't demo it | 2 days, confident demo |
 | No idempotency | Double-click safe |
-| "Is this secure?" â€” "Uh..." | "Yes, here's the spec" |
+| "Is this secure?" — "Uh..." | "Yes, here's the spec" |
 | Thursday night panic | Thursday night beer |
 
 **The difference wasn't skill. It was approach.**
@@ -323,7 +323,7 @@ In Part 2, you'll face the real world:
 | Empty repo | 5000+ lines of legacy code |
 | You write the spec | Spec is hidden in the code |
 | Full technology control | Tech debt constrains choices |
-| Monday spec â†’ Friday ship | Extract spec FROM existing code |
+| Monday spec ? Friday ship | Extract spec FROM existing code |
 
 ### What You'll Learn in Part 2
 
@@ -344,7 +344,7 @@ The spec-first thinking you learned here becomes **spec-extraction** thinking th
 1. **Demo day**: Nail the investor pitch
 2. **Apply Spec-Driven Development**: Use this on your next work project
 3. **Share**: Teach a teammate the spec-first approach
-4. **Part 2**: Coming soon â€” learn to extract specs from legacy code
+4. **Part 2**: Coming soon — learn to extract specs from legacy code
 5. **Explore**: Check out the [Further Resources](/resources/) for continued learning
 
 ---

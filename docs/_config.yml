@@ -18,7 +18,7 @@ aux_links:
 aux_links_new_tab: true
 
 # Footer
-footer_content: "Mastering Spec-Driven Development - A Free Learning Track"
+footer_content: "Mastering Spec-Driven Development"
 
 # Navigation
 nav_sort: case_insensitive

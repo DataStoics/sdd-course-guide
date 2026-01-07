@@ -1,4 +1,4 @@
-ï»¿---
+---
 title: "Lab 1.3: Implementation"
 layout: default
 parent: "Part 1: Building from Scratch"
@@ -11,13 +11,13 @@ nav_order: 5
 **Prerequisites**: Completed Lab 1.2 with plan.md and research.md
 
 {: .warning }
-> **Implementation time varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab â€” budget accordingly.
+> **Implementation time varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab — budget accordingly.
 
 ---
 
 ## Learning Objective
 
-Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified â€” including the double-click that would've crashed your Lab 0 code.
+Turn your spec into working code using `/speckit.tasks` and `/speckit.implement`. By the end of this lab, you'll have a demoable payment endpoint that handles the scenarios you specified — including the double-click that would've crashed your Lab 0 code.
 
 ---
 
@@ -49,7 +49,7 @@ Break down the implementation plan into actionable tasks:
 
 The command reads your spec and plan, then generates `specs/001-payment-checkout/tasks.md` with:
 - Dependency-ordered tasks (what must come first)
-- Phase groupings (Setup â†’ Foundational â†’ Feature â†’ Polish)
+- Phase groupings (Setup ? Foundational ? Feature ? Polish)
 - Parallel execution opportunities marked with `[P]`
 
 ### Review the Generated Tasks
@@ -92,7 +92,7 @@ Now let the AI implement the tasks:
 {: .tip }
 > **Working with Copilot**: During implementation, Copilot will:
 > - Request approval for each command (click "Allow" or "Continue")
-> - Periodically ask "Continue to iterate?" â€” click "Continue" to proceed
+> - Periodically ask "Continue to iterate?" — click "Continue" to proceed
 > - Show progress as it creates files and runs tests
 >
 > For a smoother experience, you can approve commands in batches or enable auto-approval in Copilot settings.
@@ -106,19 +106,19 @@ This command:
 ### What Gets Created
 
 Watch as the AI creates:
-- `src/app/main.py` â€” FastAPI entry point
-- `src/app/models.py` â€” Pydantic models per data-model.md
-- `src/app/payment.py` â€” Payment endpoint with idempotency
-- `src/app/config.py` â€” Environment configuration
-- `tests/test_payment.py` â€” Acceptance scenario tests
-- `docker-compose.yml` â€” Redis + Mock Gateway services
+- `src/app/main.py` — FastAPI entry point
+- `src/app/models.py` — Pydantic models per data-model.md
+- `src/app/payment.py` — Payment endpoint with idempotency
+- `src/app/config.py` — Environment configuration
+- `tests/test_payment.py` — Acceptance scenario tests
+- `docker-compose.yml` — Redis + Mock Gateway services
 
 ### Monitor Progress
 
 The AI will show you what it's implementing. Look for:
-- **FR-xxx references** â€” Code linking back to spec requirements
-- **Scenario coverage** â€” Tests matching your Given/When/Then scenarios
-- **Error handling** â€” Graceful failures per your edge cases
+- **FR-xxx references** — Code linking back to spec requirements
+- **Scenario coverage** — Tests matching your Given/When/Then scenarios
+- **Error handling** — Graceful failures per your edge cases
 
 ### Implementation Checkpoints
 
@@ -184,10 +184,10 @@ Run the spec-kit validation:
 ```
 
 This checks:
-- âœ“ All spec requirements have implementation
-- âœ“ All acceptance scenarios have tests
-- âœ“ Code coverage meets minimum threshold
-- âœ“ No critical security findings
+- ? All spec requirements have implementation
+- ? All acceptance scenarios have tests
+- ? Code coverage meets minimum threshold
+- ? No critical security findings
 
 ### Address Any Gaps
 
@@ -245,11 +245,11 @@ Your lab is complete when:
 
 If you complete the core tasks with time remaining:
 
-1. **Explore the generated code** â€” Read through `payment.py` and understand how idempotency is implemented
-2. **Add an edge case** â€” What happens if amount is negative? Add it to the spec and re-implement
-3. **Try a different scenario** â€” Add a "payment declined" scenario to your spec
-4. **Review test coverage** â€” Run `pytest --cov` and examine what's tested
-5. **Help a neighbor** â€” Debugging someone else's setup reinforces your understanding
+1. **Explore the generated code** — Read through `payment.py` and understand how idempotency is implemented
+2. **Add an edge case** — What happens if amount is negative? Add it to the spec and re-implement
+3. **Try a different scenario** — Add a "payment declined" scenario to your spec
+4. **Review test coverage** — Run `pytest --cov` and examine what's tested
+5. **Help a neighbor** — Debugging someone else's setup reinforces your understanding
 
 {: .tip }
 > Early completion = more experimentation time. The goal is mastery, not speed.
@@ -260,10 +260,10 @@ If you complete the core tasks with time remaining:
 
 Implementation-heavy labs are inherently variable. If you're past 90 minutes:
 
-1. **Check for stuck points** â€” Is Copilot waiting for a "Continue" response?
-2. **Verify infrastructure** â€” Is Docker/Redis running? (`docker ps`)
-3. **Ask for status** â€” "What's the current implementation status?"
-4. **Skip to checkpoint** â€” Use the checkpoint repo if needed to stay on schedule
+1. **Check for stuck points** — Is Copilot waiting for a "Continue" response?
+2. **Verify infrastructure** — Is Docker/Redis running? (`docker ps`)
+3. **Ask for status** — "What's the current implementation status?"
+4. **Skip to checkpoint** — Use the checkpoint repo if needed to stay on schedule
 
 {: .note }
 > Quality > speed. If tests pass and you understand the code, you're on track.
@@ -284,13 +284,13 @@ Implementation-heavy labs are inherently variable. If you're past 90 minutes:
 
 ## Key Takeaways
 
-1. **Spec â†’ Tasks â†’ Code** â€” `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
+1. **Spec ? Tasks ? Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
 
-2. **Compare to Lab 0** â€” Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
+2. **Compare to Lab 0** — Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
 
-3. **Natural language drives everything** â€” You described requirements; the AI structured and implemented them.
+3. **Natural language drives everything** — You described requirements; the AI structured and implemented them.
 
-4. **Traceability = confidence** â€” Every function traces to an FR-xxx requirement. That's "production-ready."
+4. **Traceability = confidence** — Every function traces to an FR-xxx requirement. That's "production-ready."
 
 ### Common Pitfalls
 
@@ -313,7 +313,7 @@ During implementation, you might hit API questions your AI can't answer from tra
 
 **For now**: Your AI handles most questions. The spec provides enough context.
 
-**In Part 2**: You can integrate MCP tools for real-time documentation â€” especially useful when working with complex or frequently-updated APIs.
+**In Part 2**: You can integrate MCP tools for real-time documentation — especially useful when working with complex or frequently-updated APIs.
 
 ---
 
@@ -323,7 +323,7 @@ It's **Wednesday morning**. PM walks over:
 
 > "Great progress! The investors also want to see order history. Can you add that by Thursday?"
 
-In **Lab 1.4**, you'll handle this scope addition â€” with a spec. No Thursday night panic.
+In **Lab 1.4**, you'll handle this scope addition — with a spec. No Thursday night panic.
 
 **Your payment feature works. Now let's see if the discipline scales.**
 

@@ -15,8 +15,7 @@ Build production-ready software with AI assistants using specification-first met
 Stop hoping AI understands you. Start giving it what it needs to succeed.
 {: .fs-5 .fw-300 }
 
-[Get Started](prerequisites){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[View Labs](labs/){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get Started](prerequisites.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 
 ---
 
@@ -65,8 +64,8 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 
 | Part | Focus | What You'll Build |
 |:-----|:------|:------------------|
-| [**Part 1: Building from Scratch**](/part1/) | Greenfield development | Working checkout system from empty repo |
-| [**Part 2: Transforming Legacy Code**](/part2/) | Brownfield modernization | *(Coming Soon)* Extract specs from existing code |
+| [**Part 1: Building from Scratch**](/labs/part1/) | Greenfield development | Working checkout system from empty repo |
+| [**Part 2: Transforming Legacy Code**](/labs/part2/) | Brownfield modernization | *(Coming Soon)* Extract specs from existing code |
 
 ### Part 1: This Week's Journey
 
@@ -82,7 +81,7 @@ The magic of SDD is the **clarification process**. AI does not guess -- you deci
 By Friday, you'll have a working checkout system and a repeatable process.
 
 {: .important }
-> **Complete [Prerequisites](/part1/prerequisites) before Day 1.** You'll need your environment ready.
+> **Complete [Prerequisites](prerequisites.html) before Day 1.** You'll need your environment ready.
 
-[Start Part 1](/part1/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Start Part 1](/labs/part1/){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
 [View Resources](/resources/){: .btn .fs-5 .mb-4 .mb-md-0 }

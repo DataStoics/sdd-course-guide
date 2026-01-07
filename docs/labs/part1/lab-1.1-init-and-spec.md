@@ -44,7 +44,7 @@ Remember Lab 0? You asked your AI to build a checkout feature using natural lang
 ## Starting Point
 
 {: .important }
-> **Not set up yet?** Complete the [Prerequisites](../prerequisites.md) guide first.
+> **Not set up yet?** Complete the [Prerequisites](../prerequisites.html) guide first.
 
 - **Your own repository** — When you launched the Codespace from the template, GitHub created YOUR personal copy at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. All commits go to YOUR repo, not the original template.
 - Working dev container environment with `specify` CLI pre-installed

@@ -1,8 +1,7 @@
 ﻿---
 title: Prerequisites
 layout: default
-nav_order: 1
-parent: "Part 1: Building from Scratch"
+nav_order: 2
 description: "Complete these setup steps before Day 1"
 ---
 # Prerequisites
