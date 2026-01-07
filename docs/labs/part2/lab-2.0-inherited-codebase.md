@@ -5,12 +5,14 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 1
 ---
 
-# Lab 2.0: The Inherited Codebase — Monday Morning Surprise
+# Lab 2.0: The Inherited Codebase
+{: .fs-9 }
 
-**Duration**: 45 minutes  
-**Day**: 1 (Part 2)  
-**Position**: Opening lab  
-**Prerequisites**: Part 1 complete, your greenfield repo with working payment service
+Monday Morning Surprise
+{: .fs-6 .fw-300 }
+
+[~45 min]{: .label .label-blue }
+[Exploration]{: .label .label-green }
 
 ---
 
@@ -18,7 +20,8 @@ nav_order: 1
 
 Experience the reality of inheriting undocumented legacy code. Develop systematic exploration techniques before attempting any changes.
 
-By the end of this lab, you'll understand: **Before you can fix it, you must understand it.**
+> **Before you can fix it, you must understand it.**
+{: .highlight }
 
 ---
 

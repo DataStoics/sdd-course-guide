@@ -5,12 +5,14 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 7
 ---
 
-# Lab 2.6: Migration Planning — From Legacy to Done
+# Lab 2.6: Migration Planning
+{: .fs-9 }
 
-**Duration**: 45 minutes  
-**Day**: 2 (Part 2)  
-**Position**: Final lab  
-**Prerequisites**: All previous Part 2 labs complete
+From Legacy to Done
+{: .fs-6 .fw-300 }
+
+[~45 min]{: .label .label-blue }
+[Final Lab]{: .label .label-green }
 
 ---
 
@@ -18,7 +20,8 @@ nav_order: 7
 
 Create a production-ready migration plan with rollback capabilities and risk mitigation.
 
-By the end of this lab, you'll understand: **The migration plan is a spec for the migration itself. Just like code specs prevent rework, migration specs prevent outages.**
+> **The migration plan is a spec for the migration itself. Just like code specs prevent rework, migration specs prevent outages.**
+{: .highlight }
 
 ---
 

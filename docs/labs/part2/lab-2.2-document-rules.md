@@ -5,12 +5,13 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 3
 ---
 
-# Lab 2.2: Document Business Rules — Why Does It Do That?
+# Lab 2.2: Document Business Rules
+{: .fs-9 }
 
-**Duration**: 60 minutes  
-**Day**: 1 (Part 2)  
-**Position**: After Lab 2.1  
-**Prerequisites**: Characterization tests from Lab 2.1
+Why Does It Do That?
+{: .fs-6 .fw-300 }
+
+[~60 min]{: .label .label-blue }
 
 ---
 
@@ -18,7 +19,8 @@ nav_order: 3
 
 Extract implicit business rules from code and formalize them into stakeholder-readable documentation.
 
-By the end of this lab, you'll understand: **The code is the only source of truth for legacy systems. Your job is to translate code-truth into human-truth.**
+> **The code is the only source of truth for legacy systems. Your job is to translate code-truth into human-truth.**
+{: .highlight }
 
 ---
 

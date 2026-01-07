@@ -5,12 +5,14 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 4
 ---
 
-# Lab 2.3: The Strangler Facade — Route, Don't Rewrite
+# Lab 2.3: The Strangler Facade
+{: .fs-9 }
 
-**Duration**: 90 minutes  
-**Day**: 2 (Part 2)  
-**Position**: Opening lab Day 2  
-**Prerequisites**: Labs 2.0-2.2 complete, both systems running
+Route, Don't Rewrite
+{: .fs-6 .fw-300 }
+
+[~90 min]{: .label .label-purple }
+[Implementation-Heavy]{: .label .label-yellow }
 
 ---
 
@@ -18,7 +20,8 @@ nav_order: 4
 
 Implement the strangler pattern to gradually route traffic between legacy and new systems without downtime.
 
-By the end of this lab, you'll understand: **The safest migration is one you can reverse at any moment.**
+> **The safest migration is one you can reverse at any moment.**
+{: .highlight }
 
 ---
 

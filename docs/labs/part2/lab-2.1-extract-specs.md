@@ -5,12 +5,14 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 2
 ---
 
-# Lab 2.1: Extract Specs from Code — What Does It Actually Do?
+# Lab 2.1: Extract Specs from Code
+{: .fs-9 }
 
-**Duration**: 90 minutes  
-**Day**: 1 (Part 2)  
-**Position**: After Lab 2.0  
-**Prerequisites**: System map from Lab 2.0, both repos accessible
+What Does It Actually Do?
+{: .fs-6 .fw-300 }
+
+[~90 min]{: .label .label-purple }
+[Implementation-Heavy]{: .label .label-yellow }
 
 ---
 
@@ -18,7 +20,8 @@ nav_order: 2
 
 Use characterization testing to capture existing behavior as executable specifications. Learn to document what code *does*, not what it *should* do.
 
-By the end of this lab, you'll understand: **Tests don't prove code is correct. They prove code hasn't changed.**
+> **Tests don't prove code is correct. They prove code hasn't changed.**
+{: .highlight }
 
 ---
 

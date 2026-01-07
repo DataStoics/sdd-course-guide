@@ -5,12 +5,13 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 6
 ---
 
-# Lab 2.5: Unified Reporting — One View, Two Systems
+# Lab 2.5: Unified Reporting
+{: .fs-9 }
 
-**Duration**: 45 minutes  
-**Day**: 2 (Part 2)  
-**Position**: After Lab 2.4  
-**Prerequisites**: Gateway and both systems running
+One View, Two Systems
+{: .fs-6 .fw-300 }
+
+[~45 min]{: .label .label-blue }
 
 ---
 
@@ -18,7 +19,8 @@ nav_order: 6
 
 Create a read model that aggregates data from multiple systems into a unified view.
 
-By the end of this lab, you'll understand: **You don't need to migrate data to unify reporting. Query both, transform once.**
+> **You don't need to migrate data to unify reporting. Query both, transform once.**
+{: .highlight }
 
 ---
 

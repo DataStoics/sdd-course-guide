@@ -5,12 +5,13 @@ parent: "Part 2: Transforming Legacy Code"
 nav_order: 5
 ---
 
-# Lab 2.4: Notification Integration — Events, Not Coupling
+# Lab 2.4: Notification Integration
+{: .fs-9 }
 
-**Duration**: 60 minutes  
-**Day**: 2 (Part 2)  
-**Position**: After Lab 2.3  
-**Prerequisites**: Gateway from Lab 2.3
+Events, Not Coupling
+{: .fs-6 .fw-300 }
+
+[~60 min]{: .label .label-blue }
 
 ---
 
@@ -18,7 +19,8 @@ nav_order: 5
 
 Extract notification logic into a shared service using event-driven patterns.
 
-By the end of this lab, you'll understand: **Event-driven architecture decouples systems. The legacy system doesn't need to know about new services — it just publishes events.**
+> **Event-driven architecture decouples systems. The legacy system doesn't need to know about new services — it just publishes events.**
+{: .highlight }
 
 ---
 
