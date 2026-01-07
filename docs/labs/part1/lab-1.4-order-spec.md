@@ -5,17 +5,20 @@ parent: "Part 1: Building from Scratch"
 nav_order: 6
 ---
 
-# Lab 1.4: Second Feature -- "Can You Also Add Order History?"
+# Lab 1.4: Order Specification
+{: .fs-9 }
 
-**Duration**: 45-60 minutes  
-**Day**: 2 (Morning)  
-**Prerequisites**: Completed Lab 1.3 with working payment endpoint
+Handle scope expansion with spec-first discipline.
+{: .fs-6 .fw-300 }
+
+45-60 min
+{: .label .label-blue }
 
 ---
 
 ## Learning Objective
 
-Handle the inevitable scope expansion -- PM wants "one more thing" before Thursday. Apply spec-first discipline to prevent the Thursday night scramble that would've killed you in the Lab 0 approach.
+Handle the inevitable scope expansion — PM wants "one more thing" before Thursday. Apply spec-first discipline to prevent the Thursday night scramble.
 
 ---
 
@@ -282,6 +285,9 @@ Your lab is complete when:
 ---
 
 ## Common Mistakes
+
+{: .warning }
+> Without a spec, the AI generates invalid state transitions and integration bugs.
 
 | Mistake | What Happens Thursday |
 |---------|----------------------|

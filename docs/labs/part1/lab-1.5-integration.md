@@ -5,14 +5,20 @@ parent: "Part 1: Building from Scratch"
 nav_order: 7
 ---
 
-# Lab 1.5: Integrate Payment + Order -- Thursday Build Day
+# Lab 1.5: Integration
+{: .fs-9 }
 
-**Duration**: 90-150 minutes  
-**Day**: 2 (Morning)  
-**Prerequisites**: Completed Lab 1.4 with order specification
+Build the order service and wire it to payments.
+{: .fs-6 .fw-300 }
+
+90-150 min
+{: .label .label-purple }
+
+Implementation-Heavy
+{: .label .label-yellow }
 
 {: .note }
-> This is an **implementation-heavy lab**. Timing varies based on AI model and complexity. If you finish early, use the time to explore the generated code.
+> This is an **implementation-heavy lab**. Timing varies based on AI model and complexity.
 
 ---
 

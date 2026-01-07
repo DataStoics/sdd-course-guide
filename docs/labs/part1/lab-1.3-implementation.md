@@ -4,14 +4,21 @@ layout: default
 parent: "Part 1: Building from Scratch"
 nav_order: 5
 ---
-# Lab 1.3: First Working Implementation
 
-**Duration**: 60-120 minutes  
-**Day**: 1 (Afternoon)  
-**Prerequisites**: Completed Lab 1.2 with plan.md and research.md
+# Lab 1.3: First Implementation
+{: .fs-9 }
+
+Turn your spec into working, tested code.
+{: .fs-6 .fw-300 }
+
+60-120 min
+{: .label .label-purple }
+
+Implementation-Heavy
+{: .label .label-yellow }
 
 {: .warning }
-> **Implementation time varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab � budget accordingly.
+> **Timing varies significantly** based on AI model, project complexity, and iteration depth. This is the most time-intensive lab.
 
 ---
 
@@ -284,13 +291,12 @@ Implementation-heavy labs are inherently variable. If you're past 90 minutes:
 
 ## Key Takeaways
 
-1. **Spec ? Tasks ? Code** � `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code.
+{: .highlight }
+> **Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.**
 
-2. **Compare to Lab 0** � Your endpoint handles double-clicks. Lab 0's didn't. The spec made the difference.
-
-3. **Natural language drives everything** � You described requirements; the AI structured and implemented them.
-
-4. **Traceability = confidence** � Every function traces to an FR-xxx requirement. That's "production-ready."
+1. **Spec → Tasks → Code** — `/speckit.tasks` breaks down the spec, `/speckit.implement` generates traceable code
+2. **Natural language drives everything** — You described requirements; the AI structured and implemented them
+3. **Traceability = confidence** — Every function traces to an FR-xxx requirement
 
 ### Common Pitfalls
 

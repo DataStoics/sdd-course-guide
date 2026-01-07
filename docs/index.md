@@ -143,5 +143,4 @@ By the end of this course:
 
 ## Ready to Begin?
 
-[Start with Prerequisites](prerequisites.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Quick Reference](quick-reference.html){: .btn .fs-5 .mb-4 .mb-md-0 }
+[Get Started](prerequisites.html){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }

@@ -5,12 +5,14 @@ parent: "Part 1: Building from Scratch"
 nav_order: 3
 ---
 
-# Lab 1.1: Init and Spec -- Ship Thursday, Demo Friday
+# Lab 1.1: Initialize & Specify
+{: .fs-9 }
 
-**Duration**: 45-60 minutes  
-**Day**: 1  
-**Position**: Immediately after Lab 0  
-**Prerequisites**: Working development environment (Codespaces or local Docker)
+Transform vague requirements into a validated specification.
+{: .fs-6 .fw-300 }
+
+45-60 min
+{: .label .label-blue }
 
 ---
 
@@ -385,13 +387,13 @@ Your lab is complete when:
 
 ## Key Takeaways
 
-1. **Specs are conversations, not documents** - You described what you needed naturally; the AI structured it.
+{: .highlight }
+> **30 minutes of spec writing saves hours of Thursday night rework.**
 
-2. **`[NEEDS CLARIFICATION]` is a feature** - The AI asking instead of guessing prevents Thursday rewrites.
-
-3. **Checklists catch what specs miss** - Requirements say what to build; checklists ask "did you forget anything?"
-
-4. **30 minutes now saves hours later** - Every ambiguity resolved in spec is a bug that won't appear Thursday night.
+1. **Specs are conversations, not documents** — You described what you needed naturally; the AI structured it
+2. **`[NEEDS CLARIFICATION]` is a feature** — The AI asking instead of guessing prevents Thursday rewrites
+3. **Checklists catch what specs miss** — Requirements say what to build; checklists ask "did you forget anything?"
+4. **30 minutes now saves hours later** — Every ambiguity resolved in spec is a bug that won't appear Thursday night
 
 ---
 

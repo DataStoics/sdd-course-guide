@@ -5,11 +5,14 @@ parent: "Part 1: Building from Scratch"
 nav_order: 4
 ---
 
-# Lab 1.2: From Spec to Implementation Plan
+# Lab 1.2: Plan & Research
+{: .fs-9 }
 
-**Duration**: 30-45 minutes  
-**Day**: 1  
-**Prerequisites**: Completed Lab 1.1 with `specs/001-payment-checkout/spec.md`
+Make technology decisions before writing code.
+{: .fs-6 .fw-300 }
+
+30-45 min
+{: .label .label-blue }
 
 ---
 
@@ -219,13 +222,13 @@ Your lab is complete when:
 
 ## Key Takeaways
 
-1. **One command, multiple artifacts** — `/speckit.plan` generates plan.md, research.md, and data-model.md together.
+{: .highlight }
+> **A plan is a commitment. Research documents why you made that commitment.**
 
-2. **Research is built into planning** — No separate research phase needed.
-
-3. **Traceability matters** — Every technology choice should trace to a spec requirement.
-
-4. **Plans are commitments** — Changes should go through spec → plan → implementation.
+1. **One command, multiple artifacts** — `/speckit.plan` generates plan.md, research.md, and data-model.md together
+2. **Research is built into planning** — No separate research phase needed
+3. **Traceability matters** — Every technology choice should trace to a spec requirement
+4. **Plans are commitments** — Changes should go through spec → plan → implementation
 
 ---
 

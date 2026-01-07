@@ -6,10 +6,16 @@ nav_order: 2
 ---
 
 # Lab 0: AI Without Specs
+{: .fs-9 }
 
-**Duration**: 45 minutes (30 min build + 15 min debrief)  
-**Type**: Hands-On Exploration  
-**Position**: Day 1, 10:00-10:45 AM (before Lab 1.1)
+Experience the chaos of unstructured AI development.
+{: .fs-6 .fw-300 }
+
+45 min
+{: .label .label-yellow }
+
+Hands-On
+{: .label .label-green }
 
 ---
 
@@ -148,13 +154,13 @@ Your instructor will lead a discussion using these questions:
 
 ## Key Takeaways
 
-1. **Speed is an illusion** — Code appears fast, but debug time adds up. Research shows 19% slower due to rework. (METR 2025)
+{: .highlight }
+> **The mess is the lesson.** This lab reveals a universal problem — not a personal failure.
 
-2. **Consistency beats velocity** — You got 3 different patterns when you needed one consistent approach.
-
-3. **Thursday reveals the truth** — The code that ships Friday isn't the code you started Monday.
-
-4. **"Works" ≠ "Demoable"** — "Works on my machine" isn't "works on demo day."
+1. **Speed is an illusion** — Code appears fast, but debug time adds up
+2. **Consistency beats velocity** — Same prompt, different results across the room
+3. **Thursday reveals the truth** — The code that ships Friday isn't the code you started Monday
+4. **"Works" ≠ "Demoable"** — "Works on my machine" isn't "works on demo day"
 
 ### The Speed Trap (Visual)
 

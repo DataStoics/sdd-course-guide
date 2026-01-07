@@ -4,11 +4,18 @@ layout: default
 parent: "Part 1: Building from Scratch"
 nav_order: 8
 ---
-# Lab 1.6: Production Readiness  Friday Morning Polish
 
-**Duration**: 45-75 minutes
-**Day**: 2 (Final Lab)
-**Prerequisites**: Completed Lab 1.5 with integrated features
+# Lab 1.6: Production Ready
+{: .fs-9 }
+
+Package for production and rehearse your demo.
+{: .fs-6 .fw-300 }
+
+45-75 min
+{: .label .label-blue }
+
+Final Lab
+{: .label .label-green }
 
 ---
 
