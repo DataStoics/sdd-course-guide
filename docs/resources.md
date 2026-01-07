@@ -25,8 +25,6 @@ Curated reading materials to deepen your Spec-Driven Development practice.
 
 ## Quick Reference
 
-For the complete quick reference card with commands, patterns, and checklists, see the dedicated **[Quick Reference](/quick-reference/)** page.
-
 ### Key spec-kit Commands
 
 | Command | Purpose |
