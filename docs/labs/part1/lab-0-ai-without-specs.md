@@ -35,14 +35,25 @@ For this exercise, you have **30 minutes** instead of 4 days. Same pressure, com
 
 Your challenge: Build a checkout feature that you'd be confident demoing to investors.
 
-{: .note }
-> **Where does your code go?** You're working in your Codespace. All code you create stays in your repository at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. We'll compare this Lab 0 output to the spec-driven approach in Lab 1.3.
-
 ### Your Prompt
 
 > "Build an e-commerce checkout system with payment processing and order management."
 
 That's all the guidance you get. No spec. No constraints. Just you, your AI assistant, and a deadline.
+
+---
+
+## Starting Point
+
+{: .important }
+> **Not set up yet?** Complete the [Prerequisites](../prerequisites.html) guide first.
+
+- **Your own repository** -- When you launched the Codespace from the template, GitHub created YOUR personal copy at `github.com/YOUR-USERNAME/sdd-greenfield-starter`. All commits go to YOUR repo, not the original template.
+- Working dev container environment with `specify` CLI pre-installed
+- AI assistant in **Agent mode** (GitHub Copilot, Claude Code, or Gemini CLI)
+
+{: .tip }
+> **Where do commits go?** Your Codespace is connected to YOUR fork. When you commit, changes push to `github.com/YOUR-USERNAME/sdd-greenfield-starter`. You can verify this by running `git remote -v` in the terminal.
 
 ---
 
